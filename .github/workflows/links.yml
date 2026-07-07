@@ -1,0 +1,23 @@
+name: Sprawdzanie linków
+
+on:
+  pull_request:
+    paths: ['**/*.md', '**/*.mdx']
+  schedule:
+    # raz w tygodniu, poniedziałek 06:00 UTC — łapie linki, które umarły z czasem
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: lychee — weryfikacja linków
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept 200,206,403,429
+            'src/content/**/*.md' 'src/content/**/*.mdx' '*.md'
+          fail: true

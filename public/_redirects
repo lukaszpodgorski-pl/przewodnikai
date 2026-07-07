@@ -1,0 +1,78 @@
+# Przekierowania 301: stare płaskie URL-e (przewodnikai.pl/<slug>/)
+# -> nowa struktura z prefiksami sekcji (Cloudflare Pages).
+# UWAGA: reguły są dopasowywane co do ścieżki (exact match) i mają
+# pierwszeństwo przed plikami statycznymi. Nie twórz stron pod adresami
+# /podstawy/, /prompt-engineering/ ani /etyka/ (index sekcji), bo
+# przesłonią je poniższe przekierowania starych artykułów.
+
+# --- Podstawy ---
+/wstep/ /podstawy/wstep/ 301
+/wprowadzenie/ /podstawy/czym-jest-ai/ 301
+/jak-uczyc-sie-ai/ /podstawy/jak-uczyc-sie-ai/ 301
+/pierwsza-rozmowa-z-ai/ /podstawy/pierwsza-rozmowa-z-ai/ 301
+/mity-vs-rzeczywistosc/ /podstawy/mity-vs-rzeczywistosc/ 301
+/nie-dajmy-sie-zwariowac/ /podstawy/nie-dajmy-sie-zwariowac/ 301
+/ograniczenia/ /podstawy/ograniczenia/ 301
+/weryfikacja-informacji/ /podstawy/weryfikacja-informacji/ 301
+
+# --- Jak działa AI ---
+# stary artykuł "AI, ML, Sieci Neuronowe" miał slug /podstawy/
+/podstawy/ /jak-dziala-ai/ai-ml-sieci-neuronowe/ 301
+/jak-ucza-sie-modele/ /jak-dziala-ai/jak-ucza-sie-modele/ 301
+/typy-ai/ /jak-dziala-ai/typy-ai/ 301
+/modele-jezykowe/ /jak-dziala-ai/modele-jezykowe/ 301
+/tokeny-i-kontekst/ /jak-dziala-ai/tokeny-i-kontekst/ 301
+/embedding/ /jak-dziala-ai/embedding/ 301
+/parametry-modeli/ /jak-dziala-ai/parametry-modeli/ 301
+/dane-dla-poczatkujacych/ /jak-dziala-ai/dane-dla-poczatkujacych/ 301
+/boom-ai/ /jak-dziala-ai/boom-ai/ 301
+/mapa-ai/ /jak-dziala-ai/mapa-ai/ 301
+
+# --- Prompt Engineering ---
+# stary artykuł "Wprowadzenie" miał slug /prompt-engineering/
+/prompt-engineering/ /prompt-engineering/wprowadzenie/ 301
+/prompt-podstawy/ /prompt-engineering/podstawy/ 301
+/prompt-techniki/ /prompt-engineering/techniki/ 301
+/prompt-rozumowanie/ /prompt-engineering/rozumowanie/ 301
+/prompt-schematy/ /prompt-engineering/schematy/ 301
+/prompt-automatyzacja/ /prompt-engineering/automatyzacja/ 301
+/prompt-programowanie/ /prompt-engineering/programowanie/ 301
+/prompt-praktyki/ /prompt-engineering/najlepsze-praktyki/ 301
+/baza-promptow/ /prompt-engineering/baza-promptow/ 301
+
+# --- Narzędzia AI ---
+/narzedzia-chatboty/ /narzedzia/chatboty/ 301
+/narzedzia-generatory-obrazow/ /narzedzia/generatory-obrazow/ 301
+/narzedzia-pisanie/ /narzedzia/pisanie/ 301
+/narzedzia-specjalistyczne/ /narzedzia/specjalistyczne/ 301
+/ai-w-codziennej-pracy/ /narzedzia/ai-w-codziennej-pracy/ 301
+
+# --- AI w praktyce ---
+/ai-w-branzach/ /praktyka/ai-w-branzach/ 301
+/case-studies/ /praktyka/case-studies/ 301
+/najlepsze-praktyki/ /praktyka/najlepsze-praktyki/ 301
+/ai-i-praca/ /praktyka/ai-i-praca/ 301
+
+# --- Etyka i bezpieczeństwo ---
+# stary artykuł "Etyczne aspekty AI" miał slug /etyka/
+/etyka/ /etyka/etyczne-aspekty/ 301
+/prywatnosc/ /etyka/prywatnosc/ 301
+/przyszlosc-ai/ /etyka/przyszlosc-ai/ 301
+
+# --- Zasoby ---
+/slownik-pojec/ /zasoby/slownik-pojec/ 301
+/faq/ /zasoby/faq/ 301
+/biblioteka/ /zasoby/biblioteka/ 301
+/o-mnie/ /zasoby/o-mnie/ 301
+/kontakt/ /zasoby/kontakt/ 301
+/regulamin/ /zasoby/regulamin/ 301
+
+# --- Stare strony PHP (konta/logowanie usunięte w modelu statycznym) ---
+/index.php / 301
+/login.php / 301
+/register.php / 301
+/account.php / 301
+/pro-membership.php / 301
+/logout.php / 301
+/verify-account.php / 301
+/resend-verification.php / 301
