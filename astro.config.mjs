@@ -41,4 +41,18 @@ export default defineConfig({
 			],
 		}),
 	],
+	vite: {
+		build: {
+			rolldownOptions: {
+				// `satteri` (Astro's markdown parser) tries to load its wasm32-wasi
+				// fallback binary when Vite resolves the "prerender" environment with
+				// browser-like conditions (as Cloudflare's build does). That optional
+				// dependency is gated on `cpu: ["wasm32"]` in its package.json, which
+				// npm never matches on any real host, so it's never installed and the
+				// bundler can't resolve it. It's unused in this code path, so mark it
+				// external instead of bundling it.
+				external: ['@bruits/satteri-wasm32-wasi'],
+			},
+		},
+	},
 });
