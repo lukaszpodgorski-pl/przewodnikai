@@ -87,6 +87,141 @@
 	border-color: var(--sl-color-accent);
 }
 
+/* --- Hero CTA: hierarchia --- */
+
+/*
+ * Trzy przyciski hero mialy jednakowa wage wizualna, a powyzej 50rem Starlight
+ * ustawia .actions na `justify-content: flex-start` - przy wysrodkowanym hero
+ * (patrz regula wyzej) lgnely do lewej krawedzi, mimo ze naglowek i tagline
+ * sa na srodku.
+ *
+ * Grid zamiast flexa: dwa glowne CTA dostaja identyczna szerokosc kolumny
+ * i czytaja sie jako para rownorzednych wyborow, a "Wspoltworz na GitHubie"
+ * schodzi do wlasnego wiersza. `justify-self` trzyma jego pole klikalne przy
+ * tekscie - przy `flex-basis: 100%` rozciagneloby sie na caly wiersz i lapalo
+ * kliki daleko od linku (a prowadzi poza serwis).
+ */
+.hero .actions {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 15rem));
+	justify-content: center;
+	gap: 0.75rem 1rem;
+
+	/* Wspolne tempo wszystkich przejsc CTA - uzasadnienie w sekcji hover nizej. */
+	--cta-duration: 0.28s;
+	--cta-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 30rem) {
+	.hero .actions {
+		grid-template-columns: minmax(0, 15rem);
+	}
+}
+
+.hero .actions .sl-link-button:where(.primary, .secondary) {
+	justify-content: center;
+	font-weight: 600;
+}
+
+/*
+ * Trzecie CTA dotyczy wspoltworzenia, nie nauki - wlasny wiersz, mniejszy
+ * stopien pisma i wygaszony kolor (ten sam token co pasek liczb nizej)
+ * odsuwaja je od glownej pary.
+ */
+.hero .actions .sl-link-button.minimal {
+	grid-column: 1 / -1;
+	justify-self: center;
+	margin-top: 0.25rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 0.25rem;
+}
+
+/* --- Hero CTA: hover i focus --- */
+
+/*
+ * Ruch jest miekki celowo: krzywa wyhamowujaca zamiast `ease` i dluzszy czas.
+ * Przy tak duzej zmianie koloru krotkie 0,2s czyta sie jak przeskok stanu,
+ * a nie przejscie.
+ */
+.hero .actions .sl-link-button {
+	transition:
+		transform var(--cta-duration) var(--cta-ease),
+		box-shadow var(--cta-duration) var(--cta-ease),
+		background-color var(--cta-duration) var(--cta-ease),
+		border-color var(--cta-duration) var(--cta-ease),
+		color var(--cta-duration) var(--cta-ease),
+		text-decoration-color var(--cta-duration) var(--cta-ease);
+}
+
+/*
+ * Cien w spoczynku jest przezroczysty, ale ma juz docelowa geometrie - hover
+ * jest wtedy czystym przenikaniem koloru. Animacja od `box-shadow: none`
+ * rozciaga cien od zerowego rozmiaru, co widac jako szarpniecie.
+ */
+.hero .actions .sl-link-button.primary {
+	box-shadow: 0 0.75rem 1.5rem -0.5rem transparent;
+}
+
+.hero .actions .sl-link-button svg {
+	transition: transform var(--cta-duration) var(--cta-ease);
+}
+
+/* Klawiatura dostaje to samo co mysz - :focus-visible zawsze obok :hover. */
+.hero .actions .sl-link-button:where(.primary, .secondary):is(:hover, :focus-visible) {
+	transform: translateY(-3px);
+}
+
+.hero .actions .sl-link-button.primary:is(:hover, :focus-visible) {
+	box-shadow: 0 0.75rem 1.5rem -0.5rem color-mix(in srgb, var(--sl-color-text-accent) 60%, transparent);
+}
+
+/* Strzalka sugeruje ruch naprzod - niech go zrobi. */
+.hero .actions .sl-link-button.primary:is(:hover, :focus-visible) svg {
+	transform: translateX(0.25rem);
+}
+
+/*
+ * Kolory tekstu na hoverze (tu i przy .minimal nizej) biora
+ * --sl-color-accent-high, nie -text-accent. W motywie jasnym -text-accent to
+ * #0d9488, ktore na tle --sl-color-accent-low daje kontrast 3,3:1 - ponizej
+ * progu WCAG AA. -accent-high (#115e59) daje 6,7:1, a w motywie ciemnym
+ * (#5eead4 na #042f2e) 9,8:1.
+ */
+.hero .actions .sl-link-button.secondary:is(:hover, :focus-visible) {
+	background: var(--sl-color-accent-low);
+	border-color: var(--sl-color-accent-high);
+	color: var(--sl-color-accent-high);
+}
+
+.hero .actions .sl-link-button.minimal:is(:hover, :focus-visible) {
+	color: var(--sl-color-accent-high);
+	text-decoration-color: currentColor;
+}
+
+/* Ikona linku zewnetrznego - drobny ruch w strone, ktora oznacza. */
+.hero .actions .sl-link-button.minimal:is(:hover, :focus-visible) svg {
+	transform: translate(0.125rem, -0.125rem);
+}
+
+/*
+ * prefers-reduced-motion wycisza RUCH, nie cale sprzezenie zwrotne. Kasujemy
+ * wiec same przesuniecia, a przenikanie koloru i cienia zostaje - nie wywoluje
+ * reakcji przedsionkowych, a bez niego hover jest twardym przeskokiem stanu.
+ *
+ * Nie wracaj tu do `transition: none`. Windows ma te preferencje wlaczona
+ * zawsze, gdy uzytkownik wylaczy "Efekty animacji" w ustawieniach ulatwien
+ * dostepu - to czesty przypadek, nie egzotyczny wyjatek.
+ */
+@media (prefers-reduced-motion: reduce) {
+	.hero .actions .sl-link-button:is(:hover, :focus-visible),
+	.hero .actions .sl-link-button:is(:hover, :focus-visible) svg {
+		transform: none;
+	}
+}
+
 /* --- Pasek liczb pod hero (uzywany przez src/content/docs/index.mdx) --- */
 .stats {
 	margin-top: 0;
