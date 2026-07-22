@@ -2,9 +2,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import sitemap from '@astrojs/sitemap';
+import { lastModMap } from './scripts/sitemap-lastmod.mjs';
 import { SECTIONS } from './src/config/sections';
 
 const GITHUB_REPO = 'https://github.com/lukaszpodgorski-pl/przewodnikai';
+
+// Mapa liczona raz, na starcie builda - nie per URL.
+const LAST_MOD = lastModMap();
 
 // https://astro.build/config
 export default defineConfig({
@@ -37,6 +42,18 @@ export default defineConfig({
 				label,
 				items: [{ autogenerate: { directory: slug } }],
 			})),
+		}),
+		sitemap({
+			changefreq: 'weekly',
+			serialize(item) {
+				const { pathname } = new URL(item.url);
+				const lastmod = LAST_MOD.get(pathname);
+				if (lastmod) item.lastmod = lastmod;
+				if (pathname === '/') item.priority = 1.0;
+				else if (pathname.startsWith('/sciezki/')) item.priority = 0.5;
+				else item.priority = 0.8;
+				return item;
+			},
 		}),
 	],
 	vite: {

@@ -171,7 +171,10 @@ check('sitemap ma lastmod albo potwierdzony plytki klon', () => {
 });
 check('sitemap rozroznia priorytety', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
-	assert(xml.includes('<priority>1</priority>'), 'brak priorytetu 1.0 dla strony glownej');
+	// @astrojs/sitemap serializuje priorytet 1.0 jako "1.0", nie jako "1"
+	// (zweryfikowane w dist/sitemap-0.xml) - asercja dopasowana do realnego
+	// formatu serializera, nie odwrotnie.
+	assert(xml.includes('<priority>1.0</priority>'), 'brak priorytetu 1.0 dla strony glownej');
 	assert(xml.includes('<priority>0.5</priority>'), 'brak priorytetu 0.5 dla sciezek');
 	assert(xml.includes('<priority>0.8</priority>'), 'brak priorytetu 0.8 dla artykulow');
 	return '1.0 / 0.8 / 0.5';
