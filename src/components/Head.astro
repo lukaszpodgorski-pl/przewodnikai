@@ -75,6 +75,13 @@ if (isHome) {
 // jest niezdefiniowane) warunek nie przechodzi i `blocks` pozostaje bez zmian.
 const faq = data.faq as FaqItem[] | undefined;
 if (faq && faq.length > 0) blocks.push(buildFaqPage(faq));
+
+// Analityka (Cloudflare Web Analytics) NIE jest wstrzykiwana z tego komponentu.
+// Cloudflare dokleja beacon automatycznie na brzegu sieci, dla ruchu
+// rozpoznanego jako przeglądarka - dlatego nie widać go w `dist/`, a mimo to
+// statystyki i Core Web Vitals działają. Dodanie tu drugiego znacznika liczyłoby
+// każdą odsłonę podwójnie. Konfiguracja jest w panelu Cloudflare (Web Analytics),
+// nie w repo.
 ---
 
 <Default><slot /></Default>
