@@ -11,6 +11,7 @@ teaches:
 about:
   - name: Sztuczna inteligencja
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
+faqHidden: true
 faq:
   - q: Co to właściwie jest sztuczna inteligencja?
     a: To programy komputerowe, które potrafią wykonywać zadania wymagające ludzkiej inteligencji - rozpoznawanie mowy, tłumaczenie tekstów, rozumienie pytań i generowanie odpowiedzi.

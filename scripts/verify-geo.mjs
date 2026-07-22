@@ -128,12 +128,36 @@ check('30 stron ma blok FAQPage', () => {
 	assert(withFaq.length === 30, `oczekiwano 30, jest ${withFaq.length}`);
 	return `${withFaq.length}/30`;
 });
-check('FAQPage zawsze towarzyszy widocznej sekcji', () => {
+
+// Jedyna strona z jawnym wyjątkiem: pole `faqHidden` w jej frontmatterze
+// wyłącza wygenerowaną sekcję "Częste pytania", bo treść artykułu sama jest
+// FAQ (pytania jako nagłówki `##` z rozwiniętymi odpowiedziami), a
+// wygenerowana sekcja pod spodem powielałaby dokładnie te same pytania.
+// Blok FAQPage zostaje - warunek widocznej treści (wymagany przez Google)
+// spełnia tu sama treść artykułu. To jedyny URL, któremu wolno nie mieć
+// "Częste pytania" mimo FAQPage; każda inna strona z tym wyjątkiem to
+// prawdziwy defekt.
+const FAQ_HIDDEN_URL = '/zasoby/faq/';
+
+check('FAQPage zawsze towarzyszy widocznej sekcji (poza jawnym wyjątkiem faqHidden)', () => {
 	const bad = pageData.filter(
-		(p) => typesIn(p.html).has('FAQPage') && !p.html.includes('Częste pytania')
+		(p) =>
+			p.url !== FAQ_HIDDEN_URL &&
+			typesIn(p.html).has('FAQPage') &&
+			!p.html.includes('Częste pytania')
 	);
 	assert(bad.length === 0, `JSON-LD bez widocznej tresci: ${bad.map((p) => p.url).join(', ')}`);
-	return 'brak niewidocznego FAQ';
+	return `29/29 (jedyny wyjątek: ${FAQ_HIDDEN_URL})`;
+});
+check(`faqHidden działa na ${FAQ_HIDDEN_URL}: FAQPage jest, wygenerowana sekcja - nie`, () => {
+	const page = pageData.find((p) => p.url === FAQ_HIDDEN_URL);
+	assert(page, `nie znaleziono strony ${FAQ_HIDDEN_URL}`);
+	assert(typesIn(page.html).has('FAQPage'), `${FAQ_HIDDEN_URL} powinna mieć blok FAQPage`);
+	assert(
+		!page.html.includes('Częste pytania'),
+		`${FAQ_HIDDEN_URL} nie powinna mieć wygenerowanej sekcji "Częste pytania" - flaga faqHidden nie działa`
+	);
+	return 'FAQPage + brak wygenerowanej sekcji';
 });
 check('brak sekcji FAQ na stronach bez FAQPage', () => {
 	const bad = pageData.filter(
