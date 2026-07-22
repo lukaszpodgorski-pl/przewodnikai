@@ -1,0 +1,105 @@
+/*
+ * Kolor marki: teal #0d9488.
+ *
+ * Ten plik jest CELOWO bezwarstwowy. Starlight trzyma wszystkie swoje style
+ * w @layer starlight.* (patrz node_modules/@astrojs/starlight/style/layers.css),
+ * a pliki z `customCss` sa importowane surowo, bez warstwy (patrz
+ * integrations/vite-virtual-modules.ts). Bezwarstwowy CSS wygrywa z warstwowym
+ * niezaleznie od specyficznosci - dlatego proste selektory ponizej nadpisuja
+ * Starlight bez !important. Nie owijaj tego pliku w @layer.
+ */
+
+/* --- Skala akcentu: motyw ciemny (domyslny) --- */
+:root {
+	--sl-color-accent-low: #042f2e;
+	--sl-color-accent: #0d9488;
+	--sl-color-accent-high: #5eead4;
+}
+
+/*
+ * Motyw jasny odwraca skale: -high jest najciemniejszy, bo sluzy za kolor
+ * tekstu na jasnym tle. Zachowujemy te konwencje Starlight.
+ */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #ccfbf1;
+	--sl-color-accent: #0d9488;
+	--sl-color-accent-high: #115e59;
+}
+
+/* --- Hero: subtelna poswiata zamiast pustego tla --- */
+/* [data-has-hero] siedzi na <html> i jest ustawiane przez Starlight tylko
+   dla stron z hero, wiec reguly nie wyciekaja na artykuly. */
+[data-has-hero] .hero {
+	position: relative;
+}
+
+/*
+ * Hero bez obrazka: wysrodkuj zamiast zostawiac pusta kolumne.
+ *
+ * Powyzej 50rem Starlight przestawia hero na `grid-template-columns: 7fr 4fr`
+ * i wyrownuje tekst do lewej - kolumna 4fr jest tam przeznaczona na obrazek.
+ * Nasze hero obrazka nie ma, wiec ta kolumna zostawala pusta, a tresc
+ * niepotrzebnie lgnela do lewej krawedzi. Gdy kiedys dojdzie `hero.image`,
+ * warunek :has() przestanie pasowac i wroci oryginalny uklad dwukolumnowy.
+ */
+@media (min-width: 50rem) {
+	.hero:not(:has(> img, > .hero-html)) {
+		grid-template-columns: 100%;
+		/* Domyslne 10vmin robi wyrwe miedzy CTA a trescia ponizej. */
+		padding-block: clamp(2rem, calc(1rem + 6vmin), 6rem);
+	}
+
+	.hero:not(:has(> img, > .hero-html)) .stack {
+		text-align: center;
+	}
+
+	.hero:not(:has(> img, > .hero-html)) .copy {
+		align-items: center;
+	}
+}
+
+[data-has-hero] .hero::before {
+	content: '';
+	position: absolute;
+	/* Bez ujemnych wartosci poziomych - te powodowalyby poziomy suwak. */
+	inset: -8rem 0 -2rem;
+	z-index: -1;
+	background: radial-gradient(60% 70% at 50% 45%, var(--sl-color-accent-low), transparent 70%);
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+/* --- Kafelki: jeden kolor zamiast teczy --- */
+/* Starlight koloruje ikony kart cyklicznie przez :nth-child(4n+1/3/4/5)
+   - pomaranczowy, fioletowy, zielony, czerwony. Na stronie glownej wyglada
+   to przypadkowo. Ujednolicamy do akcentu. */
+.card {
+	--sl-card-border: var(--sl-color-accent);
+	--sl-card-bg: var(--sl-color-accent-low);
+}
+
+/* --- LinkCard: akcent na hoverze zamiast szarosci --- */
+.sl-link-card {
+	transition: border-color 0.15s ease;
+}
+
+.sl-link-card:hover {
+	border-color: var(--sl-color-accent);
+}
+
+/* --- Pasek liczb pod hero (uzywany przez src/content/docs/index.mdx) --- */
+.stats {
+	margin-top: 0;
+	text-align: center;
+	font-size: var(--sl-text-sm);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--sl-color-gray-3);
+}
+
+/* --- Rytm pionowy na stronach splash --- */
+/* Bez centrowania: naglowki zostaja przy lewej, zgodnie z akapitami pod nimi.
+   Wysrodkowany jest tylko blok hero z paskiem liczb. */
+[data-has-hero] .sl-markdown-content :is(h2, .sl-heading-wrapper) {
+	margin-top: 3rem;
+}

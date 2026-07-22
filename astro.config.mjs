@@ -21,6 +21,7 @@ export default defineConfig({
 			title: 'Przewodnik AI',
 			description:
 				'Otwarta, społecznościowa baza wiedzy o sztucznej inteligencji po polsku. Kurs AI od podstaw — bez żargonu, dla każdego.',
+			customCss: ['./src/styles/custom.css'],
 			components: {
 				Footer: './src/components/Footer.astro',
 				Head: './src/components/Head.astro',
