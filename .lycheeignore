@@ -4,6 +4,20 @@
 # je fałszywie. Martwe linki naprawiaj w treści, nie wyciszaj tutaj - inaczej ten
 # plik po cichu zamieni się w listę zepsutych źródeł.
 
+# Własna domena. Zbudowane strony zawierają bezwzględne adresy własnego serwisu
+# w znacznikach `<link rel="canonical">`, `og:url` oraz w blokach JSON-LD.
+# lychee pobierał je przez sieć, czyli sprawdzał ŻYWĄ PRODUKCJĘ - a nie wersję
+# z pull requesta. Każda NOWA podstrona wpadała przez to w błędne koło: nie
+# przechodziła kontroli, bo jeszcze nie została wdrożona, i nie mogła zostać
+# wdrożona, bo nie przechodziła kontroli.
+#
+# To nie jest wyciszenie martwego linku. Linki wewnętrzne są nadal sprawdzane,
+# tylko lokalnie: w treści zapisujemy je jako root-relative (`/etyka/prywatnosc/`),
+# a lychee rozwiązuje je w `dist/` dzięki `--root-dir`. Dodatkowo `npm run build`
+# przerywa się przy złamanym linku wewnętrznym, a `npm run verify:geo` sprawdza,
+# czy adresy w JSON-LD są bezwzględne i kończą się ukośnikiem.
+^https://(www\.)?przewodnikai\.pl
+
 # McKinsey zrywa połączenie z klientami automatycznymi ("HTTP/2 protocol error").
 # Blokada jest sieciowa, nie treściowa: niedostępny jest też sam korzeń domeny
 # mckinsey.com, co wyklucza błąd 404 na tej konkretnej podstronie. Raport

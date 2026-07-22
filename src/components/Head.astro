@@ -86,6 +86,11 @@ if (faq && faq.length > 0) blocks.push(buildFaqPage(faq));
 
 <Default><slot /></Default>
 
+{/* Strony pomocnicze (potwierdzenia zapisu na newsletter) - patrz `noindex`
+    w src/content.config.ts. Muszą też być pominięte w sitemapie, inaczej
+    mapa i znacznik mówiłyby wyszukiwarce dwie sprzeczne rzeczy. */}
+{data.noindex && <meta name="robots" content="noindex, follow" />}
+
 <meta name="author" content={AUTHOR.name} />
 <link rel="author" href={AUTHOR.url} />
 <meta property="og:image" content={ogImage} />

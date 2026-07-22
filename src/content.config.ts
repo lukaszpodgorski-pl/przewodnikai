@@ -32,6 +32,14 @@ export const collections = {
 				// i wygenerowana sekcja powielałaby te same pytania, które już są
 				// nagłówkami `##` w treści.
 				faqHidden: z.boolean().optional(),
+				// Wyłącza indeksowanie strony: `<meta name="robots" content="noindex">`
+				// w Head.astro plus pominięcie w sitemapie (astro.config.mjs).
+				// Dla stron pomocniczych, które są celem przekierowania z zewnętrznej
+				// usługi i nie mają wartości w wynikach wyszukiwania - np. potwierdzenia
+				// zapisu na newsletter. Strona oznaczona `noindex` NIE MOŻE zostać
+				// w sitemapie: mapa mówiłaby wyszukiwarce "zindeksuj", a znacznik
+				// "nie indeksuj", co Google raportuje jako błąd.
+				noindex: z.boolean().optional(),
 			}),
 		}),
 	}),

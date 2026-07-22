@@ -8,6 +8,13 @@ import { SECTIONS } from './src/config/sections';
 
 const GITHUB_REPO = 'https://github.com/lukaszpodgorski-pl/przewodnikai';
 
+// Prefiks stron pomocniczych obsługi newslettera (cele przekierowań z Sendy).
+// Mają `noindex: true` we frontmatterze i są pomijane w sitemapie.
+// UWAGA: ta sama stała występuje w scripts/verify-geo.mjs, gdzie służy do
+// wyłączenia tych stron z klasyfikacji "artykuł" i z liczby URL-i w sitemapie.
+// Zmiana tutaj wymaga zmiany tam - inaczej CI zapali się na czerwono.
+const NOINDEX_PREFIX = '/newsletter/';
+
 // Mapa liczona raz, na starcie builda - nie per URL.
 const LAST_MOD = lastModMap();
 
@@ -48,6 +55,13 @@ export default defineConfig({
 			changefreq: 'weekly',
 			serialize(item) {
 				const { pathname } = new URL(item.url);
+				// Strony pomocnicze newslettera mają `noindex: true` we frontmatterze
+				// (Head.astro emituje wtedy meta robots). Strona oznaczona noindex nie
+				// może zostać w sitemapie - mapa mówiłaby wyszukiwarce "zindeksuj",
+				// a znacznik "nie indeksuj". Zwrócenie undefined usuwa wpis z mapy.
+				// Uwaga: scripts/verify-geo.mjs zna ten wyjątek i odejmuje te strony
+				// od oczekiwanej liczby URL-i - zmiana tu wymaga zmiany tam.
+				if (pathname.startsWith(NOINDEX_PREFIX)) return undefined;
 				const lastmod = LAST_MOD.get(pathname);
 				if (lastmod) item.lastmod = lastmod;
 				if (pathname === '/') item.priority = 1.0;
