@@ -74,6 +74,14 @@ export const STRONY_POWROTU = {
 	juzZapisany: '/newsletter/juz-zapisany/',
 	/** Unsubscribe page - po wypisaniu sie. */
 	poWypisaniu: '/newsletter/wypisano/',
+	/**
+	 * Error page - kazdy nieudany zapis: bledny adres, wygasly lub juz uzyty
+	 * link potwierdzajacy, chwilowy problem po stronie serwera. Jedna strona
+	 * na wszystkie te przypadki, bo z perspektywy czytelnika roznica jest
+	 * nieistotna - liczy sie informacja, ze adres NIE trafil na liste
+	 * i ze wystarczy sprobowac ponownie.
+	 */
+	blad: '/newsletter/blad/',
 } as const;
 
 /** Czy konfiguracja jest wciaz zastepcza. */
