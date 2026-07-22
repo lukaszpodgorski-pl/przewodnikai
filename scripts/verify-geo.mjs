@@ -182,21 +182,42 @@ function extractFaqQuestions(content) {
 
 assert(existsSync(DIST), 'Brak katalogu dist - uruchom najpierw `npm run build`');
 
+// Strony pomocnicze obsługi newslettera - cele przekierowań z Sendy po zapisie,
+// potwierdzeniu i wypisaniu. Nie są artykułami kursu: `Head.astro` klasyfikuje
+// stronę jako artykuł po allowliście sekcji (src/config/sections.ts), więc te
+// strony świadomie NIE dostają bloku TechArticle ani BreadcrumbList. Mają za to
+// `noindex: true` i są pomijane w sitemapie (astro.config.mjs).
+//
+// Bez tego wyjątku klasyfikacja przez negację poniżej wrzuciłaby je do worka
+// "artykuły" i asercja o TechArticle zapaliłaby się na czerwono.
+//
+// UWAGA: ta sama stała występuje w astro.config.mjs (pominięcie w sitemapie).
+const NOINDEX_PREFIX = '/newsletter/';
+const NOINDEX_SRC_PREFIX = 'newsletter/';
+
 const pages = collectionPages();
 const pageData = pages.map((f) => ({ file: f, url: urlOf(f), html: readFileSync(f, 'utf8') }));
-const articles = pageData.filter((p) => p.url !== '/' && !p.url.startsWith('/sciezki/'));
+const pomocnicze = pageData.filter((p) => p.url.startsWith(NOINDEX_PREFIX));
+const articles = pageData.filter(
+	(p) => p.url !== '/' && !p.url.startsWith('/sciezki/') && !p.url.startsWith(NOINDEX_PREFIX),
+);
 const sciezki = pageData.filter((p) => p.url.startsWith('/sciezki/'));
 const home = pageData.filter((p) => p.url === '/');
+// Strony, które mają prawo znaleźć się w sitemapie - czyli wszystkie poza
+// oznaczonymi noindex.
+const indeksowane = pageData.filter((p) => !p.url.startsWith(NOINDEX_PREFIX));
 
 // Stan źródeł (src/content/docs/) - punkt odniesienia dla asercji relacyjnych
 // poniżej. `index.mdx` w katalogu głównym to strona główna; pliki pod
-// `sciezki/` (w tym jej własny `index.mdx`) to ścieżki nauki; reszta to
-// artykuły.
+// `sciezki/` (w tym jej własny `index.mdx`) to ścieżki nauki; pliki pod
+// `newsletter/` to strony pomocnicze; reszta to artykuły.
 const sourceFiles = sourceDocFiles();
 const sourceRel = sourceFiles.map((f) => relative(SRC_DOCS, f).split(sep).join('/'));
 const sourceHome = sourceRel.filter((r) => r === 'index.mdx');
 const sourceSciezki = sourceRel.filter((r) => r.startsWith('sciezki/'));
-const sourceArticles = sourceRel.filter((r) => r !== 'index.mdx' && !r.startsWith('sciezki/'));
+const sourceArticles = sourceRel.filter(
+	(r) => r !== 'index.mdx' && !r.startsWith('sciezki/') && !r.startsWith(NOINDEX_SRC_PREFIX),
+);
 
 // --- Task 1: harness widzi to, co powinien ---
 check('liczba stron w dist odpowiada liczbie plików źródłowych w treści', () => {
@@ -223,10 +244,18 @@ check('podział na artykuły / ścieżki / stronę główną zgodny ze źródłe
 });
 
 // --- Task 3: JSON-LD + OG ---
-check('każda strona ma blok JSON-LD', () => {
-	const missing = pageData.filter((p) => jsonLdBlocks(p.html).length === 0);
+check('każda strona indeksowana ma blok JSON-LD', () => {
+	// Strony `noindex` celowo nie dostają danych strukturalnych: te służą
+	// wzbogaceniu wyników wyszukiwania, a strona wyłączona z indeksowania w tych
+	// wynikach nie występuje. Tak samo Head.astro traktuje stronę 404.
+	const missing = indeksowane.filter((p) => jsonLdBlocks(p.html).length === 0);
 	assert(missing.length === 0, `bez JSON-LD: ${missing.map((p) => p.url).join(', ')}`);
-	return `${pageData.length}/${pageData.length}`;
+	return `${indeksowane.length}/${indeksowane.length}`;
+});
+check('strony noindex nie mają danych strukturalnych', () => {
+	const zbedne = pomocnicze.filter((p) => jsonLdBlocks(p.html).length > 0);
+	assert(zbedne.length === 0, `niepotrzebny JSON-LD: ${zbedne.map((p) => p.url).join(', ')}`);
+	return `${pomocnicze.length} stron pomocniczych bez JSON-LD`;
 });
 check('każdy artykuł ma TechArticle', () => {
 	const bad = articles.filter((p) => !typesIn(p.html).has('TechArticle'));
@@ -322,18 +351,32 @@ check('obraz OG istnieje dla każdej strony', () => {
 });
 
 // --- Task 6: sitemap ---
-check('sitemap zawiera tyle URL-i, ile stron w dist', () => {
+check('sitemap zawiera tyle URL-i, ile stron indeksowanych', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	const n = (xml.match(/<loc>/g) || []).length;
-	assert(n === pageData.length, `oczekiwano ${pageData.length}, jest ${n}`);
-	return `${n} URL-i`;
+	assert(
+		n === indeksowane.length,
+		`oczekiwano ${indeksowane.length}, jest ${n} (stron pomocniczych noindex: ${pomocnicze.length})`,
+	);
+	return `${n} URL-i (+${pomocnicze.length} pominiętych jako noindex)`;
+});
+check('strony noindex nie występują w sitemapie', () => {
+	// Sitemapa i znacznik robots muszą mówić to samo. Wpis w mapie przy
+	// jednoczesnym `noindex` to sprzeczny sygnał, który Google raportuje
+	// w Search Console jako błąd.
+	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
+	const wSitemapie = pomocnicze.filter((p) => xml.includes(`${SITE_URL}${p.url}`));
+	assert(wSitemapie.length === 0, `w sitemapie mimo noindex: ${wSitemapie.map((p) => p.url).join(', ')}`);
+	const bezZnacznika = pomocnicze.filter((p) => !/<meta name="robots" content="noindex/.test(p.html));
+	assert(bezZnacznika.length === 0, `brak meta robots: ${bezZnacznika.map((p) => p.url).join(', ')}`);
+	return `${pomocnicze.length} stron pomocniczych: poza mapą i z meta robots`;
 });
 check('sitemap ma lastmod dla każdej strony albo potwierdzony płytki klon', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	const n = (xml.match(/<lastmod>/g) || []).length;
 	assert(
-		n === pageData.length || n === 0,
-		`częściowy lastmod (${n}/${pageData.length}) - mapa git jest niespójna`,
+		n === indeksowane.length || n === 0,
+		`częściowy lastmod (${n}/${indeksowane.length}) - mapa git jest niespójna`,
 	);
 	return n === 0 ? 'pominięte (brak historii git)' : `${n} wpisów`;
 });

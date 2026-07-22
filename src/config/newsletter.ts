@@ -45,6 +45,37 @@ export const NEWSLETTER = {
 	contactEmail: 'kontakt@lukaszpodgorski.pl',
 } as const;
 
+/**
+ * Strony, na ktore Sendy odsyla czlowieka po kazdej akcji.
+ *
+ * Do wklejenia w panelu Sendy (ustawienia listy) jako pelne adresy z domena.
+ * Wczesniej Sendy odsylal na strone glowna z parametrem w adresie
+ * (`/?verification=sent` itd.), a strona glowna w ogole na to nie reagowala -
+ * czlowiek ladowal na zwyklej stronie bez informacji, czy zapis sie udal.
+ *
+ * Dedykowane strony zamiast parametrow, bo:
+ *   - dzialaja bez JS (serwis jest statyczny, parametru nie da sie obsluzyc
+ *     przy generowaniu),
+ *   - przy wlaczonym double opt-in strona "sprawdz skrzynke" jest najwazniejszym
+ *     ekranem calego procesu: bez kliknięcia w link zapis nie zostaje dokonczony,
+ *   - mieszcza wyjasnienie "co dalej", ktore nie zmiescilo by sie w banerze.
+ *
+ * Kazda ma `noindex: true` we frontmatterze i jest pomijana w sitemapie.
+ */
+/** Wspolny prefiks stron powrotu - uzywany do wykluczen w Footer.astro. */
+export const PREFIX_STRON_POWROTU = '/newsletter/';
+
+export const STRONY_POWROTU = {
+	/** Subscribe success page - po wyslaniu formularza (double opt-in: mail wyslany). */
+	poZapisie: '/newsletter/sprawdz-skrzynke/',
+	/** Subscription confirmed page - po kliknieciu linku potwierdzajacego. */
+	poPotwierdzeniu: '/newsletter/potwierdzone/',
+	/** Already subscribed page - adres juz jest na liscie. */
+	juzZapisany: '/newsletter/juz-zapisany/',
+	/** Unsubscribe page - po wypisaniu sie. */
+	poWypisaniu: '/newsletter/wypisano/',
+} as const;
+
 /** Czy konfiguracja jest wciaz zastepcza. */
 export const listIdIsPlaceholder = NEWSLETTER.listId.startsWith('PODMIEN');
 
