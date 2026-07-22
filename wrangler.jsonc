@@ -5,5 +5,13 @@
 	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"directory": "./dist"
-	}
+	},
+	// Cutover produkcyjny: Worker przechwytuje ruch na domenie, zanim trafi on
+	// do starego origin (PHP na cyberfolks). Rekordy DNS zostaja nietkniete -
+	// wycofanie to usuniecie tych route'ow, ruch wraca wtedy na stary hosting.
+	// Route wymaga proxowanego (pomaranczowa chmurka) rekordu DNS - taki juz istnieje.
+	"routes": [
+		{ "pattern": "przewodnikai.pl/*", "zone_name": "przewodnikai.pl" },
+		{ "pattern": "www.przewodnikai.pl/*", "zone_name": "przewodnikai.pl" }
+	]
 }
