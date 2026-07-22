@@ -33,9 +33,13 @@ const isSciezka = pathname.startsWith('/sciezki/');
 const section = pathname.split('/').filter(Boolean)[0];
 const isArticle = section !== undefined && SECTION_LABELS[section] !== undefined;
 
-// Obraz generowany per strona przez src/pages/og/[...route].ts.
-// Strona główna ma puste `id` w kolekcji - dla niej zostaje stały obraz.
-const ogImage = route.id
+// Obraz generowany per strona przez src/pages/og/[...route].ts, ale ten
+// endpoint tworzy pliki wyłącznie z wpisów kolekcji `docs` - więc obrazu per
+// strona dostają tylko strony sklasyfikowane jako artykuł lub ścieżka
+// (isArticle/isSciezka, patrz wyżej). Wszystko poza tym - strona główna
+// (puste `id` w kolekcji) i strona 404 (w ogóle nie jest wpisem kolekcji) -
+// dostaje stały obraz domyślny, bo `/og/404.png` nigdy by nie powstał.
+const ogImage = isArticle || isSciezka
 	? `${SITE_URL}/og/${route.id}.png`
 	: `${SITE_URL}/og-default.png`;
 
