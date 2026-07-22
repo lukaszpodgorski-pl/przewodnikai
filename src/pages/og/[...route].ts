@@ -32,7 +32,7 @@ export const { getStaticPaths, GET } = await OGImageRoute({
 			[24, 24, 27],
 			[39, 39, 42],
 		],
-		border: { color: [124, 58, 237], width: 16, side: 'inline-start' },
+		border: { color: [13, 148, 136], width: 16, side: 'inline-start' },
 		padding: 70,
 		// Domyślny font Noto Sans w astro-og-canvas ładuje wyłącznie podzbiór
 		// "latin" (bez ą, ę, ł, ż) - polskie znaki renderowały się jako puste
