@@ -1,0 +1,158 @@
+---
+import { NEWSLETTER, ostrzezJesliZastepcze } from '../config/newsletter';
+
+ostrzezJesliZastepcze();
+
+interface Props {
+	/** `sekcja` - blok na stronie glownej. `pasek` - waski wariant pod artykulem. */
+	wariant?: 'sekcja' | 'pasek';
+}
+
+const { wariant = 'sekcja' } = Astro.props;
+
+const naglowek = wariant === 'sekcja' ? 'Nie przegap nowych materiałów' : 'Powiadomienia o nowych materiałach';
+---
+
+{/* data-pagefind-ignore jest konieczne: stopka Starlight lezy WEWNATRZ
+    data-pagefind-body, wiec bez tego tresc formularza trafialaby do indeksu
+    i zasmiecala wyniki wyszukiwania w serwisie. */}
+<section class:list={['newsletter', wariant]} data-pagefind-ignore aria-labelledby="newsletter-naglowek">
+	<div class="tekst">
+		<h2 id="newsletter-naglowek">{naglowek}</h2>
+		<p class="opis">
+			Zapisz się, a dam Ci znać, kiedy pojawi się nowy rozdział albo gdy zaktualizuję istniejący. Bez spamu, bez
+			sprzedawania Twojego adresu.
+		</p>
+	</div>
+
+	<form action={NEWSLETTER.endpoint} method="POST" accept-charset="utf-8">
+		<div class="pola">
+			<label class="sr-only" for={`email-${wariant}`}>Twój adres e-mail</label>
+			<input
+				type="email"
+				name="email"
+				id={`email-${wariant}`}
+				placeholder="Twój adres e-mail"
+				autocomplete="email"
+				inputmode="email"
+				required
+			/>
+			<button type="submit" name="submit">Zapisz się</button>
+		</div>
+
+		{/* Honeypot antyspamowy - ukryty przed ludzmi i przed czytnikami ekranu. */}
+		<div style="display:none;" aria-hidden="true">
+			<input type="text" name="hp" tabindex="-1" autocomplete="off" />
+		</div>
+
+		<input type="hidden" name="gdpr" value="1" />
+		<input type="hidden" name="list" value={NEWSLETTER.listId} />
+		<input type="hidden" name="subform" value="yes" />
+
+		<p class="zgoda">
+			Zapisując się, zgadzasz się na otrzymywanie powiadomień o nowych materiałach i akceptujesz{' '}
+			<a href={NEWSLETTER.privacyUrl} target="_blank" rel="noopener">Politykę prywatności</a>. Możesz zrezygnować
+			w każdej chwili - link do wypisania się jest w stopce każdej wiadomości.
+		</p>
+	</form>
+</section>
+
+<style>
+	.newsletter {
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		padding: 1.5rem;
+		background: var(--sl-color-gray-7, transparent);
+	}
+
+	/* Wariant pod artykulem: wezszy, spokojniejszy, oddzielony od tresci. */
+	.newsletter.pasek {
+		margin-top: 2.5rem;
+		padding: 1.25rem;
+	}
+
+	.newsletter.sekcja {
+		margin: 2rem 0;
+		text-align: center;
+	}
+
+	.newsletter h2 {
+		margin: 0;
+		font-size: var(--sl-text-h4);
+		color: var(--sl-color-white);
+		line-height: var(--sl-line-height-headings);
+	}
+
+	.opis {
+		margin: 0.5rem 0 0;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+	}
+
+	.pola {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.newsletter.sekcja .pola {
+		justify-content: center;
+	}
+
+	input[type='email'] {
+		flex: 1 1 16rem;
+		min-width: 0;
+		padding: 0.6rem 0.8rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.35rem;
+		background: var(--sl-color-black);
+		color: var(--sl-color-white);
+		font: inherit;
+		font-size: var(--sl-text-sm);
+	}
+
+	input[type='email']:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 1px;
+	}
+
+	button {
+		padding: 0.6rem 1.2rem;
+		border: 1px solid var(--sl-color-accent);
+		border-radius: 0.35rem;
+		background: var(--sl-color-accent);
+		color: var(--sl-color-white);
+		font: inherit;
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background: var(--sl-color-accent-high);
+		border-color: var(--sl-color-accent-high);
+		color: var(--sl-color-black);
+	}
+
+	.zgoda {
+		margin: 0.75rem 0 0;
+		font-size: var(--sl-text-xs);
+		color: var(--sl-color-gray-3);
+		line-height: 1.5;
+	}
+
+	/* Etykieta dla czytnikow ekranu - pole ma placeholder, ale sam placeholder
+	   nie jest dostepna etykieta. */
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+</style>
