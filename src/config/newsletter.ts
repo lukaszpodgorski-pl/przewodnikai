@@ -33,15 +33,14 @@ export const NEWSLETTER = {
 	/**
 	 * Adres, pod ktorym mozna wycofac zgode inaczej niz linkiem w stopce maila.
 	 *
-	 * UWAGA - ROZBIEZNOSC DO ROZSTRZYGNIECIA: tekst zgody skonfigurowany
-	 * w Sendy wskazuje `kontakt@przewodnikai.pl`, natomiast
-	 * src/content/docs/zasoby/kontakt.md podaje `kontakt@lukaszpodgorski.pl`
-	 * i wlasnie ten adres zostal potwierdzony jako aktualny (2026-07-22).
+	 * Art. 7 ust. 3 RODO wymaga, by wycofanie zgody bylo rownie latwe jak jej
+	 * udzielenie, wiec ten adres musi realnie dzialac - wskazanie martwej
+	 * skrzynki zamykaloby te droge.
 	 *
-	 * Uzywamy tu adresu potwierdzonego, bo art. 7 ust. 3 RODO wymaga, by
-	 * wycofanie zgody bylo rownie latwe jak jej udzielenie - wskazanie
-	 * nieistniejacej skrzynki zamykaloby te droge. Oba miejsca (Sendy i ten
-	 * plik) musza docelowo mowic to samo.
+	 * Adres potwierdzony przez wlasciciela 2026-07-22 i zgodny z
+	 * src/content/docs/zasoby/kontakt.md. Tekst zgody skonfigurowany w panelu
+	 * Sendy wskazuje jeszcze `kontakt@przewodnikai.pl` - do poprawienia tam,
+	 * zeby oba miejsca mowily to samo.
 	 */
 	contactEmail: 'kontakt@lukaszpodgorski.pl',
 } as const;
