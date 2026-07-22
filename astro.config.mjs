@@ -19,6 +19,7 @@ export default defineConfig({
 			components: {
 				Footer: './src/components/Footer.astro',
 				Head: './src/components/Head.astro',
+				MarkdownContent: './src/components/MarkdownContent.astro',
 			},
 			// Polski jako root locale: polskie UI Starlight, <html lang="pl">,
 			// polski stemming Pagefind — bez prefiksu /pl/ w adresach.

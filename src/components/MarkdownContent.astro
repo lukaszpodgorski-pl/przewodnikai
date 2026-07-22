@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro';
+import Faq from './Faq.astro';
+import type { FaqItem } from '../lib/structured-data';
+
+// FAQ ląduje WEWNĄTRZ kontenera treści (.sl-markdown-content), nie w stopce -
+// dzięki temu jest częścią artykułu i trafia do indeksu Pagefind.
+const faq = Astro.locals.starlightRoute.entry.data.faq as FaqItem[] | undefined;
+---
+
+<Default>
+	<slot />
+	<Faq items={faq} />
+</Default>
