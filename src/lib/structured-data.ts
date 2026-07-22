@@ -143,7 +143,7 @@ export function buildWebSite() {
 				license: LICENSE,
 				publisher: AUTHOR,
 			},
-			{ ...AUTHOR, '@type': 'Person' },
+			AUTHOR,
 		],
 	};
 }

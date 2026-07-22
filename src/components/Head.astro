@@ -8,42 +8,51 @@ import {
 	buildCollectionPage,
 	buildWebSite,
 	AUTHOR,
-	type ThingRef,
 } from '../lib/structured-data';
+import { SECTION_LABELS } from '../config/sections';
 
 const route = Astro.locals.starlightRoute;
 const data = route.entry.data;
 const pathname = Astro.url.pathname;
 
 const isHome = pathname === '/';
-// Rozroznienie po sciezce URL, nie po `data.template` - tylko `sciezki/index.mdx`
-// ma faktycznie ustawione `template: splash` we frontmatterze, pozostale 9 stron
-// sciezek nauki go nie ma. Harness (scripts/verify-geo.mjs) klasyfikuje strony
-// wylacznie po prefiksie `/sciezki/`, wiec robimy to samo, zeby CollectionPage
-// trafil na wszystkie 10 stron, a TechArticle na zaden z nich.
+// Rozróżnienie po ścieżce URL, nie po `data.template` - tylko `sciezki/index.mdx`
+// ma faktycznie ustawione `template: splash` we frontmatterze, pozostałe 9 stron
+// ścieżek nauki go nie ma. Harness (scripts/verify-geo.mjs) klasyfikuje strony
+// wyłącznie po prefiksie `/sciezki/`, więc robimy to samo, żeby CollectionPage
+// trafił na wszystkie 10 stron, a TechArticle na żaden z nich.
 const isSciezka = pathname.startsWith('/sciezki/');
 
-// Obraz OG: staly fallback. Zadanie 5 podmienia go na generowany per strona.
+// Rozpoznanie artykułu jako allowlista oparta o rejestr sekcji (SECTION_LABELS),
+// nie jako negacja - strona spoza zarejestrowanej sekcji (np. 404) nie dostaje
+// żadnego bloku JSON-LD, co dla danych strukturalnych jest bezpieczniejszym
+// domyślnym zachowaniem. Nowa sekcja dopisana do src/config/sections.ts
+// klasyfikuje się tu automatycznie.
+const section = pathname.split('/').filter(Boolean)[0];
+const isArticle = section !== undefined && SECTION_LABELS[section] !== undefined;
+
+// Obraz OG: stały fallback. Zadanie 5 podmienia go na generowany per strona.
 const ogImage = `${SITE_URL}/og-default.png`;
 
 const blocks: object[] = [];
 
 if (isHome) {
 	blocks.push(buildWebSite());
-} else {
+} else if (isSciezka) {
+	blocks.push(buildCollectionPage({ pathname, title: data.title, description: data.description }));
+	blocks.push(buildBreadcrumbs(pathname, data.title));
+} else if (isArticle) {
 	blocks.push(
-		isSciezka
-			? buildCollectionPage({ pathname, title: data.title, description: data.description })
-			: buildArticle({
-					pathname,
-					title: data.title,
-					description: data.description,
-					dateModified: route.lastUpdated,
-					educationalLevel: data.educationalLevel,
-					teaches: data.teaches,
-					about: data.about as ThingRef[] | undefined,
-					mentions: data.mentions as ThingRef[] | undefined,
-				}),
+		buildArticle({
+			pathname,
+			title: data.title,
+			description: data.description,
+			dateModified: route.lastUpdated,
+			educationalLevel: data.educationalLevel,
+			teaches: data.teaches,
+			about: data.about,
+			mentions: data.mentions,
+		}),
 	);
 	blocks.push(buildBreadcrumbs(pathname, data.title));
 }
