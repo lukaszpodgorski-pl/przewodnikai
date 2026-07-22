@@ -111,7 +111,7 @@ Od playgroundów warto zacząć eksperymenty - są darmowe, nic nie instalujesz,
 
 ## Polskie zasoby
 
-**Blogi i newslettery:** Sztuczna Inteligencja ([sfrancuzek.pl](https://sfrancuzek.pl)), AI w Praktyce (newsletter), [Deeploy.pl](https://deeploy.pl) (AI dla biznesu).
+**Blogi i newslettery:** AI w Praktyce (newsletter).
 
 **Społeczności:** Polish AI Society (wydarzenia, networking), [ML in PL](https://mlinpl.org) (konferencja i community), [AI Devs](https://aidevs.pl) (kurs i społeczność).
 

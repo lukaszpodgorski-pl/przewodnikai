@@ -70,7 +70,9 @@ Podczas huraganu Helene we wrześniu 2024 roku, AI slop zdominował wyniki wyszu
 
 ### Skala problemu
 
-Badania pokazują, że treści tworzone przez ludzi generują **5,44 razy więcej ruchu organicznego** niż treści AI (źródło: [NP Digital, 2024](https://www.neilpatel.com/blog/ai-content-vs-human-content/)). Zaangażowanie czytelników w artykuły generowane przez AI spadło o **40% w 2024 roku** (źródło: [Originality.ai](https://originality.ai/blog/ai-content-statistics)). Użytkownicy internetu uczą się rozpoznawać AI slop i go unikać.
+Użytkownicy internetu uczą się rozpoznawać AI slop i go unikać - a wyszukiwarki idą w tę samą stronę. Google od 2024 roku traktuje masowe generowanie treści bez wartości dla czytelnika jako nadużycie i obniża takim stronom widoczność, opisując to wprost w swoich [zasadach dotyczących spamu](https://developers.google.com/search/docs/essentials/spam-policies) pod hasłem "scaled content abuse".
+
+Krążą po sieci konkretne liczby opisujące skalę zjawiska, ale świadomie ich tu nie przytaczam. Publikują je najczęściej firmy sprzedające wykrywacze treści AI, rzadko z opisaną metodologią. Dwa takie źródła stały wcześniej w tym miejscu i oba zdążyły już zniknąć - dziś zwracają błąd 404. To chyba najlepsza ilustracja tego, o czym jest ten rozdział.
 
 :::tip[Jak się chronić?]
 Zawsze sprawdzaj: kto jest autorem? Czy istnieją oryginalne źródła? Czy treść zawiera unikalne spostrzeżenia, czy tylko powtarza oczywistości? Szukaj głosu eksperta i konkretnych danych z nazwanymi źródłami.
