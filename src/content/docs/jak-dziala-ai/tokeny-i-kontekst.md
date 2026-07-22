@@ -1,0 +1,162 @@
+---
+title: Tokeny i okno kontekstowe w AI - jak modele przetwarzają tekst
+description: 'Czym są tokeny w AI? Porównanie okien kontekstowych (GPT-4o, Claude, Gemini, DeepSeek), koszty API, tokenizacja polskiego vs. angielskiego.'
+sidebar:
+  label: 'Tokeny i kontekst'
+  order: 5
+educationalLevel: Intermediate
+teaches:
+  - Czym są tokeny w AI i jak działa algorytm BPE
+  - Porównanie okien kontekstowych modeli LLM
+  - Jak język polski wpływa na liczbę tokenów i koszty API
+  - Jak temperature i top-p kontrolują generowanie tekstu
+about:
+  - name: Tokenizacja
+    sameAs: https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+  - name: Byte-Pair Encoding
+    sameAs: https://en.wikipedia.org/wiki/Byte_pair_encoding
+  - name: Transformer
+    sameAs: https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
+faq:
+  - q: Ile tokenów ma jedno polskie słowo?
+    a: Średnio 1,5-2,5 tokena, w zależności od długości i częstotliwości słowa w danych treningowych. Krótkie, popularne słowa (np. "jest", "nie") to 1 token, dłuższe (np. "przedsiębiorczość") mogą wymagać 3-5 tokenów.
+  - q: Czym jest okno kontekstowe?
+    a: Okno kontekstowe to maksymalna liczba tokenów, którą model może przetwarzać jednocześnie - od 128K do 1M tokenów, w zależności od modelu. Obejmuje zarówno dane wejściowe, jak i generowaną odpowiedź.
+  - q: Czym różni się okno kontekstowe od pamięci modelu?
+    a: Okno kontekstowe to jednorazowy bufor przetwarzania (pamięć robocza), a funkcje pamięci (memory) to trwały magazyn kluczowych informacji między sesjami - jak RAM vs. dysk twardy.
+  - q: Czy mogę sprawdzić ile tokenów ma mój tekst?
+    a: Tak - OpenAI udostępnia bezpłatne narzędzie Tokenizer, Anthropic oferuje API do liczenia tokenów, a programiści mogą użyć biblioteki open-source tiktoken (Python).
+  - q: Dlaczego modele mają limit tokenów wyjściowych?
+    a: Limit odpowiedzi (np. 16K tokenów) wynika z kosztów obliczeniowych, ryzyka spadku jakości przy bardzo długich odpowiedziach oraz mechanizmów bezpieczeństwa zapobiegających niekontrolowanemu generowaniu.
+---
+
+:::note[W skrócie]
+Tokeny to podstawowe jednostki tekstu przetwarzane przez modele AI. Jedno polskie słowo to średnio 1,5-2,5 tokena. Okno kontekstowe modelu (od 8K do 1M tokenów) określa, ile tekstu model może przetworzyć jednocześnie. Koszt korzystania z API modeli jest naliczany za liczbę tokenów - od $0,07 do $75 za milion tokenów wejściowych, w zależności od modelu.
+:::
+
+## Generowanie tokenów przez AI
+
+ChatGPT, Claude, Gemini czy DeepSeek nie pracują na literach ani na słowach - pracują na tokenach. Zanim model zobaczy Twoje pytanie, dzieli je na takie właśnie kawałki, a odpowiedź składa z nich z powrotem, token po tokenie.
+
+Każda interakcja z modelem językowym - od prostego pytania po wielogodzinną konwersację - jest przetwarzana jako sekwencja tokenów. Zrozumienie tego mechanizmu pozwala lepiej wykorzystać możliwości AI, unikać przekraczania limitów kontekstu i optymalizować koszty korzystania z API.
+
+Rozkładam to na czynniki pierwsze tak wcześnie, bo tokeny wracają potem przy każdym kolejnym temacie: przy limitach długości, przy rachunkach za API i przy pytaniu, dlaczego model nagle "zapomniał" początek rozmowy.
+
+## Czym są tokeny?
+
+Tokeny to podstawowe jednostki, na które dzielony jest tekst podczas przetwarzania przez AI. Większość współczesnych modeli językowych używa algorytmu **Byte-Pair Encoding (BPE)** lub jego wariantów do podziału tekstu. Algorytm ten uczy się najczęstszych par bajtów w danych treningowych i łączy je w coraz większe jednostki - stąd "token" nie zawsze odpowiada jednemu słowu.
+
+```text
+"Sztuczna" → "Sztu" + "czna"
+"inteligencja" → " intelig" + "encja"
+"analizuje" → "anali" + "zuje"
+```
+
+W zależności od języka i kontekstu, tokenami mogą być całe słowa (często występujące, krótkie słowa jak "the", "kot", "jest"), części słów (fragmenty dłuższych lub rzadziej używanych wyrazów), znaki interpunkcyjne, przedrostki i przyrostki (charakterystyczne dla języków fleksyjnych jak polski, np. "prze-", "-anie", "-ować") oraz pojedyncze znaki lub bajty (dla rzadkich, specjalistycznych terminów).
+
+Zwróć uwagę na jedną rzecz, która ma potem realne przełożenie na Twoje rachunki: polski tokenizuje się gorzej niż angielski. To samo zdanie przetłumaczone na polski zwykle zajmuje wyraźnie więcej tokenów, mimo że może mieć mniej słów. Wynika to z mniejszej reprezentacji polskich morfemów w danych treningowych modeli - zagadnienie opisane w badaniach [Petrov i in. (2023)](https://arxiv.org/abs/2304.08467) dotyczących nierówności kosztów tokenizacji między językami.
+
+## Tokenizacja polskiego vs. angielskiego
+
+Polski, jako język fleksyjny z bogatą morfologią, jest tokenizowany mniej efektywnie niż angielski. Według analizy ["Language Model Tokenizers Introduce Unfairness Between Languages"](https://arxiv.org/abs/2304.08467), tekst w języku polskim generuje średnio o 40-60% więcej tokenów niż równoważny tekst angielski.
+
+Ma to realne konsekwencje: wyższe koszty API (ta sama treść po polsku kosztuje więcej niż po angielsku), szybsze wyczerpywanie okna kontekstowego (w polskim "mieści się" mniej tekstu) oraz wolniejsze generowanie (model musi wygenerować więcej tokenów dla tej samej długości odpowiedzi).
+
+:::caution[Sprawdź to sam]
+Nie wierz mi na słowo - policz własne zdania. Wklej ten sam tekst po polsku i po angielsku do [narzędzia Tokenizer od OpenAI](https://platform.openai.com/tokenizer) i porównaj wynik. Zobaczysz różnicę od razu, a przy specjalistycznej terminologii prawniczej czy medycznej będzie jeszcze większa niż przy prostych zdaniach.
+:::
+
+## Okno kontekstowe - ile model "pamięta"
+
+**Okno kontekstowe** (context window) to maksymalna liczba tokenów, którą model może jednocześnie przetworzyć - obejmuje zarówno dane wejściowe (Twój prompt i cała historia konwersacji), jak i generowaną odpowiedź. Jest to jeden z najważniejszych parametrów technicznych modeli LLM.
+
+Skala zmiany w tym obszarze robi wrażenie: w ciągu dwóch lat okna kontekstowe urosły ponad 240-krotnie - z 4 096 tokenów w GPT-3.5 (marzec 2023) do 1 000 000 tokenów w modelach, których używasz dziś.
+
+<!-- TODO(Łukasz): zweryfikuj aktualne maksymalne okno kontekstowe przed publikacją - tabela poniżej też wymaga odświeżenia -->
+
+<!-- TODO(Łukasz): tu zadziałałaby anegdota - kiedy pierwszy raz uderzyłeś w limit okna kontekstowego u siebie albo u klienta? Co się wtedy stało z odpowiedzią modelu? -->
+
+| Model | Producent | Okno kontekstowe | Odpowiednik w tekście |
+| --- | --- | --- | --- |
+| GPT-4o | OpenAI | 128K tokenów | ~96 000 słów (~300 stron) |
+| GPT-4.1 | OpenAI | 1M tokenów | ~750 000 słów (~2 500 stron) |
+| Claude Opus / Sonnet 4 | Anthropic | 200K tokenów | ~150 000 słów (~500 stron) |
+| Gemini 2.5 Pro | Google | 1M tokenów | ~750 000 słów (~2 500 stron) |
+| DeepSeek-V3 | DeepSeek | 128K tokenów | ~96 000 słów (~300 stron) |
+| Llama 4 Maverick | Meta | 1M tokenów | ~750 000 słów (~2 500 stron) |
+
+<small>Źródła: dokumentacja [OpenAI](https://platform.openai.com/docs/models), [Anthropic](https://docs.anthropic.com/en/docs/about-claude/models), [Google DeepMind](https://ai.google.dev/gemini-api/docs/models), [DeepSeek](https://huggingface.co/deepseek-ai), [Meta AI](https://ai.meta.com/llama/).</small>
+
+Duże okno kontekstowe nie oznacza jednak idealnej "pamięci" - i to jest miejsce, w którym najczęściej pojawia się nieporozumienie. Badanie ["Lost in the Middle" (Liu i in., 2023)](https://arxiv.org/abs/2307.03172) wykazało, że modele najlepiej przetwarzają informacje na początku i na końcu kontekstu, a gorzej radzą sobie z danymi umieszczonymi w środku. Nowsze modele (Claude 3.5+, GPT-4 Turbo+) znacząco poprawiły to zachowanie, ale efekt nadal występuje.
+
+## Proces generowania tekstu krok po kroku
+
+Model AI tworzy odpowiedzi w sekwencyjnym procesie autoregresyjnym - przewiduje jeden token na raz, a następnie dodaje go do kontekstu i przewiduje kolejny:
+
+1. **Tokenizacja wejścia** - Twoje pytanie jest dzielone na tokeny za pomocą algorytmu BPE
+2. **Embedding i kodowanie pozycji** - każdy token jest zamieniany na wektor liczbowy i otrzymuje informację o swojej pozycji w sekwencji
+3. **Przetwarzanie przez warstwy Transformer** - sekwencja przechodzi przez dziesiątki warstw sieci neuronowej, gdzie mechanizm uwagi pozwala każdemu tokenowi "komunikować się" z pozostałymi
+4. **Przewidywanie następnego tokenu** - model oblicza rozkład prawdopodobieństwa dla ~100 000 możliwych kolejnych tokenów
+5. **Próbkowanie** - zamiast zawsze wybierać najbardziej prawdopodobny token, model stosuje techniki takie jak _temperature_ i _top-p_, wprowadzając element różnorodności
+6. **Iteracja** - wygenerowany token jest dodawany do kontekstu, a proces powtarza się aż do napotkania tokenu końca sekwencji (EOS) lub osiągnięcia limitu
+
+Cały ten cykl powtarza się setki lub tysiące razy w trakcie generowania jednej odpowiedzi. Model GPT-4 wykonuje około 30-100 tokenów na sekundę (w zależności od obciążenia serwera), co oznacza, że średnia odpowiedź (300-500 tokenów) generowana jest w 5-15 sekund.
+
+## Temperature i kontrola generowania
+
+Parametr **temperature** kontroluje stopień losowości w wyborze tokenów: przy wartości 0 model zawsze wybiera najbardziej prawdopodobny token (wynik deterministyczny, idealny dla tłumaczeń, ekstrakcji danych, klasyfikacji), przy 0,3-0,7 stosuje zbalansowane podejście (domyślne ustawienie większości chatbotów), a przy 1,0+ wprowadza wysoką losowość (przydatną w burzy mózgów i pisaniu kreatywnym).
+
+Innym ważnym parametrem jest **top-p** (nucleus sampling) - zamiast rozpatrywać wszystkie możliwe tokeny, model bierze pod uwagę tylko te, których skumulowane prawdopodobieństwo osiąga wartość p (np. 0,9). Więcej o obu parametrach w rozdziale [Parametry modeli AI](/jak-dziala-ai/parametry-modeli/).
+
+## Mechanizmy zapewniające spójność
+
+To najbardziej techniczny fragment rozdziału - przy pierwszym czytaniu możesz go przewinąć i wrócić tutaj wtedy, gdy zaczniesz się zastanawiać, dlaczego model trzyma sens przez kilka akapitów, a potem go gubi.
+
+Tworzenie sensownych, wieloakapitowych odpowiedzi wymaga utrzymania spójności w całym generowanym tekście:
+
+- **Mechanizm uwagi (Self-Attention)** - wprowadzony w przełomowej pracy ["Attention Is All You Need" (Vaswani i in., 2017)](https://arxiv.org/abs/1706.03762), pozwala modelowi ważyć znaczenie każdego tokenu w kontekście względem wszystkich pozostałych
+- **Multi-Head Attention** - model utrzymuje wiele równoległych "głowic uwagi", z których każda specjalizuje się w innym aspekcie: jedna śledzi gramatykę, inna relacje semantyczne, jeszcze inna koreferencję
+- **Wewnętrzne reprezentacje (embeddingi)** - model buduje wielowymiarowe reprezentacje znaczeń, w których bliskość wektorów odzwierciedla bliskość pojęć
+- **Warstwy normalizacji i residualne** - zapobiegają "zanikaniu gradientów" w głębokich sieciach, umożliwiając stabilne przetwarzanie długich kontekstów
+
+## Koszty tokenów - cennik modeli AI
+
+Dostawcy API modeli językowych rozliczają się za liczbę przetworzonych tokenów. Cena zależy od modelu, a tokeny wejściowe (prompt) są zwykle tańsze od wyjściowych (odpowiedź). Patrz tu na proporcje między modelami, nie na bezwzględne kwoty - te drugie zmieniają się kilka razy w roku, pierwsze utrzymują się w podobnych relacjach:
+
+| Model | Input (za 1M tokenów) | Output (za 1M tokenów) |
+| --- | --- | --- |
+| GPT-4o | $2,50 | $10,00 |
+| GPT-4o mini | $0,15 | $0,60 |
+| Claude Sonnet 4 | $3,00 | $15,00 |
+| Claude Haiku 3.5 | $0,80 | $4,00 |
+| Gemini 2.5 Pro | $1,25 | $10,00 |
+| DeepSeek-V3 | $0,27 | $1,10 |
+
+<small>Źródła: oficjalne cenniki [OpenAI](https://openai.com/api/pricing/), [Anthropic](https://www.anthropic.com/pricing), [Google](https://ai.google.dev/pricing), [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing). Ceny mogą się zmieniać.</small>
+
+:::tip[Praktyczna wskazówka]
+Ponieważ polski tekst generuje o 40-60% więcej tokenów niż angielski, koszty API dla polskojęzycznych aplikacji są proporcjonalnie wyższe. Przy dużej skali warto rozważyć: (1) wysyłanie instrukcji systemowych po angielsku, a treści użytkownika po polsku, lub (2) użycie bardziej ekonomicznych modeli (GPT-4o mini, DeepSeek-V3) do zadań niewymagających najwyższej jakości.
+:::
+
+## Dlaczego zrozumienie tokenów jest ważne?
+
+Znajomość mechanizmów tokenizacji to nie tylko ciekawostka techniczna:
+
+- **Optymalizacja kosztów** - świadomość, ile tokenów zużywa Twój prompt, pozwala zmniejszyć rachunki za API nawet o 50% przez eliminację redundancji w instrukcjach systemowych
+- **Unikanie ucinania kontekstu** - gdy konwersacja zbliża się do limitu okna kontekstowego, model zaczyna "zapominać" wcześniejsze informacje
+- **Efektywność w języku polskim** - świadomość narzutu tokenizacyjnego pomaga projektować prompty bardziej zwięźle
+- **Wybór odpowiedniego modelu** - do analizy 100-stronicowego dokumentu potrzebujesz modelu z oknem min. 100K tokenów, a nie modelu z 8K kontekstem
+- **Debugowanie odpowiedzi** - gdy model generuje dziwne artefakty lub przerywa w połowie zdania, zrozumienie tokenizacji pomaga zdiagnozować problem
+
+:::note[Teraz wiesz]
+
+- Czym są tokeny i jak algorytm BPE dzieli tekst na jednostki przetwarzane przez modele AI
+- Dlaczego polski tekst wymaga 40-60% więcej tokenów niż angielski i jak to wpływa na koszty
+- Jak porównać okna kontekstowe modeli - od 128K (GPT-4o) do 1M tokenów (GPT-4.1, Gemini 2.5 Pro, Llama 4 Maverick)
+- Jak temperature i top-p kontrolują kreatywność i spójność generowanego tekstu
+- Ile kosztują tokeny w API i jak optymalizować wydatki
+
+**Następny krok:** [Embedding](/jak-dziala-ai/embedding/) - dowiesz się, jak AI zamienia słowa w wektory liczbowe i dzięki temu "rozumie" znaczenie i podobieństwo tekstów.
+:::
