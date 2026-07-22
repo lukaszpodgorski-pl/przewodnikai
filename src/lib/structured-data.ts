@@ -30,6 +30,7 @@ export interface BasicInput {
 	pathname: string;
 	title: string;
 	description?: string;
+	image?: string;
 }
 
 export interface ArticleInput extends BasicInput {
@@ -108,6 +109,7 @@ export function buildArticle(input: ArticleInput) {
 		},
 		{
 			description: input.description,
+			image: input.image,
 			dateModified: input.dateModified?.toISOString(),
 			educationalLevel: input.educationalLevel,
 			teaches: input.teaches,
@@ -127,7 +129,7 @@ export function buildCollectionPage(input: BasicInput) {
 			inLanguage: 'pl-PL',
 			isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: absoluteUrl('/') },
 		},
-		{ description: input.description },
+		{ description: input.description, image: input.image },
 	);
 }
 

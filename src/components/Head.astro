@@ -44,7 +44,9 @@ const blocks: object[] = [];
 if (isHome) {
 	blocks.push(buildWebSite());
 } else if (isSciezka) {
-	blocks.push(buildCollectionPage({ pathname, title: data.title, description: data.description }));
+	blocks.push(
+		buildCollectionPage({ pathname, title: data.title, description: data.description, image: ogImage }),
+	);
 	blocks.push(buildBreadcrumbs(pathname, data.title));
 } else if (isArticle) {
 	blocks.push(
@@ -52,6 +54,7 @@ if (isHome) {
 			pathname,
 			title: data.title,
 			description: data.description,
+			image: ogImage,
 			dateModified: route.lastUpdated,
 			educationalLevel: data.educationalLevel,
 			teaches: data.teaches,
