@@ -6,7 +6,7 @@ Wskazówki dla agentów AI (Claude Code i pokrewnych) pracujących w tym repozyt
 
 ## Czym jest ten projekt
 
-[przewodnikai.pl](https://przewodnikai.pl) - otwarta baza wiedzy o AI po polsku, zbudowana na **Astro 7 + Starlight**, hostowana na **Cloudflare Pages**. Model pracy: "żywe wiki" - treść w Markdownie, zmiany przez pull requesty, publikacja automatyczna.
+[przewodnikai.pl](https://przewodnikai.pl) - otwarta baza wiedzy o AI po polsku, zbudowana na **Astro 7 + Starlight**, hostowana na **Cloudflare Workers** (static assets, konfiguracja w `wrangler.jsonc`). Model pracy: "żywe wiki" - treść w Markdownie, zmiany przez pull requesty, publikacja automatyczna.
 
 **To repozytorium treści, nie aplikacji.** ~56 artykułów w `src/content/docs/`, dwa własne komponenty (`Footer.astro`, `Video.astro`), zero logiki biznesowej i zero testów jednostkowych. Większość zadań to edycja Markdowna.
 
