@@ -71,6 +71,10 @@ Jedna kolekcja `docs` (`src/content.config.ts`) ładowana przez `docsLoader()` S
 
 `starlight-llms-txt` generuje `llms.txt`. `public/robots.txt` świadomie wpuszcza wszystkie crawlery AI (GPTBot, ClaudeBot, PerplexityBot itd.).
 
+**Wdrożenie następuje przy merge'u do `main`.** Cloudflare Workers Builds ma ustawioną gałąź produkcyjną `main`, a buildy gałęzi nieprodukcyjnych są wyłączone - push gałęzi roboczej nie wdraża niczego na żywą domenę. Konfiguracja siedzi w panelu Cloudflare, więc nie da się jej wyczytać z repo; `wrangler.jsonc` opisuje tylko route'y.
+
+Dzięki temu bramka PR działa tak, jak powinna: `verify-geo.yml` odpala się na `pull_request`, czyli **przed** wdrożeniem. Gdyby ktoś kiedyś włączył buildy gałęzi nieprodukcyjnych, ta kolejność się odwróci i weryfikacja zacznie biegać po fakcie.
+
 ## Konwencje treści
 
 Grupa docelowa: **osoby nietechniczne**. Ton ciepły, bezpośredni (per "Ty"), bez żargonu; terminy angielskie w nawiasie przy pierwszym użyciu. Głos autora w pierwszej osobie.

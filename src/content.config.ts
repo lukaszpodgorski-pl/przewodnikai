@@ -26,6 +26,12 @@ export const collections = {
 					)
 					.optional(),
 				faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+				// Ukrywa wygenerowaną sekcję "Częste pytania" w treści strony, przy
+				// zachowaniu bloku FAQPage w JSON-LD (Head.astro nie sprawdza tej
+				// flagi). Ustaw, gdy artykuł sam w sobie jest FAQ (np. zasoby/faq.md)
+				// i wygenerowana sekcja powielałaby te same pytania, które już są
+				// nagłówkami `##` w treści.
+				faqHidden: z.boolean().optional(),
 			}),
 		}),
 	}),

@@ -19,7 +19,7 @@ about:
 Teoria jest ważna, ale nic nie uczy tak dobrze jak konkretny przykład. Zebrałem tu pięć scenariuszy pokazujących, jak firmy i osoby indywidualne wykorzystują AI w praktyce - co zadziałało, co nie i jakie wnioski z tego płyną. Radzę czytać je pod kątem mechaniki, nie liczb: przenośne jest to, _jak_ ktoś doszedł do wyniku, nie sam wynik.
 
 :::caution[Uwaga]
-Poniższe case studies to scenariusze ilustracyjne, opracowane na podstawie typowych wdrożeń AI obserwowanych w polskich i zagranicznych firmach. Nazwy firm zostały zanonimizowane. Przedstawione wyniki odpowiadają realistycznym rezultatom raportowanym w branżowych badaniach, m.in. [McKinsey State of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) i [HubSpot State of AI](https://www.hubspot.com/state-of-ai).
+Poniższe case studies to scenariusze ilustracyjne, opracowane na podstawie typowych wdrożeń AI obserwowanych w polskich i zagranicznych firmach. Nazwy firm zostały zanonimizowane. Przedstawione wyniki odpowiadają realistycznym rezultatom raportowanym w branżowych badaniach, takich jak [McKinsey State of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai).
 :::
 
 ## Case Study #1: Agencja marketingowa

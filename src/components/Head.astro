@@ -1,0 +1,93 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+import {
+	SITE_URL,
+	absoluteUrl,
+	buildArticle,
+	buildBreadcrumbs,
+	buildCollectionPage,
+	buildFaqPage,
+	buildWebSite,
+	AUTHOR,
+	type FaqItem,
+} from '../lib/structured-data';
+import { SECTION_LABELS } from '../config/sections';
+
+const route = Astro.locals.starlightRoute;
+const data = route.entry.data;
+const pathname = Astro.url.pathname;
+
+const isHome = pathname === '/';
+// Rozróżnienie po ścieżce URL, nie po `data.template` - tylko `sciezki/index.mdx`
+// ma faktycznie ustawione `template: splash` we frontmatterze, pozostałe 9 stron
+// ścieżek nauki go nie ma. Harness (scripts/verify-geo.mjs) klasyfikuje strony
+// wyłącznie po prefiksie `/sciezki/`, więc robimy to samo, żeby CollectionPage
+// trafił na wszystkie 10 stron, a TechArticle na żaden z nich.
+const isSciezka = pathname.startsWith('/sciezki/');
+
+// Rozpoznanie artykułu jako allowlista oparta o rejestr sekcji (SECTION_LABELS),
+// nie jako negacja - strona spoza zarejestrowanej sekcji (np. 404) nie dostaje
+// żadnego bloku JSON-LD, co dla danych strukturalnych jest bezpieczniejszym
+// domyślnym zachowaniem. Nowa sekcja dopisana do src/config/sections.ts
+// klasyfikuje się tu automatycznie.
+const section = pathname.split('/').filter(Boolean)[0];
+const isArticle = section !== undefined && SECTION_LABELS[section] !== undefined;
+
+// Obraz generowany per strona przez src/pages/og/[...route].ts, ale ten
+// endpoint tworzy pliki wyłącznie z wpisów kolekcji `docs` - więc obrazu per
+// strona dostają tylko strony sklasyfikowane jako artykuł lub ścieżka
+// (isArticle/isSciezka, patrz wyżej). Wszystko poza tym - strona główna
+// (puste `id` w kolekcji) i strona 404 (w ogóle nie jest wpisem kolekcji) -
+// dostaje stały obraz domyślny, bo `/og/404.png` nigdy by nie powstał.
+const ogImage = isArticle || isSciezka
+	? `${SITE_URL}/og/${route.id}.png`
+	: `${SITE_URL}/og-default.png`;
+
+const blocks: object[] = [];
+
+if (isHome) {
+	blocks.push(buildWebSite());
+} else if (isSciezka) {
+	blocks.push(
+		buildCollectionPage({ pathname, title: data.title, description: data.description, image: ogImage }),
+	);
+	blocks.push(buildBreadcrumbs(pathname, data.title));
+} else if (isArticle) {
+	blocks.push(
+		buildArticle({
+			pathname,
+			title: data.title,
+			description: data.description,
+			image: ogImage,
+			dateModified: route.lastUpdated,
+			educationalLevel: data.educationalLevel,
+			teaches: data.teaches,
+			about: data.about,
+			mentions: data.mentions,
+		}),
+	);
+	blocks.push(buildBreadcrumbs(pathname, data.title));
+}
+
+// Niezależne od klasyfikacji strony (isHome/isSciezka/isArticle) - FAQPage
+// dokleja się do bloków, które już powstały dla danej strony, o ile artykuł ma
+// wypełnione pole `faq`. Dla stron bez tego pola (w tym 404, gdzie `data.faq`
+// jest niezdefiniowane) warunek nie przechodzi i `blocks` pozostaje bez zmian.
+const faq = data.faq as FaqItem[] | undefined;
+if (faq && faq.length > 0) blocks.push(buildFaqPage(faq));
+---
+
+<Default><slot /></Default>
+
+<meta name="author" content={AUTHOR.name} />
+<link rel="author" href={AUTHOR.url} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${data.title} - Przewodnik AI`} />
+<meta name="twitter:image" content={ogImage} />
+<link rel="alternate" type="text/plain" href={absoluteUrl('/llms.txt')} />
+
+{blocks.map((block) => (
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(block)} />
+))}

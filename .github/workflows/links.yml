@@ -13,11 +13,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Instalacja (zgodna z lockfile)
+        run: npm ci
+      - name: Build produkcyjny
+        run: npm run build
       - name: lychee — weryfikacja linków
         uses: lycheeverse/lychee-action@v2
         with:
+          # Sprawdzamy ZBUDOWANY serwis, nie źródła w Markdownie. Powód: linki
+          # wewnętrzne są root-relative (`/etyka/prywatnosc/`), a w źródłach nie da
+          # się ich rozwiązać - Astro z `trailingSlash: 'always'` mapuje ten adres
+          # na plik `etyka/prywatnosc.md`, nie na katalog. lychee zgłaszał wtedy
+          # "Cannot resolve root-relative link" dla każdego z nich, a `--exclude`
+          # tego nie tłumi, bo błąd powstaje na etapie rozwiązywania URI, zanim
+          # filtr ma co odrzucać. W `dist/` te adresy są prawdziwymi katalogami
+          # z `index.html`, więc rozwiązują się poprawnie razem z zewnętrznymi.
+          # Kod 999 to celowa blokada LinkedIn wobec botów - link jest sprawny.
           args: >-
             --no-progress
-            --accept 200,206,403,429
-            'src/content/**/*.md' 'src/content/**/*.mdx' '*.md'
+            --accept 200,206,403,429,999
+            --root-dir "${{ github.workspace }}/dist"
+            'dist/**/*.html'
           fail: true

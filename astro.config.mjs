@@ -2,8 +2,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import sitemap from '@astrojs/sitemap';
+import { lastModMap } from './scripts/sitemap-lastmod.mjs';
+import { SECTIONS } from './src/config/sections';
 
 const GITHUB_REPO = 'https://github.com/lukaszpodgorski-pl/przewodnikai';
+
+// Mapa liczona raz, na starcie builda - nie per URL.
+const LAST_MOD = lastModMap();
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +23,8 @@ export default defineConfig({
 				'Otwarta, społecznościowa baza wiedzy o sztucznej inteligencji po polsku. Kurs AI od podstaw — bez żargonu, dla każdego.',
 			components: {
 				Footer: './src/components/Footer.astro',
+				Head: './src/components/Head.astro',
+				MarkdownContent: './src/components/MarkdownContent.astro',
 			},
 			// Polski jako root locale: polskie UI Starlight, <html lang="pl">,
 			// polski stemming Pagefind — bez prefiksu /pl/ w adresach.
@@ -30,15 +38,22 @@ export default defineConfig({
 			},
 			lastUpdated: true,
 			plugins: [starlightLlmsTxt()],
-			sidebar: [
-				{ label: 'Podstawy', items: [{ autogenerate: { directory: 'podstawy' } }] },
-				{ label: 'Jak działa AI', items: [{ autogenerate: { directory: 'jak-dziala-ai' } }] },
-				{ label: 'Prompt Engineering', items: [{ autogenerate: { directory: 'prompt-engineering' } }] },
-				{ label: 'Narzędzia AI', items: [{ autogenerate: { directory: 'narzedzia' } }] },
-				{ label: 'AI w praktyce', items: [{ autogenerate: { directory: 'praktyka' } }] },
-				{ label: 'Etyka i bezpieczeństwo', items: [{ autogenerate: { directory: 'etyka' } }] },
-				{ label: 'Zasoby', items: [{ autogenerate: { directory: 'zasoby' } }] },
-			],
+			sidebar: SECTIONS.map(({ slug, label }) => ({
+				label,
+				items: [{ autogenerate: { directory: slug } }],
+			})),
+		}),
+		sitemap({
+			changefreq: 'weekly',
+			serialize(item) {
+				const { pathname } = new URL(item.url);
+				const lastmod = LAST_MOD.get(pathname);
+				if (lastmod) item.lastmod = lastmod;
+				if (pathname === '/') item.priority = 1.0;
+				else if (pathname.startsWith('/sciezki/')) item.priority = 0.5;
+				else item.priority = 0.8;
+				return item;
+			},
 		}),
 	],
 	vite: {

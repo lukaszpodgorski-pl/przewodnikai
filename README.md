@@ -6,7 +6,7 @@ Serwis działa jako "żywe wiki": treść w Markdownie, zmiany przez pull reques
 
 ## Współtworzenie
 
-Każdą stronę może poprawić każdy - kliknij **"Edytuj stronę"** na dole artykułu albo przeczytaj [CONTRIBUTING.md](./CONTRIBUTING.md). Treść jest na licencji [CC BY-SA 4.0](./LICENSE-CONTENT), kod na [MIT](./LICENSE).
+Każdą stronę może poprawić każdy - kliknij **"Edytuj stronę"** na dole artykułu albo przeczytaj [CONTRIBUTING.md](./CONTRIBUTING.md). Treść jest na licencji [CC BY-SA 4.0](./LICENSE-CONTENT), kod na [MIT](./LICENSE). Repozytorium zawiera też font Noto Sans (do generowania obrazów OG) na licencji [OFL-1.1](./src/pages/og/_fonts/OFL.txt).
 
 ## Development
 
