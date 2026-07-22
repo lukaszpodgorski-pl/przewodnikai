@@ -1,6 +1,6 @@
 // Asercje GEO/AEO/SEO na zbudowanym katalogu dist/.
-// Repo nie ma frameworka testowego - ten skrypt pelni te role dla danych
-// strukturalnych, FAQ, obrazow OG i sitemapy.
+// Repo nie ma frameworka testowego - ten skrypt pełni tę rolę dla danych
+// strukturalnych, FAQ, obrazów OG i sitemapy.
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
@@ -21,7 +21,7 @@ function assert(cond, msg) {
 	if (!cond) throw new Error(msg);
 }
 
-/** Wszystkie pliki index.html pochodzace z kolekcji docs (bez 404.html). */
+/** Wszystkie pliki index.html pochodzące z kolekcji docs (bez 404.html). */
 function collectionPages() {
 	const out = [];
 	(function walk(dir) {
@@ -77,7 +77,7 @@ function hasFaqField(content) {
 	return /^faq:/m.test(frontmatterOf(content));
 }
 
-/** Wyciaga wszystkie bloki JSON-LD ze strony i parsuje je. */
+/** Wyciąga wszystkie bloki JSON-LD ze strony i parsuje je. */
 function jsonLdBlocks(html) {
 	const re = /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g;
 	const blocks = [];
@@ -86,7 +86,7 @@ function jsonLdBlocks(html) {
 	return blocks;
 }
 
-/** Zbiera wartosci @type ze wszystkich blokow, takze z @graph. */
+/** Zbiera wartości @type ze wszystkich bloków, także z @graph. */
 function typesIn(html) {
 	const types = new Set();
 	for (const block of jsonLdBlocks(html)) {
@@ -96,7 +96,7 @@ function typesIn(html) {
 	return types;
 }
 
-/** URL strony na podstawie sciezki pliku, np. dist/podstawy/x/index.html -> /podstawy/x/ */
+/** URL strony na podstawie ścieżki pliku, np. dist/podstawy/x/index.html -> /podstawy/x/ */
 function urlOf(file) {
 	const rel = relative(DIST, file).split(sep).slice(0, -1).join('/');
 	return rel === '' ? '/' : `/${rel}/`;
@@ -145,7 +145,7 @@ check('podział na artykuły / ścieżki / stronę główną zgodny ze źródłe
 });
 
 // --- Task 3: JSON-LD + OG ---
-check('kazda strona ma blok JSON-LD', () => {
+check('każda strona ma blok JSON-LD', () => {
 	const missing = pageData.filter((p) => jsonLdBlocks(p.html).length === 0);
 	assert(missing.length === 0, `bez JSON-LD: ${missing.map((p) => p.url).join(', ')}`);
 	return `${pageData.length}/${pageData.length}`;
@@ -155,9 +155,9 @@ check('każdy artykuł ma TechArticle', () => {
 	assert(bad.length === 0, `bez TechArticle: ${bad.map((p) => p.url).join(', ')}`);
 	return `${articles.length}/${articles.length}`;
 });
-check('zadna sciezka nie ma TechArticle', () => {
+check('żadna ścieżka nie ma TechArticle', () => {
 	const bad = sciezki.filter((p) => typesIn(p.html).has('TechArticle'));
-	assert(bad.length === 0, `blednie oznaczone: ${bad.map((p) => p.url).join(', ')}`);
+	assert(bad.length === 0, `błędnie oznaczone: ${bad.map((p) => p.url).join(', ')}`);
 	return `0/${sciezki.length}`;
 });
 check('każda ścieżka ma CollectionPage', () => {
@@ -165,18 +165,18 @@ check('każda ścieżka ma CollectionPage', () => {
 	assert(bad.length === 0, `bez CollectionPage: ${bad.map((p) => p.url).join(', ')}`);
 	return `${sciezki.length}/${sciezki.length}`;
 });
-check('strona glowna ma WebSite i Person', () => {
+check('strona główna ma WebSite i Person', () => {
 	const t = typesIn(home[0].html);
 	assert(t.has('WebSite'), 'brak WebSite');
 	assert(t.has('Person'), 'brak Person');
 	return 'WebSite + Person';
 });
-check('kazda strona ma BreadcrumbList poza glowna', () => {
+check('każda strona ma BreadcrumbList poza główną', () => {
 	const bad = [...articles, ...sciezki].filter((p) => !typesIn(p.html).has('BreadcrumbList'));
 	assert(bad.length === 0, `bez BreadcrumbList: ${bad.map((p) => p.url).join(', ')}`);
 	return `${articles.length + sciezki.length} stron`;
 });
-check('kazda strona ma og:image i twitter:image', () => {
+check('każda strona ma og:image i twitter:image', () => {
 	const bad = pageData.filter(
 		(p) => !p.html.includes('property="og:image"') || !p.html.includes('name="twitter:image"')
 	);
@@ -209,7 +209,7 @@ const FAQ_HIDDEN_URL = '/zasoby/faq/';
 check('FAQPage zawsze towarzyszy widocznej sekcji (poza jawnym wyjątkiem faqHidden)', () => {
 	const withFaq = pageData.filter((p) => typesIn(p.html).has('FAQPage'));
 	const bad = withFaq.filter((p) => p.url !== FAQ_HIDDEN_URL && !p.html.includes('Częste pytania'));
-	assert(bad.length === 0, `JSON-LD bez widocznej tresci: ${bad.map((p) => p.url).join(', ')}`);
+	assert(bad.length === 0, `JSON-LD bez widocznej treści: ${bad.map((p) => p.url).join(', ')}`);
 	return `${withFaq.length - 1}/${withFaq.length - 1} (jedyny wyjątek: ${FAQ_HIDDEN_URL})`;
 });
 check(`faqHidden działa na ${FAQ_HIDDEN_URL}: FAQPage jest, wygenerowana sekcja - nie`, () => {
@@ -231,7 +231,7 @@ check('brak sekcji FAQ na stronach bez FAQPage', () => {
 });
 
 // --- Task 5: obrazy OG ---
-check('obraz OG istnieje dla kazdej strony', () => {
+check('obraz OG istnieje dla każdej strony', () => {
 	const bad = [];
 	for (const p of pageData) {
 		const m = p.html.match(/property="og:image" content="([^"]+)"/);
@@ -239,8 +239,8 @@ check('obraz OG istnieje dla kazdej strony', () => {
 		const file = join(DIST, new URL(m[1]).pathname);
 		if (!existsSync(file)) bad.push(`${p.url} -> ${m[1]}`);
 	}
-	assert(bad.length === 0, `brakujace pliki: ${bad.join(', ')}`);
-	return `${pageData.length} obrazow`;
+	assert(bad.length === 0, `brakujące pliki: ${bad.join(', ')}`);
+	return `${pageData.length} obrazów`;
 });
 
 // --- Task 6: sitemap ---
@@ -250,23 +250,23 @@ check('sitemap zawiera tyle URL-i, ile stron w dist', () => {
 	assert(n === pageData.length, `oczekiwano ${pageData.length}, jest ${n}`);
 	return `${n} URL-i`;
 });
-check('sitemap ma lastmod albo potwierdzony plytki klon', () => {
+check('sitemap ma lastmod dla każdej strony albo potwierdzony płytki klon', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	const n = (xml.match(/<lastmod>/g) || []).length;
 	assert(
 		n === pageData.length || n === 0,
-		`czesciowy lastmod (${n}/${pageData.length}) - mapa git jest niespojna`,
+		`częściowy lastmod (${n}/${pageData.length}) - mapa git jest niespójna`,
 	);
-	return n === 0 ? 'pominiete (brak historii git)' : `${n} wpisow`;
+	return n === 0 ? 'pominięte (brak historii git)' : `${n} wpisów`;
 });
-check('sitemap rozroznia priorytety', () => {
+check('sitemap rozróżnia priorytety', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	// @astrojs/sitemap serializuje priorytet 1.0 jako "1.0", nie jako "1"
 	// (zweryfikowane w dist/sitemap-0.xml) - asercja dopasowana do realnego
 	// formatu serializera, nie odwrotnie.
-	assert(xml.includes('<priority>1.0</priority>'), 'brak priorytetu 1.0 dla strony glownej');
-	assert(xml.includes('<priority>0.5</priority>'), 'brak priorytetu 0.5 dla sciezek');
-	assert(xml.includes('<priority>0.8</priority>'), 'brak priorytetu 0.8 dla artykulow');
+	assert(xml.includes('<priority>1.0</priority>'), 'brak priorytetu 1.0 dla strony głównej');
+	assert(xml.includes('<priority>0.5</priority>'), 'brak priorytetu 0.5 dla ścieżek');
+	assert(xml.includes('<priority>0.8</priority>'), 'brak priorytetu 0.8 dla artykułów');
 	return '1.0 / 0.8 / 0.5';
 });
 
@@ -276,5 +276,5 @@ for (const r of results) {
 	if (!r.ok) failed++;
 	console.log(`${r.ok ? 'PASS' : 'FAIL'}  ${r.name}${r.detail ? ` - ${r.detail}` : ''}`);
 }
-console.log(`\n${results.length - failed}/${results.length} asercji przeszlo`);
+console.log(`\n${results.length - failed}/${results.length} asercji przeszło`);
 process.exit(failed > 0 ? 1 : 0);

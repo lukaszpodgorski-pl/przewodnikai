@@ -1,8 +1,9 @@
 /**
- * Siedem sekcji merytorycznych kursu, w kolejnosci sciezki nauki.
- * Zrodlo prawdy dla menu bocznego (astro.config.mjs) i dla breadcrumbow
- * w danych strukturalnych (src/lib/structured-data.ts).
- * `sciezki/` celowo nie ma na tej liscie - jest poza sidebarem.
+ * Siedem sekcji merytorycznych kursu, w kolejności ścieżki nauki.
+ * Źródło prawdy dla menu bocznego (astro.config.mjs) i dla klasyfikacji
+ * strony jako artykułu w danych strukturalnych oraz w wyborze obrazu OG
+ * (src/components/Head.astro).
+ * `sciezki/` celowo nie ma na tej liście - jest poza sidebarem.
  */
 export interface Section {
 	readonly slug: string;
