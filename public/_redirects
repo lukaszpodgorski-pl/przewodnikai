@@ -1,9 +1,11 @@
 # Przekierowania 301: stare płaskie URL-e (przewodnikai.pl/<slug>/)
 # -> nowa struktura z prefiksami sekcji (Cloudflare Pages).
 # UWAGA: reguły są dopasowywane co do ścieżki (exact match) i mają
-# pierwszeństwo przed plikami statycznymi. Nie twórz stron pod adresami
-# /podstawy/, /prompt-engineering/ ani /etyka/ (index sekcji), bo
-# przesłonią je poniższe przekierowania starych artykułów.
+# pierwszeństwo przed plikami statycznymi - reguła pod adresem sekcji
+# przesłoniłaby jej stronę indeksową. Każda z siedmiu sekcji ma własną
+# stronę (src/content/docs/<sekcja>/index.mdx), więc nie dodawaj tu reguł
+# dla /podstawy/, /jak-dziala-ai/, /prompt-engineering/, /narzedzia/,
+# /praktyka/, /etyka/ ani /zasoby/.
 
 # --- Podstawy ---
 /wstep/ /podstawy/wstep/ 301
@@ -16,8 +18,6 @@
 /weryfikacja-informacji/ /podstawy/weryfikacja-informacji/ 301
 
 # --- Jak działa AI ---
-# stary artykuł "AI, ML, Sieci Neuronowe" miał slug /podstawy/
-/podstawy/ /jak-dziala-ai/ai-ml-sieci-neuronowe/ 301
 /jak-ucza-sie-modele/ /jak-dziala-ai/jak-ucza-sie-modele/ 301
 /typy-ai/ /jak-dziala-ai/typy-ai/ 301
 /modele-jezykowe/ /jak-dziala-ai/modele-jezykowe/ 301
@@ -29,8 +29,6 @@
 /mapa-ai/ /jak-dziala-ai/mapa-ai/ 301
 
 # --- Prompt Engineering ---
-# stary artykuł "Wprowadzenie" miał slug /prompt-engineering/
-/prompt-engineering/ /prompt-engineering/wprowadzenie/ 301
 /prompt-podstawy/ /prompt-engineering/podstawy/ 301
 /prompt-techniki/ /prompt-engineering/techniki/ 301
 /prompt-rozumowanie/ /prompt-engineering/rozumowanie/ 301
@@ -54,8 +52,6 @@
 /ai-i-praca/ /praktyka/ai-i-praca/ 301
 
 # --- Etyka i bezpieczeństwo ---
-# stary artykuł "Etyczne aspekty AI" miał slug /etyka/
-/etyka/ /etyka/etyczne-aspekty/ 301
 /prywatnosc/ /etyka/prywatnosc/ 301
 /przyszlosc-ai/ /etyka/przyszlosc-ai/ 301
 
@@ -66,13 +62,3 @@
 /o-mnie/ /zasoby/o-mnie/ 301
 /kontakt/ /zasoby/kontakt/ 301
 /regulamin/ /zasoby/kontakt/ 301
-
-# --- Stare strony PHP (konta/logowanie usunięte w modelu statycznym) ---
-/index.php / 301
-/login.php / 301
-/register.php / 301
-/account.php / 301
-/pro-membership.php / 301
-/logout.php / 301
-/verify-account.php / 301
-/resend-verification.php / 301

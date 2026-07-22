@@ -46,17 +46,21 @@ Każdy PR wymaga akceptacji code ownera (`.github/CODEOWNERS`).
 
 Jedna kolekcja `docs` (`src/content.config.ts`) ładowana przez `docsLoader()` Starlight. **Folder w `src/content/docs/` = sekcja w menu bocznym**, ale sidebar nie jest w pełni automatyczny: `astro.config.mjs` wylicza 7 sekcji ręcznie (`podstawy`, `jak-dziala-ai`, `prompt-engineering`, `narzedzia`, `praktyka`, `etyka`, `zasoby`) i każda ma `autogenerate` w środku. **Nowy folder najwyższego poziomu nie pojawi się w menu, dopóki nie dopiszesz go do `sidebar`.**
 
+Każda sekcja ma stronę zbiorczą `<sekcja>/index.mdx` - wstęp, `CardGrid` z artykułami i `faq`. To ona jest środkowym poziomem breadcrumba i celem linków z ekranu głównego. W menu bocznym widnieje jako ręcznie dopisany wpis "Przegląd"; sam plik ma `sidebar.hidden: true`, żeby `autogenerate` nie dodał go po raz drugi. **Nowa sekcja bez `index.mdx` zapali `verify-geo.mjs` na czerwono** - asercja "każdy katalog sekcji ma stronę zbiorczą" pilnuje, żeby breadcrumb nie wskazywał na nieistniejący adres.
+
 `sciezki/` jest celowo poza sidebarem - to strony `template: splash` z `sidebar.hidden: true`, wchodzi się do nich przez `sciezki/index.mdx` (CardGrid).
 
 ### Trzy pułapki, o które łatwo się potknąć
 
 1. **`trailingSlash: 'always'`** - wszystkie linki wewnętrzne muszą kończyć się ukośnikiem (`/podstawy/wstep/`).
-2. **`public/_redirects`** - mapa 301 ze starych płaskich URL-i. Reguły mają pierwszeństwo przed plikami statycznymi, więc **nie twórz stron indeksowych pod `/podstawy/`, `/prompt-engineering/` ani `/etyka/`** - zostaną przesłonięte przez przekierowania starych artykułów.
+2. **`public/_redirects`** - mapa 301 ze starych płaskich URL-i. Reguły mają pierwszeństwo przed plikami statycznymi, więc **nie dodawaj tam reguły pod adresem sekcji** (`/podstawy/`, `/narzedzia/` itd.) - przesłoniłaby stronę zbiorczą tej sekcji. Trzy takie kolizje (`/podstawy/`, `/prompt-engineering/`, `/etyka/`) usunięto przy wprowadzaniu stron zbiorczych; stare adresy prowadzą teraz na stronę sekcji zamiast na dawny artykuł.
 3. **Łańcuch "Następny krok"** - treść artykułów prowadzi czytelnika liniowo przez sekcje w kolejności `podstawy → jak-dziala-ai → prompt-engineering → narzedzia → praktyka → etyka → zasoby`. `sidebar.order` w każdym pliku odzwierciedla tę ścieżkę. Zmiana kolejności wymaga aktualizacji linków "Następny krok" w sąsiednich plikach.
 
 ### Frontmatter GEO/AEO
 
-`src/content.config.ts` rozszerza `docsSchema()` o pola pod dane strukturalne: `educationalLevel`, `teaches`, `about[]`, `mentions[]`, `faq[]`. Pola są wypełnione w artykułach, ale **nic ich jeszcze nie renderuje** - generowanie `<script type="application/ld+json">` to otwarte zadanie (`TODO.md`). Dodając nowy artykuł, uzupełnij te pola wzorem istniejących (np. `src/content/docs/podstawy/czym-jest-ai.md`).
+`src/content.config.ts` rozszerza `docsSchema()` o pola pod dane strukturalne: `educationalLevel`, `teaches`, `about[]`, `mentions[]`, `faq[]`. Pola trafiają do `<script type="application/ld+json">` przez `src/components/Head.astro`, który składa bloki czystymi funkcjami z `src/lib/structured-data.ts`: `TechArticle` dla artykułu, `CollectionPage` dla strony zbiorczej, `WebSite` dla strony głównej, do tego `BreadcrumbList` i `FAQPage`. Dodając nowy artykuł, uzupełnij te pola wzorem istniejących (np. `src/content/docs/podstawy/czym-jest-ai.md`).
+
+Pole `faq` renderuje też widoczną sekcję "Częste pytania" (`MarkdownContent.astro`) - Google wymaga, by treść z `FAQPage` była widoczna na stronie. `scripts/verify-geo.mjs` sprawdza obie strony tej zależności.
 
 ### Media
 

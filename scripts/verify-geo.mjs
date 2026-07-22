@@ -98,6 +98,25 @@ function typesIn(html) {
 	return types;
 }
 
+/**
+ * Slugi sekcji, czyli katalogów treści mających własną stronę zbiorczą
+ * (`<sekcja>/index.mdx`). Wykrywane ze struktury katalogów, a nie z zaszytej
+ * listy - src/config/sections.ts jest modułem TypeScript, którego ten skrypt
+ * (zwykły node) nie zaimportuje, a druga kopia listy rozjechałaby się z
+ * pierwszą. `sciezki` i strony pomocnicze mają własne kategorie, więc są
+ * wykluczone.
+ */
+function sectionSlugs(excludedPrefix) {
+	return readdirSync(SRC_DOCS).filter(
+		(name) =>
+			name !== 'sciezki' &&
+			`${name}/` !== excludedPrefix &&
+			!name.startsWith('_') &&
+			statSync(join(SRC_DOCS, name)).isDirectory() &&
+			existsSync(join(SRC_DOCS, name, 'index.mdx')),
+	);
+}
+
 /** URL strony na podstawie ścieżki pliku, np. dist/podstawy/x/index.html -> /podstawy/x/ */
 function urlOf(file) {
 	const rel = relative(DIST, file).split(sep).slice(0, -1).join('/');
@@ -195,11 +214,23 @@ assert(existsSync(DIST), 'Brak katalogu dist - uruchom najpierw `npm run build`'
 const NOINDEX_PREFIX = '/newsletter/';
 const NOINDEX_SRC_PREFIX = 'newsletter/';
 
+// Strony zbiorcze sekcji (`/podstawy/`, `/etyka/` itd.). Bez tej kategorii
+// klasyfikacja przez negację poniżej wrzuciłaby je do worka "artykuły"
+// i asercja o TechArticle zapaliłaby się na czerwono - one mają CollectionPage.
+const SECTION_SLUGS = sectionSlugs(NOINDEX_SRC_PREFIX);
+const SECTION_URLS = new Set(SECTION_SLUGS.map((slug) => `/${slug}/`));
+const SECTION_SRC = new Set(SECTION_SLUGS.map((slug) => `${slug}/index.mdx`));
+
 const pages = collectionPages();
 const pageData = pages.map((f) => ({ file: f, url: urlOf(f), html: readFileSync(f, 'utf8') }));
 const pomocnicze = pageData.filter((p) => p.url.startsWith(NOINDEX_PREFIX));
+const sekcje = pageData.filter((p) => SECTION_URLS.has(p.url));
 const articles = pageData.filter(
-	(p) => p.url !== '/' && !p.url.startsWith('/sciezki/') && !p.url.startsWith(NOINDEX_PREFIX),
+	(p) =>
+		p.url !== '/' &&
+		!p.url.startsWith('/sciezki/') &&
+		!p.url.startsWith(NOINDEX_PREFIX) &&
+		!SECTION_URLS.has(p.url),
 );
 const sciezki = pageData.filter((p) => p.url.startsWith('/sciezki/'));
 const home = pageData.filter((p) => p.url === '/');
@@ -215,8 +246,13 @@ const sourceFiles = sourceDocFiles();
 const sourceRel = sourceFiles.map((f) => relative(SRC_DOCS, f).split(sep).join('/'));
 const sourceHome = sourceRel.filter((r) => r === 'index.mdx');
 const sourceSciezki = sourceRel.filter((r) => r.startsWith('sciezki/'));
+const sourceSekcje = sourceRel.filter((r) => SECTION_SRC.has(r));
 const sourceArticles = sourceRel.filter(
-	(r) => r !== 'index.mdx' && !r.startsWith('sciezki/') && !r.startsWith(NOINDEX_SRC_PREFIX),
+	(r) =>
+		r !== 'index.mdx' &&
+		!r.startsWith('sciezki/') &&
+		!r.startsWith(NOINDEX_SRC_PREFIX) &&
+		!SECTION_SRC.has(r),
 );
 
 // --- Task 1: harness widzi to, co powinien ---
@@ -227,10 +263,14 @@ check('liczba stron w dist odpowiada liczbie plików źródłowych w treści', (
 	);
 	return `${pageData.length} stron (źródło: ${sourceFiles.length} plików)`;
 });
-check('podział na artykuły / ścieżki / stronę główną zgodny ze źródłem', () => {
+check('podział na artykuły / sekcje / ścieżki / stronę główną zgodny ze źródłem', () => {
 	assert(
 		articles.length === sourceArticles.length,
 		`artykuły: źródło ${sourceArticles.length}, dist ${articles.length}`,
+	);
+	assert(
+		sekcje.length === sourceSekcje.length,
+		`sekcje: źródło ${sourceSekcje.length}, dist ${sekcje.length}`,
 	);
 	assert(
 		sciezki.length === sourceSciezki.length,
@@ -240,7 +280,22 @@ check('podział na artykuły / ścieżki / stronę główną zgodny ze źródłe
 		home.length === sourceHome.length,
 		`strona główna: źródło ${sourceHome.length}, dist ${home.length}`,
 	);
-	return `${articles.length}/${sciezki.length}/${home.length}`;
+	return `${articles.length}/${sekcje.length}/${sciezki.length}/${home.length}`;
+});
+check('każdy katalog sekcji ma stronę zbiorczą', () => {
+	// Nowa sekcja dopisana do src/config/sections.ts bez `index.mdx` zostawiłaby
+	// dziurę: breadcrumb artykułów wskazywałby na nieistniejący adres, a Google
+	// odrzuca cały BreadcrumbList, gdy pole `item` prowadzi donikąd.
+	const katalogi = readdirSync(SRC_DOCS).filter(
+		(name) =>
+			name !== 'sciezki' &&
+			`${name}/` !== NOINDEX_SRC_PREFIX &&
+			!name.startsWith('_') &&
+			statSync(join(SRC_DOCS, name)).isDirectory(),
+	);
+	const bez = katalogi.filter((name) => !SECTION_SLUGS.includes(name));
+	assert(bez.length === 0, `katalogi bez index.mdx: ${bez.join(', ')}`);
+	return `${SECTION_SLUGS.length}/${katalogi.length}`;
 });
 
 // --- Task 3: JSON-LD + OG ---
@@ -262,15 +317,17 @@ check('każdy artykuł ma TechArticle', () => {
 	assert(bad.length === 0, `bez TechArticle: ${bad.map((p) => p.url).join(', ')}`);
 	return `${articles.length}/${articles.length}`;
 });
-check('żadna ścieżka nie ma TechArticle', () => {
-	const bad = sciezki.filter((p) => typesIn(p.html).has('TechArticle'));
+check('żadna strona zbiorcza (sekcja/ścieżka) nie ma TechArticle', () => {
+	const zbiorcze = [...sekcje, ...sciezki];
+	const bad = zbiorcze.filter((p) => typesIn(p.html).has('TechArticle'));
 	assert(bad.length === 0, `błędnie oznaczone: ${bad.map((p) => p.url).join(', ')}`);
-	return `0/${sciezki.length}`;
+	return `0/${zbiorcze.length}`;
 });
-check('każda ścieżka ma CollectionPage', () => {
-	const bad = sciezki.filter((p) => !typesIn(p.html).has('CollectionPage'));
+check('każda strona zbiorcza (sekcja/ścieżka) ma CollectionPage', () => {
+	const zbiorcze = [...sekcje, ...sciezki];
+	const bad = zbiorcze.filter((p) => !typesIn(p.html).has('CollectionPage'));
 	assert(bad.length === 0, `bez CollectionPage: ${bad.map((p) => p.url).join(', ')}`);
-	return `${sciezki.length}/${sciezki.length}`;
+	return `${zbiorcze.length}/${zbiorcze.length}`;
 });
 check('strona główna ma WebSite i Person', () => {
 	const t = typesIn(home[0].html);
@@ -279,9 +336,25 @@ check('strona główna ma WebSite i Person', () => {
 	return 'WebSite + Person';
 });
 check('każda strona ma BreadcrumbList poza główną', () => {
-	const bad = [...articles, ...sciezki].filter((p) => !typesIn(p.html).has('BreadcrumbList'));
+	const zBreadcrumbem = [...articles, ...sekcje, ...sciezki];
+	const bad = zBreadcrumbem.filter((p) => !typesIn(p.html).has('BreadcrumbList'));
 	assert(bad.length === 0, `bez BreadcrumbList: ${bad.map((p) => p.url).join(', ')}`);
-	return `${articles.length + sciezki.length} stron`;
+	return `${zBreadcrumbem.length} stron`;
+});
+check('breadcrumb odzwierciedla głębokość adresu', () => {
+	// Sedno hierarchii w wynikach wyszukiwania: artykuł ma trzy poziomy
+	// (strona główna -> sekcja -> artykuł), strona zbiorcza dwa. Sama obecność
+	// BreadcrumbList tego nie gwarantuje - wcześniej blok istniał, ale pomijał
+	// poziom sekcji i był płytszy niż ścieżka URL.
+	const oczekiwane = (p) => (SECTION_URLS.has(p.url) || p.url === '/sciezki/' ? 2 : 3);
+	const bad = [];
+	for (const p of [...articles, ...sekcje, ...sciezki]) {
+		const block = jsonLdBlocks(p.html).find((b) => b['@type'] === 'BreadcrumbList');
+		const n = block?.itemListElement?.length ?? 0;
+		if (n !== oczekiwane(p)) bad.push(`${p.url}: ${n} zamiast ${oczekiwane(p)}`);
+	}
+	assert(bad.length === 0, `zła głębokość: ${bad.join(', ')}`);
+	return `${articles.length} artykułów po 3 poziomy, ${sekcje.length + 1} stron zbiorczych po 2`;
 });
 check('każda strona ma og:image i twitter:image', () => {
 	const bad = pageData.filter(
@@ -386,9 +459,10 @@ check('sitemap rozróżnia priorytety', () => {
 	// (zweryfikowane w dist/sitemap-0.xml) - asercja dopasowana do realnego
 	// formatu serializera, nie odwrotnie.
 	assert(xml.includes('<priority>1.0</priority>'), 'brak priorytetu 1.0 dla strony głównej');
+	assert(xml.includes('<priority>0.9</priority>'), 'brak priorytetu 0.9 dla stron sekcji');
 	assert(xml.includes('<priority>0.5</priority>'), 'brak priorytetu 0.5 dla ścieżek');
 	assert(xml.includes('<priority>0.8</priority>'), 'brak priorytetu 0.8 dla artykułów');
-	return '1.0 / 0.8 / 0.5';
+	return '1.0 / 0.9 / 0.8 / 0.5';
 });
 
 // --- Task 7: zawartość bloków JSON-LD, nie tylko ich obecność ---

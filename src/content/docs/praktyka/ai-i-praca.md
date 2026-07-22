@@ -184,5 +184,5 @@ Z mojego punktu widzenia najzdrowsze podejście jest takie: traktuj AI jak narz�
 - Jakie kompetencje rozwijać: AI literacy, krytyczne myślenie, kreatywność, empatia i głęboka ekspertyza domenowa
 - Że w Polsce luka kompetencyjna w umiejętnościach cyfrowych jest wyraźna, a próg wejścia w AI wciąż niski
 
-**Następny krok:** [Etyka i prawo w świecie AI](/etyka/etyczne-aspekty/) - poznasz najważniejsze wyzwania etyczne: uprzedzenia algorytmów, przejrzystość, prywatność i rozwijające się regulacje prawne.
+**Następny krok:** [Etyka i bezpieczeństwo AI](/etyka/) - poznasz najważniejsze wyzwania etyczne: uprzedzenia algorytmów, przejrzystość, prywatność i rozwijające się regulacje prawne.
 :::

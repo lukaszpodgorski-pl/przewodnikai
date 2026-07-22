@@ -1,0 +1,91 @@
+---
+title: Narzędzia AI
+description: Przegląd narzędzi sztucznej inteligencji - chatboty, generatory obrazów, wsparcie pisania i rozwiązania specjalistyczne. Co wybrać i do czego.
+sidebar:
+  hidden: true
+about:
+  - name: Chatbot
+    sameAs: https://pl.wikipedia.org/wiki/Chatbot
+  - name: Generatywna sztuczna inteligencja
+    sameAs: https://pl.wikipedia.org/wiki/Generatywna_sztuczna_inteligencja
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: Gemini
+    sameAs: https://en.wikipedia.org/wiki/Gemini_(language_model)
+    type: SoftwareApplication
+  - name: Midjourney
+    sameAs: https://en.wikipedia.org/wiki/Midjourney
+    type: SoftwareApplication
+faq:
+  - q: Który chatbot AI wybrać na początek?
+    a: Na start wystarczy dowolny z dużych chatbotów w wersji bezpłatnej - różnice między nimi są dla początkującego mniejsze niż różnica między dobrym a złym promptem. Wybierz jeden, popracuj z nim kilka tygodni, a dopiero potem porównuj. Szczegółowe zestawienie znajdziesz w artykule o chatbotach.
+  - q: Czy muszę płacić za narzędzia AI?
+    a: Do nauki i większości codziennych zadań wersje bezpłatne wystarczają. Płatne plany mają sens, gdy korzystasz z AI zawodowo i codziennie - dają wyższe limity, dostęp do mocniejszych modeli i dodatkowe funkcje. Zacznij od darmowego i przejdź na płatny dopiero, gdy poczujesz konkretne ograniczenie.
+  - q: Jak często ta sekcja jest aktualizowana?
+    a: Rynek narzędzi AI zmienia się szybko, więc ceny i wersje modeli podane w artykułach mogą się zdezaktualizować między jedną a drugą aktualizacją. Przed decyzją zakupową zawsze sprawdź cennik u źródła - w artykułach znajdziesz linki do stron producentów.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Czego się tu nauczysz
+
+Ta sekcja odpowiada na pytanie, które pada najczęściej ze wszystkich: "dobrze, ale czego właściwie mam używać?".
+
+Narzędzi AI są dziś tysiące i większość zestawień w internecie to listy bez hierarchii - sto pozycji, każda opisana jednym zdaniem, żadnej wskazówki, od czego zacząć. Tutaj idziemy inaczej. Dzielimy krajobraz na cztery obszary według tego, co chcesz zrobić, i w każdym pokazuję, czym narzędzia naprawdę się różnią, a gdzie różnica jest kosmetyczna.
+
+Zaczynamy od chatbotów, bo to punkt wejścia dla większości ludzi i narzędzie, z którym spędzisz najwięcej czasu. Potem generatory obrazów - osobna kategoria z własną logiką i własnym sposobem promptowania. Następnie narzędzia do pisania, czyli rozwiązania wyspecjalizowane w treściach, tam gdzie ogólny chatbot nie wystarcza. Dalej narzędzia specjalistyczne: wideo, audio, prezentacje, analiza danych. Na koniec artykuł najbardziej praktyczny w całej sekcji - jak wpleść to wszystko w zwykły dzień pracy, zamiast trzymać jako ciekawostkę.
+
+## Dla kogo to jest
+
+Dla osoby, która ma już za sobą pierwsze rozmowy z AI i chce zbudować sobie zestaw narzędzi pod własne zadania. Przyda się też, jeśli wybierasz rozwiązanie dla zespołu lub firmy.
+
+## W jakiej kolejności czytać
+
+Ta sekcja nie wymaga trzymania kolejności - wybierz obszar, który Cię dotyczy. Wyjątkiem jest ostatni artykuł, "AI w codziennej pracy": czyta się go najlepiej po pozostałych, bo spina je w konkretne workflow.
+
+## Czego tu nie ma
+
+Nie ma tu rankingu "najlepszych narzędzi roku" ani ocen w gwiazdkach. Nie ma też szczegółowych instrukcji obsługi każdego interfejsu - te zmieniają się szybciej, niż da się je opisać. Zamiast tego skupiam się na kryteriach wyboru, które zostają aktualne, gdy narzędzia się zmienią.
+
+:::caution[Ceny i wersje zmieniają się szybko]
+Artykuły w tej sekcji podają konkretne ceny i nazwy modeli, ale rynek AI zmienia się z miesiąca na miesiąc. Przed decyzją zakupową sprawdź aktualny cennik na stronie producenta.
+:::
+
+## Artykuły w tej sekcji
+
+<CardGrid>
+	<LinkCard
+		title="Chatboty AI"
+		description="ChatGPT, Claude, Gemini, Copilot - porównanie funkcji, cen i zastosowań."
+		href="/narzedzia/chatboty/"
+	/>
+	<LinkCard
+		title="Generatory obrazów AI"
+		description="Midjourney, DALL-E, Stable Diffusion - jakość, ceny i sposób promptowania."
+		href="/narzedzia/generatory-obrazow/"
+	/>
+	<LinkCard
+		title="Narzędzia AI do pisania"
+		description="Copywriting, content marketing i SEO - kiedy warto sięgnąć po wyspecjalizowane narzędzie."
+		href="/narzedzia/pisanie/"
+	/>
+	<LinkCard
+		title="Specjalistyczne narzędzia AI"
+		description="Wideo, audio, kod, prezentacje i analiza danych."
+		href="/narzedzia/specjalistyczne/"
+	/>
+	<LinkCard
+		title="AI w codziennej pracy"
+		description="Maile, dokumenty, spotkania, research - konkretne workflow do zastosowania od jutra."
+		href="/narzedzia/ai-w-codziennej-pracy/"
+	/>
+</CardGrid>
+
+:::note[Następny krok]
+**Zacznij tutaj:** [Chatboty AI](/narzedzia/chatboty/) - poznasz najważniejsze chatboty i dowiesz się, który pasuje do Twoich zadań.
+:::

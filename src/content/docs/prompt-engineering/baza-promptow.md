@@ -287,5 +287,5 @@ Nie obiecuję, że trafi tu wszystko, co dostanę. Wolę mniejszą bazę, w któ
 - Że każdy prompt możesz modyfikować i dostosowywać do swoich potrzeb - traktuj go jako punkt wyjścia
 - Że różne modele AI mogą reagować inaczej na te same prompty, więc warto eksperymentować
 
-**Następny krok:** [Chatboty AI](/narzedzia/chatboty/) - poznasz ChatGPT, Claude, Gemini i Copilot, dowiesz się który chatbot najlepiej pasuje do Twoich zadań.
+**Następny krok:** [Narzędzia AI](/narzedzia/) - poznasz chatboty, generatory obrazów i narzędzia specjalistyczne, dowiesz się które najlepiej pasują do Twoich zadań.
 :::

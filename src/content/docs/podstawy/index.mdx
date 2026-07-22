@@ -1,0 +1,97 @@
+---
+title: Podstawy AI
+description: Od czego zacząć naukę sztucznej inteligencji. Osiem artykułów, które tłumaczą czym jest AI, jak z niej korzystać i jak weryfikować to, co Ci odpowie.
+sidebar:
+  hidden: true
+about:
+  - name: Sztuczna inteligencja
+    sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
+  - name: Generatywna sztuczna inteligencja
+    sameAs: https://pl.wikipedia.org/wiki/Generatywna_sztuczna_inteligencja
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Halucynacja AI
+    sameAs: https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)
+faq:
+  - q: Od czego zacząć naukę AI, jeśli nie mam wykształcenia technicznego?
+    a: Od tej sekcji - jest napisana z założeniem, że nie masz za sobą informatyki ani matematyki na poziomie studiów. Zacznij od artykułu "Wstęp do kursu AI", potem "Czym jest AI?", a następnie przeprowadź swoją pierwszą rozmowę z chatbotem. Do techniki wrócisz później, kiedy będziesz mieć już praktyczny punkt odniesienia.
+  - q: Ile czasu zajmuje przejście sekcji Podstawy?
+    a: Osiem artykułów, każdy do przeczytania w kwadrans. Jeśli będziesz po drodze wykonywać ćwiczenia z chatbotem - a warto - licz na 3-4 godziny rozłożone na kilka wieczorów. Nie ma nagrody za pośpiech.
+  - q: Czy muszę za coś zapłacić, żeby przejść tę sekcję?
+    a: Nie. Cały przewodnik jest darmowy, a wszystkie ćwiczenia da się wykonać na bezpłatnych planach popularnych chatbotów. Płatna wersja przyda się dopiero przy bardziej wymagających zadaniach z dalszych sekcji.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Czego się tu nauczysz
+
+To jest miejsce, od którego zaczyna się cały kurs. Jeśli AI kojarzy Ci się na razie z nagłówkami w mediach i niepokojem, że coś Cię omija - trafiłeś dobrze. Ta sekcja nie zakłada żadnej wiedzy technicznej. Zakłada tylko, że chcesz zrozumieć, o co w tym wszystkim chodzi, zanim zaczniesz z tego korzystać na poważnie.
+
+Przechodzimy tu przez cztery rzeczy. Najpierw ustalamy, czym sztuczna inteligencja właściwie jest, a czym nie jest - bo wokół tego narosło więcej mitów niż wokół większości technologii ostatnich lat. Potem siadasz do pierwszej prawdziwej rozmowy z chatbotem i przekonujesz się, że to prostsze, niż wygląda z zewnątrz. Następnie oddzielamy to, co AI naprawdę potrafi, od tego, co jej się przypisuje - w obie strony, bo równie szkodliwe jest przecenianie, jak lekceważenie. Na końcu uczysz się najważniejszej umiejętności w tej całej układance: sprawdzania, czy to, co dostałeś, jest prawdą.
+
+## Dla kogo to jest
+
+Dla osób nietechnicznych. Nauczycieli, rodziców, przedsiębiorców, urzędników, studentów, emerytów. Nie znajdziesz tu wzorów, kodu ani żargonu bez wyjaśnienia. Każde angielskie określenie tłumaczę przy pierwszym użyciu i staram się nie zakładać, że wiesz cokolwiek "z góry".
+
+## W jakiej kolejności czytać
+
+Po kolei, od góry do dołu. Artykuły są ułożone w ciąg i każdy kolejny korzysta z tego, co ustaliliśmy wcześniej. Jeśli masz przeczytać tylko jeden - niech to będzie "Weryfikacja informacji". Jeśli dwa - dołóż "Twoja pierwsza rozmowa z AI".
+
+## Czego tu nie ma
+
+Nie tłumaczymy tu, jak AI działa od środka - sieci neuronowe, uczenie modeli i tokeny czekają w sekcji [Jak działa AI](/jak-dziala-ai/). Nie ma też technik pisania promptów; to osobny, duży temat. Tutaj budujemy fundament pod jedno i drugie.
+
+:::tip[Szukasz artykułu o AI, ML i sieciach neuronowych?]
+Tekst "AI, ML, Sieci Neuronowe" mieszkał kiedyś pod tym adresem. Przeniósł się do sekcji poświęconej mechanice AI - znajdziesz go pod adresem [AI, ML, Sieci Neuronowe](/jak-dziala-ai/ai-ml-sieci-neuronowe/).
+:::
+
+## Artykuły w tej sekcji
+
+<CardGrid>
+	<LinkCard
+		title="Wstęp do kursu AI"
+		description="Struktura kursu, mapa drogowa nauki i Twój pierwszy prompt."
+		href="/podstawy/wstep/"
+	/>
+	<LinkCard
+		title="Czym jest AI?"
+		description="Podstawowe pojęcia i koncepcje - bez żargonu i bez straszenia."
+		href="/podstawy/czym-jest-ai/"
+	/>
+	<LinkCard
+		title="Jak uczyć się AI? 4 poziomy kompetencji"
+		description="Model od Obserwatora po Kreatora. Sprawdź, gdzie jesteś i jak przejść dalej."
+		href="/podstawy/jak-uczyc-sie-ai/"
+	/>
+	<LinkCard
+		title="Twoja pierwsza rozmowa z AI"
+		description="Krok po kroku: jak zacząć rozmowę z ChatGPT, Claude lub innym chatbotem."
+		href="/podstawy/pierwsza-rozmowa-z-ai/"
+	/>
+	<LinkCard
+		title="Mity vs rzeczywistość AI"
+		description="Najczęstsze mity o sztucznej inteligencji i to, jak jest naprawdę."
+		href="/podstawy/mity-vs-rzeczywistosc/"
+	/>
+	<LinkCard
+		title="Nie dajmy się zwariować"
+		description="Jak zachować spokój i zdrowy rozsądek w szumie wokół AI."
+		href="/podstawy/nie-dajmy-sie-zwariowac/"
+	/>
+	<LinkCard
+		title="Ograniczenia sztucznej inteligencji"
+		description="Czego AI nie potrafi i gdzie przebiegają granice jej zastosowań."
+		href="/podstawy/ograniczenia/"
+	/>
+	<LinkCard
+		title="Weryfikacja informacji"
+		description="Jak sprawdzać odpowiedzi AI i rozpoznawać halucynacje. Najważniejszy artykuł w sekcji."
+		href="/podstawy/weryfikacja-informacji/"
+	/>
+</CardGrid>
+
+:::note[Następny krok]
+**Zacznij tutaj:** [Wstęp do kursu AI](/podstawy/wstep/) - poznasz strukturę całego przewodnika i wykonasz swój pierwszy prompt.
+:::

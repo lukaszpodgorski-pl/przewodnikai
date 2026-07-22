@@ -2,6 +2,8 @@
  * Czyste funkcje budujące obiekty JSON-LD. Zero API Astro - dzięki temu
  * dają się wywołać i sprawdzić bez uruchamiania frameworka.
  */
+import { SECTION_LABELS } from '../config/sections';
+
 export const SITE_URL = 'https://przewodnikai.pl';
 export const SITE_NAME = 'Przewodnik AI';
 const LICENSE = 'https://creativecommons.org/licenses/by-sa/4.0/';
@@ -61,24 +63,33 @@ function withOptional<T extends object>(base: T, extras: Record<string, unknown>
 
 interface Crumb {
 	name: string;
-	item?: string;
+	item: string;
+}
+
+/**
+ * Etykieta poziomu pośredniego dla pierwszego segmentu ścieżki, albo
+ * `undefined`, gdy segment nie odpowiada żadnej stronie zbiorczej.
+ * `sciezki` nie jest sekcją kursu (nie ma go w SECTIONS), ale ma własną
+ * stronę indeksową, więc traktujemy go tak samo.
+ */
+function midLevelLabel(segment: string): string | undefined {
+	return segment === 'sciezki' ? 'Ścieżki nauki' : SECTION_LABELS[segment];
 }
 
 export function buildBreadcrumbs(pathname: string, title: string) {
 	const segments = pathname.split('/').filter(Boolean);
 	const items: Crumb[] = [{ name: 'Strona główna', item: absoluteUrl('/') }];
 
-	// Sekcje (podstawy, prompt-engineering, etyka itd.) celowo nie dostają
-	// własnego wpisu w breadcrumbie. Nie chodzi tylko o brak strony indeksowej
-	// (kolidowałaby z 301 w _redirects) - Google wymaga pola `item` we
-	// wszystkich elementach `ListItem` poza ostatnim, a dla sekcji nie ma
-	// żadnego realnego URL-a, na który można by to pole wskazać. Wpis bez
-	// `item` jest zgodny ze schema.org, ale Google i tak odrzuca cały
-	// `BreadcrumbList`, więc bezpieczniej pominąć sekcję niż emitować
-	// niekompletny element. Dla `sciezki/` ten problem nie występuje -
-	// `/sciezki/` to prawdziwa strona z własnym `item`, więc zostaje.
-	if (segments.length > 1 && segments[0] === 'sciezki') {
-		items.push({ name: 'Ścieżki nauki', item: absoluteUrl('/sciezki/') });
+	// Poziom pośredni (sekcja) dodajemy wyłącznie wtedy, gdy prowadzi do
+	// istniejącej strony. Google wymaga pola `item` we wszystkich elementach
+	// `ListItem` poza ostatnim i odrzuca cały `BreadcrumbList`, gdy któregoś
+	// brakuje - dlatego brak etykiety oznacza pominięcie poziomu, a nie wpis
+	// bez adresu. Każda z siedmiu sekcji ma dziś stronę indeksową
+	// (src/content/docs/<sekcja>/index.mdx), więc `item` ma na co wskazywać.
+	// Sama strona sekcji ma jeden segment i trafia od razu do wpisu końcowego.
+	if (segments.length > 1) {
+		const label = midLevelLabel(segments[0]);
+		if (label) items.push({ name: label, item: absoluteUrl(`/${segments[0]}/`) });
 	}
 
 	items.push({ name: title, item: absoluteUrl(pathname) });
@@ -86,12 +97,12 @@ export function buildBreadcrumbs(pathname: string, title: string) {
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
-		itemListElement: items.map((entry, index) =>
-			withOptional(
-				{ '@type': 'ListItem', position: index + 1, name: entry.name },
-				{ item: entry.item },
-			),
-		),
+		itemListElement: items.map((entry, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			name: entry.name,
+			item: entry.item,
+		})),
 	};
 }
 
