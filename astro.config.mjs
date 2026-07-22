@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLlmsTxt from 'starlight-llms-txt';
+import { SECTIONS } from './src/config/sections';
 
 const GITHUB_REPO = 'https://github.com/lukaszpodgorski-pl/przewodnikai';
 
@@ -30,15 +31,10 @@ export default defineConfig({
 			},
 			lastUpdated: true,
 			plugins: [starlightLlmsTxt()],
-			sidebar: [
-				{ label: 'Podstawy', items: [{ autogenerate: { directory: 'podstawy' } }] },
-				{ label: 'Jak działa AI', items: [{ autogenerate: { directory: 'jak-dziala-ai' } }] },
-				{ label: 'Prompt Engineering', items: [{ autogenerate: { directory: 'prompt-engineering' } }] },
-				{ label: 'Narzędzia AI', items: [{ autogenerate: { directory: 'narzedzia' } }] },
-				{ label: 'AI w praktyce', items: [{ autogenerate: { directory: 'praktyka' } }] },
-				{ label: 'Etyka i bezpieczeństwo', items: [{ autogenerate: { directory: 'etyka' } }] },
-				{ label: 'Zasoby', items: [{ autogenerate: { directory: 'zasoby' } }] },
-			],
+			sidebar: SECTIONS.map(({ slug, label }) => ({
+				label,
+				items: [{ autogenerate: { directory: slug } }],
+			})),
 		}),
 	],
 	vite: {
