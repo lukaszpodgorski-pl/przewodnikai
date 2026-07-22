@@ -6,6 +6,8 @@ import { join, relative, sep } from 'node:path';
 
 const DIST = 'dist';
 const SRC_DOCS = join('src', 'content', 'docs');
+// Musi być zgodne z SITE_URL w src/lib/structured-data.ts.
+const SITE_URL = 'https://przewodnikai.pl';
 const results = [];
 
 function check(name, fn) {
@@ -100,6 +102,82 @@ function typesIn(html) {
 function urlOf(file) {
 	const rel = relative(DIST, file).split(sep).slice(0, -1).join('/');
 	return rel === '' ? '/' : `/${rel}/`;
+}
+
+/** Usuwa bloki JSON-LD ze strony - potrzebne, żeby sprawdzać widoczną treść
+ * niezależnie od tego, co jest zakodowane w danych strukturalnych (inaczej
+ * tekst z JSON-LD "potwierdzałby sam siebie" jako treść widoczna). */
+function stripJsonLd(html) {
+	return html.replace(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g, '');
+}
+
+/** Płaski tekst widoczny dla czytelnika - bez bloków JSON-LD i bez znaczników HTML. */
+function visibleText(html) {
+	return stripJsonLd(html).replace(/<[^>]+>/g, ' ');
+}
+
+/**
+ * Ujednolica cudzysłowy/apostrofy i białe znaki. Markdown renderuje proste
+ * cudzysłowy ze źródła jako typograficzne (`"myśli"` w źródle staje się
+ * „myśli" w HTML), więc porównanie tekstu pytania z frontmattera do HTML
+ * nie może zależeć od tego, który wariant znaku aktualnie renderuje Astro.
+ */
+function normalizeForMatch(text) {
+	return text
+		.replace(/["'‘’“”„«»]/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+/**
+ * Rekurencyjnie zbiera wartości wszystkich pól o podanych kluczach
+ * z dowolnie zagnieżdżonego obiektu/tablicy JSON-LD (np. `item` występuje
+ * zarówno bezpośrednio w bloku, jak i zagnieżdżone w `itemListElement`).
+ * Pole `url` na encji `Person` jest celowym wyjątkiem - to zewnętrzna
+ * strona domowa autora (AUTHOR.url), a nie adres wygenerowany przez
+ * `absoluteUrl()`, więc nie podlega wymogowi domeny/ukośnika.
+ */
+function collectFieldValues(node, keys, out) {
+	if (Array.isArray(node)) {
+		for (const item of node) collectFieldValues(item, keys, out);
+	} else if (node && typeof node === 'object') {
+		const isPerson = node['@type'] === 'Person';
+		for (const [key, value] of Object.entries(node)) {
+			if (keys.includes(key) && typeof value === 'string' && !(isPerson && key === 'url')) {
+				out.push(value);
+			}
+			collectFieldValues(value, keys, out);
+		}
+	}
+}
+
+/** Rekurencyjnie zbiera wszystkie węzły `'@type': 'Person'` z bloku JSON-LD. */
+function collectPersons(node, out) {
+	if (Array.isArray(node)) {
+		for (const item of node) collectPersons(item, out);
+	} else if (node && typeof node === 'object') {
+		if (node['@type'] === 'Person') out.push(node);
+		for (const value of Object.values(node)) collectPersons(value, out);
+	}
+}
+
+/**
+ * Wyciąga teksty pytań z pola `faq:` - dopasowanie wzorca YAML `- q: ...`,
+ * z opcjonalnym zdjęciem otaczających cudzysłowów. Też proste dopasowanie
+ * tekstowe, nie parser YAML.
+ */
+function extractFaqQuestions(content) {
+	const questions = [];
+	const re = /^\s*-\s*q:\s*(.+)$/gm;
+	let m;
+	while ((m = re.exec(content)) !== null) {
+		let q = m[1].trim();
+		if ((q.startsWith('"') && q.endsWith('"')) || (q.startsWith("'") && q.endsWith("'"))) {
+			q = q.slice(1, -1);
+		}
+		questions.push(q);
+	}
+	return questions;
 }
 
 assert(existsSync(DIST), 'Brak katalogu dist - uruchom najpierw `npm run build`');
@@ -268,6 +346,57 @@ check('sitemap rozróżnia priorytety', () => {
 	assert(xml.includes('<priority>0.5</priority>'), 'brak priorytetu 0.5 dla ścieżek');
 	assert(xml.includes('<priority>0.8</priority>'), 'brak priorytetu 0.8 dla artykułów');
 	return '1.0 / 0.8 / 0.5';
+});
+
+// --- Task 7: zawartość bloków JSON-LD, nie tylko ich obecność ---
+// Poprzednie asercje sprawdzały wyłącznie `@type` - blok mógłby mieć
+// całkowicie połamane dane (zły host, zgubiony ukośnik, puste imię autora)
+// i wszystko pozostałoby zielone. Te trzy asercje zaglądają do treści.
+check('pola url/item/mainEntityOfPage w JSON-LD są absolutne i kończą się ukośnikiem', () => {
+	const URL_FIELD_KEYS = ['url', 'item', 'mainEntityOfPage'];
+	const bad = [];
+	for (const p of pageData) {
+		for (const block of jsonLdBlocks(p.html)) {
+			const values = [];
+			collectFieldValues(block, URL_FIELD_KEYS, values);
+			for (const v of values) {
+				if (!v.startsWith(`${SITE_URL}/`) || !v.endsWith('/')) bad.push(`${p.url}: ${v}`);
+			}
+		}
+	}
+	assert(bad.length === 0, `nieprawidłowe adresy: ${bad.join(', ')}`);
+	return 'wszystkie adresy zaczynają się od SITE_URL i kończą ukośnikiem';
+});
+check('encja autora (Person) ma niepuste pole name wszędzie, gdzie występuje', () => {
+	const bad = [];
+	for (const p of pageData) {
+		for (const block of jsonLdBlocks(p.html)) {
+			const persons = [];
+			collectPersons(block, persons);
+			for (const person of persons) {
+				if (typeof person.name !== 'string' || person.name.trim() === '') bad.push(p.url);
+			}
+		}
+	}
+	assert(bad.length === 0, `puste pole name w encji Person: ${bad.join(', ')}`);
+	return 'wszystkie encje Person mają niepuste name';
+});
+check(`każde pytanie z faq: na ${FAQ_HIDDEN_URL} występuje w widocznej treści HTML`, () => {
+	const srcFile = `${join(SRC_DOCS, ...FAQ_HIDDEN_URL.split('/').filter(Boolean))}.md`;
+	const content = readFileSync(srcFile, 'utf8');
+	const questions = extractFaqQuestions(content);
+	assert(questions.length > 0, `nie znaleziono żadnego pytania w ${srcFile}`);
+
+	const page = pageData.find((p) => p.url === FAQ_HIDDEN_URL);
+	assert(page, `nie znaleziono strony ${FAQ_HIDDEN_URL}`);
+
+	const visible = normalizeForMatch(visibleText(page.html));
+	const missing = questions.filter((q) => !visible.includes(normalizeForMatch(q)));
+	assert(
+		missing.length === 0,
+		`pytania nieobecne w widocznej treści (poza JSON-LD): ${missing.join(' | ')}`,
+	);
+	return `${questions.length}/${questions.length} pytań widocznych w HTML`;
 });
 
 // --- raport ---
