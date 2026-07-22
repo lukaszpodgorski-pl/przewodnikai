@@ -19,11 +19,55 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<p class="stats">7 sekcji · 44 artykuły · 9 ścieżek nauki</p>
+
+## Program kursu
+
+Siedem sekcji ułożonych w jedną ścieżkę - od pierwszej rozmowy z chatbotem po zaawansowane promptowanie. Możesz iść po kolei albo wejść od razu tam, gdzie masz potrzebę.
+
+<CardGrid>
+	<LinkCard
+		title="1. Podstawy"
+		description="Czym jest AI, jak wygląda pierwsza rozmowa z chatbotem i w które mity nie warto wierzyć."
+		href="/podstawy/wstep/"
+	/>
+	<LinkCard
+		title="2. Jak działa AI"
+		description="Co siedzi pod maską: uczenie maszynowe, modele językowe, tokeny, konteksty i dane."
+		href="/jak-dziala-ai/ai-ml-sieci-neuronowe/"
+	/>
+	<LinkCard
+		title="3. Prompt Engineering"
+		description="Jak pisać polecenia, które dają dobre odpowiedzi - od podstaw po techniki zaawansowane."
+		href="/prompt-engineering/wprowadzenie/"
+	/>
+	<LinkCard
+		title="4. Narzędzia AI"
+		description="Chatboty, generatory obrazów, narzędzia do pisania i pracy - co wybrać i do czego."
+		href="/narzedzia/chatboty/"
+	/>
+	<LinkCard
+		title="5. AI w praktyce"
+		description="AI w różnych branżach, przykłady wdrożeń i to, co zmienia się na rynku pracy."
+		href="/praktyka/ai-w-branzach/"
+	/>
+	<LinkCard
+		title="6. Etyka i bezpieczeństwo"
+		description="Prawo, prywatność i RODO, a także granice, których lepiej nie przekraczać."
+		href="/etyka/etyczne-aspekty/"
+	/>
+	<LinkCard
+		title="7. Zasoby"
+		description="Słownik pojęć, odpowiedzi na częste pytania i materiały, do których warto wracać."
+		href="/zasoby/slownik-pojec/"
+	/>
+</CardGrid>
 
 ## Dlaczego Przewodnik AI?
 
-<CardGrid stagger>
+<CardGrid>
 	<Card title="Od zera, bez żargonu" icon="rocket">
 		Nie musisz być programistą. Kurs prowadzi Cię od pierwszej rozmowy z AI po
 		zaawansowane techniki promptowania - prostym językiem, z przykładami.
@@ -44,8 +88,6 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Kto prowadzi ten przewodnik?
 
-Nazywam się **Łukasz Podgórski** i jestem konsultantem AI oraz trenerem z ponad 15-letnim doświadczeniem w branży IT, w tym ponad 5 lat pracy ze sztuczną inteligencją. Ten przewodnik to mój autorski projekt edukacyjny - więcej o mnie i o tym, dlaczego powstał, przeczytasz w sekcji [O mnie](/zasoby/o-mnie/).
-
-Kurs liczy dziś **7 sekcji tematycznych, 44 artykuły i 9 ścieżek nauki** - od pierwszej rozmowy z chatbotem po zaawansowany prompt engineering.
+Nazywam się **Łukasz Podgórski** i jestem konsultantem AI oraz trenerem z ponad 15-letnim doświadczeniem w branży IT, w tym ponad 5 lat pracy ze sztuczną inteligencją. Ten przewodnik to mój autorski projekt edukacyjny - [więcej o mnie i o tym, dlaczego powstał](/zasoby/o-mnie/).
 
 {/* TODO(Łukasz): liczby (7 sekcji / 44 artykuły / 9 ścieżek) aktualizuj przy każdej zmianie zakresu kursu */}
