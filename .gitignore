@@ -73,6 +73,7 @@ $RECYCLE.BIN/
 # `src/content/docs/`, czyli cala tresc serwisu (nowe artykuly bylyby
 # po cichu pomijane przez git).
 .claude/
+.superpowers/
 /docs/
 /CLAUDE.md
 /TODO.md

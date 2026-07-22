@@ -43,12 +43,10 @@ Moja działalność ma dwa filary: edukację i konsulting.
 
 ### Edukacja i społeczność
 
-- **PrzewodnikAI.pl** - ten serwis. Kilkadziesiąt artykułów o AI, od podstaw po zaawansowany prompt engineering. Cały kurs jest darmowy
-- **Klub Sztucznej Inteligencji** - koordynuję społeczność zrzeszającą prawie 500 osób zainteresowanych AI, gdzie wymieniamy się wiedzą, narzędziami i doświadczeniami
+- **[PrzewodnikAI.pl](https://www.przewodnikai.pl)** - ten serwis. Kilkadziesiąt artykułów o AI, od podstaw po zaawansowany prompt engineering. Cały kurs jest darmowy
+- **Klub Sztucznej Inteligencji** - koordynuję społeczność zrzeszającą prawie 1000 osób zainteresowanych AI, gdzie wymieniamy się wiedzą, narzędziami i doświadczeniami
 - **[Kanał YouTube](https://www.youtube.com/@lukaszpodgorski)** - praktyczne poradniki o AI, recenzje narzędzi, tutoriale
 - **Szkolenia i warsztaty** - prowadzę szkolenia z AI dla firm, zespołów i organizacji
-
-<!-- TODO(Łukasz): dodaj link do Klubu Sztucznej Inteligencji i platformę (Discord/Facebook/Slack) albo usuń liczbę "prawie 500 osób" - dziś jest nieweryfikowalna -->
 
 ### Konsulting AI ([aitomate.pl](https://aitomate.pl))
 
@@ -93,3 +91,4 @@ Jeśli chcesz śledzić moje działania lub skontaktować się ze mną:
 - **[GitHub](https://github.com/lukaszpodgorski-pl)** - kod, w tym repozytorium tego przewodnika
 - **[lukaszpodgorski.pl](https://lukaszpodgorski.pl)** - strona osobista z portfolio i blogiem
 - **[aitomate.pl](https://aitomate.pl)** - konsulting AI dla firm
+- **[kursn8n.pl](https://kursn8n.pl)** - darmowy kurs N8N dla każdego
