@@ -18,6 +18,7 @@ export default defineConfig({
 				'Otwarta, społecznościowa baza wiedzy o sztucznej inteligencji po polsku. Kurs AI od podstaw — bez żargonu, dla każdego.',
 			components: {
 				Footer: './src/components/Footer.astro',
+				Head: './src/components/Head.astro',
 			},
 			// Polski jako root locale: polskie UI Starlight, <html lang="pl">,
 			// polski stemming Pagefind — bez prefiksu /pl/ w adresach.

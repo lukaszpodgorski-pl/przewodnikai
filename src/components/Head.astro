@@ -1,0 +1,65 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+import {
+	SITE_URL,
+	absoluteUrl,
+	buildArticle,
+	buildBreadcrumbs,
+	buildCollectionPage,
+	buildWebSite,
+	AUTHOR,
+	type ThingRef,
+} from '../lib/structured-data';
+
+const route = Astro.locals.starlightRoute;
+const data = route.entry.data;
+const pathname = Astro.url.pathname;
+
+const isHome = pathname === '/';
+// Rozroznienie po sciezce URL, nie po `data.template` - tylko `sciezki/index.mdx`
+// ma faktycznie ustawione `template: splash` we frontmatterze, pozostale 9 stron
+// sciezek nauki go nie ma. Harness (scripts/verify-geo.mjs) klasyfikuje strony
+// wylacznie po prefiksie `/sciezki/`, wiec robimy to samo, zeby CollectionPage
+// trafil na wszystkie 10 stron, a TechArticle na zaden z nich.
+const isSciezka = pathname.startsWith('/sciezki/');
+
+// Obraz OG: staly fallback. Zadanie 5 podmienia go na generowany per strona.
+const ogImage = `${SITE_URL}/og-default.png`;
+
+const blocks: object[] = [];
+
+if (isHome) {
+	blocks.push(buildWebSite());
+} else {
+	blocks.push(
+		isSciezka
+			? buildCollectionPage({ pathname, title: data.title, description: data.description })
+			: buildArticle({
+					pathname,
+					title: data.title,
+					description: data.description,
+					dateModified: route.lastUpdated,
+					educationalLevel: data.educationalLevel,
+					teaches: data.teaches,
+					about: data.about as ThingRef[] | undefined,
+					mentions: data.mentions as ThingRef[] | undefined,
+				}),
+	);
+	blocks.push(buildBreadcrumbs(pathname, data.title));
+}
+---
+
+<Default><slot /></Default>
+
+<meta name="author" content={AUTHOR.name} />
+<link rel="author" href={AUTHOR.url} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={`${data.title} - Przewodnik AI`} />
+<meta name="twitter:image" content={ogImage} />
+<link rel="alternate" type="text/plain" href={absoluteUrl('/llms.txt')} />
+
+{blocks.map((block) => (
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(block)} />
+))}
