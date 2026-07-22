@@ -11,15 +11,14 @@ export const NEWSLETTER = {
 	endpoint: 'https://lukaszpodgorski.pl/sendy/subscribe',
 
 	/**
-	 * UWAGA: WARTOSC ZASTEPCZA - DO PODMIANY PRZED WDROZENIEM.
+	 * ID listy w Sendy zalozonej dla przewodnikai.pl.
 	 *
-	 * To musi byc ID NOWEJ listy zalozonej w Sendy dla przewodnikai.pl.
-	 * NIE wolno uzyc tu ID listy kursu n8n (Si8V763FyPwNlZ36k4Wbr6Ww) - zapisy
-	 * czytelnikow przewodnika trafialyby wtedy na liste zupelnie innego
-	 * projektu, co jest zarowno bledem produktowym, jak i naruszeniem zgody:
-	 * czlowiek zapisuje sie na powiadomienia o przewodniku, nie o kursie n8n.
+	 * To MUSI byc lista tego serwisu. Lista kursu n8n ma ID
+	 * Si8V763FyPwNlZ36k4Wbr6Ww i uzycie jej tutaj byloby nie tylko bledem
+	 * produktowym, ale i naruszeniem zgody: czlowiek zapisuje sie na
+	 * powiadomienia o przewodniku, nie o kursie n8n.
 	 */
-	listId: 'PODMIEN-NA-ID-LISTY-PRZEWODNIKA',
+	listId: 'UNt6763763VoqjJOOBfI5Hz88w',
 
 	/**
 	 * Polityka prywatnosci wprost wymienia domene przewodnikai.pl obok
