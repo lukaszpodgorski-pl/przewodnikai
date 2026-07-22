@@ -43,8 +43,15 @@ export const { getStaticPaths, GET } = await OGImageRoute({
 		// empirycznie). Zamiast tego używamy jednego pełnego pliku Noto Sans
 		// (source Google Fonts, bez podziału na podzbiory), który pokrywa
 		// łacinę podstawową i rozszerzoną w jednym foncie - patrz
-		// src/pages/og/fonts/OFL.txt co do licencji.
-		fonts: ['./src/pages/og/fonts/noto-sans-full.ttf'],
+		// src/pages/og/_fonts/OFL.txt co do licencji. Plik jest
+		// zsubsetowany do faktycznie używanego zakresu znaków (podstawowa
+		// łacina + polskie diakrytyki + cyfry + interpunkcja) - font
+		// wciąż wariabilny (wght/wdth), więc dobór wagi Bold/Normal
+		// poniżej działa tak samo jak przed subsetowaniem. Katalog nosi
+		// prefiks podkreślenia (`_fonts`) - to udokumentowany mechanizm
+		// Astro, który bezwarunkowo wyklucza ścieżkę z routingu, więc
+		// plik nie może przypadkiem stać się trasą.
+		fonts: ['./src/pages/og/_fonts/noto-sans-full.ttf'],
 		font: {
 			title: { size: 64, weight: 'Bold', color: [255, 255, 255], lineHeight: 1.2 },
 			description: { size: 30, weight: 'Normal', color: [161, 161, 170], lineHeight: 1.4 },
