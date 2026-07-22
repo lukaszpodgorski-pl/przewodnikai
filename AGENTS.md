@@ -71,7 +71,9 @@ Jedna kolekcja `docs` (`src/content.config.ts`) ładowana przez `docsLoader()` S
 
 `starlight-llms-txt` generuje `llms.txt`. `public/robots.txt` świadomie wpuszcza wszystkie crawlery AI (GPTBot, ClaudeBot, PerplexityBot itd.).
 
-**Uwaga: push dowolnej gałęzi wdraża produkcję.** Cloudflare Workers Builds wdraża każdą wypchniętą gałąź prosto na żywą domenę - bez merge'a do `main` i bez zamknięcia pull requesta; ta konfiguracja siedzi w panelu Cloudflare, więc nie da się jej wyczytać z repo. Bramka PR nie chroni przed tym, bo `verify-geo.yml` odpala się na `pull_request`, czyli już po wdrożeniu. Docelowo warto zawęzić Workers Builds do gałęzi produkcyjnej w panelu Cloudflare.
+**Wdrożenie następuje przy merge'u do `main`.** Cloudflare Workers Builds ma ustawioną gałąź produkcyjną `main`, a buildy gałęzi nieprodukcyjnych są wyłączone - push gałęzi roboczej nie wdraża niczego na żywą domenę. Konfiguracja siedzi w panelu Cloudflare, więc nie da się jej wyczytać z repo; `wrangler.jsonc` opisuje tylko route'y.
+
+Dzięki temu bramka PR działa tak, jak powinna: `verify-geo.yml` odpala się na `pull_request`, czyli **przed** wdrożeniem. Gdyby ktoś kiedyś włączył buildy gałęzi nieprodukcyjnych, ta kolejność się odwróci i weryfikacja zacznie biegać po fakcie.
 
 ## Konwencje treści
 
