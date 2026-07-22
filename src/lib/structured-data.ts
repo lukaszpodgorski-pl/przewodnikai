@@ -2,8 +2,6 @@
  * Czyste funkcje budujące obiekty JSON-LD. Zero API Astro - dzięki temu
  * dają się wywołać i sprawdzić bez uruchamiania frameworka.
  */
-import { SECTION_LABELS } from '../config/sections';
-
 export const SITE_URL = 'https://przewodnikai.pl';
 export const SITE_NAME = 'Przewodnik AI';
 const LICENSE = 'https://creativecommons.org/licenses/by-sa/4.0/';
@@ -70,13 +68,17 @@ export function buildBreadcrumbs(pathname: string, title: string) {
 	const segments = pathname.split('/').filter(Boolean);
 	const items: Crumb[] = [{ name: 'Strona główna', item: absoluteUrl('/') }];
 
-	if (segments.length > 1) {
-		const [section] = segments;
-		const label = SECTION_LABELS[section];
-		// Sekcje nie mają własnych stron indeksowych (kolidują z 301 w _redirects),
-		// więc wpis sekcji jest nazwą bez `item` - dozwolone przez schema.org.
-		if (label) items.push({ name: label });
-		else if (section === 'sciezki') items.push({ name: 'Ścieżki nauki', item: absoluteUrl('/sciezki/') });
+	// Sekcje (podstawy, prompt-engineering, etyka itd.) celowo nie dostają
+	// własnego wpisu w breadcrumbie. Nie chodzi tylko o brak strony indeksowej
+	// (kolidowałaby z 301 w _redirects) - Google wymaga pola `item` we
+	// wszystkich elementach `ListItem` poza ostatnim, a dla sekcji nie ma
+	// żadnego realnego URL-a, na który można by to pole wskazać. Wpis bez
+	// `item` jest zgodny ze schema.org, ale Google i tak odrzuca cały
+	// `BreadcrumbList`, więc bezpieczniej pominąć sekcję niż emitować
+	// niekompletny element. Dla `sciezki/` ten problem nie występuje -
+	// `/sciezki/` to prawdziwa strona z własnym `item`, więc zostaje.
+	if (segments.length > 1 && segments[0] === 'sciezki') {
+		items.push({ name: 'Ścieżki nauki', item: absoluteUrl('/sciezki/') });
 	}
 
 	items.push({ name: title, item: absoluteUrl(pathname) });
