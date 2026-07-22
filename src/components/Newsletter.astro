@@ -45,14 +45,34 @@ const naglowek = wariant === 'sekcja' ? 'Nie przegap nowych materiałów' : 'Pow
 			<input type="text" name="hp" tabindex="-1" autocomplete="off" />
 		</div>
 
-		<input type="hidden" name="gdpr" value="1" />
+		{/*
+			`gdpr` MUSI byc niezaznaczonym checkboxem, nie ukrytym polem.
+
+			W instancji Sendy wlaczony jest tryb zgody RODO, wiec Sendy zapisuje
+			przy subskrybencie potwierdzenie zgody na podstawie tego pola. Ukryte
+			pole z wartoscia "1" oznaczaloby, ze system rejestruje zgode, ktorej
+			czlowiek nigdy nie udzielil - a motyw 32 RODO wprost stwierdza, ze
+			pola zaznaczone z gory nie stanowia zgody. Falszywy dowod zgody jest
+			gorszy niz jego brak, bo art. 7 ust. 1 wymaga, by zgode UMIEC WYKAZAC.
+
+			`required` przenosi wymuszenie na przegladarke, wiec formularz nie
+			wyjdzie bez swiadomego zaznaczenia.
+		*/}
+		<div class="zgoda-pole">
+			<input type="checkbox" name="gdpr" id={`gdpr-${wariant}`} value="true" required />
+			<label for={`gdpr-${wariant}`}>
+				Zgadzam się na otrzymywanie e-mailem powiadomień o nowych i zaktualizowanych materiałach w Przewodniku
+				AI.
+			</label>
+		</div>
+
 		<input type="hidden" name="list" value={NEWSLETTER.listId} />
 		<input type="hidden" name="subform" value="yes" />
 
 		<p class="zgoda">
-			Zapisując się, zgadzasz się na otrzymywanie powiadomień o nowych materiałach i akceptujesz{' '}
-			<a href={NEWSLETTER.privacyUrl} target="_blank" rel="noopener">Politykę prywatności</a>. Możesz zrezygnować
-			w każdej chwili - link do wypisania się jest w stopce każdej wiadomości.
+			Zgodę możesz wycofać w każdej chwili - klikając link w stopce dowolnej wiadomości albo pisząc na{' '}
+			<a href={`mailto:${NEWSLETTER.contactEmail}`}>{NEWSLETTER.contactEmail}</a>. Szczegóły przetwarzania danych
+			opisuje <a href={NEWSLETTER.privacyUrl} target="_blank" rel="noopener">Polityka prywatności</a>.
 		</p>
 	</form>
 </section>
@@ -133,6 +153,37 @@ const naglowek = wariant === 'sekcja' ? 'Nie przegap nowych materiałów' : 'Pow
 		background: var(--sl-color-accent-high);
 		border-color: var(--sl-color-accent-high);
 		color: var(--sl-color-black);
+	}
+
+	.zgoda-pole {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.5rem;
+		margin-top: 1rem;
+		text-align: start;
+	}
+
+	.zgoda-pole input {
+		/* Wyrownanie do pierwszej linii etykiety, nie do srodka bloku tekstu. */
+		margin-top: 0.15rem;
+		flex-shrink: 0;
+		width: 1rem;
+		height: 1rem;
+		accent-color: var(--sl-color-accent);
+	}
+
+	.zgoda-pole label {
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+		line-height: 1.5;
+		cursor: pointer;
+	}
+
+	/* W wariancie wysrodkowanym sam blok zgody zostaje wyrownany do lewej
+	   (czyta sie lepiej), ale jako calosc jest wysrodkowany wzgledem sekcji. */
+	.newsletter.sekcja .zgoda-pole {
+		max-width: 34rem;
+		margin-inline: auto;
 	}
 
 	.zgoda {

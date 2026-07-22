@@ -29,6 +29,21 @@ export const NEWSLETTER = {
 	 * (celu przetwarzania, podstawy prawnej, okresu przechowywania ani Sendy).
 	 */
 	privacyUrl: 'https://aitomate.pl/polityka-prywatnosci',
+
+	/**
+	 * Adres, pod ktorym mozna wycofac zgode inaczej niz linkiem w stopce maila.
+	 *
+	 * UWAGA - ROZBIEZNOSC DO ROZSTRZYGNIECIA: tekst zgody skonfigurowany
+	 * w Sendy wskazuje `kontakt@przewodnikai.pl`, natomiast
+	 * src/content/docs/zasoby/kontakt.md podaje `kontakt@lukaszpodgorski.pl`
+	 * i wlasnie ten adres zostal potwierdzony jako aktualny (2026-07-22).
+	 *
+	 * Uzywamy tu adresu potwierdzonego, bo art. 7 ust. 3 RODO wymaga, by
+	 * wycofanie zgody bylo rownie latwe jak jej udzielenie - wskazanie
+	 * nieistniejacej skrzynki zamykaloby te droge. Oba miejsca (Sendy i ten
+	 * plik) musza docelowo mowic to samo.
+	 */
+	contactEmail: 'kontakt@lukaszpodgorski.pl',
 } as const;
 
 /** Czy konfiguracja jest wciaz zastepcza. */
