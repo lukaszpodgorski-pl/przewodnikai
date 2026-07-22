@@ -1,8 +1,15 @@
 // Mapa URL -> data ostatniej zmiany pliku wg git, dla pola <lastmod> w sitemapie.
-// Cloudflare buduje projekt po swojej stronie i może klonować repo płytko
-// (--depth=1). Bez historii git zwracamy pustą mapę, a `serialize` pomija
-// <lastmod> całkowicie. Sygnał nieobecny jest uczciwy; sygnał mówiący, że
-// wszystkie 55 stron zmieniono w tej samej sekundzie - nie jest.
+// Cloudflare (i CI) mogą klonować repo płytko - nie tylko `--depth=1`, ale też
+// z umiarkowaną głębokością (np. `--depth=50`), gdzie commit dotykający
+// starszego pliku wypada poza pobrane okno. W takim wypadku `git log -1 --
+// <plik>` kończy się kodem 0 i pustym wyjściem, więc licznik commitów (`git
+// rev-list --count HEAD > 1`) niczego by nie wykrył - repo "ma historię", tylko
+// niekompletną dla części plików. Dlatego testem jest `git rev-parse
+// --is-shallow-repository`, które wykrywa płytki klon dowolnej głębokości.
+// Bez pełnej historii zwracamy pustą mapę, a `serialize` pomija <lastmod>
+// całkowicie. Sygnał nieobecny jest uczciwy; sygnał częściowy (część z 55
+// stron ma <lastmod>, część nie) - nie jest, a spec sitemap.xml wprost tego
+// zabrania.
 import { execFileSync } from 'node:child_process';
 import { readdirSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -27,22 +34,27 @@ function urlFor(file) {
 	return parts.length === 0 ? '/' : `/${parts.join('/')}/`;
 }
 
-function hasGitHistory() {
+function isShallowClone() {
 	try {
-		const depth = execFileSync('git', ['rev-list', '--count', 'HEAD'], {
+		const out = execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
 			encoding: 'utf8',
 			stdio: ['ignore', 'pipe', 'ignore'],
 		}).trim();
-		return Number(depth) > 1;
+		// Polecenie zwraca dosłowny łańcuch "true" albo "false" - wszystko inne
+		// (np. pusty ciąg) traktujemy ostrożnie, jako brak pewności co do pełnej
+		// historii, więc tak samo jak płytki klon.
+		return out !== 'false';
 	} catch {
-		return false;
+		// Brak gita albo katalog spoza repozytorium - jak dotychczas, brak
+		// pewności co do historii oznacza pominięcie <lastmod>.
+		return true;
 	}
 }
 
 export function lastModMap() {
 	const map = new Map();
-	if (!hasGitHistory()) {
-		console.warn('[sitemap] Brak historii git - pomijam <lastmod> w sitemapie.');
+	if (isShallowClone()) {
+		console.warn('[sitemap] Płytki klon (albo brak historii git) - pomijam <lastmod> w sitemapie.');
 		return map;
 	}
 	for (const file of walk(DOCS)) {
