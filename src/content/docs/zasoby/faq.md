@@ -35,6 +35,8 @@ faq:
     a: "Kluczowe zasady: bądź transparentny o użyciu AI, weryfikuj wyniki, chroń prywatność (nie wpisuj danych osobowych innych), szanuj prawa autorskie, zachowaj ludzki osąd w kluczowych decyzjach."
   - q: Czy AI może mieć świadomość?
     a: "Na tę chwilę nie. Obecne systemy AI to wyrafinowane narzędzia statystyczne bez subiektywnych doświadczeń, emocji czy samoświadomości. Czy kiedyś będzie inaczej? Tego nie wiemy - to bardziej pytanie filozoficzne niż techniczne."
+  - q: Czy Przewodnik AI zbiera dane o mnie?
+    a: "Nie ma tu logowania, kont ani ciasteczek śledzących, więc nie wyświetlamy banera zgody - nie ma na co się zgadzać. Ruch mierzy Cloudflare Web Analytics, które zlicza wyświetlenia stron bez zapisywania czegokolwiek na Twoim urządzeniu i bez śledzenia Cię między serwisami."
 ---
 
 Zebrałem tutaj pytania, które najczęściej dostaję od czytelników tego przewodnika. Jeśli dopiero zaczynasz przygodę z AI, prawdopodobnie znajdziesz tu odpowiedź na swoje wątpliwości. A jeśli nie - [napisz do mnie](/zasoby/kontakt/), chętnie odpowiem.
@@ -132,6 +134,18 @@ Podstawowe korzystanie jest darmowe. ChatGPT, Claude i Gemini mają darmowe plan
 Płatne plany (zwykle ok. 80-100 zł miesięcznie) dają dostęp do nowszych modeli, szybsze odpowiedzi i wyższe limity. Warto rozważyć je, gdy AI stanie się stałym elementem Twojej pracy.
 
 Porównanie narzędzi i ich planów cenowych znajdziesz w rozdziale o [chatbotach AI](/narzedzia/chatboty/).
+
+## Czy Przewodnik AI zbiera dane o mnie?
+
+Nie ma tu logowania, kont ani ciasteczek śledzących. Dlatego nie zobaczysz banera zgody na ciasteczka - nie ma na co się zgadzać.
+
+Mierzę natomiast ruch, żeby wiedzieć, które rozdziały są czytane, a które nikogo nie interesują. Służy do tego Cloudflare Web Analytics, narzędzie zaprojektowane odwrotnie niż typowa analityka: zlicza wyświetlenia stron, ale **nie zapisuje niczego na Twoim urządzeniu** - żadnych ciasteczek, żadnego `localStorage`, żadnego odcisku przeglądarki. Nie buduje Twojego profilu i nie śledzi Cię między serwisami.
+
+W praktyce widzę zbiorcze liczby: ile osób odwiedziło dany rozdział, z jakiego kraju przyszły i przez jaką wyszukiwarkę. Nie widzę, kim jesteś ani co czytałeś wcześniej.
+
+:::note[Dlaczego o tym piszę]
+Ten przewodnik ma cały rozdział o [prywatności i danych w AI](/etyka/prywatnosc/), w którym namawiam Cię do sprawdzania, co narzędzia robią z Twoimi danymi. Byłoby niepoważnie wymagać tego od innych, a samemu o tym milczeć.
+:::
 
 ---
 

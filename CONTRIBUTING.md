@@ -8,7 +8,9 @@ Dziękujemy, że chcesz pomóc! Przewodnik AI to **żywe wiki** - każda strona 
 2. GitHub otworzy edytor tekstu. Przy pierwszej edycji zaproponuje utworzenie kopii projektu (fork) - kliknij **"Fork this repository"**.
 3. Wprowadź poprawki (treść jest w formacie Markdown - zwykły tekst z prostymi znacznikami).
 4. Na dole kliknij **"Propose changes"**, a następnie **"Create pull request"**.
-5. Gotowe! Twoja propozycja trafi do recenzji. W komentarzu pod pull requestem pojawi się **link do podglądu** - wersji strony z Twoimi zmianami (Cloudflare Pages buduje go automatycznie).
+5. Gotowe! Twoja propozycja trafi do recenzji.
+
+Pod pull requestem zobaczysz automatyczne kontrole (formatowanie Markdown, linki, rozmiary mediów, poprawność zbudowanej strony). Nie ma natomiast podglądu na żywo - serwis buduje się wyłącznie z gałęzi `main`, więc zmiany zobaczysz po scaleniu. Jeśli chcesz obejrzeć je wcześniej u siebie, wystarczy `npm install` i `npm run dev`.
 
 Drobne literówki i błędy możesz zgłaszać od razu jako pull request - bez zakładania issue.
 
@@ -36,8 +38,8 @@ Nie czujesz się na siłach, by edytować samodzielnie? Załóż [issue](https:/
 
 ## Proces recenzji
 
-- Każdy pull request wymaga akceptacji recenzenta (code ownera) przed scaleniem.
-- CI automatycznie sprawdza formatowanie Markdown, działanie linków i rozmiary mediów.
+- Każdy pull request wymaga akceptacji recenzenta (code ownera) przed scaleniem - wymusza to ochrona gałęzi `main`, nie tylko dobra wola.
+- CI automatycznie sprawdza formatowanie Markdown, działanie linków zewnętrznych, rozmiary mediów oraz to, czy strona buduje się poprawnie razem z danymi strukturalnymi (`npm run verify:geo`). Zielony wynik tej ostatniej kontroli jest wymagany do scalenia.
 - Mergujemy pierwszy poprawny PR. Jeśli poprawki są potrzebne, dostaniesz życzliwy komentarz - nie zniechęcaj się!
 
 ## Licencja wkładu
