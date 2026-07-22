@@ -45,6 +45,8 @@ export default defineConfig({
 				baseUrl: `${GITHUB_REPO}/edit/main/`,
 			},
 			lastUpdated: true,
+			// Dokłada przycisk powrotu do strony 404 - patrz komentarz w tym pliku.
+			routeMiddleware: './src/starlightRouteData.ts',
 			plugins: [starlightLlmsTxt()],
 			sidebar: SECTIONS.map(({ slug, label }) => ({
 				label,
