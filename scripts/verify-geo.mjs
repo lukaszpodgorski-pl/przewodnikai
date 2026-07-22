@@ -5,6 +5,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
 const DIST = 'dist';
+const SRC_DOCS = join('src', 'content', 'docs');
 const results = [];
 
 function check(name, fn) {
@@ -35,6 +36,45 @@ function collectionPages() {
 		}
 	})(DIST);
 	return out;
+}
+
+/**
+ * Wszystkie pliki .md/.mdx w katalogu treści, które faktycznie staną się
+ * stroną - źródło prawdy dla liczby stron w dist. Pliki i foldery z
+ * przedrostkiem podkreślenia (`_`) pomijamy: to udokumentowana konwencja
+ * Astro bezwarunkowo wykluczająca ścieżkę z routingu i z kolekcji treści
+ * (ten sam mechanizm, co `src/pages/og/_fonts` w astro.config.mjs) - bez
+ * tego wyjątku dodanie roboczego/szkicowego pliku z tym przedrostkiem
+ * fałszywie zgłaszałoby rozjazd źródło/dist, mimo że build celowo go pomija.
+ */
+function sourceDocFiles() {
+	const out = [];
+	(function walk(dir) {
+		for (const name of readdirSync(dir)) {
+			if (name.startsWith('_')) continue;
+			const full = join(dir, name);
+			if (statSync(full).isDirectory()) {
+				walk(full);
+			} else if (/\.(md|mdx)$/.test(name)) {
+				out.push(full);
+			}
+		}
+	})(SRC_DOCS);
+	return out;
+}
+
+/** Wyciąga blok frontmatteru (między parą `---`) z treści pliku źródłowego. */
+function frontmatterOf(content) {
+	const m = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+	return m ? m[1] : '';
+}
+
+/**
+ * Czy plik ma we frontmatterze pole `faq:` - proste dopasowanie tekstowe
+ * (klucz na początku linii), bez parsera YAML jako dodatkowej zależności.
+ */
+function hasFaqField(content) {
+	return /^faq:/m.test(frontmatterOf(content));
 }
 
 /** Wyciaga wszystkie bloki JSON-LD ze strony i parsuje je. */
@@ -70,15 +110,37 @@ const articles = pageData.filter((p) => p.url !== '/' && !p.url.startsWith('/sci
 const sciezki = pageData.filter((p) => p.url.startsWith('/sciezki/'));
 const home = pageData.filter((p) => p.url === '/');
 
+// Stan źródeł (src/content/docs/) - punkt odniesienia dla asercji relacyjnych
+// poniżej. `index.mdx` w katalogu głównym to strona główna; pliki pod
+// `sciezki/` (w tym jej własny `index.mdx`) to ścieżki nauki; reszta to
+// artykuły.
+const sourceFiles = sourceDocFiles();
+const sourceRel = sourceFiles.map((f) => relative(SRC_DOCS, f).split(sep).join('/'));
+const sourceHome = sourceRel.filter((r) => r === 'index.mdx');
+const sourceSciezki = sourceRel.filter((r) => r.startsWith('sciezki/'));
+const sourceArticles = sourceRel.filter((r) => r !== 'index.mdx' && !r.startsWith('sciezki/'));
+
 // --- Task 1: harness widzi to, co powinien ---
-check('kolekcja liczy 55 stron', () => {
-	assert(pageData.length === 55, `oczekiwano 55, jest ${pageData.length}`);
-	return `${pageData.length} stron`;
+check('liczba stron w dist odpowiada liczbie plików źródłowych w treści', () => {
+	assert(
+		pageData.length === sourceFiles.length,
+		`źródło: ${sourceFiles.length} plików .md/.mdx, dist: ${pageData.length} stron`,
+	);
+	return `${pageData.length} stron (źródło: ${sourceFiles.length} plików)`;
 });
-check('podzial 44 artykuly / 10 sciezek / 1 strona glowna', () => {
-	assert(articles.length === 44, `artykuly: oczekiwano 44, jest ${articles.length}`);
-	assert(sciezki.length === 10, `sciezki: oczekiwano 10, jest ${sciezki.length}`);
-	assert(home.length === 1, `strona glowna: oczekiwano 1, jest ${home.length}`);
+check('podział na artykuły / ścieżki / stronę główną zgodny ze źródłem', () => {
+	assert(
+		articles.length === sourceArticles.length,
+		`artykuły: źródło ${sourceArticles.length}, dist ${articles.length}`,
+	);
+	assert(
+		sciezki.length === sourceSciezki.length,
+		`ścieżki: źródło ${sourceSciezki.length}, dist ${sciezki.length}`,
+	);
+	assert(
+		home.length === sourceHome.length,
+		`strona główna: źródło ${sourceHome.length}, dist ${home.length}`,
+	);
 	return `${articles.length}/${sciezki.length}/${home.length}`;
 });
 
@@ -88,20 +150,20 @@ check('kazda strona ma blok JSON-LD', () => {
 	assert(missing.length === 0, `bez JSON-LD: ${missing.map((p) => p.url).join(', ')}`);
 	return `${pageData.length}/${pageData.length}`;
 });
-check('44 artykuly maja TechArticle', () => {
+check('każdy artykuł ma TechArticle', () => {
 	const bad = articles.filter((p) => !typesIn(p.html).has('TechArticle'));
 	assert(bad.length === 0, `bez TechArticle: ${bad.map((p) => p.url).join(', ')}`);
-	return '44/44';
+	return `${articles.length}/${articles.length}`;
 });
 check('zadna sciezka nie ma TechArticle', () => {
 	const bad = sciezki.filter((p) => typesIn(p.html).has('TechArticle'));
 	assert(bad.length === 0, `blednie oznaczone: ${bad.map((p) => p.url).join(', ')}`);
-	return '0/10';
+	return `0/${sciezki.length}`;
 });
-check('10 sciezek ma CollectionPage', () => {
+check('każda ścieżka ma CollectionPage', () => {
 	const bad = sciezki.filter((p) => !typesIn(p.html).has('CollectionPage'));
 	assert(bad.length === 0, `bez CollectionPage: ${bad.map((p) => p.url).join(', ')}`);
-	return '10/10';
+	return `${sciezki.length}/${sciezki.length}`;
 });
 check('strona glowna ma WebSite i Person', () => {
 	const t = typesIn(home[0].html);
@@ -123,10 +185,15 @@ check('kazda strona ma og:image i twitter:image', () => {
 });
 
 // --- Task 4: FAQ ---
-check('30 stron ma blok FAQPage', () => {
+const sourceFaqCount = sourceFiles.filter((f) => hasFaqField(readFileSync(f, 'utf8'))).length;
+
+check('liczba stron z blokiem FAQPage odpowiada liczbie plików z polem faq: w frontmatterze', () => {
 	const withFaq = pageData.filter((p) => typesIn(p.html).has('FAQPage'));
-	assert(withFaq.length === 30, `oczekiwano 30, jest ${withFaq.length}`);
-	return `${withFaq.length}/30`;
+	assert(
+		withFaq.length === sourceFaqCount,
+		`źródło: ${sourceFaqCount} plików z faq:, dist: ${withFaq.length} bloków FAQPage`,
+	);
+	return `${withFaq.length}/${sourceFaqCount}`;
 });
 
 // Jedyna strona z jawnym wyjątkiem: pole `faqHidden` w jej frontmatterze
@@ -140,14 +207,10 @@ check('30 stron ma blok FAQPage', () => {
 const FAQ_HIDDEN_URL = '/zasoby/faq/';
 
 check('FAQPage zawsze towarzyszy widocznej sekcji (poza jawnym wyjątkiem faqHidden)', () => {
-	const bad = pageData.filter(
-		(p) =>
-			p.url !== FAQ_HIDDEN_URL &&
-			typesIn(p.html).has('FAQPage') &&
-			!p.html.includes('Częste pytania')
-	);
+	const withFaq = pageData.filter((p) => typesIn(p.html).has('FAQPage'));
+	const bad = withFaq.filter((p) => p.url !== FAQ_HIDDEN_URL && !p.html.includes('Częste pytania'));
 	assert(bad.length === 0, `JSON-LD bez widocznej tresci: ${bad.map((p) => p.url).join(', ')}`);
-	return `29/29 (jedyny wyjątek: ${FAQ_HIDDEN_URL})`;
+	return `${withFaq.length - 1}/${withFaq.length - 1} (jedyny wyjątek: ${FAQ_HIDDEN_URL})`;
 });
 check(`faqHidden działa na ${FAQ_HIDDEN_URL}: FAQPage jest, wygenerowana sekcja - nie`, () => {
 	const page = pageData.find((p) => p.url === FAQ_HIDDEN_URL);
@@ -181,16 +244,19 @@ check('obraz OG istnieje dla kazdej strony', () => {
 });
 
 // --- Task 6: sitemap ---
-check('sitemap zawiera 55 URL-i', () => {
+check('sitemap zawiera tyle URL-i, ile stron w dist', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	const n = (xml.match(/<loc>/g) || []).length;
-	assert(n === 55, `oczekiwano 55, jest ${n}`);
+	assert(n === pageData.length, `oczekiwano ${pageData.length}, jest ${n}`);
 	return `${n} URL-i`;
 });
 check('sitemap ma lastmod albo potwierdzony plytki klon', () => {
 	const xml = readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8');
 	const n = (xml.match(/<lastmod>/g) || []).length;
-	assert(n === 55 || n === 0, `czesciowy lastmod (${n}/55) - mapa git jest niespojna`);
+	assert(
+		n === pageData.length || n === 0,
+		`czesciowy lastmod (${n}/${pageData.length}) - mapa git jest niespojna`,
+	);
 	return n === 0 ? 'pominiete (brak historii git)' : `${n} wpisow`;
 });
 check('sitemap rozroznia priorytety', () => {
