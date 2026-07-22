@@ -16,8 +16,16 @@ jobs:
       - name: lychee — weryfikacja linków
         uses: lycheeverse/lychee-action@v2
         with:
+          # Linki zaczynające się od "/" to odnośniki wewnętrzne (root-relative).
+          # --root-dir tu nie pomoże: Astro (trailingSlash: 'always') mapuje np.
+          # /podstawy/czym-jest-ai/ na plik czym-jest-ai.md, a nie na katalog
+          # czym-jest-ai/, więc lychee i tak by ich nie rozwiązał. Linki wewnętrzne
+          # waliduje już "npm run build" (Astro wywala build przy złamanym linku
+          # wewnętrznym) - lychee ma sprawdzać wyłącznie linki zewnętrzne.
+          # Kod 999 to celowa blokada LinkedIn wobec botów - link jest sprawny.
           args: >-
             --no-progress
-            --accept 200,206,403,429
+            --accept 200,206,403,429,999
+            --exclude '^/'
             'src/content/**/*.md' 'src/content/**/*.mdx' '*.md'
           fail: true
