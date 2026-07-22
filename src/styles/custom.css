@@ -33,6 +33,31 @@
 	position: relative;
 }
 
+/*
+ * Hero bez obrazka: wysrodkuj zamiast zostawiac pusta kolumne.
+ *
+ * Powyzej 50rem Starlight przestawia hero na `grid-template-columns: 7fr 4fr`
+ * i wyrownuje tekst do lewej - kolumna 4fr jest tam przeznaczona na obrazek.
+ * Nasze hero obrazka nie ma, wiec ta kolumna zostawala pusta, a tresc
+ * niepotrzebnie lgnela do lewej krawedzi. Gdy kiedys dojdzie `hero.image`,
+ * warunek :has() przestanie pasowac i wroci oryginalny uklad dwukolumnowy.
+ */
+@media (min-width: 50rem) {
+	.hero:not(:has(> img, > .hero-html)) {
+		grid-template-columns: 100%;
+		/* Domyslne 10vmin robi wyrwe miedzy CTA a trescia ponizej. */
+		padding-block: clamp(2rem, calc(1rem + 6vmin), 6rem);
+	}
+
+	.hero:not(:has(> img, > .hero-html)) .stack {
+		text-align: center;
+	}
+
+	.hero:not(:has(> img, > .hero-html)) .copy {
+		align-items: center;
+	}
+}
+
 [data-has-hero] .hero::before {
 	content: '';
 	position: absolute;
@@ -73,7 +98,8 @@
 }
 
 /* --- Rytm pionowy na stronach splash --- */
-[data-has-hero] .sl-markdown-content h2 {
+/* Bez centrowania: naglowki zostaja przy lewej, zgodnie z akapitami pod nimi.
+   Wysrodkowany jest tylko blok hero z paskiem liczb. */
+[data-has-hero] .sl-markdown-content :is(h2, .sl-heading-wrapper) {
 	margin-top: 3rem;
-	text-align: center;
 }
