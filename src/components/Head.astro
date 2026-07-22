@@ -25,21 +25,31 @@ const isHome = pathname === '/';
 // trafił na wszystkie 10 stron, a TechArticle na żaden z nich.
 const isSciezka = pathname.startsWith('/sciezki/');
 
-// Rozpoznanie artykułu jako allowlista oparta o rejestr sekcji (SECTION_LABELS),
+// Rozpoznanie strony jako allowlista oparta o rejestr sekcji (SECTION_LABELS),
 // nie jako negacja - strona spoza zarejestrowanej sekcji (np. 404) nie dostaje
 // żadnego bloku JSON-LD, co dla danych strukturalnych jest bezpieczniejszym
 // domyślnym zachowaniem. Nowa sekcja dopisana do src/config/sections.ts
 // klasyfikuje się tu automatycznie.
-const section = pathname.split('/').filter(Boolean)[0];
-const isArticle = section !== undefined && SECTION_LABELS[section] !== undefined;
+//
+// Liczba segmentów rozdziela stronę zbiorczą sekcji od artykułu w środku:
+// `/podstawy/` (jeden segment) to strona sekcji, `/podstawy/wstep/` (dwa) to
+// artykuł. Bez tego rozróżnienia strona sekcji dostałaby TechArticle.
+const segments = pathname.split('/').filter(Boolean);
+const section = segments[0];
+const wSekcji = section !== undefined && SECTION_LABELS[section] !== undefined;
+const isSekcja = wSekcji && segments.length === 1;
+const isArticle = wSekcji && segments.length > 1;
 
 // Obraz generowany per strona przez src/pages/og/[...route].ts, ale ten
 // endpoint tworzy pliki wyłącznie z wpisów kolekcji `docs` - więc obrazu per
-// strona dostają tylko strony sklasyfikowane jako artykuł lub ścieżka
-// (isArticle/isSciezka, patrz wyżej). Wszystko poza tym - strona główna
-// (puste `id` w kolekcji) i strona 404 (w ogóle nie jest wpisem kolekcji) -
-// dostaje stały obraz domyślny, bo `/og/404.png` nigdy by nie powstał.
-const ogImage = isArticle || isSciezka
+// strona dostają tylko strony sklasyfikowane jako artykuł, sekcja lub ścieżka
+// (isArticle/isSekcja/isSciezka, patrz wyżej). Wszystko poza tym - strona
+// główna (puste `id` w kolekcji) i strona 404 (w ogóle nie jest wpisem
+// kolekcji) - dostaje stały obraz domyślny, bo `/og/404.png` nigdy by nie
+// powstał. Strony zbiorcze (`<sekcja>/index.mdx`) mieszczą się w tej regule:
+// Astro obcina `/index` z identyfikatora wpisu zagnieżdżonego, więc `route.id`
+// to `podstawy`, a nie `podstawy/index` - tak samo działa `sciezki/index.mdx`.
+const ogImage = isArticle || isSekcja || isSciezka
 	? `${SITE_URL}/og/${route.id}.png`
 	: `${SITE_URL}/og-default.png`;
 
@@ -47,7 +57,9 @@ const blocks: object[] = [];
 
 if (isHome) {
 	blocks.push(buildWebSite());
-} else if (isSciezka) {
+} else if (isSciezka || isSekcja) {
+	// Strona zbiorcza - spis artykułów sekcji albo ścieżek nauki. CollectionPage,
+	// nie TechArticle: nie jest jednostką dydaktyczną, tylko wejściem do zbioru.
 	blocks.push(
 		buildCollectionPage({ pathname, title: data.title, description: data.description, image: ogImage }),
 	);

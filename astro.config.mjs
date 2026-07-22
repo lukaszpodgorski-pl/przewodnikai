@@ -18,6 +18,9 @@ const NOINDEX_PREFIX = '/newsletter/';
 // Mapa liczona raz, na starcie builda - nie per URL.
 const LAST_MOD = lastModMap();
 
+// Adresy stron zbiorczych sekcji - własny próg priorytetu w sitemapie.
+const SECTION_PATHS = new Set(SECTIONS.map(({ slug }) => `/${slug}/`));
+
 // https://astro.build/config
 export default defineConfig({
 	// `site` jest wymagane m.in. dla sitemapy i kanonicznych URL-i
@@ -50,7 +53,13 @@ export default defineConfig({
 			plugins: [starlightLlmsTxt()],
 			sidebar: SECTIONS.map(({ slug, label }) => ({
 				label,
-				items: [{ autogenerate: { directory: slug } }],
+				items: [
+					// Strona zbiorcza sekcji, wpisana jawnie. `autogenerate` jej nie
+					// obejmuje, bo `<sekcja>/index.mdx` ma `sidebar.hidden: true` -
+					// inaczej wpis pojawiłby się w grupie dwa razy.
+					{ label: 'Przegląd', link: `/${slug}/` },
+					{ autogenerate: { directory: slug } },
+				],
 			})),
 		}),
 		sitemap({
@@ -66,7 +75,12 @@ export default defineConfig({
 				if (pathname.startsWith(NOINDEX_PREFIX)) return undefined;
 				const lastmod = LAST_MOD.get(pathname);
 				if (lastmod) item.lastmod = lastmod;
+				// Progi odzwierciedlają hierarchię: strona główna, strony zbiorcze
+				// sekcji, artykuły, ścieżki nauki. Google ignoruje `priority`, więc
+				// jest to porządek dla nas i dla pozostałych wyszukiwarek.
+				// Uwaga: scripts/verify-geo.mjs sprawdza obecność każdego progu.
 				if (pathname === '/') item.priority = 1.0;
+				else if (SECTION_PATHS.has(pathname)) item.priority = 0.9;
 				else if (pathname.startsWith('/sciezki/')) item.priority = 0.5;
 				else item.priority = 0.8;
 				return item;

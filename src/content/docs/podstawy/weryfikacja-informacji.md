@@ -286,5 +286,5 @@ Pamiętaj, że umiejętność weryfikacji informacji to nie tylko kluczowa kompe
 - Jak stosować metodę SIFT (Stop, Investigate, Find, Trace) do sprawdzania informacji od AI
 - Jak rozpoznawać "AI slop" i czerwone flagi oraz jakich narzędzi używać do weryfikacji (Demagog, Google Scholar, GUS)
 
-**Następny krok:** [AI, ML, Sieci Neuronowe](/jak-dziala-ai/ai-ml-sieci-neuronowe/) - teraz gdy znasz podstawy i potrafisz weryfikować informacje, czas zrozumieć, jak AI faktycznie działa od środka.
+**Następny krok:** [Jak działa AI](/jak-dziala-ai/) - teraz gdy znasz podstawy i potrafisz weryfikować informacje, czas zrozumieć, jak AI faktycznie działa od środka.
 :::

@@ -1,0 +1,108 @@
+---
+title: Jak działa AI
+description: Mechanika sztucznej inteligencji wytłumaczona bez matematyki. Dziesięć artykułów o modelach językowych, uczeniu maszynowym, tokenach i embeddingach.
+sidebar:
+  hidden: true
+about:
+  - name: Uczenie maszynowe
+    sameAs: https://pl.wikipedia.org/wiki/Uczenie_maszynowe
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+  - name: Sztuczna sieć neuronowa
+    sameAs: https://pl.wikipedia.org/wiki/Sztuczna_sie%C4%87_neuronowa
+mentions:
+  - name: Transformer
+    sameAs: https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)
+  - name: Word embedding
+    sameAs: https://en.wikipedia.org/wiki/Word_embedding
+  - name: Tokenizacja
+    sameAs: https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization
+faq:
+  - q: Czy muszę rozumieć, jak AI działa, żeby z niej korzystać?
+    a: Nie musisz, tak jak nie musisz rozumieć silnika, żeby prowadzić samochód. Ale kierowca, który wie, co się dzieje pod maską, szybciej rozpoznaje, że coś jest nie tak. Tutaj chodzi dokładnie o to - zrozumienie mechaniki pozwala przewidzieć, kiedy AI się pomyli i dlaczego.
+  - q: Czy w tej sekcji jest matematyka?
+    a: Nie ma wzorów. Pojęcia takie jak embedding czy funkcja straty tłumaczę przez analogie i przykłady, nie przez notację. Jeśli chcesz wejść głębiej w matematykę, w sekcji Zasoby znajdziesz odesłania do materiałów, które to robią.
+  - q: Po co mi wiedza o tokenach i oknie kontekstowym?
+    a: Bo to od nich zależy, ile tekstu model jest w stanie wziąć pod uwagę naraz i ile zapłacisz przy korzystaniu z API. To także najczęstsza przyczyna sytuacji, w której AI "zapomina", co napisałeś na początku długiej rozmowy.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Czego się tu nauczysz
+
+Po sekcji [Podstawy](/podstawy/) wiesz już, czym AI jest i potrafisz z nią rozmawiać. Teraz zaglądamy pod maskę. Nie po to, żeby zrobić z Ciebie inżyniera - po to, żebyś przestał traktować sztuczną inteligencję jak czarną skrzynkę, która czasem daje dobre odpowiedzi, a czasem dziwne, i nie wiadomo dlaczego.
+
+Zaczynamy od uporządkowania trzech pojęć, które w rozmowach potocznych używane są zamiennie, a znaczą co innego: sztuczna inteligencja, uczenie maszynowe i sieci neuronowe. Potem przechodzimy do tego, jak model w ogóle się uczy - skąd bierze wiedzę i co to znaczy, że "został wytrenowany". Następnie zajmujemy się modelami językowymi, czyli tą rodziną AI, z którą masz do czynienia, gdy piszesz do chatbota.
+
+Dalej robi się konkretniej. Tokeny i okno kontekstowe wyjaśniają, dlaczego model gubi wątek w długiej rozmowie. Embeddingi pokazują, w jaki sposób maszyna reprezentuje znaczenie słów. Parametry - temperature, top-p i reszta - to pokrętła, którymi da się sterować zachowaniem modelu. Na koniec cofamy się o krok: dlaczego ten boom nastąpił akurat teraz i jak wygląda mapa całego krajobrazu systemów AI.
+
+## Dla kogo to jest
+
+Dla osoby, która korzysta z AI i zaczyna zadawać pytania "dlaczego". Nadal nie potrzebujesz wykształcenia technicznego, ale ta sekcja jest gęstsza od poprzedniej i lepiej czyta się ją, mając za sobą pierwsze rozmowy z chatbotem.
+
+## W jakiej kolejności czytać
+
+Pierwsze cztery artykuły tworzą ciąg - warto trzymać kolejność. Dalsze są w dużej mierze niezależne, więc jeśli interesują Cię akurat koszty i limity, możesz przeskoczyć wprost do tokenów. "Mapa Systemów AI" na końcu podsumowuje całość i dobrze działa też jako materiał do wracania.
+
+## Czego tu nie ma
+
+Nie ma tu instrukcji obsługi konkretnych narzędzi ani technik pisania promptów. Tłumaczymy mechanikę; zastosowania czekają w [Prompt Engineering](/prompt-engineering/) i [Narzędziach AI](/narzedzia/).
+
+## Artykuły w tej sekcji
+
+<CardGrid>
+	<LinkCard
+		title="AI, ML, Sieci Neuronowe"
+		description="Trzy pojęcia mylone najczęściej. Co w czym się zawiera i czym się różnią."
+		href="/jak-dziala-ai/ai-ml-sieci-neuronowe/"
+	/>
+	<LinkCard
+		title="Jak uczą się modele AI"
+		description="Uczenie nadzorowane, nienadzorowane i przez wzmacnianie - od podstaw."
+		href="/jak-dziala-ai/jak-ucza-sie-modele/"
+	/>
+	<LinkCard
+		title="Typy AI"
+		description="Narrow AI, General AI i superinteligencja. Gdzie naprawdę jesteśmy dzisiaj."
+		href="/jak-dziala-ai/typy-ai/"
+	/>
+	<LinkCard
+		title="Modele językowe LLM"
+		description="GPT, Claude, Gemini i architektura Transformer stojąca za nimi wszystkimi."
+		href="/jak-dziala-ai/modele-jezykowe/"
+	/>
+	<LinkCard
+		title="Tokeny i okno kontekstowe"
+		description="Dlaczego model gubi wątek, ile to kosztuje i czemu polski jest droższy od angielskiego."
+		href="/jak-dziala-ai/tokeny-i-kontekst/"
+	/>
+	<LinkCard
+		title="Embedding"
+		description="Jak maszyna reprezentuje znaczenie słów i wyszukuje po sensie, a nie po literach."
+		href="/jak-dziala-ai/embedding/"
+	/>
+	<LinkCard
+		title="Parametry modeli AI"
+		description="Temperature, top-p, max tokens - pokrętła, którymi sterujesz zachowaniem modelu."
+		href="/jak-dziala-ai/parametry-modeli/"
+	/>
+	<LinkCard
+		title="Rozumienie danych dla nie-programistów"
+		description="Data Fluency - praca z danymi bez kodowania."
+		href="/jak-dziala-ai/dane-dla-poczatkujacych/"
+	/>
+	<LinkCard
+		title="Dlaczego AI teraz?"
+		description="Historia boomu: od pierwszych sieci neuronowych po ChatGPT."
+		href="/jak-dziala-ai/boom-ai/"
+	/>
+	<LinkCard
+		title="Mapa Systemów AI"
+		description="Od LLM przez agentów po systemy multi-agent. Podsumowanie całej sekcji."
+		href="/jak-dziala-ai/mapa-ai/"
+	/>
+</CardGrid>
+
+:::note[Następny krok]
+**Zacznij tutaj:** [AI, ML, Sieci Neuronowe](/jak-dziala-ai/ai-ml-sieci-neuronowe/) - uporządkujesz trzy pojęcia, które w rozmowach o AI mylone są najczęściej.
+:::

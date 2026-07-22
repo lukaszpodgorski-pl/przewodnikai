@@ -126,5 +126,5 @@ Przyszłość AI jest niepewna i nie zamierzam udawać, że wiem, jak potoczy si
 - Czym jest AGI, dlaczego prognozy ekspertów są tak rozbieżne (2027-2050+) i jakie ryzyka się z tym wiążą
 - Jak się przygotować na przyszłość: bądź na bieżąco, ucz się ciągle, rozwijaj ludzkie umiejętności i buduj reputację
 
-**Następny krok:** [Słownik pojęć AI](/zasoby/slownik-pojec/) - znajdziesz tam wyjaśnienia wszystkich kluczowych terminów, które pojawiały się w tym kursie.
+**Następny krok:** [Zasoby](/zasoby/) - znajdziesz tam słownik pojęć, odpowiedzi na częste pytania i materiały do dalszej nauki.
 :::

@@ -1,0 +1,105 @@
+---
+title: Prompt Engineering
+description: Jak pisać polecenia, które AI rozumie. Dziewięć artykułów od podstaw promptowania po zaawansowane techniki rozumowania i automatyzację.
+sidebar:
+  hidden: true
+about:
+  - name: Prompt engineering
+    sameAs: https://en.wikipedia.org/wiki/Prompt_engineering
+  - name: Przetwarzanie języka naturalnego
+    sameAs: https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego
+mentions:
+  - name: Few-shot learning
+    sameAs: https://en.wikipedia.org/wiki/Few-shot_learning
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+faq:
+  - q: Czym właściwie jest prompt engineering?
+    a: To umiejętność formułowania poleceń dla modelu AI tak, żeby odpowiadał tym, czego naprawdę potrzebujesz. Nazwa brzmi technicznie, ale w praktyce jest bliżej precyzyjnego pisania niż programowania - chodzi o jasne określenie zadania, kontekstu, formatu odpowiedzi i roli, w jakiej model ma wystąpić.
+  - q: Czy prompt engineering ma sens, skoro modele są coraz lepsze?
+    a: Modele rzeczywiście coraz lepiej radzą sobie z niedopowiedzeniami, ale to nie znosi problemu. Jeśli sam nie wiesz dokładnie, czego chcesz, żaden model tego za Ciebie nie ustali. Umiejętność precyzyjnego opisania zadania zostaje przydatna niezależnie od wersji modelu.
+  - q: Czy techniki z tej sekcji działają w każdym chatbocie?
+    a: 'Podstawy - rola, kontekst, przykłady, format odpowiedzi - działają wszędzie: w ChatGPT, Claude, Gemini i pozostałych. Bardziej zaawansowane techniki rozumowania sprawdzają się różnie w zależności od modelu, dlatego przy każdej zaznaczam, gdzie ma sens ją stosować.'
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Czego się tu nauczysz
+
+To najbardziej praktyczna sekcja całego przewodnika. Wiesz już, czym AI jest i jak z grubsza działa - teraz uczysz się z niej korzystać tak, żeby odpowiedzi przestały być loterią.
+
+Różnica między osobą, która "próbowała ChatGPT i nie było rewelacyjnie", a osobą, dla której AI jest realnym narzędziem pracy, prawie nigdy nie leży w wersji modelu. Leży w tym, jak sformułowane jest polecenie. Ta sekcja rozbiera to na części pierwsze.
+
+Zaczynamy od anatomii dobrego promptu: rola, kontekst, zadanie, format odpowiedzi. Potem przechodzimy do technik nazwanych - zero-shot, few-shot, chain-of-thought - czyli sprawdzonych schematów, które działają powtarzalnie. Dalej techniki rozumowania dla zadań złożonych, gdzie jedno polecenie nie wystarcza. Następnie strukturyzacja danych, bo prompt to nie tylko proza: tabele, listy i format JSON potrafią zrobić więcej niż akapit wyjaśnień.
+
+Ostatnie trzy artykuły to zastosowania. Automatyzacja pokazuje, jak łączyć prompty w łańcuchy. Programowanie - jak korzystać z AI przy kodzie, także jeśli nie jesteś programistą. Najlepsze praktyki zbierają typowe błędy i tematy bezpieczeństwa, w tym prompt injection. Na końcu czeka gotowa baza promptów do skopiowania.
+
+## Dla kogo to jest
+
+Dla każdego, kto korzysta z chatbota częściej niż okazjonalnie i ma poczucie, że wyciska z niego mniej, niż mógłby. Nie potrzebujesz umieć programować - artykuł o programowaniu też jest napisany z myślą o osobach nietechnicznych.
+
+## W jakiej kolejności czytać
+
+Pierwsze cztery po kolei, to fundament. Potem możesz wybierać według potrzeb: automatyzacja i programowanie są niezależne od siebie. "Najlepsze praktyki" warto przeczytać niezależnie od wszystkiego innego - to skrót przez błędy, które inni popełnili przed Tobą.
+
+## Czego tu nie ma
+
+Nie ma tu przeglądu narzędzi ani porównania chatbotów - to sekcja [Narzędzia AI](/narzedzia/). Nie ma też mechaniki modeli; jeśli chcesz wiedzieć, dlaczego dana technika działa, wróć do [Jak działa AI](/jak-dziala-ai/).
+
+## Artykuły w tej sekcji
+
+<CardGrid>
+	<LinkCard
+		title="Wprowadzenie do inżynierii promptów"
+		description="Czym jest prompt engineering i dlaczego to najbardziej opłacalna umiejętność w pracy z AI."
+		href="/prompt-engineering/wprowadzenie/"
+	/>
+	<LinkCard
+		title="Podstawy promptowania"
+		description="Rola, kontekst, zadanie, format. Anatomia polecenia, które działa."
+		href="/prompt-engineering/podstawy/"
+	/>
+	<LinkCard
+		title="Techniki promptowania"
+		description="Zero-shot, few-shot i chain-of-thought - kiedy używać której."
+		href="/prompt-engineering/techniki/"
+	/>
+	<LinkCard
+		title="Techniki rozumowania AI"
+		description="Tree of Thoughts, Self-Consistency, ReAct, RAG - dla zadań złożonych."
+		href="/prompt-engineering/rozumowanie/"
+	/>
+	<LinkCard
+		title="Strukturyzacja danych w promptach"
+		description="JSON, tabele, listy i schematy. Kiedy struktura bije prozę."
+		href="/prompt-engineering/schematy/"
+	/>
+	<LinkCard
+		title="Automatyzacja z AI"
+		description="Prompt chaining i APE - łączenie promptów w powtarzalne workflow."
+		href="/prompt-engineering/automatyzacja/"
+	/>
+	<LinkCard
+		title="Programowanie z AI"
+		description="Generowanie kodu, debugging i zapytania SQL - także dla nieprogramistów."
+		href="/prompt-engineering/programowanie/"
+	/>
+	<LinkCard
+		title="Najlepsze praktyki"
+		description="Typowe błędy, bezpieczeństwo promptów i prompt injection."
+		href="/prompt-engineering/najlepsze-praktyki/"
+	/>
+	<LinkCard
+		title="Baza promptów"
+		description="Gotowe prompty do skopiowania, podzielone na kategorie."
+		href="/prompt-engineering/baza-promptow/"
+	/>
+</CardGrid>
+
+:::note[Następny krok]
+**Zacznij tutaj:** [Wprowadzenie do inżynierii promptów](/prompt-engineering/wprowadzenie/) - zobaczysz, na czym polega różnica między przeciętnym a dobrym poleceniem.
+:::
