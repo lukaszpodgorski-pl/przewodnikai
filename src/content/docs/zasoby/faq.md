@@ -36,7 +36,7 @@ faq:
   - q: Czy AI może mieć świadomość?
     a: "Na tę chwilę nie. Obecne systemy AI to wyrafinowane narzędzia statystyczne bez subiektywnych doświadczeń, emocji czy samoświadomości. Czy kiedyś będzie inaczej? Tego nie wiemy - to bardziej pytanie filozoficzne niż techniczne."
   - q: Czy Przewodnik AI zbiera dane o mnie?
-    a: "Nie ma tu logowania, kont ani ciasteczek śledzących, więc nie wyświetlamy banera zgody - nie ma na co się zgadzać. Ruch mierzy Cloudflare Web Analytics, które zlicza wyświetlenia stron bez zapisywania czegokolwiek na Twoim urządzeniu i bez śledzenia Cię między serwisami."
+    a: "Nie ma tu logowania, kont ani ciasteczek śledzących, więc nie wyświetlamy banera zgody - nie ma na co się zgadzać. Ruch mierzy Cloudflare Web Analytics, które zlicza wyświetlenia stron bez zapisywania czegokolwiek na Twoim urządzeniu i bez śledzenia Cię między serwisami. Jedyny wyjątek to dobrowolny zapis na powiadomienia o nowych materiałach - wtedy podajesz swój adres e-mail, który trzymam na własnym serwerze i wykorzystuję wyłącznie do tych powiadomień. Wypisanie się zajmuje jedno kliknięcie."
 ---
 
 Zebrałem tutaj pytania, które najczęściej dostaję od czytelników tego przewodnika. Jeśli dopiero zaczynasz przygodę z AI, prawdopodobnie znajdziesz tu odpowiedź na swoje wątpliwości. A jeśli nie - [napisz do mnie](/zasoby/kontakt/), chętnie odpowiem.
@@ -141,7 +141,11 @@ Nie ma tu logowania, kont ani ciasteczek śledzących. Dlatego nie zobaczysz ban
 
 Mierzę natomiast ruch, żeby wiedzieć, które rozdziały są czytane, a które nikogo nie interesują. Służy do tego Cloudflare Web Analytics, narzędzie zaprojektowane odwrotnie niż typowa analityka: zlicza wyświetlenia stron, ale **nie zapisuje niczego na Twoim urządzeniu** - żadnych ciasteczek, żadnego `localStorage`, żadnego odcisku przeglądarki. Nie buduje Twojego profilu i nie śledzi Cię między serwisami.
 
-W praktyce widzę zbiorcze liczby: ile osób odwiedziło dany rozdział, z jakiego kraju przyszły i przez jaką wyszukiwarkę. Nie widzę, kim jesteś ani co czytałeś wcześniej.
+W praktyce widzę zbiorcze liczby: ile osób odwiedziło dany rozdział, z jakiego kraju przyszły i przez jaką wyszukiwarkę. Samo czytanie tej strony nie mówi mi więc, kim jesteś.
+
+Jest jeden wyjątek i chcę go nazwać wprost: **jeśli sam zapiszesz się na powiadomienia o nowych materiałach, podajesz mi swój adres e-mail** - i wtedy oczywiście go mam. Adresy trzymam na własnym serwerze (Sendy), nie u zewnętrznej firmy marketingowej. Nie sprzedaję ich, nie udostępniam nikomu i używam wyłącznie po to, by dać Ci znać o nowym albo zaktualizowanym rozdziale. Z każdej wiadomości wypiszesz się jednym kliknięciem, a wtedy adres znika z listy. Zapis jest w pełni dobrowolny - cały kurs czytasz bez podawania czegokolwiek.
+
+Szczegóły: [Polityka prywatności](https://aitomate.pl/polityka-prywatnosci). Administratorem danych jest aitomate Łukasz Podgórski, al. Jerozolimskie 148, 02-326 Warszawa.
 
 :::note[Dlaczego o tym piszę]
 Ten przewodnik ma cały rozdział o [prywatności i danych w AI](/etyka/prywatnosc/), w którym namawiam Cię do sprawdzania, co narzędzia robią z Twoimi danymi. Byłoby niepoważnie wymagać tego od innych, a samemu o tym milczeć.

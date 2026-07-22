@@ -22,6 +22,20 @@ Nie czujesz się na siłach, by edytować samodzielnie? Załóż [issue](https:/
 - **Propozycja treści** - pomysł na nowy artykuł lub sekcję
 - **Aktualizacja** - informacja się zdezaktualizowała (w AI to norma!)
 
+Szablon sam nadaje etykietę, więc nie musisz jej wybierać. Etykiet używamy tylu, ile faktycznie potrzeba:
+
+| Etykieta | Znaczy |
+| --- | --- |
+| `błąd` | coś jest nie tak na istniejącej stronie |
+| `propozycja` | pomysł na nowy artykuł, sekcję lub funkcję |
+| `aktualizacja` | informacja się zdezaktualizowała |
+| `komponent` | animacja lub element interaktywny do przeniesienia na komponent Astro |
+| `dobry pierwszy krok` | dobre na początek, jeśli dopiero zaczynasz |
+| `czeka na decyzję` | zablokowane do czasu decyzji właściciela projektu |
+| `wymaga źródła` | zmiana merytoryczna bez linku do źródła (patrz zasada 2 niżej) |
+
+Szukasz, od czego zacząć? Filtr [`dobry pierwszy krok`](https://github.com/lukaszpodgorski-pl/przewodnikai/issues?q=is%3Aissue+is%3Aopen+label%3A%22dobry+pierwszy+krok%22) pokazuje zadania nadające się na pierwszy wkład.
+
 ## Zasady treści
 
 1. **Ton dla laika.** Piszemy ciepło, bezpośrednio (per "Ty"), bez żargonu. Metafory i przykłady z życia są mile widziane. Grupa docelowa: osoby nietechniczne.

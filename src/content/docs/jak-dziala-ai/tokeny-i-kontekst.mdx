@@ -32,6 +32,8 @@ faq:
     a: Limit odpowiedzi (np. 16K tokenów) wynika z kosztów obliczeniowych, ryzyka spadku jakości przy bardzo długich odpowiedziach oraz mechanizmów bezpieczeństwa zapobiegających niekontrolowanemu generowaniu.
 ---
 
+import Tokenizacja from '../../../components/Tokenizacja.astro';
+
 :::note[W skrócie]
 Tokeny to podstawowe jednostki tekstu przetwarzane przez modele AI. Jedno polskie słowo to średnio 1,5-2,5 tokena. Okno kontekstowe modelu (od 8K do 1M tokenów) określa, ile tekstu model może przetworzyć jednocześnie. Koszt korzystania z API modeli jest naliczany za liczbę tokenów - od $0,07 do $75 za milion tokenów wejściowych, w zależności od modelu.
 :::
@@ -48,11 +50,14 @@ Rozkładam to na czynniki pierwsze tak wcześnie, bo tokeny wracają potem przy 
 
 Tokeny to podstawowe jednostki, na które dzielony jest tekst podczas przetwarzania przez AI. Większość współczesnych modeli językowych używa algorytmu **Byte-Pair Encoding (BPE)** lub jego wariantów do podziału tekstu. Algorytm ten uczy się najczęstszych par bajtów w danych treningowych i łączy je w coraz większe jednostki - stąd "token" nie zawsze odpowiada jednemu słowu.
 
-```text
-"Sztuczna" → "Sztu" + "czna"
-"inteligencja" → " intelig" + "encja"
-"analizuje" → "anali" + "zuje"
-```
+<Tokenizacja
+	przyklady={[
+		{ slowo: '"Sztuczna"', tokeny: ['Sztu', 'czna'] },
+		{ slowo: '"inteligencja"', tokeny: [' intelig', 'encja'] },
+		{ slowo: '"analizuje"', tokeny: ['anali', 'zuje'] },
+	]}
+	zrodlo="Zwróć uwagę na spację wiodącą w tokenie ' intelig' - dla modelu jest ona częścią tokena, nie separatorem."
+/>
 
 W zależności od języka i kontekstu, tokenami mogą być całe słowa (często występujące, krótkie słowa jak "the", "kot", "jest"), części słów (fragmenty dłuższych lub rzadziej używanych wyrazów), znaki interpunkcyjne, przedrostki i przyrostki (charakterystyczne dla języków fleksyjnych jak polski, np. "prze-", "-anie", "-ować") oraz pojedyncze znaki lub bajty (dla rzadkich, specjalistycznych terminów).
 
@@ -74,9 +79,9 @@ Nie wierz mi na słowo - policz własne zdania. Wklej ten sam tekst po polsku i 
 
 Skala zmiany w tym obszarze robi wrażenie: w ciągu dwóch lat okna kontekstowe urosły ponad 240-krotnie - z 4 096 tokenów w GPT-3.5 (marzec 2023) do 1 000 000 tokenów w modelach, których używasz dziś.
 
-<!-- TODO(Łukasz): zweryfikuj aktualne maksymalne okno kontekstowe przed publikacją - tabela poniżej też wymaga odświeżenia -->
+{/* TODO(Łukasz): zweryfikuj aktualne maksymalne okno kontekstowe przed publikacją - tabela poniżej też wymaga odświeżenia */}
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - kiedy pierwszy raz uderzyłeś w limit okna kontekstowego u siebie albo u klienta? Co się wtedy stało z odpowiedzią modelu? -->
+{/* TODO(Łukasz): tu zadziałałaby anegdota - kiedy pierwszy raz uderzyłeś w limit okna kontekstowego u siebie albo u klienta? Co się wtedy stało z odpowiedzią modelu? */}
 
 | Model | Producent | Okno kontekstowe | Odpowiednik w tekście |
 | --- | --- | --- | --- |
