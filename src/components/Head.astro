@@ -33,8 +33,11 @@ const isSciezka = pathname.startsWith('/sciezki/');
 const section = pathname.split('/').filter(Boolean)[0];
 const isArticle = section !== undefined && SECTION_LABELS[section] !== undefined;
 
-// Obraz OG: stały fallback. Zadanie 5 podmienia go na generowany per strona.
-const ogImage = `${SITE_URL}/og-default.png`;
+// Obraz generowany per strona przez src/pages/og/[...route].ts.
+// Strona główna ma puste `id` w kolekcji - dla niej zostaje stały obraz.
+const ogImage = route.id
+	? `${SITE_URL}/og/${route.id}.png`
+	: `${SITE_URL}/og-default.png`;
 
 const blocks: object[] = [];
 
