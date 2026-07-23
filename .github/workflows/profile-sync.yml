@@ -5,6 +5,9 @@ on:
     types: [profile-updated]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -15,6 +18,8 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run profile:sync
+        env:
+          PROFILE_REF: ${{ github.event.client_payload.sha || 'main' }}
       - uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.PROFILE_SYNC_TOKEN }}

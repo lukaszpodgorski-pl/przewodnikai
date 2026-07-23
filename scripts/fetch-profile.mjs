@@ -15,19 +15,20 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 
-const RAW = 'https://raw.githubusercontent.com/lukaszpodgorski-pl/author-profile/main';
+const REF = process.env.PROFILE_REF ?? 'main';
+const RAW = `https://raw.githubusercontent.com/lukaszpodgorski-pl/author-profile/${REF}`;
 const SCRIPTS = path.dirname(fileURLToPath(import.meta.url));
 const repo = (...p) => path.join(SCRIPTS, '..', ...p);
 
 async function pobierz(url) {
-	const res = await fetch(url);
+	const res = await fetch(url, { signal: AbortSignal.timeout(30_000) });
 	if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
 	return res;
 }
 
 const profile = await (await pobierz(`${RAW}/profile.pl.json`)).json();
 
-for (const pole of ['name', 'jobTitle', 'url', 'bioShort', 'description']) {
+for (const pole of ['name', 'jobTitle', 'url', 'bioShort', 'description', 'photo']) {
 	if (typeof profile[pole] !== 'string' || !profile[pole].trim()) {
 		throw new Error(`profile.pl.json: brak lub puste pole "${pole}"`);
 	}
