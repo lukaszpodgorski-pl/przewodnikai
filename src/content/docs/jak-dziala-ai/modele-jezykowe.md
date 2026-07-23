@@ -38,6 +38,8 @@ faq:
     a: Nie ma jednego najlepszego modelu - zależy od zastosowania. GPT-4 i Claude wyróżniają się w rozumowaniu, Gemini w pracy z danymi Google, a modele open source oferują pełną kontrolę.
 ---
 
+![Wielka świetlista kula utkana z tysięcy słów - duży model językowy](../../../assets/jak-dziala-ai/modele-jezykowe/modele-jezykowe.jpg)
+
 :::note[W skrócie]
 Duże modele językowe (LLM) to systemy AI wytrenowane na bilionach słów, które przewidują kolejne tokeny w tekście. Architektura Transformer (2017) umożliwiła skalowanie do setek miliardów parametrów. Na rynku dominują GPT-4.1/o3 (OpenAI), Claude Opus/Sonnet 4 (Anthropic), Gemini 2.5 (Google), Llama 4 (Meta) i DeepSeek-V3. Modele osiągają wyniki bliskie ekspertom w testach prawniczych, medycznych i programistycznych.
 :::

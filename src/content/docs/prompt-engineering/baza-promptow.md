@@ -14,6 +14,8 @@ about:
     sameAs: https://en.wikipedia.org/wiki/Prompt_engineering
 ---
 
+![Uporządkowana biblioteka-siatka kart z gotowymi promptami](../../../assets/prompt-engineering/baza-promptow/baza-promptow.jpg)
+
 Witaj w mojej bazie promptów - kolekcji gotowych poleceń, które możesz skopiować i uruchomić od razu. Każdy z nich napisałem tak, żeby działał bez dopieszczania i żeby nie trzeba było zaczynać od pustej strony.
 
 Prompty są pogrupowane według zastosowań, dzięki czemu łatwo znajdziesz ten, który odpowiada Twoim potrzebom.

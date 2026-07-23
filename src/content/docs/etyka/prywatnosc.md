@@ -19,6 +19,8 @@ faq:
     a: Tak, większość chatbotów AI domyślnie zapisuje konwersacje. Można to wyłączyć w ustawieniach. Nie podawaj danych osobowych, poufnych informacji firmowych ani haseł w rozmowach z AI.
 ---
 
+![Tarcza i kłódka chroniące karty danych osobowych - prywatność i ochrona danych](../../../assets/etyka/prywatnosc/prywatnosc.jpg)
+
 ## Dane - paliwo AI
 
 Korzystając z narzędzi AI, dzielisz się danymi - tekstami, dokumentami, czasem wrażliwymi informacjami. Gdzie trafiają te dane? Kto ma do nich dostęp? Czy są używane do treningu modeli? W tym rozdziale wyjaśniam, jak to działa u największych dostawców i co możesz zrobić, żeby ograniczyć ryzyko.

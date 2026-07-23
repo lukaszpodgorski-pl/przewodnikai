@@ -14,6 +14,8 @@ about:
     sameAs: https://en.wikipedia.org/wiki/Prompt_engineering
 ---
 
+![Nawiasy i bloki schematu porządkują luźne słowa w uporządkowane pola - struktura danych w promptach](../../../assets/prompt-engineering/schematy/schematy.jpg)
+
 ## Dlaczego struktura ma znaczenie?
 
 Modele językowe rozumieją nie tylko treść, ale również format. Dobrze ustrukturyzowane dane pomagają AI lepiej zrozumieć zadanie i generować spójne, przewidywalne odpowiedzi. W tym rozdziale pokażę Ci formaty, którymi opiszesz zadanie precyzyjniej niż zwykłym zdaniem, oraz frameworki, których profesjonaliści używają do pisania skutecznych promptów.

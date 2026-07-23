@@ -26,6 +26,8 @@ faq:
     a: AI pomaga w pisaniu e-maili, podsumowywaniu dokumentów, analizie danych, tworzeniu prezentacji, tłumaczeniach i automatyzacji powtarzalnych zadań.
 ---
 
+![Uporządkowane biurko, gdzie mali pomocnicy AI wspierają codzienne zadania](../../../assets/narzedzia/ai-w-codziennej-pracy/ai-w-codziennej-pracy.jpg)
+
 <!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
 
 ## AI jako codzienny współpracownik

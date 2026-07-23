@@ -19,6 +19,8 @@ faq:
     a: Prompt chaining to technika łączenia wielu promptów w sekwencję, gdzie wynik jednego staje się wejściem dla następnego, umożliwiając rozwiązywanie złożonych zadań.
 ---
 
+![Łańcuch połączonych trybików-promptów zasilających się nawzajem automatycznie](../../../assets/prompt-engineering/automatyzacja/automatyzacja.jpg)
+
 ## Automatyzacja w prompt engineering
 
 Ręczne pisanie i dopracowywanie promptów kosztuje czas - a przy powtarzalnej pracy ten koszt się mnoży. Pokażę Ci techniki, które przenoszą część tej roboty na maszynę: od łączenia promptów w sekwencje, przez automatyczne generowanie instrukcji, aż po adaptacyjne dobieranie przykładów.

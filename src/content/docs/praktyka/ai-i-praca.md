@@ -21,6 +21,8 @@ faq:
     a: Najbardziej zagrożone są zawody oparte na powtarzalnych, przewidywalnych zadaniach - wprowadzanie danych, proste tłumaczenia, podstawowa obsługa klienta. Zawody wymagające kreatywności i empatii są bezpieczniejsze.
 ---
 
+![Równowaga pracownika i automatyzacji z rozgałęziającymi się nowymi ścieżkami zawodów](../../../assets/praktyka/ai-i-praca/ai-i-praca.jpg)
+
 ## Rewolucja na rynku pracy
 
 AI zmienia rynek pracy szybciej niż jakakolwiek poprzednia technologia. Niektóre zawody znikną, inne się zmienią, a wiele nowych dopiero powstanie. Przeprowadzę Cię przez te zmiany bez paniki, ale też bez naiwnego optymizmu - jedno i drugie w tym temacie sprzedaje się równie dobrze i równie mało z niego wynika.

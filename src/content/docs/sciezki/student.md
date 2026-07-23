@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Student z książkami i laptopem na ścieżce ku biegłości w AI](../../../assets/sciezki/student/student.jpg)
+
 Przyspiesz naukę, research i pisanie prac z pomocą AI - świadomie i uczciwie. Ta ścieżka to 8 lekcji zbudowanych wokół promptowania: cztery z nich dotyczą tego, jak formułujesz polecenie, bo to jedyna umiejętność, która przekłada się na każde zadanie. Weryfikację zostawiłem blisko końca celowo - im lepsze odpowiedzi zaczniesz dostawać, tym bardziej musisz umieć je sprawdzić.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - rozróżnienie AI od generatywnej AI. Przydaje się w momencie, w którym trzeba opisać użytą metodę w pracy zaliczeniowej.

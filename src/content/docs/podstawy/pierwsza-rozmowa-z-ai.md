@@ -26,6 +26,8 @@ faq:
     a: Wystarczy wejść na stronę chatbota AI (np. ChatGPT) i wpisać pytanie lub polecenie w naturalnym języku, tak jak piszesz wiadomość do znajomego.
 ---
 
+![Ikona osoby i przyjazny orb AI spotykają się w dwóch dymkach rozmowy](../../../assets/podstawy/pierwsza-rozmowa-z-ai/pierwsza-rozmowa-z-ai.jpg)
+
 ## Zanim zaczniemy - to prostsze niż myślisz
 
 Jeśli nigdy wcześniej nie rozmawiałeś z AI, ten rozdział jest właśnie dla Ciebie. Przeprowadzę Cię krok po kroku przez pierwszą rozmowę z chatbotem - od założenia konta po napisanie pierwszego zapytania. Bez żargonu, bez stresu. Za 10 minut będziesz już rozmawiać ze sztuczną inteligencją.

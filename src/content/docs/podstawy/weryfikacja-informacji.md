@@ -18,9 +18,9 @@ faq:
     a: Zawsze weryfikuj kluczowe informacje z AI w niezależnych źródłach. Sprawdzaj daty, fakty, cytaty i statystyki. Używaj wielu źródeł i krytycznie oceniaj odpowiedzi.
 ---
 
-## Dlaczego nie można ślepo ufać AI?
+![Lupa nad dokumentem oddzielająca prawdziwe fakty od fałszywych - weryfikacja informacji](../../../assets/podstawy/weryfikacja-informacji/weryfikacja-informacji.jpg)
 
-![Weryfikacja informacji](../../../assets/podstawy/weryfikacja-informacji/weryfikacja.jpg)
+## Dlaczego nie można ślepo ufać AI?
 
 Korzystanie ze sztucznej inteligencji stało się częścią Twojej codzienności. Asystenci AI, tacy jak ChatGPT czy Claude, potrafią generować przekonujące odpowiedzi na niemal każde Twoje pytanie. Ale czy zawsze możesz im ufać? W tym rozdziale pokażę Ci, dlaczego weryfikacja informacji od AI jest konieczna, i dam Ci konkretne metody sprawdzania ich wiarygodności.
 

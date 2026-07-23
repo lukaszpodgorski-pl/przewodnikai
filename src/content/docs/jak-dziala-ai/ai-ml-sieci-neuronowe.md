@@ -22,6 +22,8 @@ faq:
     a: Sieci neuronowe to modele obliczeniowe inspirowane budową ludzkiego mózgu. Składają się z warstw sztucznych neuronów, które przetwarzają dane i uczą się rozpoznawać wzorce.
 ---
 
+![Trzy koncentryczne pierścienie z klastrem węzłów sieci - zagnieżdżenie AI, uczenia maszynowego i sieci neuronowych](../../../assets/jak-dziala-ai/ai-ml-sieci-neuronowe/ai-ml-sieci-neuronowe.jpg)
+
 ## Trzy pojęcia, które często się mylą
 
 Sztuczna inteligencja, uczenie maszynowe, sieci neuronowe... Te terminy często pojawiają się zamiennie w mediach i codziennych rozmowach. Nic dziwnego, że łatwo się w nich pogubić! W rzeczywistości to trzy różne, choć powiązane ze sobą koncepcje. Wyobraź je sobie jak rosyjskie matrioszki - jedna mieści się w drugiej. Rozdzielam je na samym początku kursu, bo bez tego rozróżnienia nie ocenisz, czy narzędzie reklamowane jako "AI" faktycznie uczy się z danych, czy tylko wykonuje reguły, które ktoś w nie wpisał.

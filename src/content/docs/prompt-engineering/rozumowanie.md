@@ -17,6 +17,8 @@ faq:
     a: Tree of Thoughts to zaawansowana technika promptowania, w której AI rozważa wiele ścieżek rozumowania jednocześnie, ocenia je i wybiera najlepszą.
 ---
 
+![Rozgałęziające się drzewo ścieżek rozumowania zbiegające się w najlepszej odpowiedzi](../../../assets/prompt-engineering/rozumowanie/rozumowanie.jpg)
+
 :::caution[Poziom: Zaawansowany]
 Ten artykuł jest dla osób, które opanowały już podstawy promptowania i chcą poznać bardziej wyrafinowane techniki. Jeśli dopiero zaczynasz z prompt engineeringiem, zacznij od [Podstaw promptowania](/prompt-engineering/podstawy/) i [Technik promptowania](/prompt-engineering/techniki/).
 :::

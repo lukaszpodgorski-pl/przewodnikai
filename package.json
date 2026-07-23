@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "verify:geo": "node scripts/verify-geo.mjs"
+    "verify:geo": "node scripts/verify-geo.mjs",
+    "grafiki": "node scripts/przetworz-grafiki.mjs",
+    "test:grafiki": "node --test scripts/lib/przetwarzanie-grafik.test.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

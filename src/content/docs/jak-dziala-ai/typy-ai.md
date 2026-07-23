@@ -19,6 +19,8 @@ faq:
     a: AGI (Artificial General Intelligence) to hipotetyczna sztuczna inteligencja ogólna, która miałaby dorównywać ludzkim zdolnościom poznawczym we wszystkich dziedzinach. Na razie AGI nie istnieje.
 ---
 
+![Trzy sylwetki rosnące od małego narzędzia do wielkiego umysłu - od wąskiej do ogólnej i superinteligencji](../../../assets/jak-dziala-ai/typy-ai/typy-ai.jpg)
+
 ## Nie każda AI jest taka sama
 
 Na hasło "sztuczna inteligencja" większości ludzi stają przed oczami roboty z filmów science fiction - inteligentne, świadome, zdolne do wszystkiego. Rzeczywistość jest znacznie bardziej złożona. Istnieją różne typy AI, każdy o innych możliwościach i ograniczeniach.

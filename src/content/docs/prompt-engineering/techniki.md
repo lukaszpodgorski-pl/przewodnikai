@@ -24,6 +24,8 @@ faq:
     a: Meta-prompting to technika, w której prosisz model AI o napisanie lub poprawienie prompta za Ciebie. Zamiast zgadywać, jak sformułować zadanie, opisujesz cel, a model - który zna zasady dobrego promptowania - proponuje gotowe polecenie do użycia.
 ---
 
+![Karty przykładów zasilają model obok łańcucha połączonych myśli - techniki promptowania](../../../assets/prompt-engineering/techniki/techniki.jpg)
+
 ## Wprowadzenie do technik promptowania
 
 Nie każde zadanie wymaga takiego samego podejścia. Proste pytanie zadasz wprost, ale złożony problem trzeba modelowi rozłożyć na części. Pokażę Ci cztery techniki, na których opiera się cała reszta kursu, i podpowiem, po czym poznasz, że pora sięgnąć po kolejną.

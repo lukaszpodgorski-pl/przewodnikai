@@ -26,6 +26,8 @@ faq:
     a: Boom AI wynika z trzech czynników - ogromnej mocy obliczeniowej (GPU), dostępności wielkich zbiorów danych (internet) oraz przełomowej architektury Transformer z 2017 roku.
 ---
 
+![Rosnąca krzywa jak ślad rakiety nad osią czasu - boom sztucznej inteligencji](../../../assets/jak-dziala-ai/boom-ai/boom-ai.jpg)
+
 ## Dlaczego akurat teraz?
 
 Sztuczna inteligencja jako koncepcja istnieje od lat 50. XX wieku. Sieci neuronowe znano od dekad. Dlaczego więc rewolucja AI nastąpiła dopiero teraz? Co się zmieniło w 2022 roku, że ChatGPT zebrał 100 milionów użytkowników w dwa miesiące?

@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Lider zespołu prowadzi postaci z pomocą pulpitu AI](../../../assets/sciezki/manager/manager.jpg)
+
 Wdrażaj AI w swoim zespole świadomie - z myślą o ludziach i o efektach ich pracy. Zebrałem 8 lekcji i ułożyłem je od zrozumienia narzędzia, przez cudze wdrożenia, po dwa rozdziały o odpowiedzialności na końcu. Ta kolejność nie jest przypadkowa: łatwiej ustalić zasady, kiedy widziało się już, co potrafi zepsuć ich brak.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - wspólny słownik dla zespołu, zanim na spotkaniu padnie "AI" i "automatyzacja" jako synonimy.

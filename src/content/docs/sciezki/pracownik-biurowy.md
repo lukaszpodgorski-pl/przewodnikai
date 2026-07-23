@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Pracownik biurowy przy biurku, pomocnicy AI odciążają codzienne zadania](../../../assets/sciezki/pracownik-biurowy/pracownik-biurowy.jpg)
+
 Przyspiesz codzienne zadania biurowe dzięki AI i przygotuj się na zmiany na rynku pracy. Ułożyłem te 7 lekcji wokół jednego pytania: co da się zdjąć z Twojego dnia bez utraty jakości. Najwięcej miejsca zajmuje promptowanie, bo to jedyna część, która przekłada się na każde zadanie - resztę można doczytywać wybiórczo.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - skąd biorą się błędy modelu. Ta wiedza oszczędza później tłumaczenia się z odpowiedzi wklejonej do maila bez sprawdzenia.

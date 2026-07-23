@@ -21,6 +21,8 @@ mentions:
     type: SoftwareApplication
 ---
 
+![Świetliste pióro pisze płynny tekst ze śladem iskier AI - narzędzia AI do pisania](../../../assets/narzedzia/pisanie/pisanie.jpg)
+
 <!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
 
 ## AI jako Twój współautor

@@ -14,6 +14,8 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
+![Kompas i lista kontrolna nad płynną współpracą człowieka z AI - najlepsze praktyki](../../../assets/praktyka/najlepsze-praktyki/najlepsze-praktyki.jpg)
+
 ## Od narzędzia do warsztatu
 
 Mieć dostęp do AI to jedno, umieć z niego korzystać to zupełnie co innego. Zebrałem tu praktyki, które w mojej ocenie odróżniają osoby pracujące z AI na co dzień od tych, które używają go okazjonalnie - i po każdej sesji zaczynają od zera.

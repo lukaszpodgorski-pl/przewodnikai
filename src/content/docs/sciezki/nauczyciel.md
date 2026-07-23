@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Nauczyciel przy tablicy, AI delikatnie wspiera klasę](../../../assets/sciezki/nauczyciel/nauczyciel.jpg)
+
 Wykorzystaj AI do przygotowania lekcji i naucz uczniów odpowiedzialnego korzystania z niej. Zebrałem 7 lekcji i ułożyłem je w kolejności, która wydaje mi się jedyna sensowna: najpierw zrozumieć narzędzie, potem nauczyć się je prowadzić, a dopiero na końcu wypuścić jego efekty przed klasę.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - żeby odpowiedzieć uczniowi na pytanie "czy to myśli?", trzeba najpierw samemu mieć jasność. Tu są potrzebne pojęcia, bez żargonu.
