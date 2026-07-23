@@ -1,0 +1,133 @@
+---
+title: 'Modele rozumujące - co naprawdę robi tryb "myślenia" w AI'
+description: Czym są modele rozumujące (reasoning models) - jak działa tryb myślenia w ChatGPT, Claude i Gemini, kiedy warto go włączyć, a kiedy tylko spowalnia odpowiedź.
+sidebar:
+  label: 'Modele rozumujące'
+  order: 5
+educationalLevel: Intermediate
+teaches:
+  - Czym są modele rozumujące (reasoning models)
+  - Jak działa tryb rozszerzonego myślenia w chatbotach
+  - Kiedy włączać tryb myślenia, a kiedy nie
+about:
+  - name: Model rozumujący
+    sameAs: https://en.wikipedia.org/wiki/Reasoning_language_model
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: Gemini
+    sameAs: https://en.wikipedia.org/wiki/Gemini_(language_model)
+    type: SoftwareApplication
+  - name: DeepSeek
+    sameAs: https://en.wikipedia.org/wiki/DeepSeek
+    type: SoftwareApplication
+faq:
+  - q: Czym jest model rozumujący?
+    a: To model językowy, który przed udzieleniem odpowiedzi generuje wewnętrzny łańcuch rozumowania - rozpisuje problem na kroki, sprawdza po drodze wyniki i dopiero potem formułuje finalną odpowiedź. Dzięki temu radzi sobie lepiej z matematyką, logiką i planowaniem.
+  - q: Kiedy włączać tryb myślenia w chatbocie?
+    a: Przy zadaniach wieloetapowych - matematyce, analizie dokumentów, planowaniu, debugowaniu kodu, porównywaniu opcji z wieloma ograniczeniami. Przy prostych pytaniach, tłumaczeniach czy szybkiej redakcji tekstu tryb myślenia tylko wydłuża czas odpowiedzi.
+  - q: Czy tryb myślenia gwarantuje poprawną odpowiedź?
+    a: Nie. Model rozumujący myli się rzadziej przy złożonych problemach, ale nadal potrafi halucynować, a pokazywane "myślenie" nie zawsze wiernie oddaje to, co dzieje się w środku modelu. Kluczowe fakty weryfikuj tak samo jak przy zwykłym trybie.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+:::note[W skrócie]
+Modele rozumujące (reasoning models) przed odpowiedzią generują wewnętrzny łańcuch rozumowania - "myślą na brudno", zanim napiszą wynik. Pierwszym szeroko dostępnym modelem tego typu był o1 od OpenAI (wrzesień 2024), a dziś tryb myślenia ma praktycznie każdy duży model - część włącza go nawet sama, gdy uzna, że pytanie tego wymaga. Sięgaj po niego przy zadaniach złożonych (matematyka, planowanie, analiza), odpuszczaj przy prostych - odpowiedź trwa dłużej i kosztuje więcej, a przy banalnych pytaniach nie daje przewagi.
+:::
+
+## Przycisk, który zmienia charakter odpowiedzi
+
+W większości chatbotów obok pola tekstowego pojawił się przełącznik: "myślenie", "rozszerzone myślenie", "thinking". Po jego włączeniu odpowiedź na to samo pytanie potrafi trwać kilkanaście sekund albo kilka minut zamiast dwóch sekund - a czasem widzisz nawet, jak model "główkuje" na Twoich oczach.
+
+Większość osób klika ten przełącznik w ciemno. A szkoda, bo to jedna z najważniejszych zmian w AI ostatnich lat - i jedna z tych, które realnie warto rozumieć, żeby nie płacić czasem i pieniędzmi za coś, co w danym zadaniu nic nie wnosi.
+
+## Czym różni się model rozumujący od zwykłego?
+
+Zwykły model językowy generuje odpowiedź "na gorąco" - token po tokenie, bez zatrzymania. Jeśli pierwszy kierunek rozumowania był błędny, model rzadko potrafi się z niego wycofać, bo... już pisze odpowiedź.
+
+**Model rozumujący** działa inaczej: zanim zacznie pisać odpowiedź dla Ciebie, generuje wewnętrzny tekst roboczy - rozpisuje problem na kroki, próbuje różnych podejść, wyłapuje własne błędy i wraca do wcześniejszych etapów, jeśli coś się nie zgadza. Dopiero na końcu składa finalną odpowiedź.
+
+:::note[Analogia]
+Zwykły model to uczeń, który odpowiada przy tablicy z marszu. Model rozumujący najpierw dostaje kartkę na obliczenia na brudno - i dopiero po zapisaniu kilku prób przepisuje na czysto wynik. Kartki możesz nie zobaczyć w całości, ale to na niej dzieje się właściwa praca.
+:::
+
+Co ważne, tej umiejętności nie uzyskano przez samo powiększenie modelu. OpenAI opisało przy premierze modelu o1, że nauczyło go rozumowania metodą uczenia przez wzmacnianie - model był nagradzany za łańcuchy myśli prowadzące do poprawnych wyników ([OpenAI, "Learning to reason with LLMs", 2024](https://openai.com/index/learning-to-reason-with-llms/)). DeepSeek pokazał następnie w otwartej publikacji, że podobny efekt da się osiągnąć zaskakująco tanio ([DeepSeek-R1, 2025](https://arxiv.org/abs/2501.12948)) - i to właśnie ta praca w styczniu 2025 wywołała małe trzęsienie ziemi na rynku.
+
+Jeśli czytałeś rozdział o [technikach promptowania](/prompt-engineering/techniki/), ten mechanizm powinien brzmieć znajomo: to chain-of-thought, czyli rozumowanie krok po kroku - tyle że wbudowane w model na etapie treningu, zamiast wymuszane frazą "pomyślmy krok po kroku" w prompcie.
+
+## Więcej czasu na myślenie = lepszy wynik
+
+Za modelami rozumującymi stoi jedno kluczowe odkrycie: jakość odpowiedzi rośnie nie tylko z rozmiarem modelu, ale też z ilością obliczeń w momencie odpowiadania (test-time compute). Ten sam model, któremu pozwolisz "myśleć" dłużej, rozwiązuje trudniejsze zadania.
+
+Ma to swoją cenę, którą znasz już z rozdziału o tokenach: myślenie to też tokeny. Model rozumujący potrafi wygenerować tysiące tokenów roboczych, zanim napisze trzy zdania odpowiedzi - płacisz za to czasem oczekiwania, a w API także pieniędzmi.
+
+## Gdzie to znajdziesz? Praktycznie wszędzie
+
+Nie znajdziesz tu tabeli z nazwami trybów w poszczególnych aplikacjach - zmieniają się zbyt często, żeby miała sens. Ważniejsza jest ogólna zasada: **większość dużych modeli ma już tryb myślenia** i wystarczy go włączyć przełącznikiem przy polu tekstowym. A część nie potrzebuje nawet przełącznika - najnowsze modele same oceniają, czy pytanie wymaga dłuższego zastanowienia, i uruchamiają myślenie automatycznie tylko wtedy, gdy widzą, że warto.
+
+Najbardziej spektakularne zastosowanie tego mechanizmu zobaczysz w trybie deep research: model wchodzi w tryb rozumowania i sam przeszukuje dziesiątki, setki, a czasem tysiące miejsc w poszukiwaniu odpowiedzi - planuje kolejne wyszukiwania na podstawie tego, co już znalazł, porównuje źródła i po kilku-kilkunastu minutach oddaje raport z przypisami. To rozumowanie i działanie w jednym; szczegóły znajdziesz w rozdziale o [trybach pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/).
+
+## Kiedy włączać, a kiedy nie?
+
+Najprostsza reguła, jaką znam: **włączaj myślenie wtedy, gdy sam potrzebowałbyś kartki na obliczenia.**
+
+**Tryb myślenia pomaga przy:**
+
+- matematyce, obliczeniach i zadaniach logicznych
+- planowaniu wieloetapowym ("ułóż harmonogram uwzględniający pięć ograniczeń")
+- analizie długich dokumentów i porównywaniu opcji
+- debugowaniu kodu i zagadkach typu "dlaczego to nie działa"
+- pytaniach, w których łatwo o pułapkę lub nieoczywisty haczyk
+
+**Tryb myślenia nie pomaga (a spowalnia) przy:**
+
+- prostych pytaniach faktograficznych
+- tłumaczeniach i redakcji tekstu
+- burzy mózgów i pisaniu kreatywnym
+- szybkich, rutynowych zadaniach, które zwykły tryb robi dobrze
+
+:::tip[Praktyczna wskazówka]
+Zrób własny test: weź zadanie, przy którym zwykły tryb się pomylił, i powtórz je z włączonym myśleniem. Różnicę zobaczysz najszybciej na zadaniach z liczbami i na pytaniach z haczykiem. Jeśli różnicy nie ma - to znak, że dla Twoich typowych zadań wystarcza tryb szybki.
+:::
+
+## Ograniczenia - myślenie to nie gwarancja prawdy
+
+Trzy rzeczy, które warto wiedzieć, zanim zaufasz "myślącemu" modelowi bardziej, niż powinieneś:
+
+- **Halucynacje nie znikają.** Model rozumujący myli się rzadziej w zadaniach logicznych, ale nadal potrafi z pełnym przekonaniem podać zmyślony fakt - zasady z rozdziału o [weryfikacji informacji](/podstawy/weryfikacja-informacji/) obowiązują bez zmian.
+- **Pokazane myślenie to nie zapis procesów w modelu.** Badacze Anthropic wykazali, że łańcuch rozumowania prezentowany użytkownikowi nie zawsze wiernie oddaje to, co faktycznie zdecydowało o odpowiedzi ([Chen i in., 2025](https://arxiv.org/abs/2505.05410)). Traktuj go jak pomocne streszczenie, nie jak protokół.
+- **Dłuższe myślenie nie zawsze znaczy lepsze.** Przy prostych zadaniach wymuszanie długiego rozumowania potrafi wręcz pogorszyć wynik - model "przekombinuje" tam, gdzie odpowiedź była oczywista.
+
+## Co to zmienia w promptowaniu?
+
+Sporo technik z sekcji [Prompt Engineering](/prompt-engineering/) powstało po to, żeby wymusić na zwykłych modelach rozumowanie - fraza "pomyślmy krok po kroku", [Self-Consistency czy Tree of Thoughts](/prompt-engineering/rozumowanie/). Modele rozumujące robią to same, więc <Termin id="prompt">prompt</Termin> dla nich może być prostszy: jasno opisz cel, dane i format odpowiedzi, a "jak myśleć" zostaw modelowi.
+
+Te techniki nie stały się jednak bezużyteczne - nadal działają w trybie szybkim, którego wciąż używasz do większości codziennych zadań, i pomagają zrozumieć, co model rozumujący robi pod maską.
+
+## Źródła i dalsze lektury
+
+- [OpenAI, "Learning to reason with LLMs" (2024)](https://openai.com/index/learning-to-reason-with-llms/) - premiera o1, pierwszego szeroko dostępnego modelu rozumującego
+- [DeepSeek-R1 (2025)](https://arxiv.org/abs/2501.12948) - otwarta publikacja o trenowaniu rozumowania metodą uczenia przez wzmacnianie
+- [Anthropic, dokumentacja rozszerzonego myślenia](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) - jak działa extended thinking w Claude
+- [Google, dokumentacja trybu myślenia w Gemini](https://ai.google.dev/gemini-api/docs/thinking) - modele thinking i budżet na rozumowanie
+- [Chen i in., "Reasoning Models Don't Always Say What They Think" (2025)](https://arxiv.org/abs/2505.05410) - dlaczego pokazany łańcuch myśli bywa niewierny
+
+:::note[Teraz wiesz]
+
+- Czym jest model rozumujący - modelem, który przed odpowiedzią generuje wewnętrzny łańcuch myśli i dzięki temu radzi sobie z zadaniami wieloetapowymi
+- Że za tę jakość płacisz czasem i tokenami - myślenie to dodatkowe obliczenia w momencie odpowiadania
+- Kiedy włączać tryb myślenia (matematyka, planowanie, analiza) i kiedy go odpuścić (proste pytania, redakcja, kreatywność)
+- Że myślenie nie znosi halucynacji, a pokazywane rozumowanie to streszczenie, nie protokół
+
+**Następny krok:** [Tokeny i kontekst](/jak-dziala-ai/tokeny-i-kontekst/) - zobaczysz, jak AI dzieli tekst na tokeny, porównasz okna kontekstowe modeli i poznasz koszty API.
+:::
+
+<SlowniczekStrony terminy={["prompt", "halucynacje"]} />

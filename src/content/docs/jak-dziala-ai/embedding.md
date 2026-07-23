@@ -3,7 +3,7 @@ title: Embedding - Jak AI rozumie znaczenie słów i tekstu
 description: Poznaj koncepcję embeddingów - reprezentacji numerycznych tekstu. Dowiedz się, jak AI rozumie podobieństwo semantyczne i wyszukuje informacje.
 sidebar:
   label: 'Embedding'
-  order: 6
+  order: 7
 educationalLevel: Advanced
 teaches:
   - Czym jest embedding
@@ -113,5 +113,5 @@ Z całego rozdziału to pojęcie przyda Ci się najczęściej. RAG to najpopular
 - Jak działa wyszukiwanie semantyczne i RAG - techniki, które pozwalają AI korzystać z Twoich dokumentów
 - Dlaczego bazy wektorowe to fundament nowoczesnych aplikacji AI opartych na wiedzy
 
-**Następny krok:** [Parametry modeli AI](/jak-dziala-ai/parametry-modeli/) - nauczysz się kontrolować zachowanie modelu za pomocą temperature, top_p i innych parametrów.
+**Następny krok:** [RAG - jak AI korzysta z Twoich dokumentów](/jak-dziala-ai/rag/) - zobaczysz, jak embeddingi i wyszukiwanie semantyczne łączą się w technikę, dzięki której chatbot odpowiada na podstawie Twoich plików, a nie z pamięci.
 :::

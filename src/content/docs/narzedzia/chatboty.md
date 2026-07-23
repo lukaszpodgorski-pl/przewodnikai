@@ -200,5 +200,5 @@ Moja rada: wypróbuj kilka i zobacz, który pasuje do Twojego stylu pracy. Nie m
 - Jak dobrać chatbota do konkretnego zadania (research, długie dokumenty, kod, generowanie obrazów)
 - Że najlepsza strategia to korzystanie z kilku chatbotów do różnych zadań, a nie przywiązywanie się do jednego
 
-**Następny krok:** [Generatory obrazów AI](/narzedzia/generatory-obrazow/) - odkryjesz Midjourney, DALL-E i Stable Diffusion, nauczysz się pisać skuteczne prompty do generowania obrazów.
+**Następny krok:** [Tryby pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/) - poznasz wyszukiwanie, deep research, projekty i tryb głosowy - funkcje, które zmieniają jeden chatbot w kilka różnych narzędzi.
 :::

@@ -3,7 +3,7 @@ title: Narzędzia AI do pisania - Jasper, Copy.ai, Writesonic i inne
 description: Przegląd najlepszych narzędzi AI do pisania - copywriting, content marketing, SEO. Porównanie funkcji, cen i zastosowań.
 sidebar:
   label: 'Narzędzia do pisania'
-  order: 3
+  order: 4
 educationalLevel: Beginner
 teaches:
   - Narzędzia AI do pisania tekstów

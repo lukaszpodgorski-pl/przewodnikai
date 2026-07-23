@@ -3,7 +3,7 @@ title: Specjalistyczne narzędzia AI - wideo, audio, kod, prezentacje
 description: Przegląd specjalistycznych narzędzi AI - generowanie wideo, edycja audio, programowanie, prezentacje, analiza danych i więcej.
 sidebar:
   label: 'Narzędzia specjalistyczne'
-  order: 4
+  order: 5
 educationalLevel: Intermediate
 teaches:
   - Specjalistyczne narzędzia AI

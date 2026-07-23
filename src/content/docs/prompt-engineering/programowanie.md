@@ -3,7 +3,7 @@ title: Programowanie z AI - Generowanie i Wyjaśnianie Kodu
 description: Naucz się wykorzystywać AI do programowania - generowanie kodu, debugging, wyjaśnianie fragmentów, pisanie zapytań SQL i automatyzacja zadań.
 sidebar:
   label: 'Programowanie z AI'
-  order: 7
+  order: 8
 educationalLevel: Intermediate
 teaches:
   - Jak AI pomaga w programowaniu

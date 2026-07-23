@@ -1,0 +1,129 @@
+---
+title: RAG - jak AI korzysta z Twoich dokumentów
+description: Czym jest RAG (Retrieval Augmented Generation) wyjaśnione po ludzku - jak chatbot odpowiada na podstawie Twoich plików, jak działa NotebookLM i projekty w ChatGPT czy Claude.
+sidebar:
+  label: 'RAG - AI na Twoich dokumentach'
+  order: 8
+educationalLevel: Intermediate
+teaches:
+  - Czym jest RAG (Retrieval Augmented Generation)
+  - Jak chatbot odpowiada na podstawie wgranych dokumentów
+  - Kiedy RAG ogranicza halucynacje, a kiedy nie
+about:
+  - name: Retrieval-augmented generation
+    sameAs: https://en.wikipedia.org/wiki/Retrieval-augmented_generation
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+mentions:
+  - name: NotebookLM
+    sameAs: https://en.wikipedia.org/wiki/NotebookLM
+    type: SoftwareApplication
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+faq:
+  - q: Czym jest RAG w prostych słowach?
+    a: RAG to technika, w której AI najpierw wyszukuje odpowiednie fragmenty w bazie dokumentów, a dopiero potem pisze odpowiedź na ich podstawie - zamiast odpowiadać wyłącznie z "pamięci" wyniesionej z treningu. To jak egzamin z otwartą książką zamiast odpowiadania z głowy.
+  - q: Czy RAG eliminuje halucynacje AI?
+    a: Ogranicza je, ale nie eliminuje. Model dostaje prawdziwe fragmenty dokumentów, więc rzadziej zmyśla fakty - ale nadal może źle zinterpretować znaleziony fragment albo połączyć fragmenty w błędny wniosek. Odpowiedzi ze wskazanym źródłem zawsze da się sprawdzić i warto z tego korzystać.
+  - q: Gdzie korzystam z RAG na co dzień?
+    a: Wgrywając pliki do chatbota, pracując w NotebookLM, używając projektów w ChatGPT lub Claude oraz zawsze, gdy chatbot przeszukuje internet przed odpowiedzią. Firmowe chatboty odpowiadające na podstawie wewnętrznej bazy wiedzy to również RAG.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+:::note[W skrócie]
+RAG (Retrieval Augmented Generation) to technika, w której model najpierw **wyszukuje** pasujące fragmenty dokumentów, a dopiero potem **generuje** odpowiedź na ich podstawie. To dzięki niej chatbot potrafi odpowiadać na pytania o Twoje pliki, firmową bazę wiedzy albo wczorajsze wiadomości - choć żadnej z tych rzeczy nie było w jego danych treningowych. Korzystasz z RAG za każdym razem, gdy wgrywasz plik do chatbota, pracujesz w NotebookLM albo używasz projektów w ChatGPT czy Claude.
+:::
+
+## Zagadka: skąd chatbot zna Twój raport?
+
+Z rozdziału o [modelach językowych](/jak-dziala-ai/modele-jezykowe/) wiesz, że model zna tylko to, co widział w treningu - a trening skończył się w konkretnym dniu. Twojego wewnętrznego raportu, umowy z klientem ani notatek ze spotkania na pewno w nim nie było.
+
+A jednak: wrzucasz PDF do <Termin id="chatbot">chatbota</Termin> i po chwili dostajesz trafne odpowiedzi na pytania o jego treść, często z odsyłaczem do konkretnej strony. Magia? Nie - RAG. I warto zrozumieć, jak działa, bo to obecnie najczęstszy sposób, w jaki AI trafia do firm i narzędzi, z których korzystasz.
+
+## Egzamin z otwartą książką
+
+**RAG** (Retrieval Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) to pomysł opisany po raz pierwszy przez badaczy Meta w 2020 roku ([Lewis i in.](https://arxiv.org/abs/2005.11401)): zamiast liczyć na to, że model "pamięta" właściwą informację, podsuńmy mu ją w momencie pytania.
+
+:::note[Analogia]
+Zwykła rozmowa z modelem to egzamin, na którym student odpowiada z pamięci - czasem świetnie, a czasem zmyśla, bo "coś mu świta". RAG to egzamin z otwartą książką: przed odpowiedzią student znajduje właściwy rozdział i odpowiada, patrząc w tekst. Nadal może źle zrozumieć przeczytany fragment - ale przestaje zmyślać rozdziały, których nie ma.
+:::
+
+## Jak to działa krok po kroku
+
+Cały proces składa się z trzech etapów - dwa pierwsze dzieją się poza Twoim wzrokiem:
+
+```text
+1. INDEKSOWANIE (raz, przy dodaniu dokumentów):
+   Twoje pliki → podział na fragmenty → zapis w bazie
+   w postaci umożliwiającej wyszukiwanie po znaczeniu
+
+2. WYSZUKIWANIE (przy każdym pytaniu):
+   Twoje pytanie → znajdź fragmenty, które najlepiej
+   pasują znaczeniowo do pytania
+
+3. GENEROWANIE:
+   Znalezione fragmenty + Twoje pytanie → model pisze
+   odpowiedź na podstawie podsuniętych fragmentów
+```
+
+Kluczowy jest krok drugi: system nie szuka po słowach kluczowych jak stary Google, tylko po **znaczeniu**. Pytanie "ile mamy urlopu?" znajdzie fragment regulaminu o "wymiarze corocznego płatnego wypoczynku", mimo że żadne słowo się nie pokrywa. Umożliwiają to embeddingi - numeryczne reprezentacje znaczenia tekstu, które poznałeś w [poprzednim rozdziale](/jak-dziala-ai/embedding/).
+
+## Gdzie używasz RAG, nie wiedząc o tym
+
+- **Wgrywanie plików do chatbota** - załączasz PDF czy arkusz, a model odpowiada na jego podstawie
+- **NotebookLM** - narzędzie Google zbudowane w całości wokół tej idei: wgrywasz źródła, a notatnik odpowiada wyłącznie na ich podstawie i podaje cytaty ([notebooklm.google](https://notebooklm.google/))
+- **Projekty w ChatGPT i Claude** - dokumenty projektu stają się stałą bazą wiedzy, do której model sięga w każdej rozmowie
+- **Chatbot z wyszukiwaniem internetu** - to też RAG, tylko zamiast Twoich plików przeszukiwany jest internet; więcej w rozdziale o [trybach pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/)
+- **Firmowe chatboty** - asystent odpowiadający na pytania klientów na podstawie bazy pomocy technicznej to dziś klasyczne wdrożenie RAG
+
+## Co RAG zmienia, a czego nie
+
+**Zmienia dużo:**
+
+- **Mniej halucynacji** - model opiera się na podsuniętych faktach, nie na "przeświadczeniu"; szczególnie przy pytaniach o konkrety, których nie było w treningu
+- **Aktualność** - wystarczy zaktualizować dokumenty w bazie; nie trzeba trenować modelu od nowa
+- **Źródła** - dobre narzędzia RAG wskazują fragment, z którego wzięły odpowiedź, więc możesz je sprawdzić jednym kliknięciem
+- **Prywatna wiedza** - model odpowiada o rzeczach, których publicznie nie ma: Twoje notatki, procedury firmy, dokumentacja produktu
+
+**Nie zmienia wszystkiego:**
+
+- Jeśli wyszukiwanie znajdzie **złe fragmenty**, model wygeneruje pewnie brzmiącą odpowiedź na złej podstawie
+- Model może **źle zinterpretować** poprawnie znaleziony fragment - zwłaszcza tabele i dane liczbowe
+- Śmieci na wejściu to śmieci na wyjściu: RAG na chaotycznej, nieaktualnej bazie dokumentów daje chaotyczne, nieaktualne odpowiedzi
+
+:::tip[Praktyczna wskazówka]
+Pracując z narzędziem opartym na RAG, proś o wskazanie źródła: "odpowiedz i zacytuj fragment dokumentu, na którym się opierasz". Odpowiedź z cytatem sprawdzisz w minutę - odpowiedź bez cytatu musisz weryfikować od zera, jak każdą inną. Zasady z rozdziału o [weryfikacji informacji](/podstawy/weryfikacja-informacji/) obowiązują także tutaj.
+:::
+
+## RAG czy duże okno kontekstowe?
+
+Skoro modele mają dziś ogromne <Termin id="okno-kontekstowe">okna kontekstowe</Termin>, to po co wyszukiwanie - nie można po prostu wkleić wszystkiego?
+
+Można, jeśli "wszystko" to jeden dokument. Przy pojedynczym raporcie wklejenie całości do rozmowy bywa najlepszym rozwiązaniem - model widzi pełny kontekst, nic mu nie umyka. Ale przy setkach dokumentów przestaje się to spinać z trzech powodów: całość nie mieści się w oknie, płacisz za każdy token przetworzonego tekstu, a modele gorzej radzą sobie z informacją zakopaną w środku bardzo długiego kontekstu ([Liu i in., 2023](https://arxiv.org/abs/2307.03172)).
+
+Praktyczna reguła: **jeden dokument - wklej; biblioteka dokumentów - RAG.**
+
+## Źródła i dalsze lektury
+
+- [Lewis i in., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (2020)](https://arxiv.org/abs/2005.11401) - praca, która dała technice nazwę
+- [AWS, "What is RAG?"](https://aws.amazon.com/what-is/retrieval-augmented-generation/) - przystępne wyjaśnienie z perspektywy wdrożeń
+- [NotebookLM](https://notebooklm.google/) - narzędzie Google zbudowane wokół pracy na własnych źródłach
+- [Liu i in., "Lost in the Middle" (2023)](https://arxiv.org/abs/2307.03172) - dlaczego bardzo długi kontekst nie zastępuje wyszukiwania
+
+:::note[Teraz wiesz]
+
+- Czym jest RAG - techniką "egzaminu z otwartą książką": najpierw wyszukanie fragmentów, potem odpowiedź na ich podstawie
+- Że korzystasz z niej codziennie - przy wgrywaniu plików, w NotebookLM, projektach i wyszukiwaniu internetowym chatbotów
+- Co RAG daje (mniej halucynacji, aktualność, źródła) i gdzie nadal trzeba uważać (złe fragmenty, błędna interpretacja)
+- Kiedy wkleić dokument w całości, a kiedy potrzebny jest RAG
+
+**Następny krok:** [Parametry modeli AI](/jak-dziala-ai/parametry-modeli/) - nauczysz się kontrolować zachowanie modelu za pomocą temperature, top_p i innych parametrów.
+:::
+
+<SlowniczekStrony terminy={["rag", "okno-kontekstowe", "chatbot", "halucynacje"]} />

@@ -3,7 +3,7 @@ title: Baza promptów
 description: Baza promptów. Wybierz kategorię i przeszukaj bazę promptów, aby znaleźć inspirację do swoich projektów.
 sidebar:
   label: 'Baza promptów'
-  order: 9
+  order: 10
 educationalLevel: Beginner
 teaches:
   - Gotowe prompty do użycia

@@ -3,7 +3,7 @@ title: Dlaczego AI teraz? - Historia boomu sztucznej inteligencji
 description: Poznaj historię rozwoju AI i dowiedz się, dlaczego boom nastąpił właśnie teraz. Od pierwszych sieci neuronowych po ChatGPT - kluczowe przełomy i czynniki sukcesu.
 sidebar:
   label: 'Dlaczego AI teraz?'
-  order: 9
+  order: 11
 educationalLevel: Beginner
 teaches:
   - Dlaczego AI rozwija się tak szybko
@@ -125,5 +125,5 @@ Czy obecne podejście (skalowanie) doprowadzi do AGI (ogólnej sztucznej intelig
 - Jak RLHF i prosty interfejs czatu sprawiły, że ChatGPT stał się przełomem dostępnym dla każdego
 - Kim są główni gracze w wyścigu AI i dokąd zmierza rozwój technologii
 
-**Następny krok:** [Mapa Systemów AI](/jak-dziala-ai/mapa-ai/) - zobaczysz pełny krajobraz technologii AI: od LLM przez agentów po protokoły komunikacji między systemami.
+**Następny krok:** [Agenci AI](/jak-dziala-ai/agenci-ai/) - poznasz systemy, które nie tylko odpowiadają na pytania, ale samodzielnie planują i wykonują wieloetapowe zadania.
 :::

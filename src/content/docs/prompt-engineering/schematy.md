@@ -435,5 +435,5 @@ Rekomendacja: [tak/nie/warunkowo]
 - Jak używać formatów JSON, tabel, list, XML i szablonów do uzyskiwania spójnych, strukturalnych odpowiedzi
 - Jak definiować narzędzia (function calling) i wieloczęściowe formaty wyjściowe dla złożonych analiz
 
-**Następny krok:** [Automatyzacja z AI](/prompt-engineering/automatyzacja/) - poznasz prompt chaining, APE i techniki testowania promptów, które pozwolą Ci skalować pracę z AI.
+**Następny krok:** [Inżynieria kontekstu](/prompt-engineering/inzynieria-kontekstu/) - nauczysz się zarządzać tym, co model naprawdę "widzi": doborem informacji, długością rozmowy i instrukcjami stałymi.
 :::

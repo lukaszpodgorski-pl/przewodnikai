@@ -3,7 +3,7 @@ title: Automatyzacja z AI - Prompt Chaining i APE
 description: Poznaj techniki automatyzacji promptów - prompt chaining, APE (Automatic Prompt Engineer), Active-Prompt. Twórz złożone workflow z AI.
 sidebar:
   label: 'Automatyzacja'
-  order: 6
+  order: 7
 educationalLevel: Advanced
 teaches:
   - Prompt chaining

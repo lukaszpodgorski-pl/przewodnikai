@@ -187,5 +187,5 @@ Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wyst
 - Jakie są realne ograniczenia LLM - halucynacje (3-15%), ograniczone okno kontekstowe, brak wiedzy po dacie treningu
 - Jak dobrać model do zadania - od analizy dokumentów (Claude/Gemini) po coding (Claude/GPT) i rozumowanie (o3/Gemini)
 
-**Następny krok:** [Tokeny i kontekst](/jak-dziala-ai/tokeny-i-kontekst/) - zobaczysz, jak AI dzieli tekst na tokeny, porównasz okna kontekstowe modeli i poznasz koszty API.
+**Następny krok:** [Modele rozumujące](/jak-dziala-ai/modele-rozumujace/) - dowiesz się, co naprawdę robi przycisk "myślenia" w chatbocie, kiedy go włączać i dlaczego odpowiedź trwa wtedy dłużej.
 :::
