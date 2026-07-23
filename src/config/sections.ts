@@ -1,5 +1,5 @@
 /**
- * Siedem sekcji merytorycznych kursu, w kolejności ścieżki nauki.
+ * Osiem sekcji merytorycznych kursu, w kolejności ścieżki nauki.
  * Źródło prawdy dla menu bocznego (astro.config.mjs) i dla klasyfikacji
  * strony jako artykułu w danych strukturalnych oraz w wyborze obrazu OG
  * (src/components/Head.astro).
