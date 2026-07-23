@@ -1,0 +1,78 @@
+---
+title: Suwerenne AI
+description: Polskie i europejskie modele AI, fabryki AI i uruchamianie modeli lokalnie - jak korzystać z AI bez uzależniania się od jednego dostawcy.
+sidebar:
+  hidden: true
+about:
+  - name: Suwerenność cyfrowa
+    sameAs: https://en.wikipedia.org/wiki/Digital_sovereignty
+  - name: Bielik
+    sameAs: https://pl.wikipedia.org/wiki/Bielik_(model_j%C4%99zykowy)
+mentions:
+  - name: Mistral AI
+    sameAs: https://en.wikipedia.org/wiki/Mistral_AI
+    type: Organization
+  - name: SpeakLeash
+    sameAs: https://speakleash.org/
+    type: Organization
+  - name: ElevenLabs
+    sameAs: https://en.wikipedia.org/wiki/ElevenLabs
+    type: Organization
+faq:
+  - q: Co znaczy "suwerenne AI"?
+    a: AI, z której możesz korzystać bez krytycznej zależności od pojedynczego zagranicznego dostawcy - bo model jest otwarty i możesz uruchomić go u siebie, bo tworzy go firma działająca pod europejskim prawem, albo bo infrastruktura stoi w Twoim regionie.
+  - q: Czy polskie i europejskie modele dorównują ChatGPT?
+    a: W czystych benchmarkach czołowe modele amerykańskie wciąż prowadzą. Ale do bardzo wielu codziennych zadań - pisania, tłumaczeń, podsumowań, pracy z dokumentami - modele takie jak Bielik czy Mistral wystarczają w zupełności, a dają prywatność i niezależność, których zamknięte usługi nie zaoferują.
+  - q: Czy muszę być osobą techniczną, żeby skorzystać z tej sekcji?
+    a: Nie. Z Bielika i Le Chat skorzystasz w przeglądarce jak z każdego chatbota, a uruchamianie modeli lokalnie pokazuję na narzędziach z prostym interfejsem - LM Studio to aplikacja okienkowa, w której model wybiera się z listy.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Termin from '../../../components/Termin.astro';
+
+## Czego się tu nauczysz
+
+To, z jakich narzędzi AI możesz korzystać, zależy dziś od decyzji firm i rządów spoza Europy - podpis pod jedną decyzją potrafi zmienić dostępność modeli dla całych regionów. Skalę tej zależności dobrze pokazuje inicjatywa EuroStack: ponad 80% infrastruktury cyfrowej Europa importuje ([CEPS](https://www.ceps.eu/ceps-publications/eurostack-a-european-alternative-for-digital-sovereignty/), [eurostack.eu](https://eurostack.eu/)). Właśnie dlatego coraz częściej mówi się o tym, czym jest <Termin id="suwerennosc-cyfrowa">suwerenność cyfrowa</Termin> - i o tym jest ta sekcja.
+
+Zaczynamy od polskich modeli językowych: poznasz Bielika, rządowy PLLuM i projekt Spichlerz oraz dowiesz się, jak ich spróbować. Potem rozglądamy się po Europie - Mistral i Le Chat, FLUX, DeepL i Aleph Alpha to europejskie alternatywy dla amerykańskich narzędzi. Trzeci artykuł to mapa polskiego ekosystemu AI: fabryki AI, superkomputery Helios i Athena oraz firmy takie jak ElevenLabs i Wordware. Na koniec pokazuję, jak uruchomić model AI na własnym komputerze - z Ollamą i LM Studio, bez chmury i bez abonamentu.
+
+## Dla kogo to jest
+
+Dla każdego, komu zależy na prywatności, przewidywalnych kosztach albo wspieraniu lokalnego rynku. Przyda się też firmom, które rozważają wdrożenie AI bez wysyłania danych do chmury.
+
+## W jakiej kolejności czytać
+
+Kolejność w menu odpowiada naturalnej ścieżce: od polskich modeli, przez europejskie firmy i polski ekosystem, aż po uruchamianie modeli lokalnie. Ale każdy artykuł czyta się samodzielnie - możesz zacząć od tego, który najbardziej Cię ciekawi.
+
+## Czego tu nie ma
+
+Nie znajdziesz tu rankingów w stylu "najlepszy model" ani agitacji. Amerykańskie narzędzia są świetne i piszemy o nich w całym kursie. W tej sekcji chodzi o coś innego: o świadomy wybór i o plan B - o to, żeby decyzja, z czego korzystasz, należała do Ciebie.
+
+:::caution[Fakty zmieniają się szybko]
+Ceny, wersje modeli i liczby w tej sekcji zmieniają się z miesiąca na miesiąc. Dlatego przy faktach znajdziesz linki do źródeł i daty - zanim podejmiesz decyzję, sprawdź stan na dziś u źródła.
+:::
+
+## Artykuły w tej sekcji
+
+<CardGrid>
+	<LinkCard
+		title="Bielik i polskie modele AI"
+		description="Bielik od SpeakLeash, rządowy PLLuM i projekt Spichlerz - co potrafią i jak ich spróbować."
+		href="/suwerenne-ai/bielik-i-polskie-modele/"
+	/>
+	<LinkCard
+		title="Europejskie modele i firmy AI"
+		description="Mistral i Le Chat, FLUX, DeepL, Aleph Alpha - europejskie alternatywy dla amerykańskich narzędzi."
+		href="/suwerenne-ai/europejskie-modele/"
+	/>
+	<LinkCard
+		title="Polski ekosystem AI"
+		description="Fabryki AI, superkomputery Helios i Athena, ElevenLabs i Wordware - kto buduje AI w Polsce."
+		href="/suwerenne-ai/polski-ekosystem-ai/"
+	/>
+	<LinkCard
+		title="AI na własnym komputerze"
+		description="Ollama, LM Studio i modele open-weight po polsku - prywatność, niezależność i zero abonamentu."
+		href="/suwerenne-ai/ai-na-wlasnym-komputerze/"
+	/>
+</CardGrid>

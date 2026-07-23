@@ -15,6 +15,7 @@ export const SECTIONS: ReadonlyArray<Section> = [
 	{ slug: 'jak-dziala-ai', label: 'Jak działa AI' },
 	{ slug: 'prompt-engineering', label: 'Prompt Engineering' },
 	{ slug: 'narzedzia', label: 'Narzędzia AI' },
+	{ slug: 'suwerenne-ai', label: 'Suwerenne AI' },
 	{ slug: 'praktyka', label: 'AI w praktyce' },
 	{ slug: 'etyka', label: 'Etyka i bezpieczeństwo' },
 	{ slug: 'zasoby', label: 'Zasoby' },
