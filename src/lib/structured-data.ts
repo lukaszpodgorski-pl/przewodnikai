@@ -12,7 +12,17 @@ export const AUTHOR = {
 	'@type': 'Person',
 	name: 'Łukasz Podgórski',
 	url: 'https://aitomate.pl',
-	sameAs: ['https://aitomate.pl', 'https://github.com/lukaszpodgorski-pl'],
+	jobTitle: 'Specjalista AI i automatyzacji',
+	description:
+		'Specjalista AI i automatyzacji, założyciel AITOMATE. Wdraża AI w firmach, doradza i uczy - po ludzku, bez hype\'u. W IT od ponad 20 lat (15 zawodowo), z AI od ponad 5. Ekspert generatywnej AI w jednym z największych polskich banków, twórca darmowych narzędzi open-source.',
+	sameAs: [
+		'https://aitomate.pl',
+		'https://lukaszpodgorski.pl',
+		'https://github.com/lukaszpodgorski-pl',
+		'https://www.youtube.com/@lukaszpodgorski',
+		'https://www.linkedin.com/in/podgorski-lukasz/',
+		'https://www.instagram.com/lukaszpodgorski_pl/',
+	],
 } as const;
 
 export interface ThingRef {
