@@ -156,6 +156,8 @@ Jeśli prywatność jest krytyczna, rozważ modele działające lokalnie.
 
 **Opcje:** Ollama (łatwe uruchamianie modeli lokalnie), LM Studio (GUI do lokalnych modeli), llama.cpp (wydajne uruchamianie na CPU), modele: Llama, Mistral, Phi, Gemma.
 
+Chcesz spróbować? [Jak to zrobić krok po kroku](/suwerenne-ai/ai-na-wlasnym-komputerze/).
+
 **Wymagania:** GPU z min. 8GB VRAM (dla średnich modeli), 16-32GB RAM, szybki dysk SSD.
 
 **Kompromisy:** jakość niższa niż GPT-4/Claude (ale rośnie!), wymaga technicznej wiedzy, potrzebny mocny sprzęt. Ale: pełna prywatność, zero kosztów API.
