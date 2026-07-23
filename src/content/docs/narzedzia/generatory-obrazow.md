@@ -29,6 +29,8 @@ faq:
     a: Zależy od zastosowania. Midjourney ma wyrazisty styl artystyczny, DALL-E jest zintegrowany z ChatGPT i dobrze trzyma się instrukcji tekstowych, a Stable Diffusion jest darmowy i daje pełną kontrolę nad procesem.
 ---
 
+![Małe ziarno tekstu rozkwita w namalowany obraz na sztaludze - generatory obrazów AI](../../../assets/narzedzia/generatory-obrazow/generatory-obrazow.jpg)
+
 <!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
 
 ## Tworzenie obrazów ze słów

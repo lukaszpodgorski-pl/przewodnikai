@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Nastolatek z plecakiem idzie ścieżką ikon nauki w świetle AI](../../../assets/sciezki/uczen-liceum/uczen-liceum.jpg)
+
 Pisz lepsze wypracowania i projekty z AI - bez oszukiwania siebie. Wybrałem 7 lekcji wokół jednej umiejętności: sprawdzania, czy model nie zmyśla. Dlatego weryfikację informacji postawiłem przed promptowaniem, a nie po nim - lepiej pisać proste polecenia i umieć ocenić odpowiedź niż odwrotnie.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - zanim zaczniesz używać AI do nauki, sprawdź, co ten model właściwie robi. To zmienia sposób, w jaki będziesz zadawać mu pytania.

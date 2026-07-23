@@ -14,9 +14,9 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
-## Świat pełen informacji i baniek
+![Spokojna postać zachowująca środek pośród wiru krzykliwych ikon szumu wokół AI](../../../assets/podstawy/nie-dajmy-sie-zwariowac/nie-dajmy-sie-zwariowac.jpg)
 
-![Sztuczna inteligencja](../../../assets/podstawy/nie-dajmy-sie-zwariowac/jak-nie-zwariowac.jpg)
+## Świat pełen informacji i baniek
 
 Jeśli czujesz się przytłoczony lawiną informacji o AI - spokojnie, to normalna reakcja. Nowe narzędzia, modele i pojęcia pojawiają się szybciej, niż ktokolwiek jest w stanie je przeczytać.
 

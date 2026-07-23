@@ -14,6 +14,8 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
+![Reflektor na rosnącym wykresie sukcesu i ukończonym projekcie - studia przypadków AI](../../../assets/praktyka/case-studies/case-studies.jpg)
+
 ## Nauka na typowych scenariuszach wdrożeń
 
 Teoria jest ważna, ale nic nie uczy tak dobrze jak konkretny przykład. Zebrałem tu pięć scenariuszy pokazujących, jak firmy i osoby indywidualne wykorzystują AI w praktyce - co zadziałało, co nie i jakie wnioski z tego płyną. Radzę czytać je pod kątem mechaniki, nie liczb: przenośne jest to, _jak_ ktoś doszedł do wyniku, nie sam wynik.

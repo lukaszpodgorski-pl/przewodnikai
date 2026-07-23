@@ -19,6 +19,8 @@ faq:
     a: Tak, AI może wykazywać bias (stronniczość), ponieważ uczy się z danych stworzonych przez ludzi. Jeśli dane treningowe zawierają uprzedzenia, model może je powielać.
 ---
 
+![Waga sprawiedliwości z małym młotkiem obok świetlistego rdzenia AI - etyka i prawo](../../../assets/etyka/etyczne-aspekty/etyczne-aspekty.jpg)
+
 ## AI a wartości i odpowiedzialność
 
 Gdy technologia staje się tak potężna jak sztuczna inteligencja, nieodłącznie pojawiają się pytania o etykę, wartości i odpowiedzialność. W tym rozdziale pokazuję najważniejsze aspekty etyczne i prawne związane z rozwojem i wykorzystaniem systemów sztucznej inteligencji.

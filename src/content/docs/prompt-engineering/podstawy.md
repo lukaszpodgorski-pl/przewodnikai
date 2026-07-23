@@ -17,6 +17,8 @@ faq:
     a: Dobry prompt jest konkretny, zawiera kontekst, określa rolę AI, format odpowiedzi i oczekiwany poziom szczegółowości. Unikaj pytań zbyt ogólnych.
 ---
 
+![Czytelna, dobrze uformowana karta polecenia zmienia się w precyzyjny wynik - podstawy promptów](../../../assets/prompt-engineering/podstawy/podstawy.jpg)
+
 ## Czym jest prompt?
 
 Prompt to instrukcja lub polecenie, które przekazujesz modelowi językowemu (LLM). Może to być proste pytanie, złożone polecenie, a nawet cały kontekst z przykładami. Jakość odpowiedzi, którą otrzymasz od AI, zależy bezpośrednio od tego, jak dobrze sformułujesz swój prompt.

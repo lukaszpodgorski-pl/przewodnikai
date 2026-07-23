@@ -21,9 +21,9 @@ faq:
     a: AI nie rozumie kontekstu tak jak człowiek, może generować błędne informacje, nie ma dostępu do aktualnych danych (chyba że jest podłączona do internetu) i nie potrafi myśleć kreatywnie.
 ---
 
-## Co potrafi, a czego nie potrafi AI?
+![Robot dotykający przezroczystej szklanej ściany-granicy - ograniczenia sztucznej inteligencji](../../../assets/podstawy/ograniczenia/ograniczenia.jpg)
 
-![Ograniczenia sztucznej inteligencji](../../../assets/podstawy/ograniczenia/ograniczenia.jpg)
+## Co potrafi, a czego nie potrafi AI?
 
 Choć sztuczna inteligencja potrafi robić rzeczy, które jeszcze dekadę temu wydawały się niemożliwe, ma ona swoje wyraźne ograniczenia. Chcę, żebyś dobrze je poznał. Bez tego będziesz albo rozczarowany AI, albo będziesz się jej bał bez powodu - a oba te stany utrudniają pracę.
 

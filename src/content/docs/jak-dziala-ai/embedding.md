@@ -19,6 +19,8 @@ faq:
     a: Embedding to sposób zamiany tekstu (słów, zdań) na wektory liczbowe, które zachowują semantyczne znaczenie. Dzięki temu AI może matematycznie porównywać podobieństwo tekstów.
 ---
 
+![Słowa jako świetliste punkty w przestrzeni 3D, podobne znaczenia blisko siebie - embedding](../../../assets/jak-dziala-ai/embedding/embedding.jpg)
+
 :::caution[Poziom: Zaawansowany]
 Ten artykuł wyjaśnia, jak AI rozumie znaczenie tekstu pod maską. To wiedza, która pomaga zrozumieć, dlaczego wyszukiwanie semantyczne działa lepiej niż szukanie po słowach kluczowych. Jeśli dopiero zaczynasz - możesz to spokojnie pominąć i wrócić później.
 :::

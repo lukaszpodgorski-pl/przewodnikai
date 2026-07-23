@@ -19,6 +19,8 @@ faq:
     a: Top-P (nucleus sampling) to parametr kontrolujący różnorodność odpowiedzi. Ogranicza wybór kolejnego tokenu do grupy najbardziej prawdopodobnych opcji sumujących się do wartości P.
 ---
 
+![Panel świetlistych pokręteł i suwaków dostrajających iskrę kreatywności - parametry modelu](../../../assets/jak-dziala-ai/parametry-modeli/parametry-modeli.jpg)
+
 :::caution[Poziom: Zaawansowany]
 Ten artykuł jest dla osób, które chcą wejść głębiej w techniczne aspekty AI. Jeśli dopiero zaczynasz swoją przygodę ze sztuczną inteligencją, spokojnie go pomiń i wróć tutaj później. Do codziennego korzystania z ChatGPT czy Claude ta wiedza nie jest niezbędna.
 :::

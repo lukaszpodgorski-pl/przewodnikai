@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Właściciel małej firmy w przytulnym sklepiku wspierany narzędziami AI](../../../assets/sciezki/wlasciciel-firmy/wlasciciel-firmy.jpg)
+
 Zautomatyzuj część pracy w swojej firmie i naucz się bezpiecznie korzystać z AI przy danych klientów. Wybrałem 8 lekcji pod jednoosobową działalność, czyli sytuację, w której nie ma ani działu IT, ani prawnika na etacie. Rozdział o prywatności jest na końcu listy, ale przy danych klientów to on jest z niej najważniejszy.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - podstawy w dziesięć minut. Tyle, żeby nie kupić czegoś, co sprzedaje się jako AI, a jest zwykłym formularzem.

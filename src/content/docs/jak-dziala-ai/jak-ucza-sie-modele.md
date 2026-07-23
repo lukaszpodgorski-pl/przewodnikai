@@ -21,6 +21,8 @@ faq:
     a: 'AI uczy się na ogromnych zbiorach danych. W uczeniu nadzorowanym otrzymuje przykłady z odpowiedziami. W uczeniu nienadzorowanym sam odkrywa wzorce w danych.'
 ---
 
+![Postać modelu ucząca się na kartach z przykładami, strzałki dostrajają wagi](../../../assets/jak-dziala-ai/jak-ucza-sie-modele/jak-ucza-sie-modele.jpg)
+
 ## Jak AI zdobywa wiedzę?
 
 Nikt nie zaprogramował modelu instrukcją "rozpoznawaj twarze". Model dostał przykłady i sam wyciągnął z nich reguły. Ale jak to właściwie działa? Jak komputer może "nauczyć się" rozpoznawać twarze, tłumaczyć języki czy prowadzić samochód?

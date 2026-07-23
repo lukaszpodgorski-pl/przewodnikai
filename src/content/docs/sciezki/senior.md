@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Spokojny senior wygodnie korzysta z prostego, przyjaznego pomocnika AI](../../../assets/sciezki/senior/senior.jpg)
+
 Oswój AI krok po kroku, we własnym tempie. Ułożyłem tę ścieżkę z 6 lekcji i rozbiłem ją na najmniejsze kawałki, jakie się dało - nic nie trzeba umieć wcześniej, a jedyny sprzęt, jakiego potrzebujesz, to przeglądarka. Jeśli któraś lekcja wyda się za długa, przeczytaj sam początek i wróć do reszty innego dnia.
 
 1. [Wstęp do kursu AI](/podstawy/wstep/) - krótkie wprowadzenie: co znajdziesz w kursie i od czego zacząć.

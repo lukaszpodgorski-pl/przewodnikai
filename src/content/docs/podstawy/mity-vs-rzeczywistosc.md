@@ -19,9 +19,9 @@ faq:
     a: Nie, obecne systemy AI nie posiadają świadomości ani uczuć. Przetwarzają dane i generują odpowiedzi na podstawie wzorców statystycznych.
 ---
 
-## Oddzielamy fakty od fikcji
+![Podzielony kadr - dramatyczna burza mitu po lewej, spokojna jasna rzeczywistość po prawej](../../../assets/podstawy/mity-vs-rzeczywistosc/mity-vs-rzeczywistosc.jpg)
 
-![MIT - AI zabierze wszystkim pracę](../../../assets/podstawy/mity-vs-rzeczywistosc/ai-zabierze-wszystkim-prace.jpg)
+## Oddzielamy fakty od fikcji
 
 Sztuczna inteligencja (AI) to dziedzina informatyki, która tworzy programy potrafiące wykonywać zadania wymagające zwykle ludzkiej inteligencji - jak uczenie się, rozumienie języka czy podejmowanie decyzji. Prostymi słowami: AI to sprawienie, by komputery **naśladowały ludzkie myślenie**. Mimo że termin powstał już w 1956 roku, prawdziwy rozkwit AI nastąpił dopiero niedawno dzięki szybszym komputerom i większym zbiorom danych.
 

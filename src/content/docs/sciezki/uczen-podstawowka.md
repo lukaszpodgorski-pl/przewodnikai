@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Ciekawe dziecko wchodzi na wesołą ścieżkę rozświetloną przyjaznym światłem AI](../../../assets/sciezki/uczen-podstawowka/uczen-podstawowka.jpg)
+
 Poznaj AI bezpiecznie i naucz się z niej korzystać z głową. Wybrałem do tej ścieżki 6 lekcji i celowo zaczynam od wyjaśnienia, czym AI w ogóle jest - bo bez tego trudno ocenić, kiedy warto jej użyć, a kiedy lepiej pomyśleć samemu. Nie musisz robić wszystkiego naraz, jedna lekcja dziennie w zupełności wystarczy.
 
 1. [Wstęp do kursu AI](/podstawy/wstep/) - zacznij tutaj: zobaczysz, co jest w kursie i jak się w nim poruszać.

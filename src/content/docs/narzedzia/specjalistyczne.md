@@ -14,6 +14,8 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
+![Zbiór symboli narzędzi - klatka filmu, fala dźwięku, nawias kodu, slajd - narzędzia specjalistyczne](../../../assets/narzedzia/specjalistyczne/specjalistyczne.jpg)
+
 <!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
 
 ## AI do wszystkiego

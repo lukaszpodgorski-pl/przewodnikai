@@ -9,6 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "verify:geo": "node scripts/verify-geo.mjs",
+    "grafiki": "node scripts/przetworz-grafiki.mjs",
+    "test:grafiki": "node --test scripts/lib/przetwarzanie-grafik.test.mjs",
     "profile:sync": "node scripts/fetch-profile.mjs"
   },
   "dependencies": {

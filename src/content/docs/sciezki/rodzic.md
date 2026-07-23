@@ -5,6 +5,8 @@ sidebar:
   hidden: true
 ---
 
+![Rodzic i dziecko bezpiecznie odkrywają AI razem w domu](../../../assets/sciezki/rodzic/rodzic.jpg)
+
 Zrozum AI, żeby mądrze towarzyszyć dziecku i dbać o jego bezpieczeństwo. Wybrałem 6 lekcji przy takim założeniu, że nie musisz zostać ekspertem - wystarczy wiedzieć na tyle dużo, żeby rozmowa w domu była rozmową, a nie zakazem.
 
 1. [Czym jest AI?](/podstawy/czym-jest-ai/) - pojęcia, których dziecko używa na co dzień, wyłożone tak, żebyście mówili tym samym językiem.

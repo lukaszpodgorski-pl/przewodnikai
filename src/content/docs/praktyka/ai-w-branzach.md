@@ -18,6 +18,8 @@ faq:
     a: Najwięcej daje tam, gdzie jest dużo danych do przetworzenia i dużo powtarzalnej pracy z tekstem - w marketingu, HR, finansach, prawie, medycynie i edukacji. Najbardziej dojrzałe wdrożenia są dziś w marketingu i finansach, najmniej zaawansowane w edukacji.
 ---
 
+![Koło symboli branż - marketing, HR, finanse, prawo, zdrowie - wokół rdzenia AI](../../../assets/praktyka/ai-w-branzach/ai-w-branzach.jpg)
+
 ## Co AI robi w konkretnych branżach
 
 Sztuczna inteligencja nie jest rozwiązaniem uniwersalnym - każda branża ma swoje zastosowania i swoje wyzwania. Zebrałem tu przegląd sektor po sektorze: co realnie działa, jakich narzędzi się używa i gdzie leżą granice. Jeśli Twojej branży nie ma na liście, przejrzyj tę najbliższą - mechanika zwykle się powtarza.

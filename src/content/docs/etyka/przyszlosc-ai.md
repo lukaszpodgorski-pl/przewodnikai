@@ -19,6 +19,8 @@ faq:
     a: Prognozy ekspertów są różne - od kilku do kilkudziesięciu lat. Nie ma pewności, czy i kiedy osiągniemy sztuczną inteligencję ogólną (AGI), porównywalną z ludzką.
 ---
 
+![Świt na horyzoncie ze ścieżką prowadzącą ku odległej świetlistej gwieździe AGI - przyszłość AI](../../../assets/etyka/przyszlosc-ai/przyszlosc-ai.jpg)
+
 ## Co nas czeka?
 
 Przewidywanie przyszłości technologii to ryzykowna gra - eksperci mylą się regularnie. Mimo to, warto znać główne trendy i scenariusze, by lepiej przygotować się na nadchodzące zmiany.

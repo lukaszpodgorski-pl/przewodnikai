@@ -14,6 +14,8 @@ about:
     sameAs: https://en.wikipedia.org/wiki/Prompt_engineering
 ---
 
+![Dopracowana lista kontrolna i kompas nad kartami promptów - najlepsze praktyki](../../../assets/prompt-engineering/najlepsze-praktyki/najlepsze-praktyki.jpg)
+
 ## Najlepsze praktyki Prompt Engineering
 
 Za sobą masz techniki promptowania, rozumowania i strukturyzacji danych. W tym rozdziale zbieram to, co najważniejsze, i dokładam dwa tematy, które pojawiają się dopiero wtedy, gdy prompt trafia do prawdziwej aplikacji: bezpieczeństwo i koszty.

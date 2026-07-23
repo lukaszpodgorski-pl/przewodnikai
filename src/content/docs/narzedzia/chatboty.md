@@ -34,6 +34,8 @@ faq:
     a: Większość chatbotów AI oferuje darmowe plany z ograniczeniami. Pełne funkcje wymagają płatnej subskrypcji (ok. 20 USD/miesiąc).
 ---
 
+![Przyjazny rząd różnych dymków-postaci jako asystenci - chatboty AI](../../../assets/narzedzia/chatboty/chatboty.jpg)
+
 <!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
 
 ## Chatboty AI - Twoi cyfrowi asystenci

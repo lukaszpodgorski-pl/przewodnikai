@@ -25,6 +25,8 @@ faq:
     a: 'Dobrze skonstruowany prompt może drastycznie poprawić jakość odpowiedzi AI. To kluczowa umiejętność w efektywnej pracy ze sztuczną inteligencją.'
 ---
 
+![Osoba wręcza świetlisty zwój z promptem uważnemu orbowi AI - wprowadzenie do promptowania](../../../assets/prompt-engineering/wprowadzenie/wprowadzenie.jpg)
+
 ## Czym jest Prompt Engineering?
 
 **Prompt Engineering** (inżynieria promptów) to dyscyplina zajmująca się tworzeniem i optymalizacją instrukcji przekazywanych modelom językowym (LLM). To sztuka komunikacji z AI - umiejętność formułowania poleceń w sposób, który prowadzi do najlepszych możliwych wyników.

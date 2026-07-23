@@ -16,6 +16,8 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Nauka_o_danych
 ---
 
+![Przyjazne wiersze i kolumny prostej tabeli układające się w czytelne kształty - dane dla początkujących](../../../assets/jak-dziala-ai/dane-dla-poczatkujacych/dane-dla-poczatkujacych.jpg)
+
 ## Dane - nowy język biznesu
 
 Nie musisz umieć programować ani zbudować modelu, żeby dobrze pracować z danymi. Musisz natomiast wiedzieć, skąd Twoje dane pochodzą i w którym miejscu potrafią kłamać - bo AI powtórzy ich błędy bez ostrzeżenia, i to bardzo przekonującym tonem. Tę umiejętność nazywa się **Data Fluency** i rozwiniesz ją niezależnie od branży, w której pracujesz.

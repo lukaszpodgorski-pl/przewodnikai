@@ -26,6 +26,8 @@ faq:
     a: AI potrafi generować, wyjaśniać i debugować kod. Nie zastępuje programisty, ale znacząco przyspiesza pracę - zwłaszcza w pisaniu powtarzalnego kodu i szukaniu błędów.
 ---
 
+![Asystent AI obok płynących bloków kodu - generowanie i wyjaśnianie kodu](../../../assets/prompt-engineering/programowanie/programowanie.jpg)
+
 ## AI jako partner programisty
 
 Narzędzia takie jak GitHub Copilot, ChatGPT czy Claude potrafią generować kod, wyjaśniać złożone fragmenty, pomagać w debugowaniu i automatyzować rutynowe zadania. Traktuj je jak bardzo szybkiego juniora: nadrabia tempem, ale wszystko po nim sprawdzasz. Pokażę Ci, jak korzystać z nich w codziennej pracy - i czego nie oddawać modelowi bez sprawdzenia.
