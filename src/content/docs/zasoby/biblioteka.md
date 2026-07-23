@@ -1,139 +1,103 @@
 ---
-title: Biblioteka zasobów AI - kursy, książki, narzędzia, społeczności
-description: Kompletna lista zasobów do nauki AI - najlepsze kursy, książki, podcasty, newslettery, narzędzia i społeczności.
+title: Biblioteka zasobów AI - sprawdzone kursy, społeczności i newsy
+description: Sprawdzone zasoby do nauki AI - oficjalne kursy i przewodniki Anthropic i OpenAI, polska społeczność SpeakLeash oraz wybrane źródła newsów o sztucznej inteligencji.
 sidebar:
   label: 'Biblioteka'
   order: 3
 educationalLevel: Beginner
 teaches:
-  - Zasoby do nauki AI
-  - Kursy i książki o AI
-  - Społeczności AI
+  - Gdzie uczyć się pracy z AI z oficjalnych źródeł
+  - Jak korzystać z anglojęzycznych materiałów o AI
+  - Gdzie znaleźć polską społeczność AI
 about:
   - name: Sztuczna inteligencja
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
+mentions:
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Anthropic
+    sameAs: https://en.wikipedia.org/wiki/Anthropic
+    type: Organization
+  - name: OpenAI
+    sameAs: https://en.wikipedia.org/wiki/OpenAI
+    type: Organization
+  - name: SpeakLeash
+    sameAs: https://speakleash.org
+    type: Organization
+faq:
+  - q: Czy te kursy i materiały są darmowe?
+    a: Tak, wszystkie zasoby z tej strony są bezpłatne. Niektóre (np. kursy Anthropic) wymagają założenia darmowego konta. Płacisz najwyżej za subskrypcję samego narzędzia AI, jeśli zechcesz wyjść poza plan darmowy.
+  - q: Nie znam angielskiego - czy te materiały są dla mnie?
+    a: 'Częściowo tak. Przewodniki ChatGPT dla nauczycieli, rodziców oraz nauki i medycyny mają oficjalne polskie wersje. Resztę możesz czytać z pomocą AI: wklej fragment do Claude''a lub ChatGPT i poproś o wyjaśnienie po polsku.'
+  - q: Który model AI najlepiej radzi sobie z językiem polskim?
+    a: Sprawdzisz to w rankingach społeczności SpeakLeash, np. Polish EQ-Bench na Hugging Face - porównują one na bieżąco, jak dobrze poszczególne modele rozumieją język polski i jego niuanse.
 ---
 
 ## Moja biblioteka zasobów
 
-Zebrałem tutaj materiały, z których sam korzystam albo które regularnie polecam na szkoleniach - kursy, książki, newslettery, narzędzia i społeczności. Nie traktuj tej listy jak zadania do odhaczenia: to raczej półka, z której wyciągasz jedną rzecz, kiedy jej potrzebujesz.
+Zebrałem tu wyłącznie materiały, które sam sprawdziłem i za które mogę ręczyć. Lista jest krótsza niż typowe "100 zasobów o AI" - i to celowo. Zamiast katalogu, w którym utoniesz, dostajesz kilkanaście pozycji z konkretną wskazówką, dla kogo są i od czego zacząć.
 
-<!-- TODO(Łukasz): ta strona nie była aktualizowana od dawna; albo odśwież zasoby (część linków i platform mogła się zmienić), albo usuń deklarację o regularnej aktualizacji -->
-
-<!-- TODO(Łukasz): zaznacz, z których zasobów faktycznie korzystasz - jedno zdanie "do tego wracam najczęściej" przy 3-4 pozycjach da czytelnikowi punkt zaczepienia. Celowo nie wpisałem tu opinii za Ciebie -->
-
-## Kursy online
-
-**Dla początkujących (bez kodowania):**
-
-| Kurs | Platforma | Cena | Uwagi |
-| --- | --- | --- | --- |
-| AI for Everyone | [Coursera](https://www.coursera.org) ([DeepLearning.AI](https://www.deeplearning.ai)) | Darmowy (audit) | Andrew Ng, świetne wprowadzenie |
-| ChatGPT Prompt Engineering for Developers | [DeepLearning.AI](https://www.deeplearning.ai) | Darmowy | Praktyczne promptowanie |
-| Generative AI for Everyone | [Coursera](https://www.coursera.org) | Darmowy (audit) | Przegląd generatywnego AI |
-| Google AI Essentials | [Coursera](https://www.coursera.org) | Darmowy | Perspektywa Google |
-
-Jeśli dopiero zaczynasz, nie zapisuj się na wszystkie cztery naraz. Wybierz jeden i przerób go do końca.
-
-**Techniczne (wymagają podstaw programowania):**
-
-| Kurs | Platforma | Poziom |
-| --- | --- | --- |
-| Machine Learning Specialization | [Coursera](https://www.coursera.org) (Stanford) | Średnio-zaawansowany |
-| Deep Learning Specialization | [Coursera](https://www.coursera.org) ([DeepLearning.AI](https://www.deeplearning.ai)) | Zaawansowany |
-| Practical Deep Learning for Coders | [fast.ai](https://course.fast.ai) | Średni (podejście top-down) |
-| Hugging Face NLP Course | [Hugging Face](https://huggingface.co/learn/nlp-course) | Średnio-zaawansowany |
-| Full Stack LLM Bootcamp | The Full Stack | Zaawansowany |
-
-## Książki
-
-**Dla ogółu czytelników:** "The Coming Wave" (Mustafa Suleyman, DeepMind - przyszłość AI i wyzwania), "AI 2041" (Kai-Fu Lee & Chen Qiufan - opowiadania SF + analiza), "Co-Intelligence" (Ethan Mollick - AI w pracy i życiu), "Impromptu" (Reid Hoffman - rozmowy z GPT-4), "Life 3.0" (Max Tegmark - filozofia AI).
-
-**Techniczne:** "Hands-On Machine Learning" (Aurélien Géron - praktyczny podręcznik), "Deep Learning" (Goodfellow et al. - biblia deep learning), "Natural Language Processing with Transformers" (Hugging Face team), "Build a Large Language Model - From Scratch" (Sebastian Raschka).
-
-**Historia i kontekst:** "The Alignment Problem" (Brian Christian - etyka i bezpieczeństwo), "Genius Makers" (Cade Metz - historia współczesnego AI), "Atlas of AI" (Kate Crawford - krytyczna perspektywa).
-
-Celowo nie linkuję do księgarni - tytuł i autor wystarczą, żebyś znalazł książkę tam, gdzie zwykle kupujesz.
-
-## Newslettery
-
-**Codzienne i tygodniowe przeglądy:** The Rundown AI (codzienny, przystępny przegląd nowości), Ben's Bites (codziennie, zwięźle, z humorem), [TLDR AI](https://tldr.tech/ai) (codziennie, zwięzłe podsumowanie), The Neuron (codziennie, praktyczne zastosowania).
-
-**Głębsze analizy:** [One Useful Thing](https://www.oneusefulthing.org) (Ethan Mollick, strategiczne spojrzenie), [AI Snake Oil](https://www.aisnakeoil.com) (krytyczna perspektywa, obalanie mitów), The Algorithmic Bridge (analiza z perspektywy UE), [Import AI](https://importai.substack.com) (Jack Clark, głębokie analizy).
-
-**Techniczne:** [The Batch](https://www.deeplearning.ai/the-batch/) (Andrew Ng, DeepLearning.AI), Papers With Code Newsletter (nowe badania), Last Week in AI (przegląd badań).
-
-Radzę zacząć od jednego. Jeden newsletter w skrzynce to nauka, pięć to szum, który po dwóch tygodniach zaczniesz ignorować.
-
-## Podcasty
-
-[Lex Fridman Podcast](https://lexfridman.com/podcast/) (długie wywiady z ekspertami AI), The AI Podcast (NVIDIA, zastosowania AI), Practical AI (praktyczne podejście), Eye on AI (biznesowa perspektywa), The TWIML AI Podcast (Machine Learning community), Gradient Dissent (Weights & Biases).
-
-## Kanały YouTube
-
-**Edukacyjne:** [3Blue1Brown](https://www.youtube.com/@3blue1brown) (wizualne wyjaśnienia matematyki i ML), [StatQuest](https://www.youtube.com/@statquest) (statystyka i ML przystępnie), [Andrej Karpathy](https://www.youtube.com/@AndrejKarpathy) (były szef AI Tesli, świetne tutoriale), [Yannic Kilcher](https://www.youtube.com/@YannicKilcher) (omówienia paperów naukowych).
-
-**Nowości i demo:** [Two Minute Papers](https://www.youtube.com/@TwoMinutePapers) (przegląd nowych badań), Matt Wolfe (narzędzia AI, demo), AI Explained (wyjaśnienia nowych modeli), [Fireship](https://www.youtube.com/@Fireship) (szybkie tech explainers, nie tylko AI).
-
-Jeśli chcesz zobaczyć, jak sieć neuronowa działa "od środka", zacznij od serii o sieciach neuronowych na 3Blue1Brown - wyjaśnia to obrazem, a nie wzorami.
-
-## Społeczności
-
-**Discord:** Midjourney (największa społeczność AI art), OpenAI Discord (dyskusje o ChatGPT), [Hugging Face](https://huggingface.co) (ML community), Eleuther AI (open-source AI research).
-
-**Reddit:** [r/MachineLearning](https://www.reddit.com/r/MachineLearning/) (techniczne dyskusje), [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/) (lokalne modele), [r/ChatGPT](https://www.reddit.com/r/ChatGPT/) (użytkownicy ChatGPT), [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/) (generowanie obrazów), [r/artificial](https://www.reddit.com/r/artificial/) (ogólne dyskusje o AI).
-
-**X/Twitter:** badacze, komentatorzy branżowi oraz oficjalne konta firm AI (OpenAI, Anthropic, Google AI) publikują tam najświeższe ogłoszenia i analizy.
-
-## Narzędzia do nauki
-
-**Playgroundy:** [OpenAI Playground](https://platform.openai.com/playground) (eksperymentowanie z GPT), [Google AI Studio](https://aistudio.google.com) (Gemini API playground), [Anthropic Console](https://console.anthropic.com) (testowanie API Claude), [Hugging Face Spaces](https://huggingface.co/spaces) (demo różnych modeli).
-
-**Środowiska do kodowania:** [Google Colab](https://colab.research.google.com) (darmowe GPU, notatniki Jupyter), [Kaggle](https://www.kaggle.com) (zbiory danych, konkursy, GPU), [Replit](https://replit.com) (środowisko z asystentem AI).
-
-**Wizualizacje i narzędzia edukacyjne:** [TensorFlow Playground](https://playground.tensorflow.org) (wizualizacja sieci neuronowych), CNN Explainer (jak działają konwolucje), Transformer Explainer (wizualizacja Transformera).
-
-Od playgroundów warto zacząć eksperymenty - są darmowe, nic nie instalujesz, a jedno popołudnie klikania daje więcej intuicji niż tydzień czytania.
-
-## Dokumentacja i tutoriale
-
-**Oficjalna dokumentacja:** [OpenAI](https://platform.openai.com/docs), [Anthropic](https://docs.anthropic.com), [Google AI](https://ai.google.dev), [Hugging Face](https://huggingface.co/docs).
-
-**Tutoriale prompt engineering:** [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering), Anthropic Prompt Library, [Learn Prompting](https://learnprompting.org), [Prompt Engineering Guide](https://www.promptingguide.ai).
-
-## Agregatory i katalogi
-
-**Narzędzia AI:** [There's An AI For That](https://theresanaiforthat.com) (katalog narzędzi AI), [Futurepedia](https://www.futurepedia.io) (baza narzędzi AI), AI Tool Tracker (śledzenie nowości).
-
-**Badania:** [arXiv](https://arxiv.org) (kategorie cs.AI, cs.CL, cs.LG - publikacje naukowe), Papers With Code (implementacje badań), [Semantic Scholar](https://www.semanticscholar.org) (wyszukiwarka akademicka).
-
-**Benchmarki:** LMSYS Chatbot Arena (porównanie modeli), Hugging Face Leaderboards (rankingi modeli), AI Benchmark (testy wydajności).
-
-## Polskie zasoby
-
-**Blogi i newslettery:** AI w Praktyce (newsletter).
-
-**Społeczności:** Polish AI Society (wydarzenia, networking), [ML in PL](https://mlinpl.org) (konferencja i community), [AI Devs](https://aidevs.pl) (kurs i społeczność).
-
-**Uczelnie:** AGH (AI i ML), Politechnika Warszawska (informatyka z AI), UW (Cognitive Science, Data Science), MIMUW (informatyka teoretyczna).
-
-## Ścieżki nauki
-
-Trzy drogi, w zależności od tego, co chcesz z AI robić:
-
-1. **Użytkownik AI (bez kodowania):** AI for Everyone (Coursera) → ChatGPT Prompt Engineering (DeepLearning.AI) → praktyka z różnymi narzędziami → jeden newsletter na start
-2. **AI Developer (z kodowaniem):** podstawy Pythona (jeśli trzeba) → Machine Learning Specialization (Coursera) → Hugging Face NLP Course → własne projekty z API modeli językowych → Deep Learning Specialization
-3. **AI Researcher:** matematyka (algebra liniowa, analiza, rachunek prawdopodobieństwa) → "Deep Learning" (Goodfellow) → czytanie paperów na arXiv → reimplementacje klasycznych modeli → własne badania
-
-:::tip[Wskazówka]
-Nie próbuj ogarnąć wszystkiego naraz. Wybierz jedną ścieżkę z powyższych trzech, zacznij od jednego kursu i jednego newslettera, a resztę tej strony potraktuj jak katalog, do którego wracasz w razie potrzeby. Konsekwentne przerobienie jednego kursu da Ci więcej niż zaczęcie dziesięciu.
+:::note[Większość jest po angielsku - i to nie jest problem]
+Najlepsze kursy o AI powstają dziś po angielsku i nie ma co udawać, że jest inaczej. Ale ucząc się AI, masz pod ręką najlepszego tłumacza: wklej fragment kursu do Claude'a lub ChatGPT i poproś "wyjaśnij mi to po polsku, prostym językiem". Tak przerobisz każdy z poniższych materiałów - a przy okazji przećwiczysz pracę z AI w praktyce.
 :::
+
+## Nauka z Claude'em (Anthropic)
+
+Sam pracuję głównie z Claude'em, więc ta część jest najobszerniejsza. Dobra wiadomość: choć materiały dotyczą jednego narzędzia, większość umiejętności - formułowanie poleceń, delegowanie zadań, ocenianie wyników - przenosi się na każdy inny model.
+
+- **[AI Fluency: Framework & Foundations](https://www.anthropic.com/learn/claude-for-you)** - darmowy kurs Anthropic stworzony we współpracy z wykładowcami akademickimi. Kilkanaście krótkich modułów o tym, jak mądrze delegować zadania AI, pisać skuteczne polecenia i krytycznie oceniać odpowiedzi. Ma też warianty dla nauczycieli i studentów. Od niego radzę zacząć.
+- **[Przykłady zastosowań](https://claude.com/resources/use-cases)** - katalog konkretnych przykładów użycia Claude'a z filtrami po dziedzinie (edukacja, finanse, prawo, marketing) i funkcjach. Zaglądaj tu po inspirację, gdy zastanawiasz się "co jeszcze mogę z tym zrobić".
+- **[Tutoriale](https://claude.com/resources/tutorials)** - praktyczne poradniki tekstowe i lekcje wideo: od obsługi poszczególnych funkcji po zastosowania branżowe. Naturalny krok drugi po kursie AI Fluency.
+- **[Anthropic Academy](https://www.anthropic.com/learn)** - portal edukacyjny zbierający wszystkie ścieżki w jednym miejscu: do użytku osobistego, do pracy i dla programistów. Część kursów kończy się certyfikatem.
+
+## Nauka z ChatGPT (OpenAI)
+
+OpenAI poszło inną drogą: zamiast jednego kursu przygotowało przewodniki pod konkretne role. Wybierz ten, który pasuje do Twojej sytuacji. Trzy z nich mają oficjalne polskie wersje - rzadkość wśród dostawców AI.
+
+- **[Dla studentów](https://chatgpt.com/use-cases/students/)** (po angielsku) - porządkowanie notatek, streszczanie materiałów, tworzenie przewodników do nauki z plików PDF, informacja zwrotna do tekstów. Z naciskiem na naukę ze zrozumieniem, nie na drogę na skróty.
+- **[Dla wykładowców](https://chatgpt.com/use-cases/university-educators/)** (po angielsku) - zbiór promptów i przykładowych rozmów od wykładowców różnych kierunków: od asystentów do feedbacku po odgrywanie debat z historycznymi filozofami.
+- **[Dla nauczycieli](https://chatgpt.com/pl-PL/use-cases/teachers/)** (po polsku) - scenariusze lekcji, quizy, sprawdziany i adaptacja materiałów do poziomu ucznia.
+- **[Nauka i medycyna](https://chatgpt.com/pl-PL/use-cases/science-medicine)** (po polsku) - przykłady zastosowań w pracy naukowej i medycznej, od przeglądu literatury po analizę danych.
+- **[Dla rodziców](https://chatgpt.com/pl-PL/parent-resources/)** (po polsku) - jak działa ChatGPT, jak ustawić kontrolę rodzicielską na koncie nastolatka i jak rozmawiać z dzieckiem o AI. Jeśli masz dzieci, zacznij właśnie tutaj.
+
+:::tip[Korzystasz z innego narzędzia?]
+Anthropic i OpenAI nie są wyjątkami - każdy większy dostawca prowadzi własne centrum nauki. Zanim sięgniesz po kurs z przypadkowej strony, sprawdź oficjalne materiały twórców narzędzia, którego używasz: są darmowe i zawsze aktualne.
+:::
+
+## Polska scena AI: SpeakLeash i Bielik
+
+**[SpeakLeash](https://speakleash.org/)** (znany też jako Spichlerz) to polska fundacja open-source, która buduje największy zbiór polskich tekstów do trenowania AI i rozwija rodzinę polskich modeli **Bielik**. To najżywsza polska społeczność AI: setki osób, które po godzinach tworzą model rozumiejący polski lepiej niż niejeden komercyjny gigant.
+
+- **[Discord SpeakLeash](https://discord.com/invite/ZJwCMrxwT7)** - główne miejsce spotkań społeczności. Możesz tylko czytać, a możesz też realnie pomóc w rozwoju polskiego AI - nie trzeba umieć programować.
+- **[Polish EQ-Bench](https://huggingface.co/spaces/speakleash/polish_eq-bench)** - prowadzony przez SpeakLeash ranking (leaderboard) sprawdzający, jak dobrze modele AI rozumieją emocje i niuanse w języku polskim. Praktyczna odpowiedź na pytanie "który model najlepiej mówi po polsku".
+
+## Newsy o AI
+
+Dwa źródła, które sam czytam - różnią się poziomem trudności:
+
+- **[AlphaSignal](https://alphasignal.ai/)** - moim zdaniem jeden z najlepszych newsletterów o AI. Codzienny, zwięzły przegląd tego, co dzieje się w branży, czytany przez ponad 300 000 inżynierów. Jest techniczny - traktuj go jako opcję "dla chcących wejść głębiej".
+- **[Singularity Hub](https://singularityhub.com/category/artificial-intelligence/)** - popularnonaukowy serwis o technologiach przyszłości. Artykuły o przełomach w AI pisane przystępnie, bez żargonu - dobre miejsce, jeśli dopiero zaczynasz śledzić temat.
+
+Radzę zacząć od jednego źródła. Jeden newsletter w skrzynce to nauka, pięć to szum, który po dwóch tygodniach zaczniesz ignorować.
+
+## Od czego zacząć
+
+Jeśli ta strona Cię przytłacza, oto kolejność, którą sam bym wybrał na start:
+
+1. Przerób kurs [AI Fluency](https://www.anthropic.com/learn/claude-for-you) - da Ci fundament niezależny od narzędzia.
+2. Przejrzyj przewodnik OpenAI dla swojej roli (student, nauczyciel, rodzic) - zobaczysz gotowe zastosowania w swoim kontekście.
+3. Dołącz do [Discorda SpeakLeash](https://discord.com/invite/ZJwCMrxwT7), jeśli chcesz być bliżej polskiej społeczności.
+4. Zapisz się na jedno źródło newsów - i na tym poprzestań.
 
 :::note[Teraz wiesz]
 
-- Jakie kursy online, książki i newslettery pomogą Ci pogłębić wiedzę o AI - od darmowych po zaawansowane
-- Gdzie szukać polskich zasobów i społeczności związanych ze sztuczną inteligencją
-- Czym różnią się trzy ścieżki nauki: użytkownika, developera i researchera
+- Gdzie znaleźć darmowe, oficjalne kursy i przewodniki od twórców Claude'a i ChatGPT - w tym te dostępne po polsku
+- Jak z pomocą AI korzystać z anglojęzycznych materiałów bez płynnej znajomości angielskiego
+- Czym jest SpeakLeash i gdzie sprawdzić, który model najlepiej radzi sobie z językiem polskim
 
 **Zobacz też:** [Prompt Engineering](/prompt-engineering/wprowadzenie/) - wykorzystaj nowo odkryte zasoby i naucz się formułować skuteczne zapytania do AI.
 :::
