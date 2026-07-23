@@ -1,0 +1,110 @@
+---
+title: AI na własnym komputerze
+description: Jak uruchomić model AI lokalnie - Ollama, LM Studio i modele open-weight po polsku. Prywatność, niezależność i zero abonamentu.
+sidebar:
+  order: 4
+educationalLevel: Beginner
+teaches:
+  - Po co uruchamiać model AI lokalnie na własnym komputerze
+  - Jak zacząć z Ollama i LM Studio
+  - Które modele open-weight dobrze mówią po polsku i jaki sprzęt jest potrzebny
+about:
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+mentions:
+  - name: Ollama
+    sameAs: https://ollama.com/
+    type: SoftwareApplication
+  - name: LM Studio
+    sameAs: https://lmstudio.ai/
+    type: SoftwareApplication
+  - name: Bielik
+    sameAs: https://pl.wikipedia.org/wiki/Bielik_(model_j%C4%99zykowy)
+    type: SoftwareApplication
+faq:
+  - q: Czy AI może działać bez internetu?
+    a: Tak. Po jednorazowym pobraniu modelu open-weight na dysk wszystko dzieje się na Twoim komputerze - rozmowa działa bez połączenia z internetem, a Twoje dane nigdzie nie wychodzą.
+  - q: Jaki komputer jest potrzebny do lokalnego AI?
+    a: Orientacyjnie - komputer z 8-12 GB pamięci karty graficznej (VRAM) uruchomi mniejsze modele (7-8 mld parametrów), a 16-24 GB pozwala na modele średnie. Na słabszym sprzęcie modele też ruszą, tylko wolniej - na start wystarczy zwykły laptop i cierpliwość.
+  - q: Który lokalny model wybrać na start, jeśli piszę po polsku?
+    a: Bielik - polski model open-weight, dostępny oficjalnie w Ollama i LM Studio. Dobrze rozumie polski, a instalacja sprowadza się do jednego polecenia lub kilku kliknięć.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+Przyzwyczailiśmy się, że AI to abonament i chmura: zakładasz konto, płacisz co miesiąc, a każde Twoje pytanie leci przez internet na czyjeś serwery. Mam dla Ciebie wiadomość, która wiele osób szczerze zaskakuje: model językowy to w gruncie rzeczy plik. Duży, ale jednak plik. <Termin id="open-weight">Model open-weight</Termin> - czyli taki, którego wagi producent udostępnił do pobrania - możesz ściągnąć na dysk i uruchomić jak każdy inny program. Bez konta, bez abonamentu i bez wysyłania czegokolwiek w świat.
+
+W tym rozdziale pokażę Ci, po co w ogóle uruchamiać AI u siebie, od jakich narzędzi zacząć i które modele dobrze radzą sobie z polszczyzną. Na koniec podpowiem, jaki sprzęt orientacyjnie wystarczy - być może masz go już na biurku.
+
+## Po co uruchamiać AI u siebie
+
+Trzy powody, dla których warto się tym zainteresować:
+
+- **Prywatność.** Wszystko, co wpiszesz do lokalnego modelu, zostaje na Twoim dysku - dane nie opuszczają komputera. Jeśli pracujesz z informacjami, których nie chcesz wysyłać do chmury, to jest rozwiązanie tego problemu u samego źródła. Więcej o tym, co dzieje się z Twoimi danymi w chmurowych chatbotach, przeczytasz w rozdziale o [prywatności](/etyka/prywatnosc/).
+- **Koszty.** Model pobierasz raz i koniec - zero abonamentu, zero opłat za każde pytanie. Możesz eksperymentować do woli, nie patrząc na licznik.
+- **Niezależność.** Lokalny model działa bez internetu i bez niczyjej zgody. Dostawca nie podniesie Ci ceny, nie wyłączy modelu, z którego korzystasz, ani nie zablokuje konta - bo nie ma tu żadnego dostawcy. To <Termin id="suwerennosc-cyfrowa">suwerenność cyfrowa</Termin> w najmniejszej możliwej skali: Twojego własnego biurka.
+
+Dodam coś od siebie, bo powtarzam to na każdym szkoleniu: nie zawsze potrzebujesz najmocniejszego modelu na rynku. Do wielu codziennych zadań - streszczenia notatki, poprawienia maila, szybkiego szkicu tekstu - model frontier (czyli topowy model z pierwszych stron gazet) jest po prostu zbędny i za drogi. Mniejszy model na Twoim komputerze zrobi to samo, za darmo i bez wysyłania danych na zewnątrz.
+
+## Dwa narzędzia na start: Ollama i LM Studio
+
+Nie potrzebujesz do tego wiedzy technicznej - dwa darmowe programy załatwiają całą trudniejszą stronę za Ciebie ([Hugging Face](https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally)).
+
+**Ollama** to opcja dla osób, którym nie przeszkadza terminal (okno tekstowe, w którym wpisuje się polecenia). Instalujesz program ze strony [ollama.com](https://ollama.com/), wpisujesz jedno polecenie i to naprawdę wszystko - Ollama sama pobierze model i uruchomi rozmowę ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)):
+
+```text
+ollama run SpeakLeash/bielik-11b-v3.0-instruct:Q4_K_M
+```
+
+Po pobraniu piszesz z polskim Bielikiem prosto w terminalu. Ollama działa też w tle jako serwer API - czyli udostępnia model innym programom na Twoim komputerze, które potrafią z niego korzystać.
+
+**LM Studio** to opcja dla osób, które wolą klikać niż pisać polecenia. To zwykła aplikacja okienkowa: instalujesz ją ze strony [lmstudio.ai](https://lmstudio.ai/), wpisujesz w wyszukiwarkę "Bielik", klikasz pobierz - i po chwili rozmawiasz z modelem w oknie, które wygląda jak każdy znany Ci chatbot ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)).
+
+Istnieje też vLLM - narzędzie do wydajnego serwowania modeli w zastosowaniach produkcyjnych, ale to już temat dla zespołów IT, poza zakresem tego kursu.
+
+## Które modele mówią po polsku
+
+Nie każdy model open-weight równie dobrze radzi sobie z polszczyzną. Na szczęście jest w czym wybierać:
+
+- **Bielik 11B v3** i mniejszy **Bielik Minitron 7B** - polskie modele open-weight, dostępne oficjalnie w Ollama i LM Studio ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)). Jeśli piszesz po polsku, to naturalny pierwszy wybór.
+- **PLLuM 8B i 12B** - drugi polski projekt otwartych modeli ([pllum.org.pl](https://pllum.org.pl/)).
+- **Gemma 3 27B** - większy model open-weight, który dobrze radzi sobie z polskim - o ile Twój sprzęt go udźwignie (o tym za chwilę).
+- **Ministral 3** - model open-weight od Mistral AI ([mistral.ai](https://mistral.ai/news/mistral-3/)).
+
+O Bieliku i PLLuM - skąd się wzięły, kto je buduje i dlaczego to ważne - przeczytasz więcej w pierwszym artykule tej sekcji, poświęconym polskim modelom.
+
+## Jaki sprzęt jest potrzebny
+
+Najważniejsza liczba to pamięć karty graficznej (VRAM) - to w niej model "mieszka" podczas pracy. Poniższa tabela zakłada modele w kwantyzacji Q4, czyli skompresowane tak, żeby zajmowały mniej pamięci kosztem odrobiny jakości ([localllm.in](https://localllm.in/blog/ollama-vram-requirements-for-local-llms)):
+
+| Pamięć karty graficznej (VRAM) | Jakie modele uruchomisz                                                 |
+| ------------------------------ | ----------------------------------------------------------------------- |
+| 8-12 GB                        | mniejsze modele (7-8 mld parametrów), np. Bielik Minitron 7B             |
+| 16-24 GB                       | modele średnie (22-35 mld parametrów), np. Gemma 3 27B (ok. 17 GB)       |
+| 48 GB i więcej                 | największe modele open-weight (70 mld parametrów i więcej)               |
+
+Te liczby traktuj orientacyjnie - stan na lipiec 2026. I ważne zastrzeżenie: słabszy sprzęt nie oznacza, że nic nie uruchomisz. Modele ruszą też bez mocnej karty graficznej, tylko wolniej - na start wystarczy zwykły laptop i odrobina cierpliwości.
+
+:::caution[Sprawdź przed pobraniem]
+Świat lokalnych modeli zmienia się szybciej niż jakikolwiek poradnik - wersje modeli i ich wymagania sprzętowe potrafią się zdezaktualizować w kilka miesięcy. Zanim cokolwiek pobierzesz, sprawdź aktualne wymagania na stronie modelu.
+:::
+
+## Źródła i dalsze lektury
+
+- [klewer.pl: Bielik AI - the complete guide](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/) - przewodnik po Bieliku, w tym uruchamianie w Ollama i LM Studio
+- [Hugging Face: Open-source LLM models to run locally](https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally) - przegląd narzędzi i modeli do lokalnego uruchamiania
+- [pllum.org.pl](https://pllum.org.pl/) - oficjalna strona projektu PLLuM
+- [Mistral AI: Mistral 3](https://mistral.ai/news/mistral-3/) - ogłoszenie rodziny modeli Mistral 3
+- [localllm.in: Ollama VRAM requirements](https://localllm.in/blog/ollama-vram-requirements-for-local-llms) - orientacyjne wymagania pamięci dla lokalnych modeli
+
+:::note[Teraz wiesz]
+
+- Po co uruchamiać model AI lokalnie: prywatność, brak abonamentu i niezależność od dostawców
+- Jak zacząć: Ollama (terminal) albo LM Studio (aplikacja okienkowa)
+- Które modele dobrze mówią po polsku i jaki sprzęt orientacyjnie wystarczy
+
+**Następny krok:** [AI w praktyce](/praktyka/) - zobaczysz, jak marketing, HR, finanse, prawo, medycyna i edukacja wykorzystują AI w praktyce.
+:::
+
+<SlowniczekStrony terminy={["open-weight", "suwerennosc-cyfrowa"]} />
