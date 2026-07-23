@@ -18,6 +18,7 @@ export const AUTHOR = {
 	'@type': 'Person',
 	name: autor.name,
 	url: autor.url,
+	image: autor.photo,
 	jobTitle: autor.jobTitle,
 	description: autor.description,
 	sameAs: autor.sameAs,
