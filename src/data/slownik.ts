@@ -77,4 +77,16 @@ export const SLOWNIK: Record<string, Pojecie> = {
 		krotka:
 			'Technika, w której AI najpierw wyszukuje odpowiednie fragmenty dokumentów, a dopiero potem odpowiada na ich podstawie, zamiast zgadywać z pamięci.',
 	},
+	'suwerennosc-cyfrowa': {
+		termin: 'Suwerenność cyfrowa',
+		anchor: 'suwerenność-cyfrowa',
+		krotka:
+			'Zdolność państwa, firmy lub osoby do korzystania z technologii cyfrowych bez krytycznej zależności od dostawców spoza swojego regionu.',
+	},
+	'open-weight': {
+		termin: 'Model open-weight',
+		anchor: 'model-open-weight',
+		krotka:
+			'Model AI, którego wagi (parametry) można pobrać i uruchomić na własnym sprzęcie - w przeciwieństwie do modeli dostępnych wyłącznie przez API dostawcy.',
+	},
 };

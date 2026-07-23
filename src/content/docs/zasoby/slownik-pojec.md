@@ -14,7 +14,7 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
-Zebrałem tutaj 30 pojęć, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
+Zebrałem tutaj 32 pojęcia, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
 
 Nie musisz czytać tego od deski do deski. Traktuj tę stronę jak podręczny leksykon i wracaj do niej, kiedy natkniesz się na nieznany termin.
 
@@ -134,6 +134,10 @@ Reprezentacja systemu AI po treningu na danych. Model zawiera wzorce i reguły w
 
 **Przykład:** ChatGPT jest modelem językowym wytrenowanym na ogromnej ilości tekstów, który potrafi generować odpowiedzi na podstawie zadanych pytań.
 
+### Model open-weight
+
+Model AI, którego wagi (czyli wyuczone parametry) producent udostępnia do pobrania - możesz uruchomić go na własnym komputerze lub serwerze, bez wysyłania danych do chmury dostawcy. Open-weight nie zawsze znaczy w pełni open source: licencje bywają różne, od bardzo liberalnej Apache 2.0 (np. Bielik, rodzina Mistral 3) po licencje z ograniczeniami komercyjnymi. Przeciwieństwem są modele zamknięte, dostępne wyłącznie przez API lub aplikację producenta.
+
 ### Model językowy (LLM)
 
 System AI trenowany na dużych zbiorach tekstów, zdolny do rozumienia i generowania ludzkiego języka. LLM (Large Language Model) uczy się wzorców i struktur językowych, dzięki czemu może tworzyć spójne teksty, odpowiadać na pytania czy tłumaczyć między językami.
@@ -199,6 +203,10 @@ Model matematyczny inspirowany strukturą i funkcjonowaniem ludzkiego mózgu, sk
 Dziedzina informatyki zajmująca się tworzeniem systemów, które potrafią wykonywać zadania wymagające ludzkiej inteligencji, takie jak rozumowanie, uczenie się, planowanie czy rozumienie języka.
 
 **Przykład:** Asystenci głosowi jak Siri czy Alexa, systemy rozpoznawania obrazów, programy grające w szachy czy samochody autonomiczne - wszystkie wykorzystują różne formy sztucznej inteligencji.
+
+### Suwerenność cyfrowa
+
+Zdolność państwa, firmy lub pojedynczej osoby do korzystania z technologii cyfrowych - chmury, oprogramowania, modeli AI - bez krytycznej zależności od dostawców spoza swojego regionu. W praktyce chodzi o pytanie: co się stanie z Twoimi narzędziami i danymi, jeśli zagraniczny dostawca zmieni cennik, regulamin albo zostanie objęty sankcjami? Odpowiedzią są m.in. europejskie modele AI, lokalne centra danych i modele open-weight uruchamiane na własnym sprzęcie.
 
 ### Tokenizacja
 
