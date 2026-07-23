@@ -1,0 +1,129 @@
+---
+title: Inżynieria kontekstu - zarządzaj tym, co AI naprawdę widzi
+description: Czym jest inżynieria kontekstu (context engineering) - jak dobierać informacje dla modelu, dlaczego długie rozmowy głupieją i jak używać instrukcji stałych oraz pamięci chatbota.
+sidebar:
+  label: 'Inżynieria kontekstu'
+  order: 6
+educationalLevel: Intermediate
+teaches:
+  - Czym jest inżynieria kontekstu i czym różni się od prompt engineeringu
+  - Dlaczego długie rozmowy z AI tracą jakość
+  - Jak dobierać informacje przekazywane modelowi
+  - Jak używać instrukcji stałych i pamięci chatbota
+about:
+  - name: Prompt engineering
+    sameAs: https://en.wikipedia.org/wiki/Prompt_engineering
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: Anthropic
+    sameAs: https://en.wikipedia.org/wiki/Anthropic
+    type: Organization
+faq:
+  - q: Czym jest inżynieria kontekstu?
+    a: To umiejętność zarządzania wszystkim, co model widzi w momencie odpowiadania - nie tylko treścią polecenia, ale też historią rozmowy, wgranymi plikami i instrukcjami stałymi. Prompt engineering pyta "jak sformułować polecenie", inżynieria kontekstu pyta "co model powinien mieć przed oczami".
+  - q: Dlaczego długa rozmowa z chatbotem traci jakość?
+    a: Z trzech powodów - okno kontekstowe się zapełnia i najstarsze fragmenty wypadają, model słabiej korzysta z informacji zakopanych w środku długiego kontekstu, a nagromadzone dygresje i porzucone wątki rozmywają to, o co naprawdę prosisz. Rozwiązaniem jest nowa rozmowa z krótkim podsumowaniem ustaleń.
+  - q: Czy warto ustawiać instrukcje stałe w chatbocie?
+    a: Tak - to jedna z najbardziej opłacalnych minut w pracy z AI. Wpisujesz raz, kim jesteś i jakich odpowiedzi oczekujesz, a każda kolejna rozmowa zaczyna się z tym kontekstem. Bez tego powtarzasz te same wyjaśnienia w każdej rozmowie od zera.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+:::note[W skrócie]
+Model nie widzi Twojego zadania - widzi swoje okno kontekstowe: instrukcje, historię rozmowy, wgrane pliki i Twoje ostatnie polecenie. Inżynieria kontekstu (context engineering) to zarządzanie tą zawartością: dobór informacji zamiast wklejania wszystkiego, świeże rozmowy zamiast niekończących się wątków, instrukcje stałe zamiast powtarzania się. Ten sam prompt potrafi dać świetną albo słabą odpowiedź wyłącznie przez to, co model widział wokół niego.
+:::
+
+## Ten sam prompt, dwie różne odpowiedzi
+
+Znasz to: kolega chwali się, że AI napisała mu świetną ofertę, więc bierzesz jego <Termin id="prompt">prompt</Termin> słowo w słowo - a dostajesz coś ledwo używalnego. Prompt ten sam, wynik inny. Jak to możliwe?
+
+Bo prompt to tylko część tego, co model widzi. U kolegi w rozmowie były już szczegóły produktu, wcześniejsze wersje oferty i ustalenia o tonie. U Ciebie - pusta rozmowa. Model nie odpowiada na prompt; odpowiada na **całą zawartość swojego okna kontekstowego**.
+
+Dotąd uczyliśmy się formułować polecenia - [rola, kontekst, zadanie, format](/prompt-engineering/podstawy/), [struktura danych](/prompt-engineering/schematy/). Teraz krok wyżej: zarządzanie wszystkim, co model ma przed oczami. W branży przyjęła się na to nazwa **inżynieria kontekstu** (context engineering) - spopularyzowana, gdy okazało się, że w pracy z agentami AI dobór kontekstu decyduje o wyniku mocniej niż szlif samego polecenia ([Anthropic, "Effective context engineering for AI agents", 2025](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)).
+
+## Co właściwie widzi model
+
+W momencie generowania odpowiedzi model widzi jedno długie "podanie", sklejone z kilku warstw:
+
+1. **Instrukcje systemowe** - ustawienia narzędzia i Twoje instrukcje stałe
+2. **Wiedza doklejona** - wgrane pliki, dokumenty projektu, wyniki wyszukiwania (mechanizm [RAG](/jak-dziala-ai/rag/))
+3. **Historia rozmowy** - wszystkie wcześniejsze wiadomości, Twoje i modelu
+4. **Twoje ostatnie polecenie**
+
+Wszystko to konkuruje o jedno, ograniczone <Termin id="okno-kontekstowe">okno kontekstowe</Termin> - i, co ważniejsze, o "uwagę" modelu. Badacze Anthropic nazywają ją wprost budżetem: każdy kolejny token w kontekście uszczupla zasób uwagi, którym model dysponuje dla pozostałych ([Anthropic, 2025](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)).
+
+:::note[Analogia]
+Wyobraź sobie, że zlecasz zadanie współpracownikowi, wręczając mu teczkę dokumentów. Teczka z trzema właściwymi kartkami da lepszy wynik niż karton z całym archiwum - mimo że w kartonie "wszystko jest". Kontekst modelu to ta teczka: liczy się dobór, nie objętość.
+:::
+
+## Dlaczego długie rozmowy głupieją
+
+To jedno z najczęstszych doświadczeń w pracy z chatbotami: pierwsza godzina rozmowy jest świetna, a potem model zaczyna się powtarzać, gubić ustalenia i wracać do porzuconych pomysłów. Składają się na to trzy mechanizmy:
+
+- **Okno się przepełnia** - gdy rozmowa przekroczy limit, najstarsze fragmenty wypadają; model dosłownie przestaje widzieć początek rozmowy (szczegóły w rozdziale o [tokenach](/jak-dziala-ai/tokeny-i-kontekst/))
+- **Środek kontekstu jest słabiej widziany** - modele najlepiej korzystają z informacji na początku i na końcu kontekstu, a gorzej z tych w środku ([Liu i in., 2023](https://arxiv.org/abs/2307.03172))
+- **Jakość spada z samą długością** - badanie na 18 modelach pokazało, że wraz ze wzrostem długości wejścia wyniki pogarszają się nawet w zadaniach, które przy krótkim wejściu były trywialne - zjawisko nazwane "context rot" ([Chroma Research, 2025](https://research.trychroma.com/context-rot))
+
+Do tego dochodzi efekt czysto ludzki: w długiej rozmowie zalegają dygresje, odrzucone wersje i sprzeczne polecenia. Model traktuje je wszystkie jako obowiązujący kontekst - również te, o których Ty dawno zapomniałeś.
+
+## Pięć zasad zarządzania kontekstem
+
+1. **Nowe zadanie = nowa rozmowa.** Najprostsza i najskuteczniejsza zasada z tej listy. Rozmowa o ofercie nie powinna płynnie przechodzić w rozmowę o rekrutacji - stare ustalenia będą ciążyć na nowych odpowiedziach.
+2. **Dobieraj, nie wysypuj.** Zamiast wklejać cały dokument "na wszelki wypadek", wklej rozdział, którego dotyczy pytanie. Więcej kontekstu to nie zawsze lepsza odpowiedź - to często rozmyta odpowiedź.
+3. **Najważniejsze na początek albo na koniec.** Skoro środek długiego kontekstu jest słabiej widziany, kluczową instrukcję umieszczaj w ostatnim akapicie polecenia, a nie w połowie wklejonego materiału.
+4. **Podsumowuj i przenoś.** Gdy długa rozmowa zaczyna się ślimaczyć, poproś: "podsumuj nasze ustalenia w punktach" - i wklej to podsumowanie jako start świeżej rozmowy. Dostajesz czysty kontekst bez utraty dorobku.
+5. **Sprzątaj po zmianach zdania.** Jeśli w trakcie rozmowy odwróciłeś decyzję ("jednak wersja B"), powiedz to wprost i poproś o zignorowanie wcześniejszych ustaleń - inaczej stara decyzja dalej siedzi w kontekście i po cichu wpływa na odpowiedzi.
+
+## Instrukcje stałe - kontekst, którego nie musisz powtarzać
+
+Każdy duży chatbot pozwala ustawić instrukcje doklejane automatycznie do każdej rozmowy: w ChatGPT to custom instructions, w Claude - ustawienia stylu i preferencji, w Gemini - informacje o Tobie. To najtańsza inwestycja w jakość odpowiedzi, jaką znam: jedna minuta konfiguracji, efekt w każdej rozmowie.
+
+Dobra instrukcja stała odpowiada na trzy pytania:
+
+```text
+Kim jestem: [zawód, branża, poziom wiedzy technicznej]
+Czego zwykle potrzebuję: [typowe zadania]
+Jak mam dostawać odpowiedzi: [język, ton, długość,
+format - np. "po polsku, konkretnie, bez lania wody,
+przy listach używaj punktów"]
+```
+
+Piętro wyżej stoją projekty ze swoją bazą wiedzy - stały kontekst dla konkretnego tematu zamiast całego konta. Omawiamy je w rozdziale o [trybach pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/).
+
+## Pamięć chatbota - wygoda z haczykiem
+
+Część chatbotów zapamiętuje informacje między rozmowami - ChatGPT robi to wręcz automatycznie, wyciągając fakty z Twoich rozmów. To wygodne: nie musisz w każdej rozmowie przypominać, że Twoja firma sprzedaje meble. Ale pamięć to też kontekst, którego nie widzisz na ekranie - a który wpływa na odpowiedzi.
+
+Dwie praktyczne rady: co jakiś czas przejrzyj w ustawieniach, co model o Tobie zapamiętał (zaskoczysz się), i usuwaj wpisy nieaktualne lub zbyt prywatne. Szerzej o tym, co chatbotom mówić, a czego nie - w rozdziale o [prywatności](/etyka/prywatnosc/).
+
+## Kontekst w erze agentów
+
+Dlaczego ten temat urósł do rangi osobnej dyscypliny akurat teraz? Przez [agentów AI](/jak-dziala-ai/agenci-ai/). Agent pracuje wieloma krokami: każdy wynik wyszukiwania, każda przeczytana strona i każdy efekt narzędzia trafia do jego kontekstu. Bez starannego zarządzania tym strumieniem agent "zapycha" sobie okno śmieciami po kilku krokach - dlatego twórcy agentów poświęcają doborowi kontekstu więcej uwagi niż samym promptom.
+
+Dla Ciebie płynie z tego praktyczna obserwacja: te same zasady, które ratują pracę agentów - selekcja, podsumowywanie, czyszczenie - ratują też Twoje długie rozmowy.
+
+## Źródła i dalsze lektury
+
+- [Anthropic, "Effective context engineering for AI agents" (2025)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) - kontekst jako budżet uwagi i zasady zarządzania nim
+- [Liu i in., "Lost in the Middle" (2023)](https://arxiv.org/abs/2307.03172) - dlaczego środek długiego kontekstu jest słabiej wykorzystywany
+- [Chroma Research, "Context Rot" (2025)](https://research.trychroma.com/context-rot) - badanie spadku jakości odpowiedzi wraz z długością wejścia na 18 modelach
+
+:::note[Teraz wiesz]
+
+- Że model odpowiada nie na prompt, tylko na całą zawartość okna kontekstowego - instrukcje, historię, pliki i polecenie razem
+- Dlaczego długie rozmowy tracą jakość - przepełnienie okna, słabo widziany środek kontekstu i "context rot"
+- Pięć zasad zarządzania kontekstem - nowa rozmowa na nowe zadanie, dobór zamiast wysypywania, kluczowe rzeczy na brzegach, podsumowywanie, sprzątanie po zmianach zdania
+- Jak ustawić instrukcje stałe i kontrolować pamięć chatbota
+
+**Następny krok:** [Automatyzacja z AI](/prompt-engineering/automatyzacja/) - poznasz prompt chaining, APE i techniki testowania promptów, które pozwolą Ci skalować pracę z AI.
+:::
+
+<SlowniczekStrony terminy={["prompt", "okno-kontekstowe", "agent-ai"]} />

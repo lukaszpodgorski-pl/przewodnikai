@@ -1,0 +1,131 @@
+---
+title: Agenci AI - kiedy chatbot przestaje tylko odpowiadać
+description: Czym jest agent AI i czym różni się od chatbota - z czego składa się agent, jak działa tryb agenta w ChatGPT i przeglądarki agentowe oraz gdzie postawić granice zaufania.
+sidebar:
+  label: 'Agenci AI'
+  order: 12
+educationalLevel: Intermediate
+teaches:
+  - Czym jest agent AI i czym różni się od chatbota
+  - Z jakich elementów składa się agent
+  - Różnica między workflow a agentem
+  - Jak bezpiecznie korzystać z trybów agentowych
+about:
+  - name: Agent programowy
+    sameAs: https://pl.wikipedia.org/wiki/Agent_programowy
+  - name: Sztuczna inteligencja
+    sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: Perplexity AI
+    sameAs: https://en.wikipedia.org/wiki/Perplexity_AI
+    type: SoftwareApplication
+  - name: OpenAI
+    sameAs: https://en.wikipedia.org/wiki/OpenAI
+    type: Organization
+  - name: Anthropic
+    sameAs: https://en.wikipedia.org/wiki/Anthropic
+    type: Organization
+faq:
+  - q: Czym różni się agent AI od chatbota?
+    a: Chatbot odpowiada na pojedyncze polecenia - każdy krok inicjujesz Ty. Agent dostaje cel, sam rozbija go na kroki, korzysta z narzędzi (przeglądarki, plików, aplikacji), sprawdza wyniki i poprawia się po drodze. Chatbot powie Ci, jak coś zrobić; agent spróbuje to zrobić za Ciebie.
+  - q: Czy agenci AI są godni zaufania?
+    a: Warunkowo. Agent kumuluje błędy - drobna pomyłka w kroku trzecim psuje kroki czwarty i piąty. Sprawdzaj wyniki, zaczynaj od zadań o niskiej stawce i zostawiaj sobie zatwierdzanie działań nieodwracalnych, takich jak płatności czy wysyłka wiadomości.
+  - q: Gdzie zwykły użytkownik spotka agenta AI?
+    a: W trybie agenta w ChatGPT, w przeglądarkach agentowych takich jak Comet od Perplexity, w trybach deep research (agent badawczy) oraz w asystentach programowania, które samodzielnie edytują pliki i uruchamiają testy.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+:::note[W skrócie]
+Agent AI to system, który dostaje cel zamiast pojedynczego polecenia: sam planuje kroki, wykonuje je za pomocą narzędzi (przeglądarka, pliki, aplikacje), sprawdza wyniki i koryguje kurs. W 2026 roku agenci wyszli z laboratoriów do produktów codziennego użytku - tryb agenta w ChatGPT, przeglądarki agentowe, deep research, asystenci programowania. Działają imponująco, ale kumulują błędy, więc kluczowa umiejętność to wiedzieć, co można im powierzyć bez nadzoru, a czego nie.
+:::
+
+## "Powiedz mi jak" kontra "zrób to za mnie"
+
+Poproś <Termin id="chatbot">chatbota</Termin> o znalezienie trzech połączeń do Rzymu na przyszły weekend, a dostaniesz... instrukcję, jak szukać połączeń. Kulturalną, poprawną i bezużyteczną, bo klikać i porównywać musisz sam.
+
+<Termin id="agent-ai">Agent AI</Termin> na to samo polecenie otworzy wyszukiwarkę, przejrzy wyniki, porówna godziny i ceny - i wróci z gotowym zestawieniem. Różnica nie polega na tym, że agent jest "mądrzejszy". Polega na tym, że agent **działa**, a nie tylko odpowiada.
+
+To jest zmiana, o której mówi się "rok agentów" - i powód, dla którego ten rozdział trafia do przewodnika. Wcześniej AI była doradcą; teraz coraz częściej bywa wykonawcą. A wykonawcy trzeba patrzeć na ręce inaczej niż doradcy.
+
+## Anatomia agenta
+
+Pod każdym agentem - od trybu w ChatGPT po systemy firmowe - kryje się ten sam zestaw elementów:
+
+1. **Model językowy** - "mózg", który rozumie cel i planuje; często [model rozumujący](/jak-dziala-ai/modele-rozumujace/), bo planowanie to zadanie wieloetapowe
+2. **Narzędzia** - "ręce": wyszukiwarka, przeglądarka, dostęp do plików, kalendarz, arkusz. Model nie klika sam z siebie - zgłasza "wywołaj narzędzie X z parametrami Y", a system wykonuje (mechanizm tool calling, który znasz z [Mapy Systemów AI](/jak-dziala-ai/mapa-ai/))
+3. **Pamięć** - notatki agenta o tym, co już zrobił i czego się dowiedział; bez niej dziesiąty krok nie wiedziałby nic o pierwszym
+4. **Pętla decyzyjna** - rytm pracy: pomyśl → działaj → sprawdź wynik → popraw plan. Ten schemat opisano w badaniach jako ReAct ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)); jego "ręczną" wersję poznałeś w rozdziale o [technikach rozumowania](/prompt-engineering/rozumowanie/)
+
+```text
+CEL: "Znajdź 3 połączenia do Rzymu i porównaj ceny"
+
+Myśl:   Potrzebuję dat. Weekend to 25-27 lipca.
+Akcja:  wyszukaj [połączenia Warszawa-Rzym 25.07]
+Wynik:  lista lotów z cenami
+Myśl:   Mam loty w jedną stronę. Teraz powroty.
+Akcja:  wyszukaj [połączenia Rzym-Warszawa 27.07]
+Wynik:  lista lotów powrotnych
+Myśl:   Zestawiam 3 najtańsze pary i piszę podsumowanie.
+```
+
+## Workflow to nie agent
+
+W materiałach marketingowych "agentem" nazywa się dziś wszystko. Warto znać rozróżnienie, które Anthropic opisało w tekście ["Building effective agents"](https://www.anthropic.com/engineering/building-effective-agents) - jednym z najczęściej cytowanych przewodników po tym temacie:
+
+- **Workflow** - kroki są zaplanowane z góry przez człowieka: "weź maila → wyciągnij dane → wpisz do arkusza → wyślij potwierdzenie". Model wykonuje poszczególne kroki, ale kolejność jest sztywna. To automatyzacja w duchu [prompt chainingu](/prompt-engineering/automatyzacja/) - przewidywalna i tania.
+- **Agent** - kroki wybiera na bieżąco sam model, w zależności od tego, co zastanie po drodze. Elastyczny, ale mniej przewidywalny i droższy.
+
+Praktyczny wniosek z tego rozróżnienia brzmi przewrotnie: **jeśli zadanie da się opisać sztywną procedurą, workflow jest lepszy od agenta** - tańszy, szybszy i łatwiejszy do sprawdzenia. Agent ma sens tam, gdzie z góry nie wiadomo, ile kroków będzie trzeba i jakich.
+
+## Gdzie spotkasz agentów w praktyce
+
+- **Tryb agenta w ChatGPT** - model dostaje wirtualny komputer z przeglądarką: klika, wypełnia formularze, zbiera dane i składa wynik w dokument ([OpenAI, 2025](https://openai.com/index/introducing-chatgpt-agent/))
+- **Przeglądarki agentowe** - np. Comet od Perplexity: asystent wbudowany w przeglądarkę, który potrafi streścić otwarte karty, porównać oferty czy wypełnić formularz ([perplexity.ai/comet](https://www.perplexity.ai/comet))
+- **Deep research** - agent badawczy: na jedno pytanie wykonuje dziesiątki wyszukiwań, czyta źródła i oddaje raport; szczegóły w rozdziale o [trybach pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/)
+- **Asystenci programowania** - narzędzia takie jak Claude Code samodzielnie przeszukują projekt, edytują pliki i uruchamiają testy, wracając do programisty z gotową zmianą
+- **Agenci w firmach** - obsługa zgłoszeń, uzupełnianie systemów CRM, monitorowanie procesów; zwykle z człowiekiem zatwierdzającym kluczowe kroki
+
+U mnie agenci najczęściej dostają cztery rodzaje zadań: pisanie skryptów, budowanie części oprogramowania, deep research oraz przekształcanie danych na najróżniejsze tematy do jednego, z góry określonego formatu. I uczciwa uwaga z praktyki: samo słowo "agent" bywa rozumiane bardzo różnie - dla jednych agentem jest dopiero system, który samodzielnie klika po przeglądarce, dla innych każdy czat z dostępem do narzędzi. Dlatego w tym przewodniku trzymam się definicji z początku rozdziału: liczy się to, że system dostaje cel, sam planuje kroki i wykonuje je narzędziami - a nie to, jak nazwał go producent.
+
+## Dlaczego agenci błądzą
+
+Każda słabość modelu, którą znasz z poprzednich rozdziałów, u agenta występuje **w wersji spotęgowanej**, bo błędy się mnożą przez liczbę kroków:
+
+- **Kumulacja błędów** - jeśli każdy krok ma 95% szans powodzenia, to zadanie z 20 kroków kończy się sukcesem tylko w ok. 36% przypadków (0,95 do potęgi 20). Dlatego agenci świetnie radzą sobie z zadaniami na kilka-kilkanaście kroków, a przy bardzo długich potrafią ugrzęznąć
+- **Halucynacja w działaniu** - chatbot, który zmyśla, produkuje błędny tekst; agent, który zmyśla, klika w błędne rzeczy. Ta sama wada, wyższa stawka
+- **Podatność na manipulację** - agent czytający strony internetowe może natrafić na ukryte złośliwe instrukcje (prompt injection - znasz to zagrożenie z [najlepszych praktyk promptowania](/prompt-engineering/najlepsze-praktyki/)); producenci wbudowują zabezpieczenia, ale problem nie jest w pełni rozwiązany
+- **Koszt** - agent wykonuje dziesiątki wywołań modelu tam, gdzie chatbot wykonałby jedno
+
+## Zasady bezpiecznego korzystania
+
+1. **Zaczynaj od niskiej stawki.** Research, porównania, zbieranie danych - świetne pierwsze zadania. Płatności, wysyłka wiadomości w Twoim imieniu, zmiany w ważnych plikach - dopiero gdy nabierzesz zaufania, i najlepiej z zatwierdzaniem każdej takiej akcji
+2. **Sprawdzaj wynik, nie proces.** Nie musisz czytać każdego kroku agenta - ale wynik traktuj jak pracę nowego stażysty: zaskakująco dobrą, wymagającą kontroli przed użyciem
+3. **Dawaj wąskie cele.** "Porównaj ceny tych trzech modeli w trzech sklepach" zadziała lepiej niż "zajmij się zakupem laptopa" - z tych samych powodów, dla których precyzyjny prompt bije ogólnikowy
+4. **Pilnuj danych.** Agent z dostępem do Twojej skrzynki czy plików to wygoda i ryzyko naraz - zasady z rozdziału o [prywatności](/etyka/prywatnosc/) stosuj tu podwójnie
+
+## Źródła i dalsze lektury
+
+- [Anthropic, "Building effective agents" (2024)](https://www.anthropic.com/engineering/building-effective-agents) - rozróżnienie workflow/agent i wzorce budowy agentów
+- [OpenAI, "Introducing ChatGPT agent" (2025)](https://openai.com/index/introducing-chatgpt-agent/) - jak działa tryb agenta w ChatGPT
+- [Yao i in., "ReAct: Synergizing Reasoning and Acting in Language Models" (2022)](https://arxiv.org/abs/2210.03629) - pętla myśl-działaj-obserwuj, fundament współczesnych agentów
+- [Perplexity Comet](https://www.perplexity.ai/comet) - przykład przeglądarki agentowej
+
+:::note[Teraz wiesz]
+
+- Czym różni się agent od chatbota - agent dostaje cel, sam planuje kroki i wykonuje je narzędziami, zamiast tylko odpowiadać
+- Z czego składa się agent - model, narzędzia, pamięć i pętla myśl-działaj-sprawdź
+- Dlaczego workflow bywa lepszy od agenta - sztywna procedura jest tańsza i przewidywalniejsza, agent wygrywa przy zadaniach o nieznanym przebiegu
+- Jak korzystać z agentów bezpiecznie - niska stawka na start, kontrola wyników, wąskie cele i ostrożność z dostępem do danych
+
+**Następny krok:** [Mapa Systemów AI](/jak-dziala-ai/mapa-ai/) - zobaczysz pełny krajobraz technologii AI: od LLM przez agentów po protokoły komunikacji między systemami.
+:::
+
+<SlowniczekStrony terminy={["agent-ai", "chatbot", "halucynacje"]} />

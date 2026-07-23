@@ -1,0 +1,138 @@
+---
+title: Tryby pracy chatbotów - wyszukiwanie, deep research, projekty
+description: Jeden chatbot to dziś kilka narzędzi w jednym - tryb wyszukiwania, myślenia, deep research, projekty, tryb głosowy i canvas. Kiedy którego używać i co realnie dają.
+sidebar:
+  label: 'Tryby pracy chatbotów'
+  order: 2
+educationalLevel: Beginner
+teaches:
+  - Jakie tryby pracy mają współczesne chatboty
+  - Kiedy używać wyszukiwania, deep research i projektów
+  - Jak dobrać tryb chatbota do zadania
+about:
+  - name: Chatbot
+    sameAs: https://pl.wikipedia.org/wiki/Chatbot
+  - name: Duży model językowy
+    sameAs: https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy
+mentions:
+  - name: ChatGPT
+    sameAs: https://en.wikipedia.org/wiki/ChatGPT
+    type: SoftwareApplication
+  - name: Claude
+    sameAs: https://en.wikipedia.org/wiki/Claude_(language_model)
+    type: SoftwareApplication
+  - name: Gemini
+    sameAs: https://en.wikipedia.org/wiki/Gemini_(language_model)
+    type: SoftwareApplication
+  - name: Perplexity AI
+    sameAs: https://en.wikipedia.org/wiki/Perplexity_AI
+    type: SoftwareApplication
+  - name: NotebookLM
+    sameAs: https://en.wikipedia.org/wiki/NotebookLM
+    type: SoftwareApplication
+faq:
+  - q: Czym jest deep research w chatbocie?
+    a: To tryb, w którym chatbot działa jak agent badawczy - na jedno pytanie wykonuje dziesiątki, a nawet setki wyszukiwań, czyta źródła i po kilku-kilkunastu minutach oddaje raport z przypisami. Świetny do rozpoznania nowego tematu, przeglądu rynku czy porównania ofert.
+  - q: Kiedy włączyć wyszukiwanie w sieci zamiast zwykłej odpowiedzi?
+    a: Zawsze, gdy pytasz o rzeczy zmienne w czasie - ceny, wersje produktów, aktualności, przepisy, godziny otwarcia. Bez wyszukiwania model odpowiada z wiedzy zamrożonej w dniu zakończenia treningu i może podawać nieaktualne informacje.
+  - q: Do czego służą projekty w chatbotach?
+    a: Projekt to folder rozmów ze wspólną bazą wiedzy - wgrywasz raz dokumenty i instrukcje, a każda rozmowa w projekcie z nich korzysta. Idealne do powtarzalnej pracy nad jednym tematem, np. obsługi klienta, pisania w stałym stylu czy analizy dokumentów jednej sprawy.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+:::note[W skrócie]
+Współczesny chatbot to kilka narzędzi ukrytych pod jednym oknem czatu: szybka odpowiedź, tryb myślenia, wyszukiwanie w sieci, deep research (raport ze źródłami w kilkanaście minut), projekty z własną bazą wiedzy, tryb głosowy i canvas do pracy nad dokumentem. Różnica między "próbowałem ChatGPT, nic specjalnego" a realną zmianą w pracy często sprowadza się do tego, czy wiesz, który tryb włączyć do którego zadania.
+:::
+
+## Te same okno czatu, zupełnie inne narzędzie
+
+W [poprzednim rozdziale](/narzedzia/chatboty/) porównaliśmy chatboty między sobą. Ale jest drugie porównanie, o którym mówi się rzadziej, a które w praktyce daje więcej: **ten sam chatbot w różnych trybach to różne narzędzia.**
+
+To trochę jak ze smartfonem: technicznie to telefon, ale większość jego wartości siedzi w aplikacjach. W chatbocie "aplikacjami" są tryby pracy - przyciski i przełączniki wokół pola tekstowego, które łatwo zignorować, a które zmieniają zarówno to, co model potrafi, jak i to, ile możesz mu ufać.
+
+Nazwy trybów różnią się między chatbotami i zmieniają się częściej, niż ktokolwiek nadąża opisywać - dlatego nie znajdziesz tu zestawienia "co oferuje który czat". Idee są wspólne i to nimi się zajmiemy; nazwę w swojej aplikacji dopasujesz bez trudu.
+
+## Tryb podstawowy - szybka odpowiedź z pamięci
+
+Domyślny tryb każdego chatbota: piszesz, model odpowiada z wiedzy wyniesionej z treningu. Najszybszy i najtańszy, idealny do redakcji tekstu, tłumaczeń, wyjaśniania pojęć, burzy mózgów.
+
+Jego granica jest jedna, za to twarda: model odpowiada z pamięci, która skończyła się w dniu odcięcia danych treningowych. O wszystko, co mogło się od tego czasu zmienić, pytaj w trybie z wyszukiwaniem.
+
+## Wyszukiwanie w sieci - odpowiedź z dzisiejszego internetu
+
+Po włączeniu wyszukiwania model najpierw przeszukuje internet, a potem odpowiada na podstawie znalezionych stron, zwykle z linkami do źródeł. To ta sama idea, którą znasz z rozdziału o [RAG](/jak-dziala-ai/rag/) - tylko zamiast Twoich dokumentów przeszukiwana jest sieć.
+
+**Włączaj do:** cen, wersji produktów, aktualności, przepisów, wszystkiego "na dziś". **Pamiętaj:** model streszcza znalezione strony, a strony bywają błędne - linki do źródeł są po to, żeby w nie klikać, dokładnie tak, jak ćwiczyliśmy przy [weryfikacji informacji](/podstawy/weryfikacja-informacji/).
+
+## Tryb myślenia - wolniej, ale dokładniej
+
+Przełącznik "myślenia" każe modelowi rozpisać problem na kroki, zanim odpowie - kosztem czasu. Włączaj przy matematyce, planowaniu i zadaniach z haczykiem; wyłączaj przy prostych pytaniach. Temu trybowi poświęciliśmy osobny rozdział - [Modele rozumujące](/jak-dziala-ai/modele-rozumujace/).
+
+## Deep research - raport zamiast odpowiedzi
+
+Najmocniejszy tryb badawczy: zadajesz jedno pytanie, a chatbot pracuje jak <Termin id="agent-ai">agent</Termin> - planuje, wykonuje dziesiątki, a przy dużych tematach setki wyszukiwań, czyta źródła, porównuje je i po kilku-kilkunastu minutach oddaje wielostronicowy raport z przypisami. Tryb tego typu oferują dziś praktycznie wszystkie duże chatboty, zwykle pod nazwą "deep research" albo zbliżoną.
+
+**Idealny do:** rozpoznania nowego tematu od zera, przeglądu rynku przed zakupem, porównania rozwiązań, przygotowania do trudnej rozmowy.
+
+:::caution[Profesjonalny wygląd to nie to samo co poprawność]
+Raport z deep research wygląda jak praca analityka: sekcje, przypisy, wnioski. To sprawia, że łatwiej mu zaufać bezkrytycznie - a to nadal tekst modelu, który mógł źle zrozumieć któreś źródło. Zanim podejmiesz na jego podstawie decyzję, kliknij w przypisy przy kluczowych liczbach i twierdzeniach.
+:::
+
+## Projekty - chatbot z Twoją bazą wiedzy
+
+Projekt - w większości dużych chatbotów znajdziesz tę funkcję pod tą albo podobną nazwą - to folder rozmów ze wspólnym kontekstem: raz wgrywasz dokumenty i ustalasz instrukcje ("odpowiadaj w stylu naszej firmy", "zawsze pytaj o grupę docelową"), a każda rozmowa w projekcie z nich korzysta.
+
+To zmienia sposób pracy z powtarzalnymi tematami: zamiast w każdej rozmowie od nowa wklejać te same materiały, budujesz stałe środowisko. Osobną ligą jest tu [NotebookLM](https://notebooklm.google/) od Google - narzędzie w całości zbudowane wokół pracy na wgranych źródłach, które odpowiada wyłącznie na ich podstawie i podaje cytaty.
+
+## Tryb głosowy - rozmowa zamiast pisania
+
+Większość chatbotów - zwłaszcza w aplikacjach mobilnych - pozwala rozmawiać z modelem na głos, z przerywaniem w pół zdania i naturalnym tempem. Niedoceniany tryb: świetny do ćwiczenia języków obcych (cierpliwy rozmówca, który nie ocenia), przegadania pomysłu w drodze, zadawania pytań podczas gotowania czy naprawy - wszędzie tam, gdzie ręce są zajęte.
+
+## Canvas i Artifacts - praca nad dokumentem obok czatu
+
+Gdy prosisz o dłuższy tekst albo kod, część chatbotów otwiera go w osobnym panelu (spotkasz nazwy "canvas" albo "artifacts"): dokument żyje obok rozmowy, a Ty zaznaczasz fragmenty i prosisz o poprawki - bez przeklejania całości w kółko. Włączaj do każdej pracy, w której wynik ma więcej niż jedną wersję: oferty, raportu, posta, prezentacji.
+
+## Ściąga: który tryb do którego zadania
+
+| Zadanie | Tryb | Dlaczego |
+| --- | --- | --- |
+| Redakcja maila, tłumaczenie, wyjaśnienie pojęcia | Podstawowy | Szybko i wystarczająco dobrze |
+| Cena, wersja produktu, aktualność | Wyszukiwanie | Wiedza modelu jest zamrożona w czasie |
+| Matematyka, planowanie, zadanie z haczykiem | Myślenie | Rozpisanie na kroki zmniejsza błędy |
+| Rozpoznanie tematu, przegląd rynku | Deep research | Dziesiątki źródeł i raport z przypisami |
+| Powtarzalna praca na tych samych materiałach | Projekt | Baza wiedzy wgrana raz, dostępna zawsze |
+| Praca na własnych dokumentach ze źródłami | NotebookLM / projekt | Odpowiedzi z cytatami z Twoich plików |
+| Nauka języka, brainstorm w drodze | Głosowy | Naturalna rozmowa, wolne ręce |
+| Tekst lub kod w wielu wersjach | Canvas / Artifacts | Poprawki bez przeklejania |
+
+:::tip[Nie ucz się cenników i nazw na pamięć]
+Praktycznie każdy duży chatbot oferuje darmowy plan z ograniczeniami - limitem wiadomości, wolniejszymi modelami albo częścią trybów w okrojonej wersji - a nazwy i zakresy planów zmieniają się co kilka miesięcy. Najprościej zapytać sam czat: "jakie tryby i limity mam w swoim planie?". Nowsze chatboty coraz lepiej znają własne funkcje, a w razie wątpliwości rozstrzyga cennik na stronie producenta.
+:::
+
+## Jak z tego korzystać na co dzień
+
+Nie musisz zapamiętywać wszystkich trybów naraz. Zacznij od jednej zmiany nawyku: **zanim wyślesz pytanie, zadaj sobie jedno pomocnicze - "czy to pytanie o coś, co mogło się zmienić po treningu modelu?"**. Jeśli tak, włącz wyszukiwanie. Samo to wyeliminuje najczęstszą klasę błędnych odpowiedzi.
+
+Drugi nawyk na kolejny tydzień: gdy łapiesz się na wklejaniu tych samych materiałów trzeci raz - załóż projekt. A gdy temat jest na tyle ważny, że i tak spędziłbyś nad nim godzinę w wyszukiwarce - odpal deep research i wróć do raportu z kawą.
+
+## Źródła i oficjalne strony
+
+- [OpenAI, "Introducing deep research" (2025)](https://openai.com/index/introducing-deep-research/) - jak działa tryb deep research w ChatGPT
+- [Google, "Try Deep Research in Gemini" (2024)](https://blog.google/products/gemini/google-gemini-deep-research/) - Deep Research w Gemini
+- [Anthropic, "Claude can now search and research" (2025)](https://www.anthropic.com/news/research) - tryb Research w Claude
+- [NotebookLM](https://notebooklm.google/) - notatnik AI pracujący na Twoich źródłach
+- [Perplexity](https://www.perplexity.ai) - wyszukiwarka AI ze źródłami i trybem badawczym
+
+:::note[Teraz wiesz]
+
+- Że jeden chatbot to kilka narzędzi - tryb podstawowy, wyszukiwanie, myślenie, deep research, projekty, głos i canvas
+- Kiedy którego używać - wyszukiwanie do rzeczy zmiennych, myślenie do zadań z haczykiem, deep research do rozpoznania tematu, projekty do powtarzalnej pracy
+- Że raport deep research czyta się jak pracę analityka, ale weryfikuje jak każdą odpowiedź AI - klikając w przypisy
+- Od czego zacząć - od nawyku włączania wyszukiwania przy pytaniach o rzeczy, które mogły się zmienić
+
+**Następny krok:** [Generatory obrazów AI](/narzedzia/generatory-obrazow/) - odkryjesz Midjourney, DALL-E i Stable Diffusion, nauczysz się pisać skuteczne prompty do generowania obrazów.
+:::
+
+<SlowniczekStrony terminy={["chatbot", "agent-ai", "rag"]} />

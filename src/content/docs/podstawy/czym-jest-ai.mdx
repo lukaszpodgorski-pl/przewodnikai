@@ -32,6 +32,9 @@ faq:
     a: 'AI jest wszędzie: w asystentach głosowych (Siri, Google Assistant), rekomendacjach filmów i produktów, tłumaczeniach automatycznych, filtrach antyspamowych, nawigacji GPS i wielu innych aplikacjach.'
 ---
 
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
 ## Czym jest sztuczna inteligencja?
 
 ![Wizualizacja czym jest sztuczna inteligencja](../../../assets/podstawy/czym-jest-ai/czym-jest-ai.jpg)
@@ -55,7 +58,7 @@ Na co dzień AI pomaga nam w wielu miejscach, często zupełnie niezauważalnie:
 
 ![Kot grający na gitarze w kosmosie - przykład generatywnej AI](../../../assets/podstawy/czym-jest-ai/kot-w-kosmosie.jpg)
 
-To wszystko są przykłady sztucznej inteligencji. Ale pewnie zauważyłeś, że ostatnio w rozmowach o AI szczególnie często pojawiają się przykłady typu "program, który sam coś tworzy". I tu dochodzimy do pojęcia, które mogło Ci się obić o uszy: generatywna sztuczna inteligencja (z ang. generative AI, w skrócie często GenAI). Co to takiego? To po prostu AI, która potrafi generować nowe treści - wymyśla teksty, rysuje obrazy, komponuje muzykę, tworzy nowe pomysły na podstawie tego, czego ją nauczono. Na przykład program ChatGPT potrafi z Tobą rozmawiać i odpowiadać na pytania całymi zdaniami, jakby pisał człowiek. Inne programy generatywne tworzą obrazy na podstawie opisu (wpisujesz "kot grający na gitarze w kosmosie", a komputer rysuje Ci takiego kota). I to właśnie dlatego generatywna AI zrobiła taką furorę.
+To wszystko są przykłady sztucznej inteligencji. Ale pewnie zauważyłeś, że ostatnio w rozmowach o AI szczególnie często pojawiają się przykłady typu "program, który sam coś tworzy". I tu dochodzimy do pojęcia, które mogło Ci się obić o uszy: <Termin id="genai">generatywna sztuczna inteligencja</Termin> (z ang. generative AI, w skrócie często GenAI). Co to takiego? To po prostu AI, która potrafi generować nowe treści - wymyśla teksty, rysuje obrazy, komponuje muzykę, tworzy nowe pomysły na podstawie tego, czego ją nauczono. Na przykład program ChatGPT potrafi z Tobą rozmawiać i odpowiadać na pytania całymi zdaniami, jakby pisał człowiek. Inne programy generatywne tworzą obrazy na podstawie opisu (wpisujesz "kot grający na gitarze w kosmosie", a komputer rysuje Ci takiego kota). I to właśnie dlatego generatywna AI zrobiła taką furorę.
 
 ## AI a generatywna AI - ważne rozróżnienie
 
@@ -75,13 +78,13 @@ Na koniec najważniejsze: sztuczna inteligencja to nie jakaś magiczna czarna sk
 
 ## Zapraszam do odkrywania
 
-Kolejne rozdziały poprowadzą Cię krok po kroku - od tego, jak zaplanować naukę, po pierwszą rozmowę z chatbotem. Idziemy spokojnie, bez strachu i bez nadęcia.
+Kolejne rozdziały poprowadzą Cię krok po kroku - od tego, jak zaplanować naukę, po pierwszą rozmowę z <Termin id="chatbot">chatbotem</Termin>. Idziemy spokojnie, bez strachu i bez nadęcia.
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - co było pierwszą rzeczą, którą wygenerowałeś przez AI, i czy wynik Cię wtedy zaskoczył czy rozczarował? -->
+Na koniec szczera historia. Pierwsza rzecz, jaką wygenerował mi chatbot, była kompletną bzdurą. Wielu ludzi w tym momencie macha ręką - "głupie, do niczego się nie nadaje" - i odpuszcza. To błąd z dwóch powodów. Po pierwsze, te narzędzia zmieniają się z miesiąca na miesiąc, a modele pod nimi odpowiadają dziś na zupełnie innym poziomie niż rok czy dwa lata temu - i wciąż idą w górę. Po drugie, jakość odpowiedzi zależy w ogromnym stopniu od jakości pytania: w branży mówi się "garbage in, garbage out" - śmieci na wejściu, śmieci na wyjściu. I dobra wiadomość - akurat tego można się nauczyć; poświęcimy temu sporą część kursu, [sekcję o prompt engineeringu](/prompt-engineering/).
 
 ## Źródła i dalsze lektury
 
-- [Stanford HAI AI Index Report 2024](https://hai.stanford.edu/research/ai-index-report) - kompleksowy raport o stanie sztucznej inteligencji, adopcji w biznesie i zastosowaniach
+- [Stanford HAI AI Index Report](https://hai.stanford.edu/research/ai-index-report) - kompleksowy, corocznie aktualizowany raport o stanie sztucznej inteligencji, adopcji w biznesie i zastosowaniach
 - [McKinsey: The State of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) - coroczne badanie adopcji AI w firmach na całym świecie
 - [Wikipedia: Sztuczna inteligencja](https://pl.wikipedia.org/wiki/Sztuczna_inteligencja) - historia i przegląd głównych koncepcji AI
 - [IBM: What is Artificial Intelligence?](https://www.ibm.com/think/topics/artificial-intelligence) - przystępne wyjaśnienie AI od jednego z pionierów branży
@@ -98,3 +101,5 @@ Każda generatywna AI to sztuczna inteligencja, ale nie każda sztuczna intelige
 
 **Następny krok:** [Jak uczyć się AI?](/podstawy/jak-uczyc-sie-ai/) - dowiesz się, jak zaplanować swoją naukę i wybrać ścieżkę dopasowaną do Twoich celów.
 :::
+
+<SlowniczekStrony terminy={["genai", "chatbot"]} />

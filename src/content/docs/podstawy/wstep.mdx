@@ -25,6 +25,9 @@ faq:
     a: Kurs składa się z kilkudziesięciu lekcji, które można przerabiać we własnym tempie. Przeciętnie zajmuje to kilka godzin.
 ---
 
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
 ## Cześć - Twoja podróż właśnie się rozpoczyna
 
 ![Sztuczna inteligencja](../../../assets/podstawy/wstep/wstep.jpg)
@@ -45,7 +48,7 @@ Nie chodzi o to, by stać się ekspertem technicznym - chodzi o zrozumienie moż
 
 Ten kurs powstał na bazie mojego doświadczenia z nauką o AI - w tym tego, jak trudno na początku połączyć wszystkie pojęcia w spójny obraz, przedzierając się przez techniczny żargon i zawiłe koncepcje. Dlatego przygotowałem ścieżkę skupioną na praktycznym zrozumieniu: jak działa AI, jak możesz z niej korzystać i jak uniknąć typowych pułapek - bez zagłębiania się w skomplikowane formuły matematyczne czy kod.
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - które konkretnie pojęcie najdłużej Ci się nie układało w całość, gdy sam uczyłeś się AI? -->
+Zdradzę Ci, co mnie samego najdłużej blokowało na starcie. Wydawało mi się, że zanim w ogóle dotknę AI, muszę najpierw zrozumieć, jak to wszystko działa od środka - sieci neuronowe, perceptrony, cała maszyneria pod spodem. To była pułapka. Żeby korzystać z AI, naprawdę nie musisz znać zasady działania tych sieci - wystarczy wiedzieć, co ta technologia potrafi i jak z nią rozmawiać. Do mechaniki pod spodem możesz wrócić później: kiedy sam zechcesz budować takie systemy albo po prostu z ciekawości zajrzeć głębiej. Dlatego ten kurs zaczyna się od praktyki, nie od matematyki.
 
 ## Kropka po kropce - układanie pełnego obrazu
 
@@ -62,9 +65,9 @@ Tak ułożyłem ten przewodnik. Każdy etap buduje na poprzednim:
 | Etap | Sekcja | Cel |
 | --- | --- | --- |
 | **1. Podstawy** (8 lekcji) | Wstęp → Czym jest AI? → Jak się uczyć → Pierwsza rozmowa → Mity vs rzeczywistość → Nie dajmy się zwariować → Ograniczenia → Weryfikacja | Rozumiesz czym jest AI, znasz jej ograniczenia, potrafisz weryfikować informacje |
-| **2. Jak to działa** (10 lekcji) | AI/ML/Sieci → Jak uczą się modele → Typy AI → LLM → Tokeny → Embedding → Parametry → Dane → Boom AI → Mapa AI | Rozumiesz mechanizmy - dlaczego AI "halucynuje", skąd się biorą odpowiedzi |
-| **3. Prompt Engineering** (9 lekcji) | Wprowadzenie → Podstawy → Techniki → Rozumowanie → Schematy → Automatyzacja → Programowanie → Najlepsze praktyki → Baza promptów | Piszesz skuteczne prompty, stosujesz zaawansowane techniki |
-| **4. Narzędzia** (5 lekcji) | Chatboty → Generatory obrazów → Pisanie → Specjalistyczne → AI w codziennej pracy | Znasz ekosystem narzędzi AI i dobierasz je do zadania |
+| **2. Jak to działa** (13 lekcji) | AI/ML/Sieci → Jak uczą się modele → Typy AI → LLM → Modele rozumujące → Tokeny → Embedding → RAG → Parametry → Dane → Boom AI → Agenci AI → Mapa AI | Rozumiesz mechanizmy - dlaczego AI "halucynuje", skąd się biorą odpowiedzi |
+| **3. Prompt Engineering** (10 lekcji) | Wprowadzenie → Podstawy → Techniki → Rozumowanie → Schematy → Inżynieria kontekstu → Automatyzacja → Programowanie → Najlepsze praktyki → Baza promptów | Piszesz skuteczne prompty, stosujesz zaawansowane techniki |
+| **4. Narzędzia** (6 lekcji) | Chatboty → Tryby pracy chatbotów → Generatory obrazów → Pisanie → Specjalistyczne → AI w codziennej pracy | Znasz ekosystem narzędzi AI i dobierasz je do zadania |
 | **5. Praktyka i etyka** (7 lekcji) | AI w branżach → Case studies → Najlepsze praktyki → AI i praca → Etyka → Prywatność → Przyszłość AI | Wdrażasz AI bezpiecznie i etycznie w swojej pracy |
 
 :::note[Kamień milowy #1: Pierwszy kontakt]
@@ -73,7 +76,7 @@ Gdy ukończysz sekcję "Podstawy" (8 stron), będziesz wiedzieć: czym jest AI, 
 
 ## Twój pierwszy prompt - wypróbuj teraz
 
-Zanim przejdziesz dalej, chcę, żebyś dotknął AI w praktyce. Skopiuj poniższy prompt i wklej go do [ChatGPT](https://chat.openai.com), [Claude](https://claude.ai) lub innego chatbota AI:
+Zanim przejdziesz dalej, chcę, żebyś dotknął AI w praktyce. Skopiuj poniższy <Termin id="prompt">prompt</Termin> i wklej go do [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) lub innego <Termin id="chatbot">chatbota</Termin> AI:
 
 ```text
 Jestem [Twój zawód/rola, np. "nauczycielem", "marketerem", "programistą"].
@@ -92,7 +95,7 @@ Zaproponuj 3 konkretne sposoby, jak mogę wykorzystać AI do rozwiązania tego p
 Ten prosty prompt pokazuje, jak AI może stać się Twoim osobistym asystentem. W kolejnych rozdziałach nauczysz się tworzyć jeszcze skuteczniejsze prompty.
 :::
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - jaki był pierwszy prompt, który realnie oszczędził Ci czas w pracy, i ile go zaoszczędził? -->
+U mnie pierwszy prompt, który realnie oszczędził czas, był... o samej AI. Zamiast szukać definicji w dziesięciu zakładkach, pytałem czata o pojęcia, których właśnie się uczyłem - i trudne rzeczy układały się dużo szybciej, bez wychodzenia z rozmowy. A na co dzień największą oszczędność dało mi coś przyziemnego: poprawianie własnych tekstów, żeby były poprawne gramatycznie i stylistycznie. Nudna, powtarzalna robota - i właśnie w takiej AI jest naprawdę dobra.
 
 ## Gotowy na start?
 
@@ -110,3 +113,5 @@ AI to potężne narzędzie, ale to Ty jesteś kapitanem statku. Obecne systemy A
 
 **Następny krok:** [Czym jest AI?](/podstawy/czym-jest-ai/) - poznasz podstawowe pojęcia i zrozumiesz, czym właściwie jest sztuczna inteligencja.
 :::
+
+<SlowniczekStrony terminy={["prompt", "chatbot"]} />

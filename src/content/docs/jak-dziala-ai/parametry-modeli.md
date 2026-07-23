@@ -3,7 +3,7 @@ title: Parametry modeli AI - Temperature, Top-P, Max Tokens
 description: Poznaj kluczowe parametry modeli AI - temperature, top_p, max_tokens i inne. Naucz się dostrajać zachowanie modelu do swoich potrzeb.
 sidebar:
   label: 'Parametry modeli'
-  order: 7
+  order: 9
 educationalLevel: Advanced
 teaches:
   - Czym jest temperature w AI

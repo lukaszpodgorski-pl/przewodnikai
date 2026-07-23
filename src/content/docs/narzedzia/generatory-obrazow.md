@@ -3,7 +3,7 @@ title: Generatory obrazów AI - Midjourney, DALL-E, Stable Diffusion
 description: Przegląd popularnych generatorów obrazów AI - Midjourney, DALL-E, Stable Diffusion, Leonardo.ai. Porównanie jakości, cen i zastosowań.
 sidebar:
   label: 'Generatory obrazów'
-  order: 2
+  order: 3
 educationalLevel: Beginner
 teaches:
   - Jak działają generatory obrazów AI

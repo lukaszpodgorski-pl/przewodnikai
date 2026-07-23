@@ -3,7 +3,7 @@ title: Najlepsze Praktyki Prompt Engineering - Wskazówki i Błędy
 description: Najlepsze praktyki prompt engineering - jak unikać typowych błędów, bezpieczeństwo promptów, prompt injection i zaawansowane techniki optymalizacji.
 sidebar:
   label: 'Najlepsze praktyki promptów'
-  order: 8
+  order: 9
 educationalLevel: Intermediate
 teaches:
   - Najlepsze praktyki prompt engineering

@@ -3,7 +3,7 @@ title: Rozumienie danych dla nie-programistów
 description: Poznaj podstawy pracy z danymi bez kodowania. Data Fluency - kluczowa kompetencja w erze AI dla każdego profesjonalisty.
 sidebar:
   label: 'Rozumienie danych'
-  order: 8
+  order: 10
 educationalLevel: Beginner
 teaches:
   - Podstawy rozumienia danych
