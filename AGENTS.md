@@ -69,6 +69,20 @@ Pole `faq` renderuje też widoczną sekcję "Częste pytania" (`MarkdownContent.
 - **GIF-y są zakazane** i odrzucane przez CI. Komendy konwersji ffmpeg: `CONTRIBUTING.md`.
 - `alt` jest obowiązkowy przy każdym obrazie i animacji.
 
+### Dane autora (repo-profil)
+
+Biogram, dane `Person` (JSON-LD) i zdjęcie autora są **zvendorowanymi kopiami** z repo
+[lukaszpodgorski-pl/author-profile](https://github.com/lukaszpodgorski-pl/author-profile):
+
+- `src/data/autor.json` i `src/data/autor-krotki.html` - generowane przez `npm run profile:sync`
+  (`scripts/fetch-profile.mjs`); **nie edytuj ich ręcznie**, zmiany rób w repo-profilu,
+- `src/components/AutorKrotki.astro` renderuje `autor-krotki.html`; `AUTHOR` w
+  `src/lib/structured-data.ts` czyta `autor.json`,
+- `src/assets/zasoby/o-mnie/lukasz.jpg` - zdjęcie pobierane tym samym skryptem.
+
+Po pushu do repo-profilu workflow `profile-sync.yml` sam robi sync i otwiera PR z aktualizacją.
+Build celowo nie dotyka sieci - działa zawsze na ostatniej zacommitowanej kopii.
+
 ### Cloudflare / build
 
 `wrangler.jsonc` serwuje statyczne `./dist`. W `astro.config.mjs` blok `vite.build.rolldownOptions.external` wyrzuca `@bruits/satteri-wasm32-wasi` z bundla - **nie usuwaj tego**, bez tego build na Cloudflare pada (opcjonalna zależność `cpu: ["wasm32"]` nigdy się nie instaluje, a bundler próbuje ją rozwiązać).
