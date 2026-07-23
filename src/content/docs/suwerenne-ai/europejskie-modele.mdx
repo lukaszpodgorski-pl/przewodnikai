@@ -1,18 +1,18 @@
 ---
 title: Europejskie modele i firmy AI
-description: Mistral i Le Chat, FLUX od Black Forest Labs, DeepL i Aleph Alpha - europejskie alternatywy dla amerykańskich narzędzi AI.
+description: Mistral i Vibe (dawniej Le Chat), FLUX od Black Forest Labs, DeepL i Aleph Alpha - europejskie alternatywy dla amerykańskich narzędzi AI.
 sidebar:
   order: 2
 educationalLevel: Beginner
 teaches:
   - Jakie europejskie firmy tworzą własne modele AI
-  - Czym jest Le Chat i rodzina modeli Mistral 3
+  - Czym jest Vibe (dawniej Le Chat) i rodzina modeli Mistral 3
   - Kiedy europejskie narzędzie może zastąpić amerykańskie
 about:
   - name: Mistral AI
     sameAs: https://en.wikipedia.org/wiki/Mistral_AI
 mentions:
-  - name: Le Chat
+  - name: Vibe
     sameAs: https://mistral.ai/products/le-chat
     type: SoftwareApplication
   - name: DeepL
@@ -26,7 +26,7 @@ mentions:
     type: Organization
 faq:
   - q: Czy Mistral to dobra alternatywa dla ChatGPT?
-    a: Dla wielu zastosowań tak. Le Chat - chatbot Mistrala - ma plan darmowy, generowanie obrazów i interpreter kodu, a flagowe modele Mistral 3 gonią czołówkę. Do tego Mistral udostępnia modele open-weight, które możesz uruchomić na własnym sprzęcie - tego amerykańscy liderzy w większości nie oferują.
+    a: Dla wielu zastosowań tak. Vibe (do niedawna Le Chat) - chatbot Mistrala - ma plan darmowy, generowanie obrazów i interpreter kodu, a flagowe modele Mistral 3 gonią czołówkę. Do tego Mistral udostępnia modele open-weight, które możesz uruchomić na własnym sprzęcie - tego amerykańscy liderzy w większości nie oferują.
   - q: Co Europa robi najlepiej w AI?
     a: Tłumaczenia (DeepL), generowanie obrazów (FLUX od Black Forest Labs) i otwarte modele do samodzielnego hostowania (Mistral). W czystej skali modeli frontier przewaga wciąż należy do USA.
   - q: Dlaczego warto sięgać po europejskie narzędzia AI?
@@ -38,15 +38,13 @@ import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
 
 Czy istnieje życie poza ChatGPT? To pytanie słyszę zaskakująco często - i mam dobrą wiadomość: istnieje, a spora jego część mówi po francusku i niemiecku. Europa nie wygrywa dziś wyścigu na największe modele - tu przewaga wciąż należy do USA - ale w kilku dziedzinach gra w światowej czołówce.
 
-W tym artykule przedstawię Ci czwórkę europejskich graczy: Mistrala z Paryża (modele językowe i chatbot Le Chat), Black Forest Labs (generowanie obrazów), DeepL (tłumaczenia, a ostatnio dużo więcej) oraz Aleph Alpha (AI pod pełną kontrolą klienta). Przy każdym pokażę, co robi najlepiej - i dlaczego warto znać jego nazwę.
+W tym artykule przedstawię Ci czwórkę europejskich graczy: Mistrala z Paryża (modele językowe i chatbot Vibe, do niedawna Le Chat), Black Forest Labs (generowanie obrazów), DeepL (tłumaczenia, a ostatnio dużo więcej) oraz Aleph Alpha (AI pod pełną kontrolą klienta). Przy każdym pokażę, co robi najlepiej - i dlaczego warto znać jego nazwę.
 
 ## Mistral - europejski gracz pierwszej ligi
 
 **Mistral AI** to firma z Paryża, która na pytanie o życie poza ChatGPT odpowiada najgłośniej. W grudniu 2025 roku pokazała rodzinę modeli **Mistral 3**. Flagowy Mistral Large 3 powstał w architekturze MoE (z ang. Mixture of Experts, czyli "mieszanka ekspertów"): łącznie ma 675 mld parametrów, ale przy każdej odpowiedzi pracuje tylko 41 mld z nich. Do tego jest multimodalny - pracuje nie tylko z tekstem - a jego okno kontekstu, czyli ilość tekstu, którą model ogarnia naraz, to 256 tys. tokenów (czym są parametry i tokeny, tłumaczę w sekcji [Jak działa AI](/jak-dziala-ai/)). Obok flagowca zadebiutowały trzy mniejsze modele Ministral 3 - o 14, 8 i 3 mld parametrów. Całą rodzinę wydano na otwartej licencji Apache 2.0: to modele <Termin id="open-weight">open-weight</Termin>, które możesz pobrać i uruchomić na własnym sprzęcie ([mistral.ai](https://mistral.ai/news/mistral-3/), [TechCrunch](https://techcrunch.com/2025/12/02/mistral-closes-in-on-big-ai-rivals-with-mistral-3-open-weight-frontier-and-small-models/)).
 
-Nie musisz jednak niczego pobierać, żeby skorzystać z modeli Mistrala. **Le Chat** to chatbot firmy - odpowiednik ChatGPT. Plan Free ma limit ok. 25 wiadomości dziennie, a do tego obejmuje generowanie obrazów i interpreter kodu (czyli uruchamianie napisanego przez AI kodu); plan Pro kosztuje 14,99 USD miesięcznie, a Team - 24,99 USD; ceny sprawdź na mistral.ai, stan na lipiec 2026 ([CloudZero](https://www.cloudzero.com/blog/mistral-api-pricing/), [felloai.com](https://felloai.com/mistral-ai-pricing/)).
-
-{/* TODO(Łukasz): potwierdź cennik Le Chat na mistral.ai przed merge */}
+Nie musisz jednak niczego pobierać, żeby skorzystać z modeli Mistrala. **Vibe** - do niedawna znany jako **Le Chat** ([Mistral przemianował asystenta](https://mistral.ai/products/le-chat), rozmowy i plany zostały bez zmian) - to chatbot firmy, odpowiednik ChatGPT. Plan Free ma dzienny limit wiadomości, a do tego obejmuje generowanie obrazów i interpreter kodu (czyli uruchamianie napisanego przez AI kodu); plan Pro kosztuje 14,99 USD miesięcznie, a Team - 24,99 USD od osoby ([oficjalny cennik](https://mistral.ai/pricing), stan na lipiec 2026; przegląd planów: [CloudZero](https://www.cloudzero.com/blog/mistral-api-pricing/), [felloai.com](https://felloai.com/mistral-ai-pricing/)).
 
 A co dalej? W lipcu 2026 Mistral zapowiedział kolejną otwartą rodzinę modeli MoE, która ma trafić do wczesnego dostępu (early access). Podkreślę wyraźnie: to na razie zapowiedź, nie gotowy produkt ([TechTimes](https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm)).
 
@@ -78,6 +76,7 @@ Wersje modeli, ceny i transakcje zmieniają się w tej branży z miesiąca na mi
 
 - [Mistral: Mistral 3](https://mistral.ai/news/mistral-3/) - oficjalne ogłoszenie rodziny modeli Mistral 3
 - [TechCrunch: premiera Mistral 3](https://techcrunch.com/2025/12/02/mistral-closes-in-on-big-ai-rivals-with-mistral-3-open-weight-frontier-and-small-models/) - o tym, jak Mistral goni największych rywali
+- [mistral.ai: cennik](https://mistral.ai/pricing) - oficjalne plany i ceny Vibe (dawniej Le Chat)
 - [CloudZero: ceny Mistrala](https://www.cloudzero.com/blog/mistral-api-pricing/) - przegląd planów i cen, w tym Le Chat
 - [felloai.com: cennik Mistral AI](https://felloai.com/mistral-ai-pricing/) - plany i limity Le Chat
 - [TechTimes: zapowiedź nowej rodziny MoE](https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm) - o otwartych modelach zapowiedzianych do wczesnego dostępu
@@ -91,7 +90,7 @@ Wersje modeli, ceny i transakcje zmieniają się w tej branży z miesiąca na mi
 
 :::note[Teraz wiesz]
 
-- Że Mistral z Paryża tworzy modele open-weight klasy światowej, a Le Chat ma plan darmowy
+- Że Mistral z Paryża tworzy modele open-weight klasy światowej, a jego chatbot Vibe (dawniej Le Chat) ma plan darmowy
 - Że FLUX (generowanie obrazów) i DeepL (tłumaczenia i agent biurowy) to europejska czołówka
 - Że suwerenność bywa produktem - Aleph Alpha buduje AI pod pełną kontrolą klienta
 
