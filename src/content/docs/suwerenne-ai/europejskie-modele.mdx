@@ -28,7 +28,7 @@ faq:
   - q: Czy Mistral to dobra alternatywa dla ChatGPT?
     a: Dla wielu zastosowań tak. Le Chat - chatbot Mistrala - ma plan darmowy, generowanie obrazów i interpreter kodu, a flagowe modele Mistral 3 gonią czołówkę. Do tego Mistral udostępnia modele open-weight, które możesz uruchomić na własnym sprzęcie - tego amerykańscy liderzy w większości nie oferują.
   - q: Co Europa robi najlepiej w AI?
-    a: Tłumaczenia (DeepL), generowanie obrazów (FLUX od Black Forest Labs - niemiecki model używany m.in. w innych popularnych narzędziach) i otwarte modele do samodzielnego hostowania (Mistral). W czystej skali modeli frontier przewaga wciąż należy do USA.
+    a: Tłumaczenia (DeepL), generowanie obrazów (FLUX od Black Forest Labs) i otwarte modele do samodzielnego hostowania (Mistral). W czystej skali modeli frontier przewaga wciąż należy do USA.
   - q: Dlaczego warto sięgać po europejskie narzędzia AI?
     a: Dane zostają pod europejskim prawem (RODO, AI Act), a Ty uniezależniasz się od decyzji pojedynczych firm i rządów spoza regionu - zmiana regulaminu czy sankcje za oceanem nie odcinają Cię od narzędzia.
 ---
@@ -44,13 +44,15 @@ W tym artykule przedstawię Ci czwórkę europejskich graczy: Mistrala z Paryża
 
 **Mistral AI** to firma z Paryża, która na pytanie o życie poza ChatGPT odpowiada najgłośniej. W grudniu 2025 roku pokazała rodzinę modeli **Mistral 3**. Flagowy Mistral Large 3 powstał w architekturze MoE (z ang. Mixture of Experts, czyli "mieszanka ekspertów"): łącznie ma 675 mld parametrów, ale przy każdej odpowiedzi pracuje tylko 41 mld z nich. Do tego jest multimodalny - pracuje nie tylko z tekstem - a jego okno kontekstu, czyli ilość tekstu, którą model ogarnia naraz, to 256 tys. tokenów (czym są parametry i tokeny, tłumaczę w sekcji [Jak działa AI](/jak-dziala-ai/)). Obok flagowca zadebiutowały trzy mniejsze modele Ministral 3 - o 14, 8 i 3 mld parametrów. Całą rodzinę wydano na otwartej licencji Apache 2.0: to modele <Termin id="open-weight">open-weight</Termin>, które możesz pobrać i uruchomić na własnym sprzęcie ([mistral.ai](https://mistral.ai/news/mistral-3/), [TechCrunch](https://techcrunch.com/2025/12/02/mistral-closes-in-on-big-ai-rivals-with-mistral-3-open-weight-frontier-and-small-models/)).
 
-Nie musisz jednak niczego pobierać, żeby skorzystać z modeli Mistrala. **Le Chat** to chatbot firmy - odpowiednik ChatGPT. Plan Free ma limit ok. 25 wiadomości dziennie, plan Pro kosztuje 14,99 USD miesięcznie, a Team - 24,99 USD; ceny sprawdź na mistral.ai, stan na lipiec 2026 ([CloudZero](https://www.cloudzero.com/blog/mistral-api-pricing/), [felloai.com](https://felloai.com/mistral-ai-pricing/)).
+Nie musisz jednak niczego pobierać, żeby skorzystać z modeli Mistrala. **Le Chat** to chatbot firmy - odpowiednik ChatGPT. Plan Free ma limit ok. 25 wiadomości dziennie, a do tego obejmuje generowanie obrazów i interpreter kodu (czyli uruchamianie napisanego przez AI kodu); plan Pro kosztuje 14,99 USD miesięcznie, a Team - 24,99 USD; ceny sprawdź na mistral.ai, stan na lipiec 2026 ([CloudZero](https://www.cloudzero.com/blog/mistral-api-pricing/), [felloai.com](https://felloai.com/mistral-ai-pricing/)).
+
+{/* TODO(Łukasz): potwierdź cennik Le Chat na mistral.ai przed merge */}
 
 A co dalej? W lipcu 2026 Mistral zapowiedział kolejną otwartą rodzinę modeli MoE, która ma trafić do wczesnego dostępu (early access). Podkreślę wyraźnie: to na razie zapowiedź, nie gotowy produkt ([TechTimes](https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm)).
 
 ## Black Forest Labs - obrazy z Czarnego Lasu
 
-Druga historia zaczyna się w Niemczech. **Black Forest Labs** - nazwa nawiązuje do Schwarzwaldu, czyli Czarnego Lasu - to twórcy **FLUX**, modelu generującego obrazy. Nawet jeśli ta nazwa nic Ci nie mówi, obrazy wygenerowane przez FLUX-a mogły już przemknąć Ci przed oczami - model pracuje też pod maską innych popularnych narzędzi.
+Druga historia zaczyna się w Niemczech. **Black Forest Labs** - nazwa nawiązuje do Schwarzwaldu, czyli Czarnego Lasu - to twórcy **FLUX**, modelu generującego obrazy. Nawet jeśli ta nazwa nic Ci nie mówi, obrazy wygenerowane przez FLUX-a mogły już przemknąć Ci przed oczami.
 
 Najnowsza wersja, **FLUX.2**, lepiej radzi sobie z tekstem na obrazach, utrzymuje spójność przy wielu obrazach referencyjnych (podajesz kilka ujęć np. tej samej postaci albo produktu, a model trzyma się ich w kolejnych generacjach) i tworzy obrazy w rozdzielczości 4K. Firma ma też za sobą mocny grudzień 2025: rundę finansowania serii B o wartości 300 mln USD, przy wycenie 3,25 mld USD ([bfl.ai](https://bfl.ai/blog/our-300m-series-b), [TechCrunch](https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation)).
 

@@ -23,7 +23,7 @@ mentions:
     type: Organization
 faq:
   - q: Czym jest Bielik?
-    a: Bielik to otwarty polski model językowy tworzony przez społeczność fundacji SpeakLeash i trenowany na superkomputerach Cyfronetu AGH. Najnowsza wersja 3.0 (11 mld parametrów, styczeń 2026) jest dostępna za darmo na licencji Apache 2.0 - możesz z niej korzystać w czacie, przez API albo lokalnie na własnym komputerze.
+    a: Bielik to otwarty polski model językowy tworzony przez społeczność fundacji SpeakLeash i trenowany na superkomputerach Cyfronetu AGH. Najnowsza wersja 3.0 (11 mld parametrów, styczeń 2026) jest dostępna za darmo na licencji Apache 2.0 - możesz z niej korzystać w czacie w przeglądarce albo uruchomić ją lokalnie w Ollama lub LM Studio.
   - q: Czym Bielik różni się od PLLuM?
     a: Bielik to projekt społecznościowy (fundacja SpeakLeash i Cyfronet AGH), a PLLuM - rządowy, rozwijany przez konsorcjum HIVE AI pod przewodnictwem NASK i wdrażany w administracji publicznej, m.in. w planowanym asystencie aplikacji mObywatel. Oba są otwarte i oba możesz pobrać z Hugging Face.
   - q: Czy polski model jest mi w ogóle potrzebny, skoro ChatGPT zna polski?
@@ -33,7 +33,7 @@ faq:
 import Termin from '../../../components/Termin.astro';
 import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
 
-Zacznę od faktu, który zaskakuje prawie każdego na moich szkoleniach: w aplikacji InPost, z której korzystają miliony Polaków, pracuje polski model językowy ([Wikipedia](https://pl.wikipedia.org/wiki/Bielik_%28model_j%C4%99zykowy%29)). Nie zbudował go gigant z Doliny Krzemowej ani nawet rząd. Zbudowała go społeczność wolontariuszy - ludzie, którzy po godzinach uczyli komputer mówić po polsku. Ten model nazywa się Bielik i to on jest głównym bohaterem tego artykułu.
+Zacznę od faktu, który zaskakuje prawie każdego: w aplikacji InPost, z której korzystają miliony Polaków, pracuje polski model językowy ([Wikipedia](https://pl.wikipedia.org/wiki/Bielik_%28model_j%C4%99zykowy%29)). Nie zbudował go gigant z Doliny Krzemowej ani nawet rząd. Zbudowała go społeczność wolontariuszy - ludzie, którzy po godzinach uczyli komputer mówić po polsku. Ten model nazywa się Bielik i to on jest głównym bohaterem tego artykułu.
 
 To pierwszy artykuł sekcji o suwerennym AI, więc <Termin id="suwerennosc-cyfrowa">suwerenność cyfrowa</Termin> - czyli zdolność do korzystania z technologii bez krytycznej zależności od zagranicznych dostawców - będzie tu wracać jak refren. Dziś zaczynamy od podwórka najbliższego nam wszystkim: poznasz Bielika i jego historię, rządowy projekt PLLuM oraz Spichlerz - zbiór polskich tekstów, którym te modele się żywią. Pokażę Ci też, jak wypróbować Bielika samodzielnie - w przeglądarce albo na własnym komputerze.
 

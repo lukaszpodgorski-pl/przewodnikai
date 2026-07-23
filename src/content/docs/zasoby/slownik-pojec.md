@@ -204,7 +204,7 @@ Model matematyczny inspirowany strukturą i funkcjonowaniem ludzkiego mózgu, sk
 
 Zdolność państwa, firmy lub pojedynczej osoby do korzystania z technologii cyfrowych - chmury, oprogramowania, modeli AI - bez krytycznej zależności od dostawców spoza swojego regionu. W praktyce chodzi o pytanie: co się stanie z Twoimi narzędziami i danymi, jeśli zagraniczny dostawca zmieni cennik, regulamin albo zostanie objęty sankcjami? Odpowiedzią są m.in. europejskie modele AI, lokalne centra danych i modele open-weight uruchamiane na własnym sprzęcie.
 
-**Przykład:** urząd, który zamiast chmury zagranicznego dostawcy uruchamia polski model językowy na własnych serwerach - dane obywateli nie opuszczają kraju.
+**Przykład:** Urząd, który zamiast chmury zagranicznego dostawcy uruchamia polski model językowy na własnych serwerach - dane obywateli nie opuszczają kraju.
 
 ### Sztuczna inteligencja (AI)
 
