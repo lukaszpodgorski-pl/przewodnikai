@@ -1,0 +1,100 @@
+---
+title: Europejskie modele i firmy AI
+description: Mistral i Vibe (dawniej Le Chat), FLUX od Black Forest Labs, DeepL i Aleph Alpha - europejskie alternatywy dla amerykańskich narzędzi AI.
+sidebar:
+  order: 2
+educationalLevel: Beginner
+teaches:
+  - Jakie europejskie firmy tworzą własne modele AI
+  - Czym jest Vibe (dawniej Le Chat) i rodzina modeli Mistral 3
+  - Kiedy europejskie narzędzie może zastąpić amerykańskie
+about:
+  - name: Mistral AI
+    sameAs: https://en.wikipedia.org/wiki/Mistral_AI
+mentions:
+  - name: Vibe
+    sameAs: https://mistral.ai/products/le-chat
+    type: SoftwareApplication
+  - name: DeepL
+    sameAs: https://en.wikipedia.org/wiki/DeepL_Translator
+    type: SoftwareApplication
+  - name: Black Forest Labs
+    sameAs: https://bfl.ai/
+    type: Organization
+  - name: Aleph Alpha
+    sameAs: https://en.wikipedia.org/wiki/Aleph_Alpha
+    type: Organization
+faq:
+  - q: Czy Mistral to dobra alternatywa dla ChatGPT?
+    a: Dla wielu zastosowań tak. Vibe (do niedawna Le Chat) - chatbot Mistrala - ma plan darmowy, generowanie obrazów i interpreter kodu, a flagowe modele Mistral 3 gonią czołówkę. Do tego Mistral udostępnia modele open-weight, które możesz uruchomić na własnym sprzęcie - tego amerykańscy liderzy w większości nie oferują.
+  - q: Co Europa robi najlepiej w AI?
+    a: Tłumaczenia (DeepL), generowanie obrazów (FLUX od Black Forest Labs) i otwarte modele do samodzielnego hostowania (Mistral). W czystej skali modeli frontier przewaga wciąż należy do USA.
+  - q: Dlaczego warto sięgać po europejskie narzędzia AI?
+    a: Dane zostają pod europejskim prawem (RODO, AI Act), a Ty uniezależniasz się od decyzji pojedynczych firm i rządów spoza regionu - zmiana regulaminu czy sankcje za oceanem nie odcinają Cię od narzędzia.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+Czy istnieje życie poza ChatGPT? To pytanie słyszę zaskakująco często - i mam dobrą wiadomość: istnieje, a spora jego część mówi po francusku i niemiecku. Europa nie wygrywa dziś wyścigu na największe modele - tu przewaga wciąż należy do USA - ale w kilku dziedzinach gra w światowej czołówce.
+
+W tym artykule przedstawię Ci czwórkę europejskich graczy: Mistrala z Paryża (modele językowe i chatbot Vibe, do niedawna Le Chat), Black Forest Labs (generowanie obrazów), DeepL (tłumaczenia, a ostatnio dużo więcej) oraz Aleph Alpha (AI pod pełną kontrolą klienta). Przy każdym pokażę, co robi najlepiej - i dlaczego warto znać jego nazwę.
+
+## Mistral - europejski gracz pierwszej ligi
+
+**Mistral AI** to firma z Paryża, która na pytanie o życie poza ChatGPT odpowiada najgłośniej. W grudniu 2025 roku pokazała rodzinę modeli **Mistral 3**. Flagowy Mistral Large 3 powstał w architekturze MoE (z ang. Mixture of Experts, czyli "mieszanka ekspertów"): łącznie ma 675 mld parametrów, ale przy każdej odpowiedzi pracuje tylko 41 mld z nich. Do tego jest multimodalny - pracuje nie tylko z tekstem - a jego okno kontekstu, czyli ilość tekstu, którą model ogarnia naraz, to 256 tys. tokenów (czym są parametry i tokeny, tłumaczę w sekcji [Jak działa AI](/jak-dziala-ai/)). Obok flagowca zadebiutowały trzy mniejsze modele Ministral 3 - o 14, 8 i 3 mld parametrów. Całą rodzinę wydano na otwartej licencji Apache 2.0: to modele <Termin id="open-weight">open-weight</Termin>, które możesz pobrać i uruchomić na własnym sprzęcie ([mistral.ai](https://mistral.ai/news/mistral-3/), [TechCrunch](https://techcrunch.com/2025/12/02/mistral-closes-in-on-big-ai-rivals-with-mistral-3-open-weight-frontier-and-small-models/)).
+
+Nie musisz jednak niczego pobierać, żeby skorzystać z modeli Mistrala. **Vibe** - do niedawna znany jako **Le Chat** ([Mistral przemianował asystenta](https://mistral.ai/products/le-chat), rozmowy i plany zostały bez zmian) - to chatbot firmy, odpowiednik ChatGPT. Plan Free ma dzienny limit wiadomości, a do tego obejmuje generowanie obrazów i interpreter kodu (czyli uruchamianie napisanego przez AI kodu); plan Pro kosztuje 14,99 USD miesięcznie, a Team - 24,99 USD od osoby ([oficjalny cennik](https://mistral.ai/pricing), stan na lipiec 2026; przegląd planów: [CloudZero](https://www.cloudzero.com/blog/mistral-api-pricing/), [felloai.com](https://felloai.com/mistral-ai-pricing/)).
+
+A co dalej? W lipcu 2026 Mistral zapowiedział kolejną otwartą rodzinę modeli MoE, która ma trafić do wczesnego dostępu (early access). Podkreślę wyraźnie: to na razie zapowiedź, nie gotowy produkt ([TechTimes](https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm)).
+
+## Black Forest Labs - obrazy z Czarnego Lasu
+
+Druga historia zaczyna się w Niemczech. **Black Forest Labs** - nazwa nawiązuje do Schwarzwaldu, czyli Czarnego Lasu - to twórcy **FLUX**, modelu generującego obrazy. Nawet jeśli ta nazwa nic Ci nie mówi, obrazy wygenerowane przez FLUX-a mogły już przemknąć Ci przed oczami.
+
+Najnowsza wersja, **FLUX.2**, lepiej radzi sobie z tekstem na obrazach, utrzymuje spójność przy wielu obrazach referencyjnych (podajesz kilka ujęć np. tej samej postaci albo produktu, a model trzyma się ich w kolejnych generacjach) i tworzy obrazy w rozdzielczości 4K. Firma ma też za sobą mocny grudzień 2025: rundę finansowania serii B o wartości 300 mln USD, przy wycenie 3,25 mld USD ([bfl.ai](https://bfl.ai/blog/our-300m-series-b), [TechCrunch](https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation)).
+
+## DeepL - z Kolonii na biurka świata
+
+Trzeci bohater to firma, którą możesz znać z najbardziej przyziemnej strony AI - z tłumaczenia tekstów. **DeepL** z Kolonii od lat buduje reputację tłumacza, który w wielu parach językowych wypada lepiej niż rozwiązania technologicznych gigantów. Rynek to docenia: firma jest wyceniana na 2 mld USD ([Sacra](https://sacra.com/c/deepl/)).
+
+DeepL nie zatrzymał się jednak na tłumaczeniach. **DeepL Agent** to <Termin id="agent-ai">agent AI</Termin> do zadań biurowych, ogólnodostępny od listopada 2025 roku - a w lutym 2026 korzystało z niego już ok. 2000 klientów ([CNBC](https://www.cnbc.com/2025/09/03/deepl-launches-ai-agent-pitting-it-against-openai-anthropic.html), [Sifted](https://sifted.eu/articles/deepl-agent-release)).
+
+## Aleph Alpha - suwerenność jako produkt
+
+Ostatni przystanek: **Aleph Alpha**, niemiecka firma, która z suwerenności zrobiła swój główny produkt. Jej platforma **PhariaAI** jest nastawiona na wdrożenia on-prem (z ang. on-premises - na serwerach klienta, nie w cudzej chmurze) i na wyjaśnialność, czyli możliwość prześledzenia, na jakiej podstawie model udzielił odpowiedzi. To oferta dla organizacji, które chcą mieć AI w pełni pod własną kontrolą.
+
+W kwietniu 2026 ogłoszono fuzję Aleph Alpha z kanadyjskim Cohere. Wycena połączonej firmy ma sięgnąć ok. 20 mld USD, a częścią transakcji jest inwestycja Schwarz Group. Ważne zastrzeżenie: w chwili, gdy piszę te słowa, transakcja jest w toku i nie została jeszcze domknięta ([CNBC](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html), [TechCrunch](https://techcrunch.com/2026/04/24/cohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/)).
+
+Czy to wszystko oznacza, że masz jutro porzucić amerykańskie narzędzia? Nie. Ale warto wiedzieć, że wybór istnieje - a razem z nim argumenty: dane zostają pod europejskim prawem (RODO, AI Act), a Ty uniezależniasz się od decyzji pojedynczych firm i rządów spoza regionu.
+
+:::caution[Stan na lipiec 2026]
+Wersje modeli, ceny i transakcje zmieniają się w tej branży z miesiąca na miesiąc. Wszystko powyżej to migawka z lipca 2026 - dlatego przy każdym fakcie znajdziesz link do źródła. Zanim powołasz się na konkretną liczbę, sprawdź tam aktualny stan.
+:::
+
+## Źródła i dalsze lektury
+
+- [Mistral: Mistral 3](https://mistral.ai/news/mistral-3/) - oficjalne ogłoszenie rodziny modeli Mistral 3
+- [TechCrunch: premiera Mistral 3](https://techcrunch.com/2025/12/02/mistral-closes-in-on-big-ai-rivals-with-mistral-3-open-weight-frontier-and-small-models/) - o tym, jak Mistral goni największych rywali
+- [mistral.ai: cennik](https://mistral.ai/pricing) - oficjalne plany i ceny Vibe (dawniej Le Chat)
+- [CloudZero: ceny Mistrala](https://www.cloudzero.com/blog/mistral-api-pricing/) - przegląd planów i cen, w tym Le Chat
+- [felloai.com: cennik Mistral AI](https://felloai.com/mistral-ai-pricing/) - plany i limity Le Chat
+- [TechTimes: zapowiedź nowej rodziny MoE](https://www.techtimes.com/articles/319798/20260706/mistral-ai-targets-frontier-gap-open-weight-model-entering-july-early-access.htm) - o otwartych modelach zapowiedzianych do wczesnego dostępu
+- [Black Forest Labs: runda B](https://bfl.ai/blog/our-300m-series-b) - oficjalny komunikat o rundzie finansowania
+- [TechCrunch: wycena Black Forest Labs](https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation) - o rundzie 300 mln USD i wycenie 3,25 mld USD
+- [Sacra: DeepL](https://sacra.com/c/deepl/) - profil firmy i dane o wycenie
+- [CNBC: DeepL wypuszcza agenta AI](https://www.cnbc.com/2025/09/03/deepl-launches-ai-agent-pitting-it-against-openai-anthropic.html) - o premierze DeepL Agent
+- [Sifted: DeepL Agent](https://sifted.eu/articles/deepl-agent-release) - o ogólnej dostępności agenta i liczbie klientów
+- [CNBC: fuzja Cohere i Aleph Alpha](https://www.cnbc.com/2026/04/24/cohere-aleph-alpha-germany-ai-europe-expansion.html) - o ogłoszeniu transakcji i planach dla Europy
+- [TechCrunch: transatlantycka fuzja](https://techcrunch.com/2026/04/24/cohere-acquires-merges-with-german-based-startup-to-create-a-transatlantic-ai-powerhouse/) - o połączeniu Cohere z Aleph Alpha
+
+:::note[Teraz wiesz]
+
+- Że Mistral z Paryża tworzy modele open-weight klasy światowej, a jego chatbot Vibe (dawniej Le Chat) ma plan darmowy
+- Że FLUX (generowanie obrazów) i DeepL (tłumaczenia i agent biurowy) to europejska czołówka
+- Że suwerenność bywa produktem - Aleph Alpha buduje AI pod pełną kontrolą klienta
+
+**Następny krok:** [Polski ekosystem AI](/suwerenne-ai/polski-ekosystem-ai/) - poznasz fabryki AI, superkomputery i firmy z polskim rodowodem.
+:::
+
+<SlowniczekStrony terminy={["open-weight", "agent-ai"]} />

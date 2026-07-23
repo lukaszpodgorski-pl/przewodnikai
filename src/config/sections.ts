@@ -1,5 +1,5 @@
 /**
- * Siedem sekcji merytorycznych kursu, w kolejności ścieżki nauki.
+ * Osiem sekcji merytorycznych kursu, w kolejności ścieżki nauki.
  * Źródło prawdy dla menu bocznego (astro.config.mjs) i dla klasyfikacji
  * strony jako artykułu w danych strukturalnych oraz w wyborze obrazu OG
  * (src/components/Head.astro).
@@ -15,6 +15,7 @@ export const SECTIONS: ReadonlyArray<Section> = [
 	{ slug: 'jak-dziala-ai', label: 'Jak działa AI' },
 	{ slug: 'prompt-engineering', label: 'Prompt Engineering' },
 	{ slug: 'narzedzia', label: 'Narzędzia AI' },
+	{ slug: 'suwerenne-ai', label: 'Suwerenne AI' },
 	{ slug: 'praktyka', label: 'AI w praktyce' },
 	{ slug: 'etyka', label: 'Etyka i bezpieczeństwo' },
 	{ slug: 'zasoby', label: 'Zasoby' },

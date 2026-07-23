@@ -1,0 +1,122 @@
+---
+title: Bielik i polskie modele AI
+description: Bielik od SpeakLeash, rządowy PLLuM i projekt Spichlerz - kto tworzy polskie modele językowe, co potrafią i jak ich spróbować.
+sidebar:
+  order: 1
+educationalLevel: Beginner
+teaches:
+  - Czym jest Bielik i kto go tworzy
+  - Czym jest PLLuM i gdzie wdraża go administracja
+  - Jak wypróbować polskie modele w przeglądarce i lokalnie
+about:
+  - name: Bielik
+    sameAs: https://pl.wikipedia.org/wiki/Bielik_(model_j%C4%99zykowy)
+mentions:
+  - name: SpeakLeash
+    sameAs: https://speakleash.org/
+    type: Organization
+  - name: Akademickie Centrum Komputerowe Cyfronet AGH
+    sameAs: https://www.cyfronet.pl/
+    type: Organization
+  - name: NASK
+    sameAs: https://www.nask.pl/
+    type: Organization
+faq:
+  - q: Czym jest Bielik?
+    a: Bielik to otwarty polski model językowy tworzony przez społeczność fundacji SpeakLeash i trenowany na superkomputerach Cyfronetu AGH. Najnowsza wersja 3.0 (11 mld parametrów, styczeń 2026) jest dostępna za darmo na licencji Apache 2.0 - możesz z niej korzystać w czacie w przeglądarce albo uruchomić ją lokalnie w Ollama lub LM Studio.
+  - q: Czym Bielik różni się od PLLuM?
+    a: Bielik to projekt społecznościowy (fundacja SpeakLeash i Cyfronet AGH), a PLLuM - rządowy, rozwijany przez konsorcjum HIVE AI pod przewodnictwem NASK i wdrażany w administracji publicznej, m.in. w planowanym asystencie aplikacji mObywatel. Oba są otwarte i oba możesz pobrać z Hugging Face.
+  - q: Czy polski model jest mi w ogóle potrzebny, skoro ChatGPT zna polski?
+    a: Wielkie modele znają polski dobrze, ale polskie modele mają inne atuty - są otwarte (uruchomisz je u siebie, dane zostają na miejscu), trenowane na starannie zebranych polskich tekstach i niezależne od decyzji zagranicznych dostawców. Do wielu zadań to wystarczy w zupełności.
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+Zacznę od faktu, który zaskakuje prawie każdego: w aplikacji InPost, z której korzystają miliony Polaków, pracuje polski model językowy ([Wikipedia](https://pl.wikipedia.org/wiki/Bielik_%28model_j%C4%99zykowy%29)). Nie zbudował go gigant z Doliny Krzemowej ani nawet rząd. Zbudowała go społeczność wolontariuszy - ludzie, którzy po godzinach uczyli komputer mówić po polsku. Ten model nazywa się Bielik i to on jest głównym bohaterem tego artykułu.
+
+To pierwszy artykuł sekcji o suwerennym AI, więc <Termin id="suwerennosc-cyfrowa">suwerenność cyfrowa</Termin> - czyli zdolność do korzystania z technologii bez krytycznej zależności od zagranicznych dostawców - będzie tu wracać jak refren. Dziś zaczynamy od podwórka najbliższego nam wszystkim: poznasz Bielika i jego historię, rządowy projekt PLLuM oraz Spichlerz - zbiór polskich tekstów, którym te modele się żywią. Pokażę Ci też, jak wypróbować Bielika samodzielnie - w przeglądarce albo na własnym komputerze.
+
+## Bielik - model, który uszyła społeczność
+
+Za Bielikiem stoją dwie siły. Pierwsza to fundacja **SpeakLeash** - otwarta społeczność pasjonatów, która zbiera dane i buduje model. Druga to **Akademickie Centrum Komputerowe Cyfronet AGH** w Krakowie, które dołożyło to, czego społeczność sama mieć nie mogła: moc obliczeniową. Kolejne wersje Bielika trenowano na superkomputerach Helios i Athena ([AGH](https://www.agh.edu.pl/aktualnosci/detail/bielik-polski-model-jezykowy-powstal-w-agh)).
+
+Bielik jest przy tym modelem <Termin id="open-weight">open-weight</Termin> - jego wagi możesz po prostu pobrać i uruchomić na własnym sprzęcie. A historia jego wersji dobrze pokazuje tempo, w jakim rozwija się cała ta dziedzina ([Wikipedia](https://pl.wikipedia.org/wiki/Bielik_%28model_j%C4%99zykowy%29)):
+
+- **Wersja 1.0 (kwiecień 2024)** - pierwszy Bielik, zbudowany na bazie francuskiego modelu Mistral-7B - tego samego Mistrala, któremu przyglądam się bliżej w [artykule o europejskich modelach](/suwerenne-ai/europejskie-modele/).
+- **Wersja 2.0 (sierpień 2024)** - model o 11 mld parametrów (o parametrach i tokenach przeczytasz więcej w sekcji [Jak działa AI](/jak-dziala-ai/)); od tej wersji Bielik jest dostępny na otwartej licencji Apache 2.0.
+- **Wersja 3.0 w rozmiarach 1,5B i 4,5B (maj 2025)** - dwa mniejsze modele, tym razem zbudowane na bazie modelu Qwen 2.5.
+- **Wersja 3.0 11B (styczeń 2026)** - najnowsza duża odsłona modelu.
+
+Efekty robią wrażenie. Do czerwca 2026 roku Bielik zanotował 2,8 mln pobrań, a od początku 2026 roku mówi w ok. 30 językach ([bank.pl](https://bank.pl/polski-model-jezykowy-bielik-ai-wkrotce-bedzie-mowic-w-50-jezykach/)). W zadaniach wielojęzycznych benchmarku EuroEval - europejskiego testu porównującego modele - zajął 4. miejsce na świecie ([rp.pl](https://cyfrowa.rp.pl/globalne-interesy/art43590861-polska-ai-lepsza-od-mety-marka-zuckerberga-bielik-w-czolowce-swiatowych-benchmarkow)).
+
+Społecznościowy projekt zaczął też przyciągać biznes: patronat nad Bielikiem objęły InPost, Beyond i EY, a w grudniu 2025 roku model został zintegrowany z aplikacją InPost ([rp.pl](https://cyfrowa.rp.pl/globalne-interesy/art43590861-polska-ai-lepsza-od-mety-marka-zuckerberga-bielik-w-czolowce-swiatowych-benchmarkow)). Tak - to właśnie ta historia z początku artykułu.
+
+A co dalej? Twórcy zapowiedzieli wersję 3.1, która ma mówić już w 50 językach. Podkreślę wyraźnie: w chwili, gdy piszę te słowa, to wciąż zapowiedź, nie dostępny model ([bank.pl](https://bank.pl/polski-model-jezykowy-bielik-ai-wkrotce-bedzie-mowic-w-50-jezykach/)).
+
+## Jak spróbować Bielika
+
+Najlepsze w tym wszystkim jest to, że Bielika nie musisz podziwiać z daleka. Masz trzy drogi - od najprostszej do najbardziej samodzielnej.
+
+**Czat w przeglądarce.** Wchodzisz na stronę chat.bielik.ai i rozmawiasz z modelem jak z każdym chatbotem - niczego nie instalujesz ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)).
+
+{/* TODO(Łukasz): kliknij chat.bielik.ai przed merge - adres potwierdzony w źródłach (SpeakLeash), ale strona blokuje boty i nie dało się automatycznie sprawdzić, czy czat aktualnie działa (jeden wynik wyszukiwania sugerował przerwę serwisową) */}
+
+**Ollama.** Jeśli chcesz mieć Bielika u siebie, najkrótsza droga prowadzi przez program Ollama - wystarczy jedno polecenie w terminalu ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)):
+
+```text
+ollama run SpeakLeash/bielik-11b-v3.0-instruct:Q4_K_M
+```
+
+**LM Studio.** Wolisz klikać zamiast pisać polecenia? W aplikacji LM Studio wyszukujesz "Bielik" i pobierasz model w formacie GGUF, czyli w skompresowanej wersji przygotowanej do uruchamiania na zwykłym komputerze; pliki pochodzą z profilu SpeakLeash na platformie Hugging Face ([huggingface.co/speakleash](https://huggingface.co/speakleash)).
+
+Lokalne uruchamianie AI - po co to robić, jaki sprzęt wystarczy i jak przejść przez to krok po kroku - opisuję w artykule [AI na własnym komputerze](/suwerenne-ai/ai-na-wlasnym-komputerze/).
+
+## PLLuM - państwo buduje własny model
+
+Bielik pokazał, co potrafi społeczność. Nad polskim AI pracuje jednak także państwo. **PLLuM** (od ang. Polish Large Language Model) to rodzina otwartych modeli w rozmiarach 8B, 12B i 70B - czyli od 8 do 70 mld parametrów - oraz wariant w architekturze MoE 8x7B (z ang. Mixture of Experts, czyli "mieszanka ekspertów"). Wszystkie znajdziesz na platformie Hugging Face na koncie CYFRAGOVPL, a bez instalowania wypróbujesz je w demie pod adresem pllum.clarin-pl.eu ([pllum.org.pl](https://pllum.org.pl/)).
+
+Rozwój projektu przejęło konsorcjum **HIVE AI**, któremu przewodzi NASK - Państwowy Instytut Badawczy. Nowa generacja modeli PLLuM była trenowana na ok. 18 mld tokenów z tekstów o zweryfikowanych prawach autorskich, a licencja dopuszcza użycie komercyjne ([NASK](https://www.nask.pl/aktualnosci/nowe-modele-jezykowe-sa-juz-dostepne-rodzina-pllum-sie-powieksza)).
+
+PLLuM nie jest przy tym projektem zamkniętym w laboratorium - trafia do urzędów. Wdrożyły go już Częstochowa ([gov.pl](https://www.gov.pl/web/cyfryzacja/polski-model-jezykowy-pllum-trafi-do-samorzadu)) i Gdynia, a od czerwca 2026 roku korzystają z niego także Ministerstwo Cyfryzacji i Kancelaria Prezesa Rady Ministrów. Na dalszy rozwój zaplanowano minimum 200 mln zł do 2029 roku ([CyberDefence24](https://cyberdefence24.pl/technologie/pierwsze-wdrozenia-pllum-minimum-200-mln-zl-na-dalszy-rozwoj)).
+
+Plany sięgają dalej: PLLuM ma napędzać wirtualnego asystenta w aplikacji mObywatel, który usprawni załatwianie spraw urzędowych ([Bankier.pl](https://www.bankier.pl/wiadomosc/Polski-model-jezykowy-PLLuM-w-mObywatelu-Usprawni-zalatwianie-spraw-urzedowych-8902139.html)). Podkreślam: to na razie plan, nie działająca funkcja.
+
+## Spichlerz - paliwo dla polskich modeli
+
+Na koniec zostawiłem opowieść najmniej efektowną, a moim zdaniem najważniejszą. **Spichlerz** to projekt SpeakLeash o prostym celu: zebrać największy zbiór polskich tekstów do trenowania modeli językowych - docelowo co najmniej 1 TB danych. Buduje go społeczność licząca ok. 300 osób ([speakleash.org/about-us](https://speakleash.org/en/about-us/)). Już pod koniec 2023 roku zbiór przekroczył 833 GB ([speakleash.org](https://speakleash.org/en/blog/the-speakleash-dataset-of-texts-in-the-polish-language-has-expanded-by-over-470-gb-in-3-5-months-17-12-2023/)).
+
+Dlaczego poświęcam temu osobny rozdział? Bo model językowy jest dokładnie tak dobry jak dane, na których się uczył. Możesz mieć świetnych inżynierów i superkomputery, ale bez ogromnej, starannie zebranej biblioteki polskich tekstów nie zbudujesz modelu, który naprawdę czuje polszczyznę. Spichlerz - zgodnie z nazwą - to zapas ziarna, z którego wyrastają polskie modele. Więcej o roli danych w AI przeczytasz w artykule [Rozumienie danych dla nie-programistów](/jak-dziala-ai/dane-dla-poczatkujacych/).
+
+Czy to wszystko oznacza, że masz porzucić ChatGPT, bo "polskie jest lepsze"? Nie. Wielkie modele znają polski naprawdę dobrze. Ale polskie modele mają atuty, których tamte nie mają: są otwarte, więc uruchomisz je u siebie i dane zostaną na miejscu, powstały na starannie zebranych polskich tekstach i nie zależą od decyzji zagranicznych dostawców. Do wielu zadań to wystarczy w zupełności - a wybór, jak zwykle, należy do Ciebie.
+
+:::caution[Stan na lipiec 2026]
+Wersje modeli, liczby pobrań i lista wdrożeń starzeją się w tej branży szybciej niż jakikolwiek artykuł. Wszystko powyżej to migawka z lipca 2026 - dlatego przy każdym fakcie znajdziesz link do źródła. Zanim powołasz się na konkretną liczbę, sprawdź tam aktualny stan.
+:::
+
+## Źródła i dalsze lektury
+
+- [Wikipedia: Bielik (model językowy)](https://pl.wikipedia.org/wiki/Bielik_%28model_j%C4%99zykowy%29) - historia projektu i kolejne wersje modelu
+- [AGH: Bielik - polski model językowy powstał w AGH](https://www.agh.edu.pl/aktualnosci/detail/bielik-polski-model-jezykowy-powstal-w-agh) - o treningu na superkomputerach Helios i Athena
+- [rp.pl: Bielik w czołówce światowych benchmarków](https://cyfrowa.rp.pl/globalne-interesy/art43590861-polska-ai-lepsza-od-mety-marka-zuckerberga-bielik-w-czolowce-swiatowych-benchmarkow) - o wynikach w EuroEval, patronacie InPost, Beyond i EY oraz integracji z aplikacją InPost
+- [bank.pl: Bielik wkrótce będzie mówić w 50 językach](https://bank.pl/polski-model-jezykowy-bielik-ai-wkrotce-bedzie-mowic-w-50-jezykach/) - o liczbie pobrań, obsłudze ok. 30 języków i zapowiedzi wersji 3.1
+- [klewer.pl: Bielik AI - the complete guide](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/) - przewodnik po uruchamianiu Bielika w przeglądarce, Ollama i LM Studio
+- [Hugging Face: profil SpeakLeash](https://huggingface.co/speakleash) - modele Bielik do pobrania, w tym pliki GGUF
+- [pllum.org.pl](https://pllum.org.pl/) - oficjalna strona projektu PLLuM z linkami do modeli i dema
+- [NASK: rodzina PLLuM się powiększa](https://www.nask.pl/aktualnosci/nowe-modele-jezykowe-sa-juz-dostepne-rodzina-pllum-sie-powieksza) - o nowej generacji modeli, danych treningowych i licencji
+- [gov.pl: PLLuM trafi do samorządu](https://www.gov.pl/web/cyfryzacja/polski-model-jezykowy-pllum-trafi-do-samorzadu) - o wdrożeniu w Częstochowie
+- [CyberDefence24: pierwsze wdrożenia PLLuM](https://cyberdefence24.pl/technologie/pierwsze-wdrozenia-pllum-minimum-200-mln-zl-na-dalszy-rozwoj) - o wdrożeniach w administracji i finansowaniu do 2029 roku
+- [Bankier.pl: PLLuM w mObywatelu](https://www.bankier.pl/wiadomosc/Polski-model-jezykowy-PLLuM-w-mObywatelu-Usprawni-zalatwianie-spraw-urzedowych-8902139.html) - o planowanym wirtualnym asystencie
+- [SpeakLeash: rozrost zbioru danych](https://speakleash.org/en/blog/the-speakleash-dataset-of-texts-in-the-polish-language-has-expanded-by-over-470-gb-in-3-5-months-17-12-2023/) - o przekroczeniu 833 GB pod koniec 2023 roku
+- [SpeakLeash: o nas](https://speakleash.org/en/about-us/) - o społeczności projektu i celu 1 TB polskich tekstów
+
+:::note[Teraz wiesz]
+
+- Że Bielik to otwarty polski model od społeczności SpeakLeash, trenowany w Cyfronecie AGH
+- Że PLLuM to rządowa rodzina modeli wdrażana w administracji - z planem asystenta w mObywatelu
+- Jak wypróbować polskie modele: czat w przeglądarce, Ollama albo LM Studio
+
+**Następny krok:** [Europejskie modele i firmy AI](/suwerenne-ai/europejskie-modele/) - poznasz Mistrala, FLUX i DeepL, czyli europejską pierwszą ligę.
+:::
+
+<SlowniczekStrony terminy={["open-weight", "suwerennosc-cyfrowa"]} />
