@@ -3,6 +3,10 @@
 	"name": "Łukasz Podgórski",
 	"jobTitle": "Specjalista AI i automatyzacji",
 	"url": "https://aitomate.pl",
+	"knowsLanguage": [
+		"pl",
+		"en"
+	],
 	"bioShort": "Nazywam się Łukasz Podgórski i jestem specjalistą AI i automatyzacji - z IT za pan brat od ponad 20 lat (15 zawodowo), z AI od ponad 5. Na co dzień wdrażam sztuczną inteligencję w firmach jako założyciel AITOMATE i ekspert generatywnej AI w jednym z największych polskich banków. Po godzinach tłumaczę AI po ludzku - w przewodniku PrzewodnikAI.pl, na kanale YouTube i w darmowych narzędziach open-source, które sam buduję. Nie sprzedaję hype'u; pokazuję, co naprawdę działa.",
 	"description": "Specjalista AI i automatyzacji, założyciel AITOMATE. Wdraża AI w firmach, doradza i uczy - po ludzku, bez hype'u. W IT od ponad 20 lat (15 zawodowo), z AI od ponad 5. Ekspert generatywnej AI w jednym z największych polskich banków, twórca darmowych narzędzi open-source.",
 	"photo": "https://cdn.jsdelivr.net/gh/lukaszpodgorski-pl/author-profile@main/foto/lukasz-web.jpg",
