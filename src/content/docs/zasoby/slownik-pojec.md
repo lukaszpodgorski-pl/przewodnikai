@@ -14,7 +14,7 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
-Zebrałem tutaj 30 pojęć, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
+Zebrałem tutaj 34 pojęcia, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
 
 Nie musisz czytać tego od deski do deski. Traktuj tę stronę jak podręczny leksykon i wracaj do niej, kiedy natkniesz się na nieznany termin.
 
@@ -142,6 +142,12 @@ System AI trenowany na dużych zbiorach tekstów, zdolny do rozumienia i generow
 
 **Więcej:** [Modele językowe](/jak-dziala-ai/modele-jezykowe/)
 
+### Model open-weight
+
+Model AI, którego wagi (czyli wyuczone parametry) producent udostępnia do pobrania - możesz uruchomić go na własnym komputerze lub serwerze, bez wysyłania danych do chmury dostawcy. Open-weight nie zawsze znaczy w pełni open source: licencje bywają różne, od bardzo liberalnej Apache 2.0 (np. Bielik, rodzina Mistral 3) po licencje z ograniczeniami komercyjnymi. Przeciwieństwem są modele zamknięte, dostępne wyłącznie przez API lub aplikację producenta.
+
+**Przykład:** Bielik i rodzina Mistral 3 to modele open-weight - możesz pobrać je za darmo i uruchomić w aplikacji LM Studio na własnym komputerze.
+
 ### Okno kontekstowe
 
 Maksymalna ilość tekstu (liczona w tokenach), którą model AI może jednocześnie "widzieć" - obejmuje Twoje pytania, wcześniejsze odpowiedzi i załączone dokumenty. Gdy rozmowa przekroczy ten limit, model traci dostęp do najstarszych fragmentów.
@@ -193,6 +199,12 @@ Model matematyczny inspirowany strukturą i funkcjonowaniem ludzkiego mózgu, sk
 **Przykład:** Wyobraź sobie sieć neuronową analizującą zdjęcie: pierwsza warstwa może wykrywać proste krawędzie i linie, kolejne warstwy rozpoznają kształty i struktury, a ostatnie warstwy identyfikują złożone obiekty, jak "kot", "samochód" czy "dom".
 
 **Więcej:** [AI, ML i sieci neuronowe](/jak-dziala-ai/ai-ml-sieci-neuronowe/)
+
+### Suwerenność cyfrowa
+
+Zdolność państwa, firmy lub pojedynczej osoby do korzystania z technologii cyfrowych - chmury, oprogramowania, modeli AI - bez krytycznej zależności od dostawców spoza swojego regionu. W praktyce chodzi o pytanie: co się stanie z Twoimi narzędziami i danymi, jeśli zagraniczny dostawca zmieni cennik, regulamin albo zostanie objęty sankcjami? Odpowiedzią są m.in. europejskie modele AI, lokalne centra danych i modele open-weight uruchamiane na własnym sprzęcie.
+
+**Przykład:** Urząd, który zamiast chmury zagranicznego dostawcy uruchamia polski model językowy na własnych serwerach - dane obywateli nie opuszczają kraju.
 
 ### Sztuczna inteligencja (AI)
 

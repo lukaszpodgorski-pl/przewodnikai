@@ -1,0 +1,102 @@
+---
+title: Polski ekosystem AI
+description: Fabryki AI, superkomputery Helios i Athena, ElevenLabs i Wordware - kto w Polsce buduje infrastrukturę i firmy sztucznej inteligencji.
+sidebar:
+  order: 3
+educationalLevel: Beginner
+teaches:
+  - Jakie firmy AI mają polskie korzenie
+  - Czym są fabryki AI i gdzie powstają w Polsce
+  - Na jakiej infrastrukturze trenuje się polskie modele
+about:
+  - name: ElevenLabs
+    sameAs: https://en.wikipedia.org/wiki/ElevenLabs
+mentions:
+  - name: Beyond.pl
+    sameAs: https://www.beyond.pl/
+    type: Organization
+  - name: Akademickie Centrum Komputerowe Cyfronet AGH
+    sameAs: https://www.cyfronet.pl/
+    type: Organization
+  - name: Poznańskie Centrum Superkomputerowo-Sieciowe
+    sameAs: https://www.pcss.pl/
+    type: Organization
+faq:
+  - q: Jakie znane firmy AI założyli Polacy?
+    a: Najgłośniejsza jest ElevenLabs - lider syntezy mowy założony w Londynie przez Mateusza Staniszewskiego i Piotra Dąbkowskiego, wyceniany na 11 mld dolarów (początek 2026). Z polskim udziałem powstało też Wordware - platforma do budowy agentów AI, która zebrała rekordową rundę seed 30 mln dolarów.
+  - q: Co to jest fabryka AI?
+    a: Centrum obliczeniowe z tysiącami procesorów graficznych (GPU), zaprojektowane do trenowania i uruchamiania modeli AI. Polska ma trzy fabryki AI - dwie już działają (publiczna Gaia w Krakowie i komercyjna Beyond.pl w Poznaniu), trzecia - publiczna PIAST-AI w Poznaniu, budowana w ramach programu EuroHPC - jest w budowie.
+  - q: Gdzie trenowano polskie modele językowe?
+    a: Bielik powstał na superkomputerach Helios i Athena w Cyfronecie AGH w Krakowie. Helios to najszybszy superkomputer w Polsce (ok. 35 PFlops).
+---
+
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
+Spora część internetu mówi dziś głosem wygenerowanym przez AI. I jest niemała szansa, że stoi za nim technologia, którą stworzyli dwaj koledzy z polskiego liceum. A kiedy media piszą o fabrykach AI - wielkich centrach obliczeniowych, w których trenuje się modele - wcale nie trzeba patrzeć za ocean: pierwsza w tej części Europy komercyjna fabryka AI stoi w Poznaniu.
+
+W tym artykule pokażę Ci polski ekosystem AI z trzech stron: firmy z polskim rodowodem, które grają w światowej lidze, fabryki AI budowane w Krakowie i Poznaniu oraz superkomputery i chmurę, dzięki którym polskie modele mają na czym się uczyć.
+
+## Firmy z polskim rodowodem
+
+Najgłośniejsza historia to **ElevenLabs** - lider syntezy mowy, czyli generowania głosu przez AI. Od razu uczciwa rama: formalnie firma została założona w 2022 roku w Londynie. Stworzyli ją jednak dwaj Polacy, koledzy jeszcze ze szkolnych czasów - Mateusz Staniszewski, dziś dyrektor generalny (CEO), i Piotr Dąbkowski, dyrektor techniczny (CTO) ([Wikipedia](https://en.wikipedia.org/wiki/ElevenLabs), [Forbes](https://www.forbes.com/sites/iainmartin/2025/12/01/how-a-tiny-polish-startup-became-the-multi-billion-dollar-voice-of-ai/)). Skalę sukcesu najlepiej oddają liczby: na początku 2026 roku firma zamknęła rundę finansowania serii D o wartości 500 mln dolarów, przy wycenie całej firmy na 11 mld dolarów ([elevenlabs.io](https://elevenlabs.io/blog/series-d)).
+
+Druga historia to **Wordware** - polsko-brytyjski startup założony przez Filipa Kozerę i Roberta Chandlera. Wordware to platforma do budowy <Termin id="agent-ai">agentów AI</Termin> w języku naturalnym: zamiast programować, opisujesz zwykłymi zdaniami, co agent ma robić. Firma zebrała rekordową rundę zalążkową (seed) w wysokości 30 mln dolarów, a z jej platformy korzystają m.in. Instacart i Runway ([ITwiz](https://itwiz.pl/polsko-brytyjski-startup-wordware-zebral-30-mln-dolarow-dofinansowania/)).
+
+I to nie są dwa odosobnione przypadki. Serwis AIPORT.pl prowadzi indeks polskiego AI: 125 firm, ludzi i projektów - od Bielika po ElevenLabs ([AIPORT.pl](https://aiport.pl/testy-i-rankingi/ludzie-polskiego-ai-indeks-125-firm-ludzi-i-projektow-od-bielika-po-elevenlabs/)). Jeśli chcesz poczuć skalę tego ekosystemu, to dobre miejsce na start.
+
+## Fabryki AI - Polska buduje moc obliczeniową
+
+Firmy to jedna strona medalu. Druga to infrastruktura - bo modele AI trzeba na czymś trenować i uruchamiać. Tu na scenę wchodzą fabryki AI (z ang. AI factory): centra obliczeniowe z tysiącami procesorów graficznych (GPU), zaprojektowane specjalnie do pracy z modelami sztucznej inteligencji. Polska ma trzy takie fabryki - dwie już działają, trzecia jest w budowie.
+
+Dwie są publiczne i powstają w ramach europejskiego programu EuroHPC:
+
+- **Gaia AI Factory** w Krakowie - odpowiada za nią Akademickie Centrum Komputerowe Cyfronet AGH. To inwestycja za 70 mln euro, finansowana po połowie przez Polskę i Unię Europejską, z ponad 1000 GPU na pokładzie. Fabrykę uruchomiono w maju 2026 roku ([Cyfronet](https://www.cyfronet.pl/pl/projects/initiatives/eurohpc-ju/gaia-ai-factory), [gov.pl](https://www.gov.pl/web/cyfryzacja/gaia-ai--fabryka-sztucznej-inteligencji-powstaje-w-krakowie)).
+- **PIAST-AI** w Poznaniu - buduje ją Poznańskie Centrum Superkomputerowo-Sieciowe (PCSS), a koszt to ok. 420 mln zł. Pierwsze usługi mają ruszyć w III kwartale 2026 roku, a pełną moc fabryka osiągnie w 2027 ([PCSS](https://www.pcss.pl/piast-ai/), [ITwiz](https://itwiz.pl/pcss-w-poznaniu-zbuduje-ai-factory-za-420-mln-zl/)).
+
+Trzecia fabryka gra w innej kategorii, bo jest komercyjna. Firma Beyond.pl uruchomiła w Poznaniu pierwszą w Europie Środkowo-Wschodniej komercyjną <Termin id="suwerennosc-cyfrowa">suwerenną</Termin> fabrykę AI. Jej sercem jest NVIDIA DGX SuperPOD - gotowy system superkomputerowy NVIDII, który spina wiele procesorów graficznych w jedną maszynę - wyposażony w układy B200, czyli procesory graficzne NVIDII zaprojektowane z myślą o pracy z AI. Fabryka działa w kampusie o mocy 100 MW - to jedyne centrum danych w Unii Europejskiej z certyfikatami niezawodności Rated 4 i Class 4 ([Beyond.pl](https://www.beyond.pl/en/newsroom/press-releases/beyond-pl-launches-sovereign-ai-factory-on-the-central-east-european-market/)). I na tym nie koniec: Beyond.pl wspólnie z miastem zabiega o to, żeby w Poznaniu powstała także Baltic AI GigaFactory ([Beyond.pl](https://www.beyond.pl/en/newsroom/beyond-pl-and-poznan-in-an-innitiative-to-bring-baltic-ai-gigafactory/)).
+
+:::caution[Stan na lipiec 2026]
+Wyceny firm, harmonogramy i budżety fabryk AI oraz parametry superkomputerów zmieniają się w tej branży z miesiąca na miesiąc. Wszystko powyżej to migawka z lipca 2026 - dlatego przy każdym fakcie znajdziesz link do źródła. Zanim powołasz się na konkretną liczbę, sprawdź tam aktualny stan.
+:::
+
+## Superkomputery i chmura
+
+Jest jeszcze trzecia warstwa tej układanki. W Akademickim Centrum Komputerowym Cyfronet AGH w Krakowie pracują superkomputery **Helios** i **Athena**. Helios, z mocą ok. 35 PFlops (petaflopsów - to jednostka tempa obliczeń; im więcej, tym szybciej maszyna liczy), jest najszybszym superkomputerem w Polsce. I to właśnie na Heliosie i Athenie trenowano Bielika - polski model językowy, o którym więcej przeczytasz w [pierwszym artykule tej sekcji](/suwerenne-ai/bielik-i-polskie-modele/) ([DCD](https://www.datacenterdynamics.com/en/news/gaia-ai-supercomputer-launched-in-krak%C3%B3w-poland/), [naukawpolsce.pl](https://naukawpolsce.pl/aktualnosci/news,104221,bielik-wyladowal-polski-model-jezykowy-rozwinal-skrzydla-dzieki)).
+
+Do tego dochodzi chmura. Jeśli firma chce korzystać z otwartych modeli językowych, ale nie ma własnej serwerowni, może sięgnąć po **Polcom AI Cloud** - usługę, która serwuje otwarte modele (LLM) z infrastruktury zlokalizowanej w Polsce ([polcom.com.pl](https://polcom.com.pl/en/services/polcom-cloud-2/ai-cloud/)).
+
+Sam rynek centrów danych też się organizuje: Atman, Beyond.pl, Data4, Equinix oraz należąca do Play firma 3S Data Center powołały Polish Data Center Association, wspólne stowarzyszenie branży ([ITwiz](https://itwiz.pl/atman-beyond-pl-equinix-data4-i-play-tworza-polskie-stowarzyszenie-data-center/)).
+
+## Dlaczego to ważne
+
+Mogłoby się wydawać, że to wyliczanka dla pasjonatów serwerowni. Ale klucz jest prosty: własna infrastruktura oznacza, że dane i modele działają pod europejskim prawem - niezależnie od decyzji podejmowanych za oceanem. To suwerenność cyfrowa w skali kraju. A w następnym artykule zobaczysz tę samą ideę w skali najmniejszej z możliwych: Twojego własnego komputera.
+
+## Źródła i dalsze lektury
+
+- [Wikipedia: ElevenLabs](https://en.wikipedia.org/wiki/ElevenLabs) - historia i podstawowe fakty o firmie
+- [Forbes: How a tiny Polish startup became the multi-billion-dollar voice of AI](https://www.forbes.com/sites/iainmartin/2025/12/01/how-a-tiny-polish-startup-became-the-multi-billion-dollar-voice-of-ai/) - reportaż o założycielach ElevenLabs
+- [ElevenLabs: Series D](https://elevenlabs.io/blog/series-d) - oficjalne ogłoszenie rundy finansowania serii D
+- [ITwiz: Wordware zebrał 30 mln dolarów](https://itwiz.pl/polsko-brytyjski-startup-wordware-zebral-30-mln-dolarow-dofinansowania/) - o rundzie seed i klientach platformy
+- [AIPORT.pl: Ludzie polskiego AI](https://aiport.pl/testy-i-rankingi/ludzie-polskiego-ai-indeks-125-firm-ludzi-i-projektow-od-bielika-po-elevenlabs/) - indeks 125 polskich firm, ludzi i projektów AI
+- [Cyfronet: Gaia AI Factory](https://www.cyfronet.pl/pl/projects/initiatives/eurohpc-ju/gaia-ai-factory) - oficjalna strona projektu
+- [gov.pl: Gaia AI - fabryka sztucznej inteligencji powstaje w Krakowie](https://www.gov.pl/web/cyfryzacja/gaia-ai--fabryka-sztucznej-inteligencji-powstaje-w-krakowie) - komunikat rządowy o krakowskiej fabryce AI
+- [PCSS: PIAST-AI](https://www.pcss.pl/piast-ai/) - oficjalna strona projektu
+- [ITwiz: PCSS zbuduje AI Factory za 420 mln zł](https://itwiz.pl/pcss-w-poznaniu-zbuduje-ai-factory-za-420-mln-zl/) - o budżecie i harmonogramie PIAST-AI
+- [Beyond.pl: Sovereign AI Factory](https://www.beyond.pl/en/newsroom/press-releases/beyond-pl-launches-sovereign-ai-factory-on-the-central-east-european-market/) - komunikat o uruchomieniu komercyjnej fabryki AI
+- [Beyond.pl: Baltic AI GigaFactory](https://www.beyond.pl/en/newsroom/beyond-pl-and-poznan-in-an-innitiative-to-bring-baltic-ai-gigafactory/) - o wspólnej inicjatywie Beyond.pl i Poznania
+- [Data Center Dynamics: Gaia AI supercomputer launched in Kraków](https://www.datacenterdynamics.com/en/news/gaia-ai-supercomputer-launched-in-krak%C3%B3w-poland/) - o uruchomieniu Gai i superkomputerach Cyfronetu
+- [naukawpolsce.pl: Bielik wylądował](https://naukawpolsce.pl/aktualnosci/news,104221,bielik-wyladowal-polski-model-jezykowy-rozwinal-skrzydla-dzieki) - o treningu Bielika na superkomputerach Cyfronetu
+- [Polcom AI Cloud](https://polcom.com.pl/en/services/polcom-cloud-2/ai-cloud/) - oficjalna strona usługi
+- [ITwiz: polskie stowarzyszenie data center](https://itwiz.pl/atman-beyond-pl-equinix-data4-i-play-tworza-polskie-stowarzyszenie-data-center/) - o powołaniu Polish Data Center Association
+
+:::note[Teraz wiesz]
+
+- Że ElevenLabs i Wordware to firmy z polskim rodowodem grające w światowej lidze
+- Czym jest fabryka AI i że Polska ma trzy: Gaia (Kraków), PIAST-AI i Beyond.pl (Poznań)
+- Że Bielik trenował na superkomputerach Helios i Athena w Cyfronecie AGH
+
+**Następny krok:** [AI na własnym komputerze](/suwerenne-ai/ai-na-wlasnym-komputerze/) - zobaczysz, jak uruchomić model AI lokalnie, bez chmury i abonamentu.
+:::
+
+<SlowniczekStrony terminy={["suwerennosc-cyfrowa", "agent-ai"]} />

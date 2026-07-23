@@ -3,26 +3,25 @@
  * dają się wywołać i sprawdzić bez uruchamiania frameworka.
  */
 import { SECTION_LABELS } from '../config/sections';
+import autor from '../data/autor.json';
 
 export const SITE_URL = 'https://przewodnikai.pl';
 export const SITE_NAME = 'Przewodnik AI';
 const LICENSE = 'https://creativecommons.org/licenses/by-sa/4.0/';
 
+/**
+ * Dane autora są ZVENDOROWANĄ KOPIĄ z repo-profilu
+ * github.com/lukaszpodgorski-pl/author-profile (profile.json).
+ * Edytuj tam, potem `npm run profile:sync` - nie edytuj autor.json ręcznie.
+ */
 export const AUTHOR = {
 	'@type': 'Person',
-	name: 'Łukasz Podgórski',
-	url: 'https://aitomate.pl',
-	jobTitle: 'Specjalista AI i automatyzacji',
-	description:
-		'Specjalista AI i automatyzacji, założyciel AITOMATE. Wdraża AI w firmach, doradza i uczy - po ludzku, bez hype\'u. W IT od ponad 20 lat (15 zawodowo), z AI od ponad 5. Ekspert generatywnej AI w jednym z największych polskich banków, twórca darmowych narzędzi open-source.',
-	sameAs: [
-		'https://aitomate.pl',
-		'https://lukaszpodgorski.pl',
-		'https://github.com/lukaszpodgorski-pl',
-		'https://www.youtube.com/@lukaszpodgorski',
-		'https://www.linkedin.com/in/podgorski-lukasz/',
-		'https://www.instagram.com/lukaszpodgorski_pl/',
-	],
+	name: autor.name,
+	url: autor.url,
+	image: autor.photo,
+	jobTitle: autor.jobTitle,
+	description: autor.description,
+	sameAs: autor.sameAs,
 } as const;
 
 export interface ThingRef {

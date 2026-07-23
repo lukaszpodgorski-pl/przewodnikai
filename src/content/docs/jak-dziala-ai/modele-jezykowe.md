@@ -120,7 +120,7 @@ Anthropic rozwinął tę metodologię w **RLAIF** (Constitutional AI), gdzie oce
 
 ### Modele open-source
 
-Społeczność open-source rozwija się dynamicznie: **Llama 4** (Meta, 2025) - Maverick (400 mld param., MoE) i Scout, 1M kontekst, [dostępny publicznie](https://ai.meta.com/llama/); **Mistral Large / Medium** (Mistral AI) - wydajne europejskie modele; **Qwen 2.5** (Alibaba) - silny w wielojęzyczności i programowaniu; **Phi-4** (Microsoft) - kompaktowy model z konkurencyjną wydajnością.
+Społeczność open-source rozwija się dynamicznie: **Llama 4** (Meta, 2025) - Maverick (400 mld param., MoE) i Scout, 1M kontekst, [dostępny publicznie](https://ai.meta.com/llama/); **Mistral Large / Medium** (Mistral AI) - wydajne europejskie modele; **Qwen 2.5** (Alibaba) - silny w wielojęzyczności i programowaniu; **Phi-4** (Microsoft) - kompaktowy model z konkurencyjną wydajnością. W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
 
 ## Porównanie czołowych modeli
 

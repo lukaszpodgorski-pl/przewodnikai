@@ -80,7 +80,7 @@ Copilot for M365 ma dostęp do Twoich firmowych danych (pliki SharePoint, maile,
 
 ## Audio i muzyka
 
-**ElevenLabs** - synteza mowy i klonowanie głosu z naciskiem na naturalną intonację. Cena: darmowy (10k znaków) / od $5/miesiąc. Funkcje: text-to-speech, voice cloning, dubbing. Najlepsze dla: audiobooki, dubbing, voiceover.
+**ElevenLabs** - synteza mowy i klonowanie głosu z naciskiem na naturalną intonację. Cena: darmowy (10k znaków) / od $5/miesiąc. Funkcje: text-to-speech, voice cloning, dubbing. Najlepsze dla: audiobooki, dubbing, voiceover. Firmę założyli Polacy - Mateusz Staniszewski i Piotr Dąbkowski - więcej w [polskim ekosystemie AI](/suwerenne-ai/polski-ekosystem-ai/).
 
 **Murf.ai** - profesjonalny voiceover AI dla biznesu. Cena: od $19/miesiąc. Funkcje: 120+ głosów, 20+ języków, edycja pitch/tempo. Najlepsze dla: prezentacje, e-learning, reklamy.
 

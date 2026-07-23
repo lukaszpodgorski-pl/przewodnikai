@@ -118,6 +118,8 @@ Poza wielką czwórką jest kilka narzędzi, o których warto wiedzieć, że ist
 
 **Poe (Quora)** - platforma agregująca różne modele AI (GPT-4, Claude, Llama i inne) w jednym miejscu. Cena: darmowy / Pro $16.67/miesiąc. Najlepsze dla: porównywanie modeli, eksperymenty.
 
+Jeśli zależy Ci na europejskiej alternatywie dla amerykańskich gigantów, zerknij na Vibe od Mistrala (do niedawna Le Chat) i polski czat Bielika - [polskie i europejskie alternatywy](/suwerenne-ai/).
+
 ## Porównanie chatbotów
 
 | Funkcja | ChatGPT | Claude | Gemini | Copilot |
