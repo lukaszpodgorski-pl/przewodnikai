@@ -120,7 +120,7 @@ Anthropic rozwinął tę metodologię w **RLAIF** (Constitutional AI), gdzie oce
 
 ### Modele open-source
 
-Społeczność open-source rozwija się dynamicznie: **Llama 4** (Meta, 2025) - Maverick (400 mld param., MoE) i Scout, 1M kontekst, [dostępny publicznie](https://ai.meta.com/llama/); **Mistral Large / Medium** (Mistral AI) - wydajne europejskie modele; **Qwen 2.5** (Alibaba) - silny w wielojęzyczności i programowaniu; **Phi-4** (Microsoft) - kompaktowy model z konkurencyjną wydajnością. W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
+Społeczność open-source rozwija się dynamicznie: **Llama 4** (Meta, 2025) - Maverick (400 mld param., MoE) i Scout, 1M kontekst, [dostępny publicznie](https://ai.meta.com/llama/); **Mistral 3** (Mistral AI, 2025) - flagowy Mistral Large 3 i kompaktowe Ministral 3, wydajne europejskie modele [open-weight na licencji Apache 2.0](https://mistral.ai/news/mistral-3/); **Qwen 2.5** (Alibaba) - silny w wielojęzyczności i programowaniu; **Phi-4** (Microsoft) - kompaktowy model z konkurencyjną wydajnością. W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
 
 ## Porównanie czołowych modeli
 
@@ -170,7 +170,7 @@ Radzę zacząć od pytania o zadanie, a nie o nazwę modelu. Wybór zależy od t
 | Programowanie | Claude Sonnet 4 / GPT-4o | Liderzy w benchmarkach kodowania |
 | Zaawansowana matematyka/nauka | o3 / Gemini 2.5 Pro (thinking) | Modele rozumujące |
 | Ograniczony budżet API | DeepSeek-V3 / GPT-4o mini | Najniższy koszt za token |
-| Prywatność / on-premise | Llama 4 / Mistral | Open-source, pełna kontrola |
+| Prywatność / on-premise | Llama 4 / Mistral 3 | Open-source, pełna kontrola |
 
 Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wystarczy jeden model z górnej półki - do dobierania narzędzia pod konkretne zadanie wrócisz wtedy, gdy zaczniesz uderzać w jego ograniczenia.
 
