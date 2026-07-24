@@ -98,6 +98,8 @@ Mniej precyzyjny w złożonych zadaniach, ograniczone możliwości analizy plik�
 
 **Wersje:** Copilot Free (darmowy w Edge/Bing), Copilot Pro ($20/miesiąc, integracja z Office 365), Copilot for Microsoft 365 ($30/os/miesiąc, pełna integracja biznesowa).
 
+Nazwa "Copilot" to zresztą cała rodzina produktów Microsoftu - co dokładnie się pod nią kryje, rozplątuję w artykule [Asystenci agentowi](/narzedzia/asystenci-agentowi/).
+
 **Kluczowe funkcje:** przeglądanie internetu (zawsze aktualne informacje), integracja z Office (Word, Excel, PowerPoint, Outlook), generowanie obrazów (DALL-E), wbudowany w Windows (dostęp przez skrót klawiszowy).
 
 :::tip[Zalety]

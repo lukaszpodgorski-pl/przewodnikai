@@ -52,7 +52,7 @@ Wgrywasz 5 raportów rocznych firmy (PDF) i pytasz: "Jakie były główne trendy
 
 ## Microsoft 365 Copilot - AI w środowisku korporacyjnym
 
-Dla pracowników dużych organizacji, Microsoft 365 Copilot integruje AI bezpośrednio z narzędziami biurowymi. Cena: $30/użytkownika/miesiąc (wymaga licencji M365). Dostępność: Word, Excel, PowerPoint, Outlook, Teams.
+Dla pracowników dużych organizacji, Microsoft 365 Copilot integruje AI bezpośrednio z narzędziami biurowymi. Cena: $30/użytkownika/miesiąc (wymaga licencji M365). Dostępność: Word, Excel, PowerPoint, Outlook, Teams. Szerzej opisuję go - razem z resztą rodziny Copilot - w artykule [Asystenci agentowi](/narzedzia/asystenci-agentowi/).
 
 | Aplikacja | Co potrafi Copilot | Przykład użycia |
 | --- | --- | --- |
@@ -90,7 +90,7 @@ Copilot for M365 ma dostęp do Twoich firmowych danych (pliki SharePoint, maile,
 
 ## Programowanie i rozwój
 
-**GitHub Copilot** - AI asystent kodowania zintegrowany z edytorem. Cena: $10/miesiąc (Individual) / $19 (Business). Funkcje: autocomplete, generowanie funkcji, wyjaśnienia kodu. IDE: VS Code, JetBrains, Neovim.
+**GitHub Copilot** - AI asystent kodowania zintegrowany z edytorem. Cena: $10/miesiąc (Individual) / $19 (Business). Funkcje: autocomplete, generowanie funkcji, wyjaśnienia kodu. IDE: VS Code, JetBrains, Neovim. Więcej o nim - i o agentowych alternatywach jak Claude Code - w [Asystentach agentowych](/narzedzia/asystenci-agentowi/).
 
 **Cursor** - edytor kodu z wbudowanym AI (fork VS Code). Cena: darmowy / Pro $20/miesiąc. Funkcje: chat w edytorze, edycja wielu plików, Copilot++. Najlepsze dla: programiści szukający głębszej integracji AI.
 
@@ -177,5 +177,5 @@ Lista narzędzi AI zmienia się z miesiąca na miesiąc i nie namawiam Cię do n
 - Do czego służą Perplexity AI i NotebookLM - research ze źródłami i praca na Twoich własnych dokumentach (oraz dlaczego nawet NotebookLM trzeba sprawdzać)
 - Jak wybierać narzędzia AI: zdefiniuj problem, wypróbuj darmowe plany, sprawdź integracje z Twoim workflow i polityki prywatności
 
-**Następny krok:** [AI w codziennej pracy](/narzedzia/ai-w-codziennej-pracy/) - nauczysz się praktycznie integrować AI z codziennymi zadaniami: mailami, dokumentami, spotkaniami i planowaniem.
+**Następny krok:** [Asystenci agentowi](/narzedzia/asystenci-agentowi/) - poznasz narzędzia, które nie tylko podpowiadają, ale wykonują pracę za Ciebie: rodzinę Copilot, Claude Code i Claude Cowork.
 :::
