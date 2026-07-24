@@ -67,9 +67,7 @@ Zasada "human-in-the-loop" (człowiek w pętli decyzyjnej) sugeruje, że krytycz
 
 Regulatorzy na całym świecie próbują nadążyć za szybkim rozwojem sztucznej inteligencji, tworząc nowe przepisy lub adaptując istniejące do nowych wyzwań.
 
-<!-- TODO(Łukasz): zweryfikuj aktualny stan prawny przed publikacją -->
-
-Unia Europejska przoduje w tym obszarze z [AI Act](https://artificialintelligenceact.eu/) - kompleksowym aktem prawnym regulującym systemy sztucznej inteligencji według stopnia ryzyka, jakie stwarzają. AI Act wszedł w życie 1 sierpnia 2024 r. i jest wdrażany etapami do 2027 r. Stany Zjednoczone przyjmują bardziej sektorowe podejście, z różnymi regulacjami dla AI w medycynie, finansach czy transporcie.
+Unia Europejska przoduje w tym obszarze z [AI Act](https://artificialintelligenceact.eu/) - kompleksowym aktem prawnym regulującym systemy sztucznej inteligencji według stopnia ryzyka, jakie stwarzają. AI Act wszedł w życie 1 sierpnia 2024 r. i jest wdrażany etapami. Od 2 sierpnia 2026 r. zaczną obowiązywać [wymogi przejrzystości](https://datamatters.sidley.com/2026/06/24/eu-ai-act-transparency-obligations-preparing-for-compliance-by-2-august-2026/) - m.in. jasna informacja, że rozmawiasz z AI, a nie z człowiekiem, oraz oznaczanie treści wygenerowanych przez AI. Wymogi dla systemów wysokiego ryzyka (np. AI w rekrutacji, biometrii czy wyrobach medycznych) [przesunięto w maju 2026 r. pakietem Digital Omnibus](https://www.traverssmith.com/knowledge/knowledge-container/eu-agrees-to-delay-key-ai-act-compliance-deadlines/) na 2 grudnia 2027 r. i 2 sierpnia 2028 r. Stany Zjednoczone przyjmują bardziej sektorowe podejście, z różnymi regulacjami dla AI w medycynie, finansach czy transporcie.
 
 Warto śledzić ten rozwijający się krajobraz regulacyjny, szczególnie jeśli wykorzystujesz AI w pracy lub biznesie. Co było dozwolone wczoraj, może wymagać specjalnych zabezpieczeń lub certyfikacji jutro.
 
