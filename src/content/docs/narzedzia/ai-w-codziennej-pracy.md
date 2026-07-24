@@ -3,7 +3,7 @@ title: AI w codziennej pracy - praktyczne zastosowania
 description: Jak wykorzystać AI w codziennej pracy - maile, dokumenty, spotkania, research. Praktyczne przykłady i workflow.
 sidebar:
   label: 'AI w codziennej pracy'
-  order: 6
+  order: 8
 educationalLevel: Beginner
 teaches:
   - Jak wykorzystać AI w codziennej pracy
