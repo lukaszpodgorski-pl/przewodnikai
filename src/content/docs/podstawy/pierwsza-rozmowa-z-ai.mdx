@@ -26,6 +26,9 @@ faq:
     a: Wystarczy wejść na stronę chatbota AI (np. ChatGPT) i wpisać pytanie lub polecenie w naturalnym języku, tak jak piszesz wiadomość do znajomego.
 ---
 
+import Termin from '../../../components/Termin.astro';
+import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
+
 ![Ikona osoby i przyjazny orb AI spotykają się w dwóch dymkach rozmowy](../../../assets/podstawy/pierwsza-rozmowa-z-ai/pierwsza-rozmowa-z-ai.jpg)
 
 ## Zanim zaczniemy - to prostsze niż myślisz
@@ -40,27 +43,29 @@ To program, z którym rozmawiasz, pisząc tekst - tak jak na czacie z drugą oso
 
 Na początek potrzebujesz jednego narzędzia. Pokażę Ci trzy - każde jest darmowe na start:
 
-| Chatbot | Adres | Darmowy plan | Dla kogo najlepszy |
-| --- | --- | --- | --- |
-| **ChatGPT** | [chat.openai.com](https://chat.openai.com) | Tak, z dziennym limitem wiadomości | Najlepszy na start - najbardziej popularny, łatwy w obsłudze |
-| **Claude** | [claude.ai](https://claude.ai) | Tak, z dziennym limitem | Świetny do dłuższych tekstów i analizy dokumentów |
-| **Gemini** | [gemini.google.com](https://gemini.google.com) | Tak, bez limitu | Dobry jeśli masz konto Google - logowanie jednym kliknięciem |
+| Chatbot | Adres | Dla kogo najlepszy |
+| --- | --- | --- |
+| **ChatGPT** | [chatgpt.com](https://chatgpt.com) | Najlepszy na start - najbardziej popularny, łatwy w obsłudze |
+| **Claude** | [claude.ai](https://claude.ai) | Świetny do dłuższych tekstów i analizy dokumentów |
+| **Gemini** | [gemini.google.com](https://gemini.google.com) | Dobry jeśli masz konto Google - logowanie jednym kliknięciem |
+
+Każde z tych narzędzi ma darmowy plan, który w zupełności wystarczy do nauki. Wszystkie mają też limity użycia - jeśli piszesz bardzo dużo, po pewnej liczbie wiadomości trzeba odczekać kilka godzin, aż limit się odnowi (albo narzędzie przełączy Cię na słabszy model). Na początku raczej ich nie odczujesz.
 
 :::tip[Moja rekomendacja na start]
-Zacznij od [ChatGPT](https://chat.openai.com). Jest najpopularniejszy, więc najłatwiej znajdziesz pomoc online. Później możesz wypróbować pozostałe - każdy ma swoje mocne strony.
+Zacznij od [ChatGPT](https://chatgpt.com). Jest najpopularniejszy, więc najłatwiej znajdziesz pomoc online. Później możesz wypróbować pozostałe - każdy ma swoje mocne strony.
 :::
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - od którego chatbota sam zacząłeś i dlaczego dziś polecasz akurat ChatGPT na start? -->
+{/* TODO(Łukasz): tu zadziałałaby anegdota - od którego chatbota sam zacząłeś i dlaczego dziś polecasz akurat ChatGPT na start? */}
 
 ## Krok 2: Załóż konto
 
 Proces jest podobny w każdym narzędziu. Na przykładzie ChatGPT:
 
-1. **Wejdź na stronę** - otwórz [chat.openai.com](https://chat.openai.com) w przeglądarce (na komputerze lub telefonie)
-2. **Kliknij "Sign up"** (Zarejestruj się) - znajdziesz ten przycisk na stronie głównej
-3. **Wybierz sposób rejestracji** - najszybciej jest przez konto Google ("Continue with Google") lub Apple. Możesz też użyć dowolnego e-maila
+1. **Wejdź na stronę** - otwórz [chatgpt.com](https://chatgpt.com) w przeglądarce (na komputerze lub telefonie)
+2. **Kliknij przycisk rejestracji** - "Zarejestruj się" lub "Sign up", znajdziesz go na stronie głównej
+3. **Wybierz sposób rejestracji** - najszybciej jest przez konto Google lub Apple. Możesz też użyć dowolnego e-maila
 4. **Potwierdź e-mail** - jeśli rejestrowałeś się e-mailem, sprawdź skrzynkę i kliknij link potwierdzający
-5. **Gotowe!** - po zalogowaniu zobaczysz pole tekstowe z napisem "Message ChatGPT" (lub podobnym). To tutaj wpisujesz swoje pytania
+5. **Gotowe!** - po zalogowaniu zobaczysz na środku ekranu pole tekstowe. To tutaj wpisujesz swoje pytania
 
 :::caution[Nie musisz płacić!]
 Darmowy plan w pełni wystarczy na początek. Płatne wersje (ChatGPT Plus, Claude Pro) dają szybszy dostęp do najnowszych modeli, ale do nauki i codziennego użytku wersja darmowa jest świetna.
@@ -92,7 +97,7 @@ Zamień `[wpisz swój zawód]` na swoją rzeczywistą rolę - np. "nauczycielem"
 Muszę napisać e-mail do klienta z przeprosinami za opóźnienie w dostawie. Pomóż mi sformułować profesjonalną, ale ciepłą wiadomość. Opóźnienie wynosi 3 dni i wynika z problemów z dostawcą.
 ```
 
-Ten prompt pokazuje, jak AI może pomóc w realnym, codziennym zadaniu. Zobaczysz, jak szybko dostaniesz gotowy tekst, który możesz dostosować.
+Ten <Termin id="prompt">prompt</Termin> pokazuje, jak AI może pomóc w realnym, codziennym zadaniu. Zobaczysz, jak szybko dostaniesz gotowy tekst, który możesz dostosować.
 
 ## Krok 4: Przeczytaj odpowiedź i... porozmawiaj dalej
 
@@ -127,7 +132,7 @@ Zebrałem kilka fraz, które natychmiast poprawią jakość odpowiedzi AI:
 **AI może się mylić w:** podawaniu konkretnych dat, statystyk i cytatów (**zawsze weryfikuj fakty**), obliczeniach matematycznych (paradoksalnie!), informacjach o bardzo aktualnych wydarzeniach, podawaniu linków (często wymyśla nieistniejące adresy URL).
 
 :::caution[Ważna zasada]
-AI brzmi zawsze pewnie - nawet gdy się myli. To zjawisko nazywamy "halucynacjami AI". Nie traktuj odpowiedzi AI jako niepodważalnej prawdy, szczególnie gdy chodzi o fakty, liczby i źródła. Więcej o tym przeczytasz w rozdziale o [ograniczeniach AI](/podstawy/ograniczenia/).
+AI brzmi zawsze pewnie - nawet gdy się myli. To zjawisko nazywamy <Termin id="halucynacje">halucynacjami AI</Termin>. Nie traktuj odpowiedzi AI jako niepodważalnej prawdy, szczególnie gdy chodzi o fakty, liczby i źródła. Więcej o tym przeczytasz w rozdziale o [ograniczeniach AI](/podstawy/ograniczenia/).
 :::
 
 ## Co robić, gdy odpowiedź jest słaba?
@@ -143,7 +148,7 @@ Nie zrażaj się, jeśli pierwsza odpowiedź nie jest idealna. To normalne. Masz
 Im więcej kontekstu dasz AI, tym lepszą odpowiedź dostaniesz. Porównaj: "napisz e-mail" vs "napisz profesjonalny e-mail do klienta z branży IT, w którym przepraszam za opóźnienie w realizacji projektu o 2 tygodnie, proponując nowy harmonogram". Druga wersja da zdecydowanie lepszy wynik.
 :::
 
-<!-- TODO(Łukasz): tu zadziałałaby anegdota - jaki był pierwszy prompt, który kompletnie Ci nie wyszedł, i co konkretnie w nim brakowało? -->
+{/* TODO(Łukasz): tu zadziałałaby anegdota - jaki był pierwszy prompt, który kompletnie Ci nie wyszedł, i co konkretnie w nim brakowało? */}
 
 ## 5 rzeczy do wypróbowania w pierwszym tygodniu
 
@@ -163,7 +168,7 @@ Zanim zaczniesz intensywnie korzystać z AI, zapamiętaj trzy zasady:
 - **Nie traktuj AI jak sejfu** - to, co wpisujesz, może być wykorzystane do treningu modelu (chyba że wyłączysz tę opcję w ustawieniach)
 - **Sprawdź politykę firmy** - jeśli chcesz używać AI w pracy, upewnij się, że Twoja firma na to pozwala
 
-Więcej o bezpieczeństwie dowiesz się z rozdziału o prywatności i danych w sekcji Etyka i bezpieczeństwo.
+Więcej o bezpieczeństwie dowiesz się z rozdziału [Prywatność i dane w AI](/etyka/prywatnosc/) w sekcji Etyka i bezpieczeństwo.
 
 :::note[Teraz wiesz]
 
@@ -173,3 +178,5 @@ Więcej o bezpieczeństwie dowiesz się z rozdziału o prywatności i danych w s
 
 **Następny krok:** [Mity vs rzeczywistość](/podstawy/mity-vs-rzeczywistosc/) - dowiesz się, co AI naprawdę potrafi, a co jest przesadą medialną.
 :::
+
+<SlowniczekStrony terminy={["chatbot", "prompt", "halucynacje"]} />
