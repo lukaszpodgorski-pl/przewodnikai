@@ -101,7 +101,7 @@ Czy kiedyś będzie inaczej? Tego nie wiemy. Jest to bardziej pytanie filozoficz
 
 Oto moja rekomendacja w 3 krokach:
 
-1. **Wypróbuj chatbota** - wejdź na [ChatGPT](https://chat.openai.com) lub [Claude](https://claude.ai), załóż darmowe konto i po prostu porozmawiaj. Krok po kroku opisałem to w artykule [Twoja pierwsza rozmowa z AI](/podstawy/pierwsza-rozmowa-z-ai/)
+1. **Wypróbuj chatbota** - wejdź na [ChatGPT](https://chatgpt.com) lub [Claude](https://claude.ai), załóż darmowe konto i po prostu porozmawiaj. Krok po kroku opisałem to w artykule [Twoja pierwsza rozmowa z AI](/podstawy/pierwsza-rozmowa-z-ai/)
 2. **Przeczytaj podstawy** - przejdź sekcję "Podstawy" w tym przewodniku. To solidny fundament
 3. **Naucz się promptować** - sekcja "Prompt Engineering" nauczy Cię, jak pisać zapytania do AI, żeby dostawać najlepsze możliwe odpowiedzi
 
