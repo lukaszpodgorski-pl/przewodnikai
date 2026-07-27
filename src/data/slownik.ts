@@ -89,4 +89,28 @@ export const SLOWNIK: Record<string, Pojecie> = {
 		krotka:
 			'Model AI, którego wagi (parametry) można pobrać i uruchomić na własnym sprzęcie - w przeciwieństwie do modeli dostępnych wyłącznie przez API dostawcy.',
 	},
+	token: {
+		termin: 'Token',
+		anchor: 'token',
+		krotka:
+			'Podstawowa jednostka tekstu, na jaką model dzieli to, co czyta i pisze - zwykle fragment słowa; w tokenach mierzy się okno kontekstowe i koszty API.',
+	},
+	temperatura: {
+		termin: 'Temperatura',
+		anchor: 'temperatura-temperature',
+		krotka:
+			'Parametr sterujący losowością odpowiedzi modelu - niska wartość daje wyniki powtarzalne i zachowawcze, wysoka bardziej kreatywne, ale mniej przewidywalne.',
+	},
+	'zero-shot': {
+		termin: 'Zero-shot',
+		anchor: 'zero-shot-bez-przykładów',
+		krotka:
+			'Zadanie polecenia bez pokazywania modelowi ani jednego przykładu - liczy się sama instrukcja i wiedza, którą model wyniósł z treningu.',
+	},
+	'chain-of-thought': {
+		termin: 'Chain-of-thought',
+		anchor: 'chain-of-thought-łańcuch-myśli',
+		krotka:
+			'Technika promptowania, w której prosisz model o rozpisanie rozumowania krok po kroku, zanim poda ostateczną odpowiedź.',
+	},
 };
