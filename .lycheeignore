@@ -29,3 +29,13 @@ https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
 # W przeglądarce link działa; wywalał PR #21, choć ten nie dotykał plików,
 # w których występuje (chatboty, pierwsza-rozmowa-z-ai).
 https://gemini.google.com/
+
+# AIPORT.pl nie odpowiada na żądania z runnerów GitHuba - połączenie wisi aż do
+# timeoutu. Podniesienie limitu z 20 s do 45 s i pięć prób nic nie zmieniły
+# (lychee i tak nie ponawia timeoutów), więc to gubione pakiety, nie wolna strona.
+# Blokada jest sieciowa, nie treściowa: spoza CI ten sam adres zwraca 200 w 0,4 s,
+# również z nagłówkiem User-Agent lychee, a cotygodniowy cron przechodził jeszcze
+# tego samego dnia rano (2026-07-27, 09:58 UTC) - blokada pojawiła się w ciągu dnia.
+# Link jest źródłem indeksu 125 polskich firm AI w "Polski ekosystem AI" (dwa
+# wystąpienia). Gdy aiport.pl przestanie odcinać ruch z CI, ten wpis można usunąć.
+https://aiport.pl/testy-i-rankingi/ludzie-polskiego-ai-indeks-125-firm-ludzi-i-projektow-od-bielika-po-elevenlabs/
