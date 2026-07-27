@@ -14,7 +14,7 @@ about:
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
 ---
 
-Zebrałem tutaj 34 pojęcia, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
+Zebrałem tutaj 38 pojęć, które najczęściej sprawiają kłopot osobom zaczynającym przygodę z AI. Każde hasło tłumaczę w dwóch krokach: najpierw definicja, potem przykład z życia - bo dopiero przykład sprawia, że definicja zostaje w głowie. Tam, gdzie dane pojęcie ma w przewodniku swój rozdział, podaję link, żebyś mógł od razu wejść głębiej.
 
 Nie musisz czytać tego od deski do deski. Traktuj tę stronę jak podręczny leksykon i wracaj do niej, kiedy natkniesz się na nieznany termin.
 
@@ -51,6 +51,14 @@ Zestaw reguł i protokołów, które pozwalają różnym programom komunikować 
 Systematyczne odchylenie wyników lub decyzji modelu AI, odzwierciedlające uprzedzenia obecne w danych treningowych lub algorytmach. Bias może prowadzić do dyskryminacji lub nierównego traktowania różnych grup.
 
 **Przykład:** System rekrutacyjny trenowany na historycznych danych firmy, gdzie większość kierowniczych stanowisk zajmowali mężczyźni, może faworyzować kandydatów płci męskiej, nawet jeśli płeć nie jest bezpośrednio uwzględniana w ocenie.
+
+### Chain-of-thought (łańcuch myśli)
+
+Technika promptowania, w której prosisz model, żeby rozpisał rozumowanie krok po kroku, zanim poda ostateczną odpowiedź. Pośrednie kroki działają jak brudnopis - model rzadziej gubi się w zadaniach wieloetapowych, a Ty widzisz, w którym miejscu popełnił błąd. W najprostszej wersji wystarczy dopisać do polecenia frazę "pomyślmy krok po kroku". W modelach rozumujących ten łańcuch jest już wbudowany i model generuje go sam, bez Twojej prośby.
+
+**Przykład:** Pytasz "mam 3 skrzynki po 24 butelki, sprzedałem 17 - ile zostało?" i dostajesz samą liczbę, czasem błędną. Dopisujesz "rozpisz obliczenia krok po kroku" - model najpierw mnoży 3 × 24, potem odejmuje 17 i podaje wynik, który możesz sprawdzić.
+
+**Więcej:** [Techniki promptowania](/prompt-engineering/techniki/)
 
 ### Chatbot
 
@@ -212,6 +220,22 @@ Dziedzina informatyki zajmująca się tworzeniem systemów, które potrafią wyk
 
 **Przykład:** Asystenci głosowi jak Siri czy Alexa, systemy rozpoznawania obrazów, programy grające w szachy czy samochody autonomiczne - wszystkie wykorzystują różne formy sztucznej inteligencji.
 
+### Temperatura (temperature)
+
+Parametr sterujący losowością odpowiedzi modelu. Model w każdym kroku wybiera kolejny token z listy kandydatów - niska temperatura każe mu trzymać się najbardziej prawdopodobnego, wysoka pozwala sięgać po mniej oczywiste. Niska wartość (0-0,3) daje odpowiedzi powtarzalne i zachowawcze, wysoka (0,8-1) - bardziej kreatywne, ale i bardziej podatne na błędy. W zwykłych chatbotach temperatura jest ustawiona z góry; regulujesz ją przez API albo w narzędziach dla zaawansowanych.
+
+**Przykład:** Prosisz o hasło reklamowe przy temperaturze 0,2 i za każdym razem dostajesz niemal to samo, bezpieczne zdanie. Podnosisz do 0,9 - propozycje robią się zaskakujące i różnorodne, ale część z nich jest kompletnie nietrafiona.
+
+**Więcej:** [Parametry modeli](/jak-dziala-ai/parametry-modeli/)
+
+### Token
+
+Podstawowa jednostka tekstu, na jaką model dzieli to, co czyta i co pisze - zwykle fragment słowa, całe krótkie słowo albo znak interpunkcyjny. Tokeny są walutą modeli językowych: w nich mierzy się okno kontekstowe i w nich naliczane są opłaty za korzystanie z API. Polszczyzna dzieli się na tokeny mniej ekonomicznie niż angielski - jedno polskie słowo to średnio 1,5-2,5 tokena.
+
+**Przykład:** Wklejasz do chatbota dokument, który ma 10 tysięcy słów. Dla modelu to około 20 tysięcy tokenów - i to ta liczba, a nie liczba stron, decyduje, czy tekst zmieści się w oknie kontekstowym i ile zapłacisz za jego przetworzenie.
+
+**Więcej:** [Tokeny i kontekst](/jak-dziala-ai/tokeny-i-kontekst/)
+
 ### Tokenizacja
 
 Proces dzielenia tekstu na mniejsze jednostki zwane tokenami, które mogą być przetwarzane przez modele językowe. Tokeny to najczęściej słowa, części słów lub symbole, które stanowią podstawową jednostkę analizy.
@@ -263,6 +287,14 @@ Metoda uczenia maszynowego, w której agent (program AI) uczy się osiągać cel
 **Przykład:** Program AlphaGo, który pokonał mistrzów w grze Go, uczył się strategii poprzez rozgrywanie milionów partii przeciwko sobie, otrzymując nagrody za zwycięstwa i kary za porażki.
 
 **Więcej:** [Jak uczą się modele](/jak-dziala-ai/jak-ucza-sie-modele/)
+
+### Zero-shot (bez przykładów)
+
+Sposób zadania modelowi zadania bez pokazywania ani jednego przykładu - liczy się sama instrukcja, a model radzi sobie dzięki ogólnej wiedzy z treningu. To domyślne podejście i warto od niego zaczynać: jest najprostsze i najczęściej wystarcza. Gdy zawodzi, kolejnym krokiem jest few-shot, czyli dorzucenie do polecenia 2-3 przykładów rozwiązanego zadania.
+
+**Przykład:** Piszesz "oceń, czy ta opinia o produkcie jest pozytywna, negatywna czy neutralna" i wklejasz tekst - bez żadnego wzorca. Model klasyfikuje opinię poprawnie, bo z treningu wie, jak wygląda zadowolony, a jak rozczarowany klient.
+
+**Więcej:** [Techniki promptowania](/prompt-engineering/techniki/)
 
 :::tip[Wskazówka]
 Wracaj do tego słownika za każdym razem, gdy natkniesz się na nieznany termin w kursie lub w artykule o AI. Jeśli szukasz konkretnego pojęcia, skorzystaj z wyszukiwarki w górnej części strony - przeszuka nie tylko ten słownik, ale cały przewodnik, więc od razu zobaczysz, w których rozdziałach dany termin się pojawia.
