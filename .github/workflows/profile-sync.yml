@@ -20,7 +20,7 @@ jobs:
       - run: npm run profile:sync
         env:
           PROFILE_REF: ${{ github.event.client_payload.sha || 'main' }}
-      - uses: peter-evans/create-pull-request@v7
+      - uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.PROFILE_SYNC_TOKEN }}
           branch: chore/profile-sync
