@@ -27,6 +27,9 @@ mentions:
   - name: Microsoft Copilot
     sameAs: https://en.wikipedia.org/wiki/Microsoft_Copilot
     type: SoftwareApplication
+  - name: DeepSeek
+    sameAs: https://en.wikipedia.org/wiki/DeepSeek
+    type: SoftwareApplication
 faq:
   - q: Który chatbot AI jest najlepszy?
     a: Zależy od potrzeb. ChatGPT sprawdza się w szerokim zakresie zadań, Claude w długich tekstach i analizie dokumentów, Gemini jest zintegrowany z usługami Google, a Copilot z pakietem Microsoft 365.
@@ -132,6 +135,12 @@ Poza wielką czwórką jest kilka narzędzi, o których warto wiedzieć, że ist
 
 **Grok (xAI)** - chatbot zintegrowany z platformą X, z wyszukiwaniem w sieci i w postach. Ma plan darmowy. Warto wiedzieć, że istnieje, ale pod względem liczby użytkowników dzieli go od czołowej trójki duży dystans. [Cennik](https://x.ai/pricing).
 
+**DeepSeek** - chiński chatbot oparty na własnych modelach o otwartych wagach (aktualna generacja to V4). Wyróżnia się tym, że nie ma płatnego planu konsumenckiego - czat jest darmowy, także w trybie rozumowania i z wyszukiwaniem w sieci. Płatne jest dopiero API dla programistów. Najlepsze dla: dostęp do mocnego modelu bez abonamentu. [Strona](https://deepseek.com/en/).
+
+:::caution[Gdzie trafiają Twoje rozmowy]
+DeepSeek to firma chińska i dane z czatu trafiają na jej serwery. Przy pytaniach ogólnych to bez znaczenia, ale przy danych firmowych, klientów czy czymkolwiek objętym RODO potraktuj to jak każdą inną usługę spoza UE - i sprawdź, czy możesz. To ten sam rachunek sumienia, który opisuję w rozdziale o [prywatności](/etyka/prywatnosc/). Jeśli zależy Ci na modelu, który zostaje u Ciebie, modele DeepSeeka są otwartowagowe - można je uruchomić [na własnym sprzęcie](/suwerenne-ai/ai-na-wlasnym-komputerze/).
+:::
+
 **Poe (Quora)** - platforma agregująca modele różnych dostawców w jednym miejscu, rozliczana punktami zamiast liczbą wiadomości. Ma plan darmowy. Najlepsze dla: porównywanie modeli, eksperymenty. [Cennik](https://poe.com/subscription_plans).
 
 **Pi (Inflection AI)** - chatbot nastawiony na empatyczną rozmowę. Darmowy. Traktuj go jako niszę do luźnej rozmowy, a nie alternatywę dla powyższych: w 2024 roku większość zespołu Inflection przeszła do Microsoftu i firma przestała nadążać za czołówką.
@@ -193,7 +202,7 @@ Gdyby ktoś kazał mi streścić ten rozdział w pięciu punktach, wyglądałyby
 2. **Do analizy długich dokumentów** → **Claude** - milionowe okno kontekstu, dobra praca na długim tekście
 3. **Jeśli używasz Google/Office** → **Gemini/Copilot** - integracja z ekosystemem
 4. **Do researchu** → **Perplexity** - źródła, aktualne informacje
-5. **Bez wydawania pieniędzy** → **Gemini** lub **Copilot** - najhojniejsze darmowe plany
+5. **Bez wydawania pieniędzy** → **Gemini** lub **Copilot** - najhojniejsze darmowe plany wśród wielkiej czwórki; **DeepSeek**, jeśli nie przeszkadza Ci chiński dostawca
 
 <!-- TODO(Łukasz): tu zadziałałaby anegdota - którego z tych chatbotów faktycznie używasz na co dzień i co Cię do niego przekonało? -->
 <!-- TODO(Łukasz): jeśli któryś z nich Cię kiedyś zawiódł na realnym zadaniu, to najmocniejszy możliwy akapit w tym rozdziale -->
