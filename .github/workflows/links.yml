@@ -33,9 +33,11 @@ jobs:
           # filtr ma co odrzucać. W `dist/` te adresy są prawdziwymi katalogami
           # z `index.html`, więc rozwiązują się poprawnie razem z zewnętrznymi.
           # Kod 999 to celowa blokada LinkedIn wobec botów - link jest sprawny.
+          # Kod 202 zwraca deepseek.com (warstwa antybotowa) - w przeglądarce
+          # strona otwiera się normalnie, a 202 i tak należy do rodziny 2xx.
           args: >-
             --no-progress
-            --accept 200,206,403,429,999
+            --accept 200,202,206,403,429,999
             --root-dir "${{ github.workspace }}/dist"
             'dist/**/*.html'
           fail: true
