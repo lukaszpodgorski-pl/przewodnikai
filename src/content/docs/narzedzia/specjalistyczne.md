@@ -38,7 +38,7 @@ Ta kategoria odpowiada na inne pytanie niż zwykły chatbot. Zamiast generować 
 W przeciwieństwie do ChatGPT czy Claude, które opierają się na wiedzy z treningu, Perplexity przeszukuje internet w czasie rzeczywistym. Każda odpowiedź zawiera numery przypisów odsyłające do konkretnych źródeł - możesz kliknąć i zweryfikować informację.
 :::
 
-**Gemini Notebook (dawniej NotebookLM)** - narzędzie Google do pracy z własnymi dokumentami. W lipcu 2026 zmieniło nazwę z NotebookLM na Gemini Notebook; działa dalej pod adresem notebooklm.google. Ma plan darmowy (wymaga konta Google). Funkcje: wgrywanie własnych źródeł (PDF, Google Docs, linki), "rozmowa" z dokumentami, generowanie podcastów audio. Czym się wyróżnia: model odpowiada wyłącznie na podstawie wgranych przez Ciebie źródeł, więc nie dopisze faktów znalezionych w internecie. Najlepsze dla: studenci, badacze, analiza dokumentacji, przygotowanie do egzaminów.
+**Gemini Notebook (dawniej NotebookLM)** - narzędzie Google do pracy z własnymi dokumentami. W lipcu 2026 zmieniło nazwę i weszło do rodziny Gemini; to ten sam produkt, notatników nie trzeba przenosić ani zakładać od nowa. Ma plan darmowy (wymaga konta Google). Funkcje: wgrywanie własnych źródeł (PDF, Google Docs, linki), "rozmowa" z dokumentami, generowanie podcastów audio. Czym się wyróżnia: model odpowiada wyłącznie na podstawie wgranych przez Ciebie źródeł, więc nie dopisze faktów znalezionych w internecie. Najlepsze dla: studenci, badacze, analiza dokumentacji, przygotowanie do egzaminów.
 
 :::caution[Ograniczenie źródeł to nie to samo co brak błędów]
 Chcę tu być z Tobą uczciwy, bo widuję to przekręcone w wielu poradnikach: Gemini Notebook zawęża materiał, z którego korzysta AI - i to naprawdę zmniejsza ryzyko zmyślonych faktów z zewnątrz. Ale model nadal może błędnie streścić fragment, pomylić liczby albo przypisać cytat do niewłaściwego miejsca w dokumencie. Dlatego każdą odpowiedź, na której Ci zależy, klikaj do przypisu i sprawdzaj w oryginale.
@@ -182,7 +182,7 @@ Lista narzędzi AI zmienia się z miesiąca na miesiąc i nie namawiam Cię do n
 :::note[Teraz wiesz]
 
 - Jakie specjalistyczne narzędzia AI istnieją do wideo (Runway, HeyGen), audio (ElevenLabs, Suno), kodu (Copilot, Cursor) i prezentacji (Gamma)
-- Do czego służą Perplexity AI i NotebookLM - research ze źródłami i praca na Twoich własnych dokumentach (oraz dlaczego nawet NotebookLM trzeba sprawdzać)
+- Do czego służą Perplexity AI i Gemini Notebook - research ze źródłami i praca na Twoich własnych dokumentach (oraz dlaczego nawet Gemini Notebook trzeba sprawdzać)
 - Jak wybierać narzędzia AI: zdefiniuj problem, wypróbuj darmowe plany, sprawdź integracje z Twoim workflow i polityki prywatności
 
 **Następny krok:** [Asystenci agentowi](/narzedzia/asystenci-agentowi/) - poznasz narzędzia, które nie tylko podpowiadają, ale wykonują pracę za Ciebie: rodzinę Copilot, Claude Code i Claude Cowork.

@@ -127,7 +127,7 @@ Optymalne wykorzystanie AI zależy od tego, czym się zajmujesz. Rozpisałem czt
 
 ### Dla studentów i badaczy
 
-**Optymalny przepływ pracy badawczej:** 1. Perplexity Deep Research (przegląd tematu, identyfikacja kluczowych zagadnień). 2. Semantic Scholar / Consensus (przegląd literatury naukowej z cytowaniami). 3. NotebookLM (wgranie źródeł i "rozmowa" z nimi). 4. Claude / ChatGPT (pomoc w pisaniu i strukturyzowaniu). 5. Grammarly / LanguageTool (korekta językowa).
+**Optymalny przepływ pracy badawczej:** 1. Perplexity Deep Research (przegląd tematu, identyfikacja kluczowych zagadnień). 2. Semantic Scholar / Consensus (przegląd literatury naukowej z cytowaniami). 3. Gemini Notebook (wgranie źródeł i "rozmowa" z nimi). 4. Claude / ChatGPT (pomoc w pisaniu i strukturyzowaniu). 5. Grammarly / LanguageTool (korekta językowa).
 
 :::caution[Zasada kciuka]
 Używaj AI jako trenera pisania, nie ghostwritera. ZAWSZE weryfikuj cytaty i źródła - AI często wymyśla publikacje naukowe!
