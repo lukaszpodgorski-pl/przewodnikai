@@ -31,7 +31,7 @@ Ten rozdział zawiera spekulacje i prognozy, które mogą się nie sprawdzić. T
 
 ## Krótkoterminowe trendy (1-2 lata)
 
-**Multimodalność jako standard.** Modele rozumiejące i generujące tekst, obraz, audio i wideo jednocześnie: GPT-4V już rozumie obrazy, Gemini jest natywnie multimodalny, Sora (OpenAI) generuje wideo. Kierunek: jeden model do wszystkiego.
+**Multimodalność jako standard.** Modele rozumiejące i generujące tekst, obraz, audio i wideo jednocześnie: GPT-5.6 już rozumie obrazy, Gemini jest natywnie multimodalny, Veo 3.1 (Google) generuje wideo. Kierunek: jeden model do wszystkiego.
 
 **Agenci AI.** Systemy wykonujące złożone zadania autonomicznie, krok po kroku: computer use (AI steruje komputerem), coding agents (piszą i debugują kod), research agents (przeszukują internet i analizują), personal assistants (zarządzają kalendarzem, mailami).
 

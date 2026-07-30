@@ -30,7 +30,7 @@ faq:
   - q: Jak zacząć korzystać z AI?
     a: "W 3 krokach: (1) wypróbuj chatbota (ChatGPT lub Claude), (2) przeczytaj podstawy w sekcji Podstawy przewodnika, (3) naucz się promptować w sekcji Prompt Engineering."
   - q: Ile kosztuje korzystanie z AI?
-    a: Podstawowe korzystanie jest darmowe - ChatGPT, Claude i Gemini mają darmowe plany wystarczające do nauki. Płatne plany (ok. 80-100 zł/mies.) dają dostęp do nowszych modeli i wyższe limity.
+    a: Podstawowe korzystanie jest darmowe - ChatGPT, Claude i Gemini mają darmowe plany wystarczające do nauki. Płatne plany dają dostęp do modeli flagowych i wyższe limity. Trzy modele rozliczania i drabinę planów opisuję w rozdziale "Ile kosztuje AI".
   - q: Jakie są etyczne zasady korzystania z AI?
     a: "Kluczowe zasady: bądź transparentny o użyciu AI, weryfikuj wyniki, chroń prywatność (nie wpisuj danych osobowych innych), szanuj prawa autorskie, zachowaj ludzki osąd w kluczowych decyzjach."
   - q: Czy AI może mieć świadomość?
@@ -131,9 +131,9 @@ Cały rozdział na ten temat: [Etyczne aspekty AI](/etyka/etyczne-aspekty/).
 
 Podstawowe korzystanie jest darmowe. ChatGPT, Claude i Gemini mają darmowe plany, które w pełni wystarczają do nauki i codziennego użytku.
 
-Płatne plany (zwykle ok. 80-100 zł miesięcznie) dają dostęp do nowszych modeli, szybsze odpowiedzi i wyższe limity. Warto rozważyć je, gdy AI stanie się stałym elementem Twojej pracy.
+Płatne plany dają dostęp do modeli flagowych, szybsze odpowiedzi i wyższe limity. Warto rozważyć je, gdy AI stanie się stałym elementem Twojej pracy.
 
-Porównanie narzędzi i ich planów cenowych znajdziesz w rozdziale o [chatbotach AI](/narzedzia/chatboty/).
+Nie podaję tu kwot, bo zmieniają się kilka razy w roku - zamiast tego w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/) tłumaczę trzy sposoby płacenia (subskrypcja, API u dostawcy, API u brokera), pokazuję, jak wygląda drabina planów, i linkuję wprost do cenników. Porównanie samych narzędzi znajdziesz w rozdziale o [chatbotach AI](/narzedzia/chatboty/).
 
 ## Czy Przewodnik AI zbiera dane o mnie?
 

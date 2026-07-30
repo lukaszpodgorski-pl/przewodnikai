@@ -14,6 +14,6 @@ Ten adres jest u mnie na liście, więc nie musisz robić nic więcej - powiadom
 
 Jeśli mimo to nic od dawna nie dostajesz, sprawdź folder ze spamem albo napisz na [kontakt@lukaszpodgorski.pl](mailto:kontakt@lukaszpodgorski.pl). Zdarza się, że dostawcy poczty odkładają takie wiadomości w niespodziewane miejsca.
 
-Chcesz przestać je dostawać? Wystarczy kliknąć „wypisz się" w stopce dowolnej wiadomości ode mnie.
+Chcesz przestać je dostawać? Wystarczy kliknąć "wypisz się" w stopce dowolnej wiadomości ode mnie.
 
 [Wróć do kursu](/podstawy/wstep/) albo [zobacz program](/).

@@ -111,7 +111,7 @@ Zaznaczam od razu: poniższy podział dotyczy zadań, nie ludzi. Prawie każdy z
 | Wprowadzanie danych | Powtarzalne, wzorce | OCR, przetwarzanie dokumentów |
 | Telemarketing | Skrypty, masowość | Voiceboty, automatyczne dzwonienie |
 | Podstawowa księgowość | Reguły, kategoryzacja | Auto-kategoryzacja, reconciliation |
-| Tłumaczenia proste | Wzorce językowe | DeepL, GPT-4 tłumaczy bardzo dobrze |
+| Tłumaczenia proste | Wzorce językowe | DeepL i modele językowe tłumaczą bardzo dobrze |
 | Obsługa klienta L1 | FAQ, skrypty | Chatboty rozwiązują 40-60% zapytań |
 
 **Średnie ryzyko:** copywriting (AI pisze, ale ekspertyza i strategia wciąż ludzkie), programowanie junior (Copilot pisze kod, ale architektura i debugging to ludzie), analiza danych (AI pomaga, ale interpretacja wymaga kontekstu), projektowanie graficzne (Midjourney tworzy, ale koncept i brand to człowiek).

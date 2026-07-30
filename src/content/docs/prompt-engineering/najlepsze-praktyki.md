@@ -141,7 +141,7 @@ Jailbreaking jest nieetyczny i często narusza warunki użytkowania. Omawiam go 
 
 Korzystanie z API modeli AI może być kosztowne. Oto strategie optymalizacji:
 
-**1. Wybór odpowiedniego modelu.** Najprostszy sposób na przepalenie budżetu to puszczanie wszystkiego przez najmocniejszy dostępny model. Radzę odwrotnie: domyślnie sięgaj po mniejszy i tańszy model (GPT-3.5, Claude Haiku), a mocniejszy (GPT-4, Claude Opus) rezerwuj dla zadań, przy których ten mniejszy realnie zawiódł. Które to zadania - sprawdzisz tylko testem na własnych przypadkach.
+**1. Wybór odpowiedniego modelu.** Najprostszy sposób na przepalenie budżetu to puszczanie wszystkiego przez najmocniejszy dostępny model. Radzę odwrotnie: każdy dostawca ma w rodzinie wariant ekonomiczny i flagowy - domyślnie sięgaj po ten ekonomiczny, a flagowca rezerwuj dla zadań, przy których mniejszy model realnie zawiódł. Które to zadania - sprawdzisz tylko testem na własnych przypadkach.
 
 <!-- TODO(Łukasz): tu zadziałałaby anegdota - masz konkretny przykład zadania, które zeszło na tańszy model bez straty jakości? Jeśli tak, wstaw liczby; jeśli nie, zostaw akapit bez nich. -->
 

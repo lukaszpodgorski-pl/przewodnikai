@@ -124,7 +124,7 @@ Podkategoria uczenia maszynowego wykorzystująca wielowarstwowe sieci neuronowe 
 
 Specjalistyczny procesor pierwotnie zaprojektowany do renderowania grafiki, który okazał się niezwykle efektywny w obliczeniach równoległych potrzebnych do trenowania modeli głębokiego uczenia.
 
-**Przykład:** Trening dużego modelu językowego, takiego jak GPT-4, wymaga tysięcy wysokowydajnych GPU pracujących równolegle przez wiele tygodni, co kosztuje miliony dolarów w zasobach obliczeniowych.
+**Przykład:** Trening dużego modelu językowego, takiego jak GPT-5.6, wymaga tysięcy wysokowydajnych GPU pracujących równolegle przez wiele tygodni, co kosztuje miliony dolarów w zasobach obliczeniowych.
 
 ### Halucynacje AI
 
@@ -146,7 +146,7 @@ Reprezentacja systemu AI po treningu na danych. Model zawiera wzorce i reguły w
 
 System AI trenowany na dużych zbiorach tekstów, zdolny do rozumienia i generowania ludzkiego języka. LLM (Large Language Model) uczy się wzorców i struktur językowych, dzięki czemu może tworzyć spójne teksty, odpowiadać na pytania czy tłumaczyć między językami.
 
-**Przykład:** GPT-4, Claude czy Gemini to popularne duże modele językowe, które potrafią prowadzić konwersacje, pisać teksty i pomagać w rozwiązywaniu problemów.
+**Przykład:** GPT-5.6, Claude czy Gemini to popularne duże modele językowe, które potrafią prowadzić konwersacje, pisać teksty i pomagać w rozwiązywaniu problemów.
 
 **Więcej:** [Modele językowe](/jak-dziala-ai/modele-jezykowe/)
 
