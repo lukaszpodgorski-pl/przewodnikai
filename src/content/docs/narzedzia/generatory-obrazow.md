@@ -109,9 +109,9 @@ Wymaga wiedzy technicznej, potrzebny mocny komputer, krzywa uczenia.
 
 **Leonardo.ai** - przyjazna platforma z darmowym planem, od 2024 roku należąca do Canvy. Obok własnych modeli udostępnia modele innych dostawców. Najlepsze dla: początkujący, concept art, game design. [Cennik](https://leonardo.ai/pricing/).
 
-**Adobe Firefly** - generator od Adobe zintegrowany z Creative Cloud, dziś raczej wielomodelowe studio niż pojedynczy generator. Ma plan darmowy. Najlepsze dla: profesjonaliści używający Adobe, komercyjne użycie. [Cennik](https://www.adobe.com/products/firefly/plans.html).
+**Adobe Firefly** - generator od Adobe zintegrowany z Creative Cloud, dziś raczej wielomodelowe studio niż pojedynczy generator. Ma plan darmowy. Najlepsze dla: profesjonaliści używający Adobe, komercyjne użycie. [Cennik](https://firefly.adobe.com/pricing).
 
-**Ideogram** - generator nastawiony na czytelny tekst wewnątrz obrazu (napisy, logo, plakaty); od wersji 4.0 model ma otwarte wagi. Ma plan darmowy. Najlepsze dla: grafiki z tekstem, logo, plakaty. [Cennik](https://about.ideogram.ai/pricing).
+**Ideogram** - generator nastawiony na czytelny tekst wewnątrz obrazu (napisy, logo, plakaty); od wersji 4.0 model ma otwarte wagi. Ma plan darmowy. Najlepsze dla: grafiki z tekstem, logo, plakaty. [Cennik](https://ideogram.ai/pricing).
 
 **Canva (Magic Studio)** - generowanie obrazów zintegrowane z popularnym narzędziem do projektowania. Ma plan darmowy. Najlepsze dla: marketing, social media, szybkie projekty. [Cennik](https://www.canva.com/pricing/).
 
