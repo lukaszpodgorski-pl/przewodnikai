@@ -120,7 +120,7 @@ AI czasem "halucynowało" klauzule, których nie było w dokumentach. Dlatego we
 
 **Problem:** opisy produktów - większość skopiowana od producenta, słabe SEO, brak unikalności. Przepisanie 5000 produktów ręcznie? Niemożliwe.
 
-**Rozwiązanie:** GPT-4 API (automatyczne generowanie opisów), skrypt Python (batch processing całego katalogu), template prompts (spójna struktura opisów).
+**Rozwiązanie:** API modelu językowego (automatyczne generowanie opisów), skrypt Python (batch processing całego katalogu), template prompts (spójna struktura opisów).
 
 **Prompt template:**
 

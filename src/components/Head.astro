@@ -2,6 +2,7 @@
 import Default from '@astrojs/starlight/components/Head.astro';
 import {
 	SITE_URL,
+	SITE_NAME,
 	absoluteUrl,
 	buildArticle,
 	buildBreadcrumbs,
@@ -52,6 +53,11 @@ const isArticle = wSekcji && segments.length > 1;
 const ogImage = isArticle || isSekcja || isSciezka
 	? `${SITE_URL}/og/${route.id}.png`
 	: `${SITE_URL}/og-default.png`;
+
+// Strona główna ma w kolekcji tytuł "Przewodnik AI", więc doklejenie sufiksu
+// dałoby "Przewodnik AI - Przewodnik AI". Sufiks ma dopowiadać, czyja jest
+// grafika, a nie powtarzać tytuł, który już to mówi.
+const ogImageAlt = data.title === SITE_NAME ? data.title : `${data.title} - ${SITE_NAME}`;
 
 const blocks: object[] = [];
 
@@ -108,7 +114,7 @@ if (faq && faq.length > 0) blocks.push(buildFaqPage(faq));
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content={`${data.title} - Przewodnik AI`} />
+<meta property="og:image:alt" content={ogImageAlt} />
 <meta name="twitter:image" content={ogImage} />
 <link rel="alternate" type="text/plain" href={absoluteUrl('/llms.txt')} />
 

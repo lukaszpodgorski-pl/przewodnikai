@@ -92,7 +92,7 @@ Sieci neuronowe są szczególnie dobre w:
 To właśnie deep learning stoi za największymi przełomami ostatnich lat:
 
 - **GPT i ChatGPT** - modele językowe z miliardami parametrów
-- **DALL-E, Midjourney** - generatory obrazów
+- **GPT Image, Midjourney** - generatory obrazów
 - **AlphaGo** - program, który pokonał mistrzów w Go
 - **Rozpoznawanie mowy** - Siri, Asystent Google, Alexa
 

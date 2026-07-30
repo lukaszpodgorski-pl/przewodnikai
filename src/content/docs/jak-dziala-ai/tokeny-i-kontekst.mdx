@@ -1,6 +1,6 @@
 ---
 title: Tokeny i okno kontekstowe w AI - jak modele przetwarzają tekst
-description: 'Czym są tokeny w AI? Porównanie okien kontekstowych (GPT-4o, Claude, Gemini, DeepSeek), koszty API, tokenizacja polskiego vs. angielskiego.'
+description: 'Czym są tokeny w AI? Porównanie okien kontekstowych (GPT, Claude, Gemini, DeepSeek), koszty API, tokenizacja polskiego vs. angielskiego.'
 sidebar:
   label: 'Tokeny i kontekst'
   order: 6
@@ -37,7 +37,7 @@ import Tokenizacja from '../../../components/Tokenizacja.astro';
 ![Zdanie rozpadające się na małe tokeny-puzzle przepływające przez okno kontekstu](../../../assets/jak-dziala-ai/tokeny-i-kontekst/tokeny-i-kontekst.jpg)
 
 :::note[W skrócie]
-Tokeny to podstawowe jednostki tekstu przetwarzane przez modele AI. Jedno polskie słowo to średnio 1,5-2,5 tokena. Okno kontekstowe modelu (od 8K do 1M tokenów) określa, ile tekstu model może przetworzyć jednocześnie. Koszt korzystania z API modeli jest naliczany za liczbę tokenów - od $0,07 do $75 za milion tokenów wejściowych, w zależności od modelu.
+Tokeny to podstawowe jednostki tekstu przetwarzane przez modele AI. Jedno polskie słowo to średnio 1,5-2,5 tokena. Okno kontekstowe modelu (dziś w czołówce zwykle 1M tokenów) określa, ile tekstu model może przetworzyć jednocześnie. Koszt korzystania z API jest naliczany za liczbę tokenów, a stawki różnią się między modelami o rzędy wielkości - od groszy po kilkadziesiąt dolarów za milion tokenów.
 :::
 
 ## Generowanie tokenów przez AI
@@ -81,22 +81,24 @@ Nie wierz mi na słowo - policz własne zdania. Wklej ten sam tekst po polsku i 
 
 Skala zmiany w tym obszarze robi wrażenie: w ciągu dwóch lat okna kontekstowe urosły ponad 240-krotnie - z 4 096 tokenów w GPT-3.5 (marzec 2023) do 1 000 000 tokenów w modelach, których używasz dziś.
 
-{/* TODO(Łukasz): zweryfikuj aktualne maksymalne okno kontekstowe przed publikacją - tabela poniżej też wymaga odświeżenia */}
-
 {/* TODO(Łukasz): tu zadziałałaby anegdota - kiedy pierwszy raz uderzyłeś w limit okna kontekstowego u siebie albo u klienta? Co się wtedy stało z odpowiedzią modelu? */}
 
 | Model | Producent | Okno kontekstowe | Odpowiednik w tekście |
 | --- | --- | --- | --- |
-| GPT-4o | OpenAI | 128K tokenów | ~96 000 słów (~300 stron) |
-| GPT-4.1 | OpenAI | 1M tokenów | ~750 000 słów (~2 500 stron) |
-| Claude Opus / Sonnet 4 | Anthropic | 200K tokenów | ~150 000 słów (~500 stron) |
-| Gemini 2.5 Pro | Google | 1M tokenów | ~750 000 słów (~2 500 stron) |
-| DeepSeek-V3 | DeepSeek | 128K tokenów | ~96 000 słów (~300 stron) |
+| GPT-5.6 Sol | OpenAI | ~1M tokenów | ~750 000 słów (~2 500 stron) |
+| Claude Opus 5 / Sonnet 5 | Anthropic | 1M tokenów | ~750 000 słów (~2 500 stron) |
+| Gemini 3.1 Pro | Google | 1M tokenów | ~750 000 słów (~2 500 stron) |
+| DeepSeek V4 | DeepSeek | 1M tokenów | ~750 000 słów (~2 500 stron) |
 | Llama 4 Maverick | Meta | 1M tokenów | ~750 000 słów (~2 500 stron) |
+| Llama 4 Scout | Meta | 10M tokenów | ~7,5 mln słów (~25 000 stron) |
 
-<small>Źródła: dokumentacja [OpenAI](https://platform.openai.com/docs/models), [Anthropic](https://docs.anthropic.com/en/docs/about-claude/models), [Google DeepMind](https://ai.google.dev/gemini-api/docs/models), [DeepSeek](https://huggingface.co/deepseek-ai), [Meta AI](https://ai.meta.com/llama/).</small>
+<small>Źródła: dokumentacja [OpenAI](https://developers.openai.com/api/docs/models), [Anthropic](https://platform.claude.com/docs/en/about-claude/models), [Google DeepMind](https://ai.google.dev/gemini-api/docs/models), [DeepSeek](https://huggingface.co/deepseek-ai), [Meta AI](https://ai.meta.com/llama/).</small>
 
-Duże okno kontekstowe nie oznacza jednak idealnej "pamięci" - i to jest miejsce, w którym najczęściej pojawia się nieporozumienie. Badanie ["Lost in the Middle" (Liu i in., 2023)](https://arxiv.org/abs/2307.03172) wykazało, że modele najlepiej przetwarzają informacje na początku i na końcu kontekstu, a gorzej radzą sobie z danymi umieszczonymi w środku. Nowsze modele (Claude 3.5+, GPT-4 Turbo+) znacząco poprawiły to zachowanie, ale efekt nadal występuje.
+:::caution[W aplikacji dostajesz mniej niż w API]
+To rozczarowanie, które spotyka wiele osób: powyższe liczby dotyczą modelu udostępnianego przez API. W samym oknie czatu efektywne okno bywa wyraźnie mniejsze i **zależy od wykupionego planu** - i u OpenAI, i u Google plan darmowy dostaje ułamek tego, co plan najwyższy. Jeśli wklejasz do czatu grubą dokumentację i model "zapomina" jej początek, to zwykle nie wada modelu, tylko limit Twojego planu.
+:::
+
+Duże okno kontekstowe nie oznacza jednak idealnej "pamięci" - i to jest miejsce, w którym najczęściej pojawia się nieporozumienie. Badanie ["Lost in the Middle" (Liu i in., 2023)](https://arxiv.org/abs/2307.03172) wykazało, że modele najlepiej przetwarzają informacje na początku i na końcu kontekstu, a gorzej radzą sobie z danymi umieszczonymi w środku. Kolejne generacje modeli znacząco poprawiły to zachowanie, ale efekt nadal występuje - i tym wyraźniej, im bliżej górnej granicy okna pracujesz.
 
 ## Proces generowania tekstu krok po kroku
 
@@ -109,7 +111,7 @@ Model AI tworzy odpowiedzi w sekwencyjnym procesie autoregresyjnym - przewiduje 
 5. **Próbkowanie** - zamiast zawsze wybierać najbardziej prawdopodobny token, model stosuje techniki takie jak _temperature_ i _top-p_, wprowadzając element różnorodności
 6. **Iteracja** - wygenerowany token jest dodawany do kontekstu, a proces powtarza się aż do napotkania tokenu końca sekwencji (EOS) lub osiągnięcia limitu
 
-Cały ten cykl powtarza się setki lub tysiące razy w trakcie generowania jednej odpowiedzi. Model GPT-4 wykonuje około 30-100 tokenów na sekundę (w zależności od obciążenia serwera), co oznacza, że średnia odpowiedź (300-500 tokenów) generowana jest w 5-15 sekund.
+Cały ten cykl powtarza się setki lub tysiące razy w trakcie generowania jednej odpowiedzi. Typowy model generuje rzędu kilkudziesięciu tokenów na sekundę (zależnie od modelu i obciążenia serwera), co oznacza, że średnia odpowiedź (300-500 tokenów) powstaje w kilka do kilkunastu sekund.
 
 ## Temperature i kontrola generowania
 
@@ -130,21 +132,21 @@ Tworzenie sensownych, wieloakapitowych odpowiedzi wymaga utrzymania spójności 
 
 ## Koszty tokenów - cennik modeli AI
 
-Dostawcy API modeli językowych rozliczają się za liczbę przetworzonych tokenów. Cena zależy od modelu, a tokeny wejściowe (prompt) są zwykle tańsze od wyjściowych (odpowiedź). Patrz tu na proporcje między modelami, nie na bezwzględne kwoty - te drugie zmieniają się kilka razy w roku, pierwsze utrzymują się w podobnych relacjach:
+Dostawcy API modeli językowych rozliczają się za liczbę przetworzonych tokenów. Cena zależy od modelu, a tokeny wejściowe (prompt) są zwykle tańsze od wyjściowych (odpowiedź).
 
-| Model | Input (za 1M tokenów) | Output (za 1M tokenów) |
+Nie podaję tu stawek, bo zmieniają się kilka razy w roku - a to i tak nie one są najważniejsze. Ważne są **proporcje**, bo te trzymają się latami i to one decydują o Twoim rachunku:
+
+| Zależność | Typowa krotność | Co z tego wynika |
 | --- | --- | --- |
-| GPT-4o | $2,50 | $10,00 |
-| GPT-4o mini | $0,15 | $0,60 |
-| Claude Sonnet 4 | $3,00 | $15,00 |
-| Claude Haiku 3.5 | $0,80 | $4,00 |
-| Gemini 2.5 Pro | $1,25 | $10,00 |
-| DeepSeek-V3 | $0,27 | $1,10 |
+| Wyjście kontra wejście (ten sam model) | ok. 4-5x drożej | Długa odpowiedź kosztuje więcej niż długie pytanie |
+| Model flagowy kontra ekonomiczny (ten sam dostawca) | ok. 15-20x drożej | Największa oszczędność to dobór modelu do zadania |
+| Model zachodni kontra otwartowagowy | nawet kilkanaście razy drożej | Do prostych zadań otwarte modele bywają wystarczające |
+| Polski tekst kontra angielski (ta sama treść) | ok. 1,4-1,6x więcej tokenów | Za tę samą treść po polsku zapłacisz więcej |
 
-<small>Źródła: oficjalne cenniki [OpenAI](https://openai.com/api/pricing/), [Anthropic](https://www.anthropic.com/pricing), [Google](https://ai.google.dev/pricing), [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing). Ceny mogą się zmieniać.</small>
+<small>Aktualne stawki sprawdzisz w cennikach: [OpenAI](https://developers.openai.com/api/docs/pricing), [Anthropic](https://claude.com/pricing), [Google](https://ai.google.dev/pricing), [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing). Więcej o modelach rozliczania w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).</small>
 
 :::tip[Praktyczna wskazówka]
-Ponieważ polski tekst generuje o 40-60% więcej tokenów niż angielski, koszty API dla polskojęzycznych aplikacji są proporcjonalnie wyższe. Przy dużej skali warto rozważyć: (1) wysyłanie instrukcji systemowych po angielsku, a treści użytkownika po polsku, lub (2) użycie bardziej ekonomicznych modeli (GPT-4o mini, DeepSeek-V3) do zadań niewymagających najwyższej jakości.
+Ponieważ polski tekst generuje o 40-60% więcej tokenów niż angielski, koszty API dla polskojęzycznych aplikacji są proporcjonalnie wyższe. Przy dużej skali warto rozważyć: (1) wysyłanie instrukcji systemowych po angielsku, a treści użytkownika po polsku, lub (2) użycie tańszego modelu z rodziny (Terra, Luna, Haiku, Flash) do zadań niewymagających najwyższej jakości.
 :::
 
 ## Dlaczego zrozumienie tokenów jest ważne?
@@ -161,7 +163,7 @@ Znajomość mechanizmów tokenizacji to nie tylko ciekawostka techniczna:
 
 - Czym są tokeny i jak algorytm BPE dzieli tekst na jednostki przetwarzane przez modele AI
 - Dlaczego polski tekst wymaga 40-60% więcej tokenów niż angielski i jak to wpływa na koszty
-- Jak porównać okna kontekstowe modeli - od 128K (GPT-4o) do 1M tokenów (GPT-4.1, Gemini 2.5 Pro, Llama 4 Maverick)
+- Jak porównać okna kontekstowe modeli - dziś standardem w czołówce jest 1 mln tokenów, a w aplikacji dostajesz tyle, na ile pozwala Twój plan
 - Jak temperature i top-p kontrolują kreatywność i spójność generowanego tekstu
 - Ile kosztują tokeny w API i jak optymalizować wydatki
 

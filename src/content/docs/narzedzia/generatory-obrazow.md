@@ -1,13 +1,13 @@
 ---
-title: Generatory obrazów AI - Midjourney, DALL-E, Stable Diffusion
-description: Przegląd popularnych generatorów obrazów AI - Midjourney, DALL-E, Stable Diffusion, Leonardo.ai. Porównanie jakości, cen i zastosowań.
+title: Generatory obrazów AI - Midjourney, GPT Image, Stable Diffusion
+description: Przegląd popularnych generatorów obrazów AI - Midjourney, GPT Image, Stable Diffusion, FLUX, Leonardo.ai. Porównanie jakości, dostępu i zastosowań.
 sidebar:
   label: 'Generatory obrazów'
   order: 3
 educationalLevel: Beginner
 teaches:
   - Jak działają generatory obrazów AI
-  - Porównanie Midjourney, DALL-E i Stable Diffusion
+  - Porównanie Midjourney, GPT Image i Stable Diffusion
   - Jak tworzyć obrazy z AI
 about:
   - name: Generatywna sztuczna inteligencja
@@ -26,59 +26,77 @@ mentions:
     type: SoftwareApplication
 faq:
   - q: Który generator obrazów AI jest najlepszy?
-    a: Zależy od zastosowania. Midjourney ma wyrazisty styl artystyczny, DALL-E jest zintegrowany z ChatGPT i dobrze trzyma się instrukcji tekstowych, a Stable Diffusion jest darmowy i daje pełną kontrolę nad procesem.
+    a: Zależy od zastosowania. Midjourney ma wyrazisty styl artystyczny, GPT Image w ChatGPT dobrze trzyma się instrukcji tekstowych i jest najłatwiejszy na start, a Stable Diffusion i FLUX dają pełną kontrolę i mogą działać lokalnie.
+  - q: Czy DALL-E jeszcze działa?
+    a: Nie. OpenAI wycofało DALL-E 2 i DALL-E 3 - modele zniknęły z API w maju 2026. Ich następcą jest linia GPT Image, dostępna w ChatGPT jako wbudowane generowanie obrazów.
 ---
 
 ![Małe ziarno tekstu rozkwita w namalowany obraz na sztaludze - generatory obrazów AI](../../../assets/narzedzia/generatory-obrazow/generatory-obrazow.jpg)
 
-<!-- TODO(Łukasz): ceny i wersje w tym pliku pochodzą z 2024/2025 - zweryfikuj u dostawców przed publikacją -->
-
 ## Tworzenie obrazów ze słów
 
-Generatory obrazów AI to narzędzia, które tworzą obrazy na podstawie opisów tekstowych. Wystarczy napisać, co chcesz zobaczyć, a AI wygeneruje obraz. Pokażę Ci trzy narzędzia, o które pytają mnie najczęściej, realne różnice między nimi oraz to, co w nich frustruje początkujących - bo o tym w opisach producentów nie przeczytasz.
+Generatory obrazów AI to narzędzia, które tworzą obrazy na podstawie opisów tekstowych. Wystarczy napisać, co chcesz zobaczyć, a AI wygeneruje obraz. Pokażę Ci narzędzia, o które pytają mnie najczęściej, realne różnice między nimi oraz to, co w nich frustruje początkujących - bo o tym w opisach producentów nie przeczytasz.
+
+:::note[Dlaczego nie znajdziesz tu cen]
+Modele i plany w tej kategorii zmieniają się szczególnie szybko. Przy każdym narzędziu piszę więc, czy ma plan darmowy, i linkuję do cennika u dostawcy. Za co się w ogóle płaci przy AI, tłumaczę w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).
+:::
 
 ## Midjourney
 
-**Midjourney** to jeden z najpopularniejszych generatorów obrazów, słynący z artystycznej jakości i estetyki.
+**Midjourney** to jeden z najpopularniejszych generatorów obrazów, słynący z artystycznej jakości i estetyki. Aktualna generacja modelu to linia V8.
 
-**Dostęp i ceny:** Basic ($10/miesiąc, ~200 obrazów), Standard ($30/miesiąc, 15h szybkiego generowania), Pro ($60/miesiąc, 30h, tryb stealth), Mega ($120/miesiąc, 60h).
+**Dostęp:** aplikacja webowa na midjourney.com, opcjonalnie także Discord. Nie ma planu darmowego. [Cennik](https://www.midjourney.com/plans).
 
-**Jak używać:** Midjourney działa przez Discord. Wpisujesz `/imagine` i opisujesz, co chcesz zobaczyć.
+:::note[Discord nie jest już obowiązkowy]
+Przez lata Midjourney działało wyłącznie przez Discorda i to zniechęcało najwięcej osób. Dziś głównym interfejsem jest zwykła strona internetowa, na którą zalogujesz się kontem Google. Discord nadal działa, ale nie musisz go instalować.
+:::
+
+**Jak używać:** opisujesz obraz w oknie promptu, dostajesz cztery propozycje, wybraną powiększasz lub przerabiasz w wariantach. Plan kupuje w praktyce czas obliczeniowy, a nie liczbę obrazów.
 
 :::tip[Zalety]
-Bardzo dopracowane estetycznie kadry, rozpoznawalny styl, aktywna społeczność.
+Bardzo dopracowane estetycznie kadry, rozpoznawalny styl, aktywna społeczność, generowanie krótkiego wideo z obrazu.
 :::
 
 :::caution[Wady]
-Wymaga Discorda, brak darmowej wersji, trudniejsze precyzyjne kontrolowanie.
+Brak darmowej wersji, trudniejsze precyzyjne kontrolowanie szczegółów, styl potrafi "przykryć" Twoje intencje.
 :::
 
-## DALL-E 3 (OpenAI)
+## GPT Image (OpenAI)
 
-**DALL-E 3** to generator obrazów od OpenAI, zintegrowany z ChatGPT.
+**GPT Image** to generator obrazów wbudowany w ChatGPT - następca wycofanego DALL-E. Aktualna wersja to GPT Image 2.
 
-**Dostęp:** ChatGPT Plus ($20/miesiąc, w ramach subskrypcji), Microsoft Copilot (darmowy, ograniczone użycie), API ($0.04-0.12 za obraz).
+**Dostęp:** w ChatGPT we wszystkich planach, w darmowym z ograniczeniami; także przez API. [Cennik](https://openai.com/chatgpt/pricing/).
 
-**Kluczowe cechy:** świetne rozumienie promptów w języku naturalnym, dokładne podążanie za instrukcjami, dobry tekst na obrazach, integracja z ChatGPT (możesz prowadzić rozmowę o obrazie).
+**Kluczowe cechy:** świetne rozumienie promptów w języku naturalnym, dokładne podążanie za instrukcjami, dobry tekst na obrazach, integracja z rozmową (możesz poprosić o poprawkę zwykłym zdaniem, zamiast pisać prompt od nowa).
+
+:::caution[DALL-E to już historia]
+Jeśli w poradnikach albo w starszych artykułach widzisz "DALL-E 3", masz do czynienia z nieaktualną treścią. OpenAI ogłosiło wycofanie DALL-E 2 i DALL-E 3 w listopadzie 2025, a w maju 2026 modele zniknęły z API. W ChatGPT zastąpiła je linia GPT Image.
+:::
 
 :::tip[Zalety]
-Dokładnie realizuje złożone polecenia opisane zwykłym językiem, łatwy dostęp (ChatGPT), dobry tekst w obrazach.
+Dokładnie realizuje złożone polecenia opisane zwykłym językiem, najniższy próg wejścia ze wszystkich narzędzi w tym rozdziale, dobry tekst w obrazach.
 :::
 
 :::caution[Wady]
-Mniej artystyczny niż Midjourney, ograniczenia treści, wymaga subskrypcji.
+Mniej artystyczny niż Midjourney, ograniczenia treści, w planie darmowym wolniejszy i limitowany.
 :::
 
-## Stable Diffusion
+## Stable Diffusion i FLUX
 
-**Stable Diffusion** to open-source'owy generator, który możesz uruchomić lokalnie na swoim komputerze.
+**Stable Diffusion** to open-source'owy generator, który możesz uruchomić lokalnie na swoim komputerze. Aktualna wersja to Stable Diffusion 3.5 (w wariantach Large, Turbo i Medium).
 
-**Dostęp:** lokalnie (darmowy, wymaga dobrej karty graficznej), online (przez platformy jak DreamStudio, Leonardo.ai).
+**FLUX** od Black Forest Labs to dziś druga - a często mocniejsza - opcja w świecie otwartych modeli obrazu. Rozlicza się za wygenerowany obraz, bez abonamentu. [Cennik](https://bfl.ai/pricing).
 
-**Zalety modelu open-source:** pełna kontrola i prywatność, możliwość dostrojenia do swoich potrzeb, brak ograniczeń treści (lokalna wersja), tysiące modeli społeczności (Civitai).
+**Dostęp:** lokalnie (darmowy, wymaga dobrej karty graficznej) albo online przez platformy pośredniczące.
+
+**Zalety modelu open-source:** pełna kontrola i prywatność, możliwość dostrojenia do swoich potrzeb, brak ograniczeń treści w wersji lokalnej, tysiące modeli społeczności.
+
+:::caution[Uwaga na fałszywe wersje]
+W sieci krążą artykuły o "Stable Diffusion 4". Taki model nie istnieje - to powielana dezinformacja. Najnowsza oficjalna wersja Stability AI to Stable Diffusion 3.5. Zanim uwierzysz w numer wersji, sprawdź go na stronie producenta.
+:::
 
 :::tip[Zalety]
-Darmowy, prywatny, ogromna elastyczność, aktywna społeczność.
+Darmowy lokalnie, prywatny, ogromna elastyczność, aktywna społeczność.
 :::
 
 :::caution[Wady]
@@ -87,25 +105,30 @@ Wymaga wiedzy technicznej, potrzebny mocny komputer, krzywa uczenia.
 
 ## Inne popularne generatory
 
-**Leonardo.ai** - przyjazna platforma oparta na Stable Diffusion z darmowym planem. Cena: darmowy (150 kredytów/dzień) / od $12/miesiąc. Najlepsze dla: początkujący, concept art, game design.
+**Gemini (Google)** - generowanie obrazów wbudowane w chatbota Google, pod nazwą Nano Banana. Ma plan darmowy. Najlepsze dla: szybkie obrazy bez zakładania kolejnego konta. [Cennik](https://gemini.google/subscriptions/).
 
-**Adobe Firefly** - generator od Adobe, zintegrowany z Photoshop i innymi aplikacjami Creative Cloud. Cena: w ramach subskrypcji Adobe. Najlepsze dla: profesjonaliści używający Adobe, komercyjne użycie.
+**Leonardo.ai** - przyjazna platforma z darmowym planem, od 2024 roku należąca do Canvy. Obok własnych modeli udostępnia modele innych dostawców. Najlepsze dla: początkujący, concept art, game design. [Cennik](https://leonardo.ai/pricing/).
 
-**Ideogram** - generator nastawiony na czytelny tekst wewnątrz obrazu (napisy, logo, plakaty). Cena: darmowy (25 promptów/dzień) / od $7/miesiąc. Najlepsze dla: grafiki z tekstem, logo, plakaty.
+**Adobe Firefly** - generator od Adobe zintegrowany z Creative Cloud, dziś raczej wielomodelowe studio niż pojedynczy generator. Ma plan darmowy. Najlepsze dla: profesjonaliści używający Adobe, komercyjne użycie. [Cennik](https://firefly.adobe.com/pricing).
 
-**Canva AI / Magic Studio** - generowanie obrazów zintegrowane z popularnym narzędziem do projektowania. Cena: w ramach Canva Pro ($12.99/miesiąc). Najlepsze dla: marketing, social media, szybkie projekty.
+**Ideogram** - generator nastawiony na czytelny tekst wewnątrz obrazu (napisy, logo, plakaty); od wersji 4.0 model ma otwarte wagi. Ma plan darmowy. Najlepsze dla: grafiki z tekstem, logo, plakaty. [Cennik](https://ideogram.ai/pricing).
+
+**Canva (Magic Studio)** - generowanie obrazów zintegrowane z popularnym narzędziem do projektowania. Ma plan darmowy. Najlepsze dla: marketing, social media, szybkie projekty. [Cennik](https://www.canva.com/pricing/).
 
 ## Porównanie generatorów
 
-| Generator | Jakość | Łatwość | Cena startu | Najlepsze dla |
+| Generator | Jakość | Łatwość | Plan darmowy | Najlepsze dla |
 | --- | --- | --- | --- | --- |
-| **Midjourney** | Bardzo dobra (artystyczna) | Średnia | $10/mies | Sztuka, estetyka |
-| **DALL-E 3** | Bardzo dobra | Bardzo łatwa | $20/mies* | Ogólne, precyzja |
-| **Stable Diffusion** | Dobra-Świetna | Trudna | Darmowy | Kontrola, prywatność |
-| **Leonardo.ai** | Dobra | Łatwa | Darmowy | Początkujący |
-| **Ideogram** | Dobra | Łatwa | Darmowy | Tekst na obrazach |
+| **Midjourney** | Bardzo dobra (artystyczna) | Średnia | Nie | Sztuka, estetyka |
+| **GPT Image (ChatGPT)** | Bardzo dobra | Bardzo łatwa | Tak (z limitami) | Ogólne, precyzja |
+| **Gemini (Nano Banana)** | Bardzo dobra | Bardzo łatwa | Tak | Szybkie obrazy |
+| **Stable Diffusion / FLUX** | Dobra-Świetna | Trudna | Tak (lokalnie) | Kontrola, prywatność |
+| **Leonardo.ai** | Dobra | Łatwa | Tak | Początkujący |
+| **Ideogram** | Dobra | Łatwa | Tak | Tekst na obrazach |
 
-<small>*DALL-E 3 w ramach ChatGPT Plus</small>
+:::note[Granica obraz-wideo się zaciera]
+Warto o tym wiedzieć, wybierając narzędzie na dłużej: te same platformy generują dziś obraz i wideo, a część z nich hostuje modele konkurencji obok własnych. Midjourney animuje obrazy, Google ma Veo, a Runway czy Adobe udostępniają cudze modele u siebie. Narzędzia do wideo opisuję w [Specjalistycznych narzędziach AI](/narzedzia/specjalistyczne/).
+:::
 
 ## Podstawy pisania promptów do obrazów
 
@@ -135,9 +158,9 @@ Status prawny obrazów AI jest wciąż niejasny. Większość platform pozwala n
 
 ## Podsumowanie
 
-- **Midjourney** - dopracowana estetyka, dostęp przez Discord
-- **DALL-E 3** - wierne odwzorowanie złożonych promptów, w ChatGPT
-- **Stable Diffusion** - open-source, pełna kontrola, darmowy lokalnie
+- **Midjourney** - dopracowana estetyka, dziś dostępny przez zwykłą stronę, bez planu darmowego
+- **GPT Image** - wierne odwzorowanie złożonych promptów, w ChatGPT; następca DALL-E
+- **Stable Diffusion / FLUX** - open-source, pełna kontrola, darmowe lokalnie
 - **Leonardo.ai** - przyjazny dla początkujących, darmowy plan
 - **Ideogram** - czytelny tekst wewnątrz obrazu
 
@@ -146,9 +169,10 @@ Status prawny obrazów AI jest wciąż niejasny. Większość platform pozwala n
 
 :::note[Teraz wiesz]
 
-- Czym różnią się Midjourney (artystyczna jakość), DALL-E 3 (precyzja promptów) i Stable Diffusion (open-source, pełna kontrola)
+- Czym różnią się Midjourney (artystyczna jakość), GPT Image (precyzja promptów) i Stable Diffusion z FLUX-em (open-source, pełna kontrola)
+- Że DALL-E został wycofany, a jego następcą w ChatGPT jest linia GPT Image
 - Jak budować skuteczne prompty do obrazów: temat, styl, detale, oświetlenie, kolorystyka i jakość
 - Na co uważać pod względem praw autorskich przy komercyjnym wykorzystaniu obrazów generowanych przez AI
 
-**Następny krok:** [Narzędzia AI do pisania](/narzedzia/pisanie/) - poznasz Jasper, Copy.ai, Writesonic i narzędzia SEO, które pomogą Ci tworzyć treści szybciej i lepiej.
+**Następny krok:** [Narzędzia AI do pisania](/narzedzia/pisanie/) - poznasz narzędzia, które pomogą Ci tworzyć treści szybciej i lepiej.
 :::

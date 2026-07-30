@@ -35,13 +35,13 @@ faq:
   - q: Czym jest LLM?
     a: LLM (Large Language Model) to duży model językowy - system AI wytrenowany na ogromnych zbiorach tekstu, który potrafi rozumieć i generować tekst w języku naturalnym.
   - q: Który model językowy jest najlepszy?
-    a: Nie ma jednego najlepszego modelu - zależy od zastosowania. GPT-4 i Claude wyróżniają się w rozumowaniu, Gemini w pracy z danymi Google, a modele open source oferują pełną kontrolę.
+    a: Nie ma jednego najlepszego modelu - zależy od zastosowania. GPT i Claude wyróżniają się w rozumowaniu i pracy z kodem, Gemini w pracy z danymi Google, a modele o otwartych wagach dają pełną kontrolę i możliwość uruchomienia na własnym sprzęcie.
 ---
 
 ![Wielka świetlista kula utkana z tysięcy słów - duży model językowy](../../../assets/jak-dziala-ai/modele-jezykowe/modele-jezykowe.jpg)
 
 :::note[W skrócie]
-Duże modele językowe (LLM) to systemy AI wytrenowane na bilionach słów, które przewidują kolejne tokeny w tekście. Architektura Transformer (2017) umożliwiła skalowanie do setek miliardów parametrów. Na rynku dominują GPT-4.1/o3 (OpenAI), Claude Opus/Sonnet 4 (Anthropic), Gemini 2.5 (Google), Llama 4 (Meta) i DeepSeek-V3. Modele osiągają wyniki bliskie ekspertom w testach prawniczych, medycznych i programistycznych.
+Duże modele językowe (LLM) to systemy AI wytrenowane na bilionach słów, które przewidują kolejne tokeny w tekście. Architektura Transformer (2017) umożliwiła skalowanie do setek miliardów parametrów. Na rynku dominują GPT-5.6 (OpenAI), Claude Opus 5 / Sonnet 5 / Fable 5 (Anthropic), Gemini 3.1 Pro (Google) oraz otwartowagowe DeepSeek V4 i Llama 4. Modele osiągają wyniki bliskie ekspertom w testach prawniczych, medycznych i programistycznych.
 :::
 
 ## Czym są modele językowe?
@@ -98,40 +98,47 @@ Anthropic rozwinął tę metodologię w **RLAIF** (Constitutional AI), gdzie oce
 | GPT-4 | 2023 | 8K / 128K | Multimodalny (tekst + obraz), skok jakości rozumowania |
 | GPT-4o | 2024 | 128K | Natywna multimodalność (tekst, obraz, audio), szybszy i tańszy |
 | o1 / o3 | 2024-2025 | 200K | Modele "rozumujące" - wewnętrzny chain-of-thought przed odpowiedzią |
-| GPT-4.1 | 2025 | 1M | Następca GPT-4o, milionowe okno kontekstowe |
+| GPT-5 | 2025 | 400K | Zunifikowanie linii klasycznej i rozumującej |
+| GPT-5.6 | 2026 | ~1M | Aktualna generacja: Sol (flagowy), Terra (zbalansowany), Luna (ekonomiczny) |
 
-<small>Źródło: [OpenAI Models Documentation](https://platform.openai.com/docs/models)</small>
+<small>Źródło: [OpenAI Models Documentation](https://developers.openai.com/api/docs/models). Modele z pierwszych czterech wierszy zostały już wycofane z ChatGPT.</small>
 
 ### Claude (Anthropic)
 
-**Claude** to seria modeli od [Anthropic](https://www.anthropic.com), firmy założonej przez byłych pracowników OpenAI (Daria i Danielę Amodei). Wyróżnia się naciskiem na bezpieczeństwo (podejście Constitutional AI) oraz dużym oknem kontekstowym: Claude 3 Haiku (2024, szybki i ekonomiczny), Claude 3.5 Sonnet (2024, przełomowy stosunek jakości do ceny, lider w kodowaniu), Claude Sonnet 4 / Opus 4 (2025, 200K kontekst, zaawansowane rozumowanie).
+**Claude** to seria modeli od [Anthropic](https://claude.com), firmy założonej przez byłych pracowników OpenAI (Dario i Danielę Amodei). Wyróżnia się naciskiem na bezpieczeństwo (podejście Constitutional AI) oraz bardzo dużym oknem kontekstowym. Aktualna, piąta generacja to Claude Opus 5, Claude Sonnet 5 i Claude Fable 5 - wszystkie z oknem kontekstu **1 mln tokenów**. Najmniejszy i najtańszy model rodziny to Claude Haiku 4.5.
 
-<small>Źródło: [Anthropic Models Documentation](https://docs.anthropic.com/en/docs/about-claude/models)</small>
+<small>Źródło: [Anthropic Models Documentation](https://platform.claude.com/docs/en/about-claude/models)</small>
 
 ### Gemini (Google DeepMind)
 
-**Gemini** to odpowiedź Google na GPT. Natywnie multimodalny - trenowany na tekście, obrazach, audio i wideo jednocześnie. Wyróżnia się dużym oknem kontekstowym: Gemini 2.0 Flash (2025, szybki model do zastosowań masowych, 1M kontekst), Gemini 2.5 Pro (2025, flagowy model z "myśleniem", 1M kontekst).
+**Gemini** to odpowiedź Google na GPT. Natywnie multimodalny - trenowany na tekście, obrazach, audio i wideo jednocześnie. Wyróżnia się dużym oknem kontekstowym. Aktualna linia to generacja 3.x: flagowy Gemini 3.1 Pro (z trybem głębokiego rozumowania Deep Think) oraz szybkie i tańsze modele Flash, z oknem kontekstu 1 mln tokenów.
 
 <small>Źródło: [Google AI Models Documentation](https://ai.google.dev/gemini-api/docs/models)</small>
 
 ### DeepSeek (Chiny)
 
-**DeepSeek** to chiński startup, który w styczniu 2025 roku zszokował branżę modelem [DeepSeek-R1](https://arxiv.org/abs/2501.12948) - osiągającym wyniki na poziomie GPT-4o i o1 przy ułamku kosztów treningu (szacunkowo $5,6 mln vs. setki milionów dolarów u OpenAI). Wykorzystuje innowacyjną architekturę Mixture of Experts (MoE): DeepSeek-V3 (671 mld parametrów, MoE, 128K kontekst) i DeepSeek-R1 (model rozumujący, konkurencyjny z o1).
+**DeepSeek** to chiński startup, który w styczniu 2025 roku zszokował branżę modelem [DeepSeek-R1](https://arxiv.org/abs/2501.12948) - osiągającym wyniki na poziomie ówczesnej czołówki przy ułamku kosztów treningu (szacunkowo 5,6 mln USD wobec setek milionów dolarów u konkurencji). Wykorzystuje architekturę Mixture of Experts (MoE), w której na każde zapytanie uruchamia się tylko część modelu. Aktualna generacja to **DeepSeek V4** (kwiecień 2026) w wariantach Pro i Flash, z oknem kontekstu 1 mln tokenów i wagami udostępnionymi publicznie na licencji MIT.
 
-### Modele open-source
+### Modele o otwartych wagach
 
-Społeczność open-source rozwija się dynamicznie: **Llama 4** (Meta, 2025) - Maverick (400 mld param., MoE) i Scout, 1M kontekst, [dostępny publicznie](https://ai.meta.com/llama/); **Mistral 3** (Mistral AI, 2025) - flagowy Mistral Large 3 i kompaktowe Ministral 3, wydajne europejskie modele [open-weight na licencji Apache 2.0](https://mistral.ai/news/mistral-3/); **Qwen 2.5** (Alibaba) - silny w wielojęzyczności i programowaniu; **Phi-4** (Microsoft) - kompaktowy model z konkurencyjną wydajnością. W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
+To obszar, w którym w ostatnim roku sporo się przestawiło - i warto wiedzieć, w którą stronę. **DeepSeek V4** (licencja MIT) i modele **Mistral AI** - Mistral Large 3, Small 4 oraz kompaktowa rodzina Ministral 3 na [licencji Apache 2.0](https://mistral.ai/news/mistral-3/) - są dziś w pełni otwarte. **Llama 4** (Meta, 2025) w wariantach Scout i Maverick nadal jest [dostępna publicznie](https://ai.meta.com/llama/), ale to ostatnia otwarta generacja Meta: nowa flagowa linia firmy jest zamknięta i dostępna wyłącznie przez API. Podobnie przesunęła się Alibaba - mniejsze modele **Qwen** wychodzą na Apache 2.0, ale flagowce już nie. **Phi-4** (Microsoft) pozostaje otwarty na licencji MIT.
+
+W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
+
+:::note[Uwaga na słowo "otwarty"]
+"Otwarte wagi" nie zawsze znaczy "otwarte oprogramowanie". Licencje Apache 2.0 i MIT są w pełni liberalne, ale część modeli - w tym Llama - wychodzi na licencji społecznościowej z ograniczeniami, której organizacja Open Source Initiative nie uznaje za open source. Jeśli budujesz na tym produkt komercyjny, przeczytaj licencję zamiast ufać etykiecie.
+:::
 
 ## Porównanie czołowych modeli
 
-| Model | Producent | Kontekst | Open-source | Mocne strony |
+| Model | Producent | Kontekst | Otwarte wagi | Mocne strony |
 | --- | --- | --- | --- | --- |
-| **GPT-4o / 4.1** | OpenAI | 128K / 1M | Nie | Wszechstronność, multimodalność, ekosystem |
-| **o3** | OpenAI | 200K | Nie | Zaawansowane rozumowanie, matematyka, nauka |
-| **Claude Opus 4** | Anthropic | 200K | Nie | Bezpieczeństwo, coding, długie dokumenty |
-| **Gemini 2.5 Pro** | Google | 1M | Nie | Największe okno, integracja Google, wideo |
-| **DeepSeek-V3** | DeepSeek | 128K | Tak | Niska cena API, MoE, wydajność |
-| **Llama 4 Maverick** | Meta | 1M | Tak | Darmowy, MoE, do wdrożeń on-premise |
+| **GPT-5.6 Sol** | OpenAI | ~1M | Nie | Wszechstronność, multimodalność, ekosystem |
+| **Claude Opus 5** | Anthropic | 1M | Nie | Bezpieczeństwo, coding, długie dokumenty |
+| **Claude Fable 5** | Anthropic | 1M | Nie | Najtrudniejsze zadania, głębokie rozumowanie |
+| **Gemini 3.1 Pro** | Google | 1M | Nie | Integracja Google, multimodalność, wideo |
+| **DeepSeek V4** | DeepSeek | 1M | Tak (MIT) | Niska cena API, MoE, wydajność |
+| **Llama 4 Maverick** | Meta | 1M | Tak (z ograniczeniami) | Darmowy, MoE, do wdrożeń on-premise |
 
 <small>Ranking oparty na [LMSYS Chatbot Arena](https://lmarena.ai/) (niezależny benchmark oparty na głosowaniu użytkowników) oraz oficjalnej dokumentacji producentów.</small>
 
@@ -139,7 +146,7 @@ Na co tu naprawdę patrzeć: na kolumny "Kontekst" i "Mocne strony", a nie na ko
 
 ## Co potrafią modele językowe?
 
-Możliwości LLM systematycznie rosną. W 2024 r. GPT-4 zdał egzamin adwokacki (bar exam) plasując się w top 10% zdających ([OpenAI, 2023](https://arxiv.org/abs/2303.08774)). Gemini Ultra uzyskał wynik przewyższający ludzkich ekspertów na benchmarku MMLU (57 dyscyplin akademickich). Kluczowe obszary zastosowań:
+Możliwości LLM systematycznie rosną. Już w 2023 r. GPT-4 zdał egzamin adwokacki (bar exam), plasując się w top 10% zdających ([OpenAI, 2023](https://arxiv.org/abs/2303.08774)). W tym samym roku Gemini 1.0 Ultra jako pierwszy model przekroczył wynik ludzkich ekspertów na benchmarku MMLU (57 dyscyplin akademickich). Kluczowe obszary zastosowań:
 
 - **Generowanie tekstu** - artykuły, e-maile, raporty, kreatywne pisanie, streszczenia dokumentów
 - **Analiza i zrozumienie** - sentyment, ekstrakcja danych, klasyfikacja, podsumowywanie
@@ -164,13 +171,13 @@ Radzę zacząć od pytania o zadanie, a nie o nazwę modelu. Wybór zależy od t
 
 | Potrzeba | Rekomendowany model | Dlaczego |
 | --- | --- | --- |
-| Ogólne zadania tekstowe | GPT-4o / Claude Sonnet 4 | Najlepsza wszechstronność |
-| Analiza długich dokumentów | Claude Opus 4 / Gemini 2.5 Pro | 200K-1M kontekst |
-| Praca z obrazami/wideo | GPT-4o / Gemini 2.5 | Natywna multimodalność |
-| Programowanie | Claude Sonnet 4 / GPT-4o | Liderzy w benchmarkach kodowania |
-| Zaawansowana matematyka/nauka | o3 / Gemini 2.5 Pro (thinking) | Modele rozumujące |
-| Ograniczony budżet API | DeepSeek-V3 / GPT-4o mini | Najniższy koszt za token |
-| Prywatność / on-premise | Llama 4 / Mistral 3 | Open-source, pełna kontrola |
+| Ogólne zadania tekstowe | GPT-5.6 / Claude Sonnet 5 | Najlepsza wszechstronność |
+| Analiza długich dokumentów | Claude Opus 5 / Gemini 3.1 Pro | Milionowe okno kontekstu |
+| Praca z obrazami/wideo | GPT-5.6 / Gemini 3.1 Pro | Natywna multimodalność |
+| Programowanie | Claude Sonnet 5 / GPT-5.6 | Liderzy w benchmarkach kodowania |
+| Zaawansowana matematyka/nauka | Claude Fable 5 / Gemini 3.1 Deep Think | Modele rozumujące |
+| Ograniczony budżet API | DeepSeek V4 / modele ekonomiczne | Najniższy koszt za token |
+| Prywatność / on-premise | Llama 4 / Mistral | Otwarte wagi, pełna kontrola |
 
 Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wystarczy jeden model z górnej półki - do dobierania narzędzia pod konkretne zadanie wrócisz wtedy, gdy zaczniesz uderzać w jego ograniczenia.
 
@@ -185,7 +192,7 @@ Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wyst
 :::note[Teraz wiesz]
 
 - Jak działają LLM - przewidują kolejne tokeny dzięki architekturze Transformer i mechanizmowi uwagi, a RLHF czyni je pomocnymi asystentami
-- Jakie modele dominują na rynku - GPT-4.1, Claude 4, Gemini 2.5, DeepSeek-V3, Llama 4 - i czym się różnią
+- Jakie modele dominują na rynku - GPT-5.6, Claude 5, Gemini 3.1, DeepSeek V4, Llama 4 - i czym się różnią
 - Jakie są realne ograniczenia LLM - halucynacje (3-15%), ograniczone okno kontekstowe, brak wiedzy po dacie treningu
 - Jak dobrać model do zadania - od analizy dokumentów (Claude/Gemini) po coding (Claude/GPT) i rozumowanie (o3/Gemini)
 

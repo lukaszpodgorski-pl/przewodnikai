@@ -92,12 +92,12 @@ Ten podział przyda Ci się na co dzień częściej niż oba poprzednie - to nim
 | **AI wizualna** (Computer Vision) | Rozpoznawanie obrazów, wykrywanie obiektów, analiza wideo | Face ID, diagnostyka medyczna, autonomiczne pojazdy |
 | **AI językowa** (NLP) | Przetwarzanie i generowanie tekstu, tłumaczenia, chatboty | ChatGPT, DeepL, asystenci głosowi |
 | **AI dźwiękowa** (Speech/Audio) | Rozpoznawanie mowy, synteza głosu, analiza audio | Siri, transkrypcja automatyczna, Shazam |
-| **AI generatywna** (Generative AI) | Tworzenie nowych treści: tekstu, obrazów, muzyki, kodu | DALL-E, Midjourney, GitHub Copilot |
+| **AI generatywna** (Generative AI) | Tworzenie nowych treści: tekstu, obrazów, muzyki, kodu | GPT Image, Midjourney, GitHub Copilot |
 | **AI predykcyjna** (Predictive AI) | Prognozowanie na podstawie danych historycznych | Systemy finansowe, prognoza pogody, analiza ryzyka |
 
 ## Gdzie jesteśmy dziś?
 
-Zatrzymaj się tutaj na chwilę, bo to najważniejszy akapit w tym rozdziale. Mimo imponujących osiągnięć cała współczesna AI to wąska AI (ANI). Nawet najnowsze modele językowe jak GPT-4 czy Claude:
+Zatrzymaj się tutaj na chwilę, bo to najważniejszy akapit w tym rozdziale. Mimo imponujących osiągnięć cała współczesna AI to wąska AI (ANI). Nawet najnowsze modele językowe jak GPT-5.6 czy Claude Opus 5:
 
 - **Nie rozumieją** świata tak jak ludzie - przetwarzają wzorce statystyczne
 - **Nie mają świadomości** ani własnych celów

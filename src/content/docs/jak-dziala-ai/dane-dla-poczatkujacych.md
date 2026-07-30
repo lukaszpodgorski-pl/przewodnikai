@@ -122,7 +122,7 @@ Nie traktuj tej listy jak formularza do wypełniania przy każdym pytaniu do AI.
 
 ## Zasoby do dalszej nauki
 
-Jeśli chcesz pogłębić swoją Data Fluency bez nauki programowania: **Google Data Analytics Certificate** (darmowy kurs na Coursera, podstawy analizy bez kodowania), **Storytelling with Data** (Cole Nussbaumer Knaflic, książka o efektywnej wizualizacji), **Calling Bullshit** (Carl Bergstrom, Jevin West, jak rozpoznawać manipulacje danymi), **NotebookLM od Google** (narzędzie do "rozmowy" z własnymi dokumentami i danymi).
+Jeśli chcesz pogłębić swoją Data Fluency bez nauki programowania: **Google Data Analytics Certificate** (darmowy kurs na Coursera, podstawy analizy bez kodowania), **Storytelling with Data** (Cole Nussbaumer Knaflic, książka o efektywnej wizualizacji), **Calling Bullshit** (Carl Bergstrom, Jevin West, jak rozpoznawać manipulacje danymi), **Gemini Notebook od Google** (narzędzie do "rozmowy" z własnymi dokumentami i danymi).
 
 :::tip[Podsumowanie]
 Data Fluency to nie umiejętność techniczna, ale sposób myślenia. Chodzi o zadawanie właściwych pytań, zdrowy sceptycyzm wobec wyników i świadomość ograniczeń zarówno danych, jak i AI. W erze, gdzie "dane napędzają decyzje", ta kompetencja jest niezbędna dla każdego profesjonalisty.

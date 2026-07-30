@@ -193,5 +193,5 @@ Moja rada na koniec: zacznij od małych, powtarzalnych zadań. Nie od tych najtr
 - Jak wygląda praktyczny dzień z AI w różnych zawodach - marketera, programisty i nauczyciela
 - Że klucz do sukcesu to zaczynanie od małych, powtarzalnych zadań i stopniowe rozszerzanie wykorzystania AI
 
-**Następny krok:** [Suwerenne AI](/suwerenne-ai/) - poznasz polskie i europejskie modele oraz dowiesz się, jak uruchomić AI na własnym komputerze.
+**Następny krok:** [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/) - poznasz trzy sposoby płacenia za AI, nauczysz się czytać drabinę planów i dowiesz się, gdzie sprawdzić aktualną cenę.
 :::

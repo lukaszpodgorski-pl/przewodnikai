@@ -127,7 +127,7 @@ Optymalne wykorzystanie AI zależy od tego, czym się zajmujesz. Rozpisałem czt
 
 ### Dla studentów i badaczy
 
-**Optymalny przepływ pracy badawczej:** 1. Perplexity Deep Research (przegląd tematu, identyfikacja kluczowych zagadnień). 2. Semantic Scholar / Consensus (przegląd literatury naukowej z cytowaniami). 3. NotebookLM (wgranie źródeł i "rozmowa" z nimi). 4. Claude / ChatGPT (pomoc w pisaniu i strukturyzowaniu). 5. Grammarly / LanguageTool (korekta językowa).
+**Optymalny przepływ pracy badawczej:** 1. Perplexity Deep Research (przegląd tematu, identyfikacja kluczowych zagadnień). 2. Semantic Scholar / Consensus (przegląd literatury naukowej z cytowaniami). 3. Gemini Notebook (wgranie źródeł i "rozmowa" z nimi). 4. Claude / ChatGPT (pomoc w pisaniu i strukturyzowaniu). 5. Grammarly / LanguageTool (korekta językowa).
 
 :::caution[Zasada kciuka]
 Używaj AI jako trenera pisania, nie ghostwritera. ZAWSZE weryfikuj cytaty i źródła - AI często wymyśla publikacje naukowe!
@@ -141,7 +141,7 @@ Używaj AI jako trenera pisania, nie ghostwritera. ZAWSZE weryfikuj cytaty i źr
 
 ### Dla twórców treści
 
-**Stos content creation:** tekst (Claude - lepszy styl, lub ChatGPT - wszechstronność), obrazy (Midjourney - artystyczne, lub DALL-E 3 - dokładne odwzorowanie), wideo (Runway, Synthesia - avatary), audio (ElevenLabs - klonowanie głosu, Suno - muzyka).
+**Stos content creation:** tekst (Claude - lepszy styl, lub ChatGPT - wszechstronność), obrazy (Midjourney - artystyczne, lub GPT Image - dokładne odwzorowanie), wideo (Runway, Synthesia - avatary), audio (ElevenLabs - klonowanie głosu, Suno - muzyka).
 
 **Workflow tworzenia posta:** 1. Burza mózgów w ChatGPT - generowanie pomysłów. 2. Research w Perplexity - fakty i dane. 3. Zarys i pisanie w Claude - właściwy ton. 4. Obrazy w Midjourney - wizualizacje. 5. Snippety social media w ChatGPT - adaptacja do platform.
 
