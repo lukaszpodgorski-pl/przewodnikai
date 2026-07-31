@@ -33,3 +33,4 @@ Warstwę, którą da się rozstrzygnąć maszynowo, pokrywają istniejące workf
 | Data | Zakres | P1 | P2 | P3 | Uwagi |
 | --- | --- | ---: | ---: | ---: | --- |
 | 2026-07-31 | pełny (80 stron, 24 jednostki) | 14 | 116 | 92 | pierwszy przebieg. 23 sprzeczności międzyartykułowe. Weryfikacja adwersaryjna odrzuciła 13 ustaleń. Zero martwych linków wewnętrznych - higiena po audycie linków (#36) się trzyma. Najcięższe: wycofany tryb agenta ChatGPT, "Claude nie przeszukuje internetu" wbrew własnej treści serwisu, fabryka AI Gaia opisana jako działająca, błędna atrybucja cytatu IBM zamiast Karima Lakhaniego. |
+| 2026-07-31 | poprawki P1 + P2 | 0 | 0 | 92 | Naprawiono 14 P1, 116 P2 i 11 sprzeczności międzyartykułowych. Pozostały ustalenia P3 (styl, kosmetyka) i 12 sprzeczności P3. Skan po poprawkach: P1 0 / P2 1. |
