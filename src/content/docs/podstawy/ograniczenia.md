@@ -101,13 +101,13 @@ To jak pytanie doradcy finansowego "Jak najlepiej zainwestować pieniądze?" bez
 
 **Rozwiązanie:** dostarcz istotne informacje kontekstowe, np. "Jestem 30-letnim freelancerem z nieregularnym dochodem około 8000 zł miesięcznie, mieszkam w dużym mieście i szukam sposobów na oszczędzanie, które pozwolą mi zgromadzić kapitał na wkład własny do mieszkania w ciągu 3 lat."
 
-### Traktowanie AI jak wyszukiwarki
+### Zakładanie, że AI zawsze sprawdza w internecie
 
-Standardowe modele AI nie mają dostępu do internetu w czasie rzeczywistym (chyba że zostały w to specjalnie wyposażone). Nie mogą więc podawać aktualnych informacji, takich jak pogoda, kursy walut czy najnowsze wiadomości.
+Sam model językowy nie ma dostępu do sieci - zna tylko to, czego nauczył się do daty odcięcia. Popularne chatboty dokładają jednak do modelu wyszukiwarkę, więc potrafią podać pogodę, kurs waluty czy najnowsze wiadomości. Haczyk jest w tym, że robią to tylko wtedy, gdy wyszukiwanie faktycznie się uruchomi - a nie uruchamia się przy każdym pytaniu.
 
-To jak pytanie bibliotekarza o jutrzejszą pogodę - nawet najbardziej kompetentny bibliotekarz zna tylko to, co znajduje się w jego księgozbiorze.
+To jak pytanie bibliotekarza o jutrzejszą pogodę - dopóki nie wstanie i nie zajrzy do dzisiejszej gazety, odpowie z tego, co ma na półkach.
 
-**Rozwiązanie:** używaj AI do zadań, które nie wymagają bardzo aktualnych danych. Dla bieżących informacji korzystaj z wyszukiwarek internetowych lub dedykowanych aplikacji takich jak Perplexity.
+**Rozwiązanie:** przy pytaniach o rzeczy zmienne w czasie - ceny, wersje produktów, przepisy, aktualności - włącz wyszukiwanie albo po prostu poproś: "sprawdź w internecie". Potem klikaj w przypisy, bo nawet z wyszukiwarką model potrafi źle streścić znalezione źródło. Więcej o trybach pracy chatbotów znajdziesz w rozdziale [Tryby pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/).
 
 ## Jak mądrze korzystać z AI?
 

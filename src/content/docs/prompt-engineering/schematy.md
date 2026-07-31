@@ -22,49 +22,42 @@ Modele językowe rozumieją nie tylko treść, ale również format. Dobrze ustr
 
 ## Frameworki do promptów
 
-W rozdziale [Podstawy promptowania](/prompt-engineering/podstawy/) przedstawiłem framework **CO-STAR** (Context, Objective, Style, Tone, Audience, Response) - standard biznesowy do tworzenia skutecznych promptów. Tutaj dokładam do niego drugi framework, przydatny w zadaniach technicznych.
+W rozdziale [Podstawy promptowania](/prompt-engineering/podstawy/) przedstawiłem framework **CO-STAR** (Context, Objective, Style, Tone, Audience, Response) - standard biznesowy do tworzenia skutecznych promptów. Tutaj dokładam do niego drugi framework, przydatny wtedy, gdy zależy Ci na kilku wariantach odpowiedzi do wyboru.
 
-## Framework CRISPE - dla zadań technicznych
+## Framework CRISPE - gdy chcesz kilku wariantów odpowiedzi
 
-Dla zadań wymagających precyzji technicznej - generowania kodu, instrukcji, procedur operacyjnych - lepszym wyborem jest framework **CRISPE**:
+Gdy zależy Ci na tym, żeby AI wcieliło się w konkretną rolę, dostało tło sprawy i pokazało kilka wersji odpowiedzi do porównania, sięgnij po framework **CRISPE**. Ma pięć elementów - pierwsze dwie litery opisują jeden, wspólny ([CRISPE w praktyce klinicznej, 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12412748/)):
 
 | Element | Opis | Przykład |
 | --- | --- | --- |
-| **C** - Capacity | Rola AI - kim ma być? | "Działaj jako Senior Python Developer z 10-letnim doświadczeniem." |
-| **R** - Role | Doprecyzowanie roli i celu | "Twój wgląd ma pomóc juniorom w zespole zrozumieć błąd." |
-| **I** - Input | Dane wejściowe do analizy | "Oto fragment kodu / logi z serwera: [dane]" |
-| **S** - Steps | Kroki do wykonania | "Przeanalizuj kod linijka po linijce, znajdź lukę, zaproponuj poprawkę." |
-| **P** - Parameters | Ograniczenia i wymagania | "Kod zgodny z PEP8, wyjaśnienie po polsku, max 200 słów." |
-| **E** - Example | Wzór do naśladowania | "Wzoruj się na stylu dokumentacji biblioteki Django." |
+| **C+R** - Capacity and Role (kompetencje i rola) | Kim ma być AI i w czym jest ekspertem | "Działaj jako doświadczony specjalista od obsługi klienta." |
+| **I** - Insight (tło i kontekst) | Co AI musi wiedzieć o Twojej sytuacji | "Prowadzę małą księgarnię, klient reklamuje książkę po dwóch miesiącach." |
+| **S** - Statement (polecenie) | Co konkretnie ma zrobić | "Napisz odpowiedź na tę reklamację." |
+| **P** - Personality (ton i styl) | Jakim językiem ma odpowiedzieć | "Pisz ciepło i konkretnie, bez formalnego żargonu." |
+| **E** - Experiment (warianty) | Poproś o kilka wersji do porównania | "Pokaż trzy warianty i powiedz, który polecasz." |
+
+Element E to sedno tego frameworka - to on odróżnia CRISPE od CO-STAR. Zamiast jednej odpowiedzi dostajesz kilka propozycji i wybierasz tę, która pasuje.
 
 ### Przykład CRISPE w praktyce
 
 ```text
-CAPACITY: Działaj jako ekspert ds. cyberbezpieczeństwa
-z certyfikatem CISSP.
+CAPACITY AND ROLE: Działaj jako doświadczony specjalista
+od obsługi klienta w handlu detalicznym.
 
-ROLE: Twój audyt pomoże zespołowi developerów zrozumieć
-zagrożenia i wdrożyć poprawki.
+INSIGHT: Prowadzę małą księgarnię internetową. Klientka
+zamówiła książkę, która dotarła z zagiętą okładką.
+Napisała nieuprzejmą wiadomość i grozi negatywną opinią.
+Chcę ją zatrzymać jako klientkę.
 
-INPUT: Oto fragment kodu PHP obsługującego logowanie użytkowników:
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $query = "SELECT * FROM users WHERE username='$username'
-  AND password='$password'";
+STATEMENT: Napisz odpowiedź na jej wiadomość - przeproś,
+zaproponuj rozwiązanie i zamknij sprawę.
 
-STEPS:
-1. Zidentyfikuj wszystkie luki bezpieczeństwa
-2. Wyjaśnij, jak atakujący mógłby je wykorzystać
-3. Podaj poprawiony kod z komentarzami
-4. Zasugeruj dodatkowe zabezpieczenia
+PERSONALITY: Pisz ciepło i po ludzku, bez korporacyjnych
+formułek. Nie tłumacz się długo, przejdź do konkretu.
 
-PARAMETERS:
-- Wyjaśnienia po polsku
-- Kod zgodny z najlepszymi praktykami PHP 8
-- Uwzględnij OWASP Top 10
-
-EXAMPLE: Formatuj odpowiedź jak raport audytu bezpieczeństwa
-z sekcjami: Znalezione luki, Ryzyko, Rekomendacje, Kod naprawczy.
+EXPERIMENT: Podaj trzy warianty odpowiedzi - jeden krótki,
+jeden ze zwrotem kosztów, jeden z wymianą egzemplarza.
+Powiedz, który polecasz i dlaczego.
 ```
 
 ## Kiedy używać którego frameworka?
@@ -74,9 +67,9 @@ z sekcjami: Znalezione luki, Ryzyko, Rekomendacje, Kod naprawczy.
 | E-maile biznesowe | **CO-STAR** | Ton i styl są kluczowe |
 | Posty na social media | **CO-STAR** | Ważna jest persona i odbiorcy |
 | Raporty i analizy | **CO-STAR** | Format i struktura priorytetem |
-| Generowanie kodu | **CRISPE** | Precyzja i kroki są kluczowe |
-| Audyty techniczne | **CRISPE** | Potrzebna metodyczna analiza |
-| Dokumentacja techniczna | **CRISPE** | Ważne parametry i przykłady |
+| Trudna odpowiedź do klienta | **CRISPE** | Chcesz porównać kilka wariantów |
+| Tekst wymagający eksperta | **CRISPE** | Ważna jest rola i pełne tło sprawy |
+| Szukanie pomysłów | **CRISPE** | Element Experiment daje kilka propozycji naraz |
 
 :::note[Wskazówka praktyczna]
 Nie musisz zawsze używać wszystkich elementów frameworka. Traktuj je jako checklistę - im więcej kontekstu podasz, tym lepszy wynik otrzymasz. Dla prostych zadań wystarczą 2-3 elementy, dla złożonych używaj wszystkich.
@@ -154,7 +147,7 @@ JSON:
 ```
 
 :::note[Wskazówka]
-Wiele modeli AI ma wbudowaną opcję "JSON mode", która gwarantuje poprawny format wyjściowy. W ChatGPT możesz to włączyć w ustawieniach API.
+Wymuszenie odpowiedzi w JSON to funkcja API (czyli dostępu do modelu z poziomu kodu), a nie okna czatu. U OpenAI tryb "JSON mode" pilnuje tylko tego, żeby odpowiedź była poprawnym JSON-em - nie tego, żeby trafiła w Twój schemat. Do zgodności ze schematem służą Structured Outputs (wyjścia zgodne ze schematem) i to je OpenAI zaleca ([dokumentacja OpenAI](https://platform.openai.com/docs/guides/structured-outputs)). W samym oknie czatu takiego przełącznika nie znajdziesz - tam po prostu opisz schemat w prompcie, tak jak w przykładach wyżej.
 :::
 
 ## Format tabelaryczny
@@ -433,7 +426,7 @@ Rekomendacja: [tak/nie/warunkowo]
 
 :::note[Teraz wiesz]
 
-- Jak stosować framework CRISPE (zadania techniczne) obok poznanego wcześniej CO-STAR (treści biznesowe) do budowania profesjonalnych promptów
+- Jak stosować framework CRISPE (rola, kontekst i kilka wariantów odpowiedzi) obok poznanego wcześniej CO-STAR (treści biznesowe) do budowania profesjonalnych promptów
 - Jak używać formatów JSON, tabel, list, XML i szablonów do uzyskiwania spójnych, strukturalnych odpowiedzi
 - Jak definiować narzędzia (function calling) i wieloczęściowe formaty wyjściowe dla złożonych analiz
 

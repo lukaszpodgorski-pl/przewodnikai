@@ -66,9 +66,8 @@ Polska jest poniżej średniej UE w umiejętnościach cyfrowych. Nie traktuj teg
 9. Myślenie analityczne
 10. Odpowiedzialność środowiskowa
 
-<!-- TODO(Łukasz): zweryfikuj atrybucję tego cytatu - przypisywany bywa Karimowi Lakhaniemu (HBR, 2023), nie IBM. Popraw albo usuń ramkę -->
 :::note[Kluczowy cytat]
-"AI nie zastąpi ludzi - ale ludzie używający AI zastąpią ludzi, którzy tego nie robią." - IBM
+"AI nie zastąpi ludzi - ale ludzie używający AI zastąpią ludzi, którzy tego nie robią." - Karim Lakhani, Harvard Business School (HBR, 2023)
 :::
 
 ## Umiejętności odporne na automatyzację

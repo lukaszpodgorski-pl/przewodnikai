@@ -35,7 +35,7 @@ Ta kategoria odpowiada na inne pytanie niż zwykły chatbot. Zamiast generować 
 **Perplexity AI** - wyszukiwarka oparta na AI: zamiast listy linków dostajesz odpowiedź z przypisami do źródeł. Ma plan darmowy. [Cennik](https://www.perplexity.ai/hub/pricing). Funkcje: wyszukiwanie w czasie rzeczywistym, cytaty ze źródeł, Deep Research (generuje raporty z 100-300 źródeł). Najlepsze dla: research akademicki, weryfikacja faktów, analiza rynku.
 
 :::tip[Czym Perplexity różni się od chatbota?]
-W przeciwieństwie do ChatGPT czy Claude, które opierają się na wiedzy z treningu, Perplexity przeszukuje internet w czasie rzeczywistym. Każda odpowiedź zawiera numery przypisów odsyłające do konkretnych źródeł - możesz kliknąć i zweryfikować informację.
+ChatGPT i Claude też potrafią dziś szukać w sieci - różnica jest w domyślnym trybie pracy. W chatbocie wyszukiwanie jest dodatkiem, który często trzeba uruchomić samemu; w Perplexity to podstawa działania, bo każde pytanie startuje od przeszukania internetu. Odpowiedź dostajesz z numerami przypisów odsyłającymi do konkretnych źródeł - możesz kliknąć i zweryfikować informację.
 :::
 
 **Gemini Notebook (dawniej NotebookLM)** - narzędzie Google do pracy z własnymi dokumentami. W lipcu 2026 zmieniło nazwę i weszło do rodziny Gemini; to ten sam produkt, notatników nie trzeba przenosić ani zakładać od nowa. Ma plan darmowy (wymaga konta Google). Funkcje: wgrywanie własnych źródeł (PDF, Google Docs, linki), "rozmowa" z dokumentami, generowanie podcastów audio. Czym się wyróżnia: model odpowiada wyłącznie na podstawie wgranych przez Ciebie źródeł, więc nie dopisze faktów znalezionych w internecie. Najlepsze dla: studenci, badacze, analiza dokumentacji, przygotowanie do egzaminów.

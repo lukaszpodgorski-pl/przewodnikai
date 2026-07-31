@@ -42,13 +42,13 @@ AI często podaje Ci nieprawdziwe informacje z dużą pewnością siebie, bez ż
 | Dziedzina | Wskaźnik halucynacji | Źródło |
 | --- | --- | --- |
 | **Ogólne pytania** | 3-10% | Vectara Hallucination Leaderboard, 2024 |
-| **Prawo i regulacje** | 69-88% | Stanford HAI, badanie prawników 2023 |
+| **Prawo i regulacje** | 69-88% | [Stanford HAI / RegLab, 2024](https://hai.stanford.edu/news/hallucinating-law-legal-mistakes-large-language-models-are-pervasive) |
 | **Medycyna** | 15-30% | Badania kliniczne, JAMA 2023 |
 | **Cytaty i źródła** | do 50% | NYU badanie cytatów naukowych |
 | **Dane liczbowe** | 20-40% | Meta-analiza, Vectara 2024 |
 
 :::danger[Szokujące odkrycie]
-W badaniu Stanford HAI z 2023 roku, AI (w tym ChatGPT i inne modele) generowało fałszywe cytaty prawne i nieistniejące precedensy w 69-88% przypadków pytań prawnych. Prawnik w USA został ukarany za cytowanie w sądzie nieistniejących spraw wygenerowanych przez ChatGPT!
+W badaniu Stanford HAI z 2024 roku trzy modele AI (GPT-3.5, Llama 2 i PaLM 2) generowały fałszywe cytaty prawne i nieistniejące precedensy w 69-88% przypadków pytań prawnych ([Stanford HAI, styczeń 2024](https://hai.stanford.edu/news/hallucinating-law-legal-mistakes-large-language-models-are-pervasive)). Prawnik w USA został ukarany za cytowanie w sądzie nieistniejących spraw wygenerowanych przez ChatGPT!
 :::
 
 ## "AI Slop" - nowe zagrożenie ery generatywnego AI
@@ -217,7 +217,7 @@ Zapytałeś AI o historię Internetu w Polsce, a model odpowiedział:
 
 **Twoja weryfikacja:**
 
-- Sprawdzenie w artykułach historycznych na stronie Polskiego Internetu Optycznego PIONIER pokazuje, że pierwszy komercyjny dostęp pojawił się wcześniej (1991-1992)
+- Sprawdzenie w archiwum NASK pokazuje, że w latach 1991-1992 Internet w Polsce był siecią akademicką, a pierwsze komercyjne usługi dostępowe uruchomiono w 1993 roku - czyli wcześniej, niż podaje model ([NASK](https://archiwum.nask.pl/pl/aktualnosci/4271,Internet-w-Polsce-ma-30-lat.html))
 - Firma PolNet istniała, ale była tylko jednym z wielu dostawców i nie została wykupiona przez TP
 - Konsultacja z polskim ekspertem ds. historii Internetu potwierdza błędy w informacji
 

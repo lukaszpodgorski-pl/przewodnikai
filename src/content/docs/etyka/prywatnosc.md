@@ -37,17 +37,19 @@ Czy Twoje dane są używane do treningu modeli? To różni się między dostawca
 
 **OpenAI (ChatGPT):**
 
-| Plan | Dane do treningu? | Retencja |
+| Rodzaj planu | Dane do treningu? | Retencja |
 | --- | --- | --- |
-| Free | Tak (domyślnie) | 30 dni |
-| Plus | Tak (można wyłączyć) | 30 dni |
-| Team | Nie | 30 dni |
-| Enterprise | Nie | Konfigurowalne |
+| Plany konsumenckie | Tak (domyślnie, można wyłączyć) | 30 dni |
+| Plany firmowe | Nie | Konfigurowalne |
 | API | Nie (domyślnie) | 30 dni (logs) |
 
 <small>Źródło: OpenAI Privacy Policy. Zawsze sprawdzaj aktualne polityki.</small>
 
-**Anthropic (Claude):** Consumer (dane mogą być używane do treningu, można opt-out), Pro (dane mogą być używane, można opt-out), API (dane NIE są używane do treningu), Enterprise (pełna kontrola, dane nie używane).
+:::note[Dlaczego bez nazw planów?]
+Nazwy szczebli zmieniają się kilka razy w roku - plan, który do sierpnia 2025 nazywał się Team, nosi dziś nazwę Business. Aktualną listę planów każdego dostawcy trzymam w jednym miejscu, w rozdziale [Chatboty AI](/narzedzia/chatboty/). Tutaj liczy się sama zasada: plany dla firm domyślnie nie trenują na Twoich danych, konsumenckie tak.
+:::
+
+**Anthropic (Claude):** plany konsumenckie (dane mogą być używane do treningu, można wyłączyć), API (dane NIE są używane do treningu), Enterprise (pełna kontrola, dane nie używane).
 
 **Google (Gemini):** Free Gemini (dane używane do ulepszania produktów), Workspace (dane nie używane do treningu), API/Vertex AI (dane nie używane do treningu).
 
@@ -55,7 +57,7 @@ Czy Twoje dane są używane do treningu modeli? To różni się między dostawca
 
 ## Jak wyłączyć trening na Twoich danych?
 
-**ChatGPT:** 1. Otwórz Settings. 2. Data Controls. 3. Wyłącz "Improve the model for everyone". Uwaga: wyłączenie oznacza też brak historii rozmów!
+**ChatGPT:** 1. Otwórz Settings. 2. Data Controls. 3. Wyłącz "Improve the model for everyone". Uwaga: to ustawienie dotyczy tylko treningu - historia rozmów zostaje na Twoim koncie.
 
 **Claude:** 1. Otwórz Settings. 2. Privacy. 3. Opt-out z treningu.
 
