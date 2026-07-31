@@ -13,9 +13,6 @@ about:
   - name: Przetwarzanie języka naturalnego
     sameAs: https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego
 mentions:
-  - name: Jasper AI
-    sameAs: https://en.wikipedia.org/wiki/Jasper_AI
-    type: SoftwareApplication
   - name: Grammarly
     sameAs: https://en.wikipedia.org/wiki/Grammarly
     type: SoftwareApplication

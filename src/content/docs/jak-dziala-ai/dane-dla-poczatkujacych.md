@@ -13,7 +13,7 @@ about:
   - name: Dane
     sameAs: https://pl.wikipedia.org/wiki/Dane
   - name: Nauka o danych
-    sameAs: https://pl.wikipedia.org/wiki/Nauka_o_danych
+    sameAs: https://pl.wikipedia.org/wiki/Data_science
 ---
 
 ![Przyjazne wiersze i kolumny prostej tabeli układające się w czytelne kształty - dane dla początkujących](../../../assets/jak-dziala-ai/dane-dla-poczatkujacych/dane-dla-poczatkujacych.jpg)

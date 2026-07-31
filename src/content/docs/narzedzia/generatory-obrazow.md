@@ -13,7 +13,7 @@ about:
   - name: Generatywna sztuczna inteligencja
     sameAs: https://pl.wikipedia.org/wiki/Generatywna_sztuczna_inteligencja
   - name: Przetwarzanie obrazu
-    sameAs: https://pl.wikipedia.org/wiki/Przetwarzanie_obraz%C3%B3w
+    sameAs: https://pl.wikipedia.org/wiki/Przetwarzanie_obraz%C3%B3w_cyfrowych
 mentions:
   - name: Midjourney
     sameAs: https://en.wikipedia.org/wiki/Midjourney
@@ -65,7 +65,7 @@ Brak darmowej wersji, trudniejsze precyzyjne kontrolowanie szczegółów, styl p
 
 **GPT Image** to generator obrazów wbudowany w ChatGPT - następca wycofanego DALL-E. Aktualna wersja to GPT Image 2.
 
-**Dostęp:** w ChatGPT we wszystkich planach, w darmowym z ograniczeniami; także przez API. [Cennik](https://openai.com/chatgpt/pricing/).
+**Dostęp:** w ChatGPT we wszystkich planach, w darmowym z ograniczeniami; także przez API. [Cennik](https://chatgpt.com/pricing/).
 
 **Kluczowe cechy:** świetne rozumienie promptów w języku naturalnym, dokładne podążanie za instrukcjami, dobry tekst na obrazach, integracja z rozmową (możesz poprosić o poprawkę zwykłym zdaniem, zamiast pisać prompt od nowa).
 

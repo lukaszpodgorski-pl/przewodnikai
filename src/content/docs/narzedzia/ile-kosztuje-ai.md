@@ -118,9 +118,9 @@ Jedyna rzetelna odpowiedź na pytanie "ile to kosztuje dzisiaj" jest u dostawcy.
 
 | Dostawca | Cennik aplikacji | Cennik API |
 | --- | --- | --- |
-| **OpenAI (ChatGPT)** | [openai.com/chatgpt/pricing](https://openai.com/chatgpt/pricing/) | [developers.openai.com](https://developers.openai.com/api/docs/pricing) |
+| **OpenAI (ChatGPT)** | [chatgpt.com/pricing](https://chatgpt.com/pricing/) | [developers.openai.com](https://developers.openai.com/api/docs/pricing) |
 | **Anthropic (Claude)** | [claude.com/pricing](https://claude.com/pricing) | [claude.com/pricing#api](https://claude.com/pricing) |
-| **Google (Gemini)** | [gemini.google/subscriptions](https://gemini.google/subscriptions/) | [ai.google.dev/pricing](https://ai.google.dev/pricing) |
+| **Google (Gemini)** | [gemini.google/subscriptions](https://gemini.google/subscriptions/) | [ai.google.dev](https://ai.google.dev/gemini-api/docs/pricing) |
 | **Microsoft (Copilot)** | [microsoft.com/microsoft-365/premium](https://www.microsoft.com/pl-pl/microsoft-365/premium) | - |
 | **Mistral (Vibe)** | [mistral.ai/pricing](https://mistral.ai/pricing) | [mistral.ai/pricing](https://mistral.ai/pricing) |
 | **DeepSeek** | - | [api-docs.deepseek.com](https://api-docs.deepseek.com/quick_start/pricing) |

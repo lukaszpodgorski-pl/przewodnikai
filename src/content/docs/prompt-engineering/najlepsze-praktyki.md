@@ -183,7 +183,7 @@ Sentyment:
 
 ## Zasoby do nauki
 
-**Dokumentacje:** [OpenAI Documentation](https://platform.openai.com/docs), [Anthropic Documentation](https://docs.anthropic.com), [Prompting Guide](https://www.promptingguide.ai)
+**Dokumentacje:** [OpenAI Documentation](https://developers.openai.com/api/docs), [Anthropic Documentation](https://platform.claude.com/docs/en/home), [Prompting Guide](https://www.promptingguide.ai/)
 
 **Narzędzia:** Prompt Flow (Microsoft, wizualne projektowanie), LangChain (framework do łańcuchów promptów), OpenAI Playground (testowanie promptów)
 

@@ -24,4 +24,4 @@ Zachowania nieakceptowane:
 
 Naruszenia możesz zgłaszać do maintainerów projektu przez formularz kontaktowy na [przewodnikai.pl](https://przewodnikai.pl) lub prywatnie na GitHubie. Wszystkie zgłoszenia rozpatrzymy z zachowaniem poufności. Maintainerzy mogą usuwać, edytować lub odrzucać komentarze, commity, issues i pull requesty naruszające ten kodeks, a w powtarzających się przypadkach - czasowo lub trwale zablokować możliwość udziału w projekcie.
 
-Ten kodeks jest oparty na [Contributor Covenant 2.1](https://www.contributor-covenant.org/pl/version/2/1/code_of_conduct/).
+Ten kodeks jest oparty na [Contributor Covenant 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).

@@ -92,7 +92,7 @@ Skala zmiany w tym obszarze robi wrażenie: w ciągu dwóch lat okna kontekstowe
 | Llama 4 Maverick | Meta | 1M tokenów | ~750 000 słów (~2 500 stron) |
 | Llama 4 Scout | Meta | 10M tokenów | ~7,5 mln słów (~25 000 stron) |
 
-<small>Źródła: dokumentacja [OpenAI](https://developers.openai.com/api/docs/models), [Anthropic](https://platform.claude.com/docs/en/about-claude/models), [Google DeepMind](https://ai.google.dev/gemini-api/docs/models), [DeepSeek](https://huggingface.co/deepseek-ai), [Meta AI](https://ai.meta.com/llama/).</small>
+<small>Źródła: dokumentacja [OpenAI](https://developers.openai.com/api/docs/models), [Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview), [Google DeepMind](https://ai.google.dev/gemini-api/docs/models), [DeepSeek](https://huggingface.co/deepseek-ai).</small>
 
 :::caution[W aplikacji dostajesz mniej niż w API]
 To rozczarowanie, które spotyka wiele osób: powyższe liczby dotyczą modelu udostępnianego przez API. W samym oknie czatu efektywne okno bywa wyraźnie mniejsze i **zależy od wykupionego planu** - i u OpenAI, i u Google plan darmowy dostaje ułamek tego, co plan najwyższy. Jeśli wklejasz do czatu grubą dokumentację i model "zapomina" jej początek, to zwykle nie wada modelu, tylko limit Twojego planu.
@@ -143,7 +143,7 @@ Nie podaję tu stawek, bo zmieniają się kilka razy w roku - a to i tak nie one
 | Model zachodni kontra otwartowagowy | nawet kilkanaście razy drożej | Do prostych zadań otwarte modele bywają wystarczające |
 | Polski tekst kontra angielski (ta sama treść) | ok. 1,4-1,6x więcej tokenów | Za tę samą treść po polsku zapłacisz więcej |
 
-<small>Aktualne stawki sprawdzisz w cennikach: [OpenAI](https://developers.openai.com/api/docs/pricing), [Anthropic](https://claude.com/pricing), [Google](https://ai.google.dev/pricing), [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing). Więcej o modelach rozliczania w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).</small>
+<small>Aktualne stawki sprawdzisz w cennikach: [OpenAI](https://developers.openai.com/api/docs/pricing), [Anthropic](https://claude.com/pricing), [Google](https://ai.google.dev/gemini-api/docs/pricing), [DeepSeek](https://api-docs.deepseek.com/quick_start/pricing). Więcej o modelach rozliczania w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).</small>
 
 :::tip[Praktyczna wskazówka]
 Ponieważ polski tekst generuje o 40-60% więcej tokenów niż angielski, koszty API dla polskojęzycznych aplikacji są proporcjonalnie wyższe. Przy dużej skali warto rozważyć: (1) wysyłanie instrukcji systemowych po angielsku, a treści użytkownika po polsku, lub (2) użycie tańszego modelu z rodziny (Terra, Luna, Haiku, Flash) do zadań niewymagających najwyższej jakości.

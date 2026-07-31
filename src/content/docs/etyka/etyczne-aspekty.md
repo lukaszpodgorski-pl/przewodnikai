@@ -114,7 +114,6 @@ Kluczowe jest zachowanie równowagi - ani bezkrytyczny entuzjazm, ani paraliżuj
 - [EU AI Act](https://artificialintelligenceact.eu/) - pełny tekst i harmonogram wdrażania europejskiego rozporządzenia o sztucznej inteligencji
 - [UNESCO Recommendation on the Ethics of AI (2021)](https://www.unesco.org/en/artificial-intelligence/recommendation-ethics) - pierwsza globalna rekomendacja etyczna dot. AI, przyjęta przez 193 państwa
 - [Stanford HAI AI Index Report](https://hai.stanford.edu/research/ai-index-report) - coroczny raport o stanie AI, w tym sekcje o etyce, regulacjach i wpływie społecznym
-- [OECD AI Policy Observatory](https://www.oecd.org/en/topics/sub-issues/artificial-intelligence.html) - przegląd polityk AI w krajach OECD, w tym zasady odpowiedzialnej AI
 
 :::note[Teraz wiesz]
 

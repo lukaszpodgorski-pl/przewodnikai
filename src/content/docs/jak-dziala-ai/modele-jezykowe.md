@@ -107,7 +107,7 @@ Anthropic rozwinął tę metodologię w **RLAIF** (Constitutional AI), gdzie oce
 
 **Claude** to seria modeli od [Anthropic](https://claude.com), firmy założonej przez byłych pracowników OpenAI (Dario i Danielę Amodei). Wyróżnia się naciskiem na bezpieczeństwo (podejście Constitutional AI) oraz bardzo dużym oknem kontekstowym. Aktualna, piąta generacja to Claude Opus 5, Claude Sonnet 5 i Claude Fable 5 - wszystkie z oknem kontekstu **1 mln tokenów**. Najmniejszy i najtańszy model rodziny to Claude Haiku 4.5.
 
-<small>Źródło: [Anthropic Models Documentation](https://platform.claude.com/docs/en/about-claude/models)</small>
+<small>Źródło: [Anthropic Models Documentation](https://platform.claude.com/docs/en/about-claude/models/overview)</small>
 
 ### Gemini (Google DeepMind)
 
@@ -121,7 +121,7 @@ Anthropic rozwinął tę metodologię w **RLAIF** (Constitutional AI), gdzie oce
 
 ### Modele o otwartych wagach
 
-To obszar, w którym w ostatnim roku sporo się przestawiło - i warto wiedzieć, w którą stronę. **DeepSeek V4** (licencja MIT) i modele **Mistral AI** - Mistral Large 3, Small 4 oraz kompaktowa rodzina Ministral 3 na [licencji Apache 2.0](https://mistral.ai/news/mistral-3/) - są dziś w pełni otwarte. **Llama 4** (Meta, 2025) w wariantach Scout i Maverick nadal jest [dostępna publicznie](https://ai.meta.com/llama/), ale to ostatnia otwarta generacja Meta: nowa flagowa linia firmy jest zamknięta i dostępna wyłącznie przez API. Podobnie przesunęła się Alibaba - mniejsze modele **Qwen** wychodzą na Apache 2.0, ale flagowce już nie. **Phi-4** (Microsoft) pozostaje otwarty na licencji MIT.
+To obszar, w którym w ostatnim roku sporo się przestawiło - i warto wiedzieć, w którą stronę. **DeepSeek V4** (licencja MIT) i modele **Mistral AI** - Mistral Large 3, Small 4 oraz kompaktowa rodzina Ministral 3 na [licencji Apache 2.0](https://mistral.ai/news/mistral-3/) - są dziś w pełni otwarte. **Llama 4** (Meta, 2025) w wariantach Scout i Maverick nadal jest dostępna publicznie, ale to ostatnia otwarta generacja Meta: nowa flagowa linia firmy jest zamknięta i dostępna wyłącznie przez API. Podobnie przesunęła się Alibaba - mniejsze modele **Qwen** wychodzą na Apache 2.0, ale flagowce już nie. **Phi-4** (Microsoft) pozostaje otwarty na licencji MIT.
 
 W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK) - [więcej o polskich modelach](/suwerenne-ai/bielik-i-polskie-modele/).
 
@@ -140,7 +140,7 @@ W tym gronie są też polskie modele - **Bielik** (SpeakLeash) i **PLLuM** (NASK
 | **DeepSeek V4** | DeepSeek | 1M | Tak (MIT) | Niska cena API, MoE, wydajność |
 | **Llama 4 Maverick** | Meta | 1M | Tak (z ograniczeniami) | Darmowy, MoE, do wdrożeń on-premise |
 
-<small>Ranking oparty na [LMSYS Chatbot Arena](https://lmarena.ai/) (niezależny benchmark oparty na głosowaniu użytkowników) oraz oficjalnej dokumentacji producentów.</small>
+<small>Ranking oparty na [Arena AI](https://arena.ai/) (niezależny benchmark oparty na głosowaniu użytkowników, dawniej LMSYS Chatbot Arena) oraz oficjalnej dokumentacji producentów.</small>
 
 Na co tu naprawdę patrzeć: na kolumny "Kontekst" i "Mocne strony", a nie na kolejność wierszy. Układ czołówki zmienia się z każdym wydaniem, a dla Twojej pracy więcej znaczy dopasowanie modelu do zadania niż jego miejsce w rankingu.
 
@@ -186,7 +186,7 @@ Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wyst
 - [Vaswani i in. "Attention Is All You Need" (2017)](https://arxiv.org/abs/1706.03762) - praca opisująca architekturę Transformer
 - [OpenAI "GPT-4 Technical Report" (2023)](https://arxiv.org/abs/2303.08774) - raport techniczny o możliwościach GPT-4
 - [DeepSeek-R1 Technical Report (2025)](https://arxiv.org/abs/2501.12948) - architektura i wyniki DeepSeek-R1
-- [LMSYS Chatbot Arena](https://lmarena.ai/) - niezależny ranking modeli AI oparty na głosowaniu użytkowników
+- [Arena AI](https://arena.ai/) - niezależny ranking modeli AI oparty na głosowaniu użytkowników (dawniej LMSYS Chatbot Arena)
 - [Stanford HAI AI Index 2024](https://hai.stanford.edu/research/ai-index-report) - kompleksowy raport o stanie sztucznej inteligencji
 
 :::note[Teraz wiesz]
