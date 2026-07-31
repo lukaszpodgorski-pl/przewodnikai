@@ -32,6 +32,14 @@ faq:
 
 Narzędzia takie jak GitHub Copilot, ChatGPT czy Claude potrafią generować kod, wyjaśniać złożone fragmenty, pomagać w debugowaniu i automatyzować rutynowe zadania. Traktuj je jak bardzo szybkiego juniora: nadrabia tempem, ale wszystko po nim sprawdzasz. Pokażę Ci, jak korzystać z nich w codziennej pracy - i czego nie oddawać modelowi bez sprawdzenia.
 
+## Dwa tryby pracy
+
+Z AI przy kodzie pracuje się dziś na dwa sposoby i warto je od siebie odróżnić, bo wymagają innej czujności.
+
+**Rozmowa o kodzie.** Wklejasz fragment do czatu, dostajesz odpowiedź, kopiujesz ją z powrotem do edytora. To tryb, który opisuję w tym rozdziale - Ty decydujesz, co trafia do modelu i co wraca do projektu.
+
+**Tryb agentowy.** Narzędzie samo czyta pliki w projekcie, uruchamia polecenia i proponuje zmiany w wielu plikach naraz. Tak działają [asystenci agentowi](/narzedzia/asystenci-agentowi/) - GitHub Copilot w trybie agenta czy Claude Code. Techniki z tego rozdziału obowiązują tam tak samo, ale zasada "czytaj wygenerowany kod, zanim go uruchomisz" robi się jeszcze ważniejsza: dostajesz nie jedną funkcję do przejrzenia, tylko zestaw zmian w plikach, których nawet nie masz otwartych.
+
 ## Generowanie kodu z opisu
 
 Najprostsze zastosowanie - opisujesz, co chcesz osiągnąć, a AI generuje kod.
@@ -336,9 +344,9 @@ AI może automatycznie tworzyć dokumentację dla istniejącego kodu - docstring
 | --- | --- | --- |
 | **GitHub Copilot** | Autouzupełnianie, generowanie kodu | VS Code, JetBrains, Neovim |
 | **ChatGPT** | Wyjaśnienia, debugging, architektura | Web, API, integracje |
-| **Claude** | Długi kontekst, analiza kodu | Web, API |
+| **Claude / Claude Code** | Długi kontekst, analiza kodu, praca agentowa na projekcie | Web, API, terminal, VS Code, JetBrains |
 | **Cursor** | IDE z wbudowanym AI | Samodzielne IDE |
-| **Amazon CodeWhisperer** | Autouzupełnianie, bezpieczeństwo | VS Code, JetBrains |
+| **[Kiro](https://kiro.dev/)** (AWS, następca CodeWhisperera i Amazon Q Developer) | Kodowanie agentowe, praca na specyfikacji | Samodzielne IDE, terminal, przeglądarka |
 | **Tabnine** | Autouzupełnianie lokalne | Większość IDE |
 
 ## Podsumowanie

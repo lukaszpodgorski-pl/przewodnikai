@@ -64,7 +64,7 @@ ASI to koncepcja czysto teoretyczna, będąca przedmiotem filozofii i science fi
 | **Status** | Istnieje | Nie istnieje | Teoretyczna |
 | **Zakres zadań** | Wąski, specyficzny | Wszystkie ludzkie | Ponadludzkie |
 | **Transfer wiedzy** | Brak | Tak | Tak |
-| **Samoświadomość** | Nie | Być może | Prawdopodobnie |
+| **Samoświadomość** | Nie | Nieznane | Nieznane |
 | **Przykład** | ChatGPT | Brak | Brak |
 
 Patrz przede wszystkim na pierwszą kolumnę z danymi. Dwie pozostałe opisują systemy, które istnieją dziś wyłącznie w publikacjach i dyskusjach - nie w narzędziach, które możesz otworzyć w przeglądarce.

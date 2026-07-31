@@ -67,9 +67,11 @@ Wyobraź sobie mapę, gdzie każde słowo ma swoje współrzędne. Słowa o podo
 | --- | --- | --- | --- |
 | **text-embedding-3-small** | OpenAI | 1536 | Ogólne, ekonomiczne |
 | **text-embedding-3-large** | OpenAI | 3072 | Najwyższa jakość |
-| **voyage-large-2** | Voyage AI | 1536 | RAG, wyszukiwanie |
+| **voyage-4-large** | Voyage AI | 1024 | RAG, wyszukiwanie |
 | **e5-large** | Microsoft | 1024 | Open-source |
 | **all-MiniLM** | Sentence-Transformers | 384 | Szybki, lokalny |
+
+<small>Źródła: dokumentacja [OpenAI](https://developers.openai.com/api/docs/guides/embeddings) i [Voyage AI](https://docs.voyageai.com/docs/embeddings). Liczba wymiarów bywa konfigurowalna - w tabeli podaję wartości domyślne.</small>
 
 Tej tabeli nie musisz znać na pamięć. Ma pokazać jedno: modeli embeddingowych jest wiele i różnią się liczbą wymiarów, czyli tym, jak szczegółowo zapisują znaczenie tekstu.
 

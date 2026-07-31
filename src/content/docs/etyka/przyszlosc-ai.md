@@ -47,11 +47,11 @@ Ten rozdział zawiera spekulacje i prognozy, które mogą się nie sprawdzić. T
 
 **AI w nauce:** przyspieszenie badań naukowych, drug discovery i projektowanie białek, symulacje i modelowanie, automatyzacja eksperymentów.
 
-**Demokratyzacja AI:** modele open-source dorównujące zamkniętym, AI na zwykłych laptopach, no-code tools do tworzenia własnych AI, niższe bariery wejścia.
+**Demokratyzacja AI:** modele open-weight (z otwartymi wagami) dorównujące zamkniętym, no-code tools do tworzenia własnych AI, niższe bariery wejścia. Uruchomienie AI na zwykłym laptopie nie jest już prognozą - jak to zrobić dziś, pokazuję w rozdziale [AI na własnym komputerze](/suwerenne-ai/ai-na-wlasnym-komputerze/).
 
 ## AGI - Artificial General Intelligence
 
-AGI to hipotetyczna AI dorównująca lub przewyższająca ludzką inteligencję we wszystkich domenach.
+AGI to hipotetyczna AI dorównująca ludzkiej inteligencji we wszystkich domenach. Systemy, które by ją przewyższały, to już superinteligencja (ASI) - o obu piszę w rozdziale [Typy AI](/jak-dziala-ai/typy-ai/).
 
 | Cecha | Obecne AI (ANI) | AGI |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ AGI to hipotetyczna AI dorównująca lub przewyższająca ludzką inteligencję 
 | Transfer | Ograniczony | Pełny między domenami |
 | Rozumienie | Statystyczne wzorce | Prawdziwe zrozumienie? |
 
-**Kiedy AGI?** Prognozy ekspertów różnią się dramatycznie: optymiści (OpenAI, niektórzy) - 2027-2030; umiarkowani - 2040-2050; sceptycy - nie wiadomo, czy w ogóle możliwe; Yann LeCun (Meta) - potrzebujemy fundamentalnie nowych podejść.
+**Kiedy AGI?** Prognozy ekspertów różnią się dramatycznie: optymiści (OpenAI, niektórzy) - 2027-2030; umiarkowani - 2040-2050; sceptycy - nie wiadomo, czy w ogóle możliwe; Yann LeCun (do 2025 r. w Meta, dziś [AMI Labs](https://amilabs.xyz/)) - potrzebujemy fundamentalnie nowych podejść.
 
 :::note[Czy GPT-5 to AGI?]
 Prawdopodobnie nie. Skalowanie obecnej architektury daje coraz mniejsze przyrosty. Prawdziwe AGI może wymagać nowych przełomów, nie tylko większych modeli.
@@ -94,7 +94,7 @@ Masowe bezrobocie i nierówności. Koncentracja władzy w rękach nielicznych. D
 
 **Organizacje bezpieczeństwa AI:** OpenAI ("Superalignment" team, rozwiązany w 2024), Anthropic (założona z myślą o bezpieczeństwie), Google DeepMind (badania nad alignment), MIRI (Machine Intelligence Research Institute), Center for AI Safety (polityka i badania).
 
-**Regulacje:** EU AI Act (pierwsze kompleksowe regulacje), US Executive Order (wymogi dla dużych modeli), UK AI Safety Institute (badania i standardy), globalne porozumienia (próby koordynacji).
+**Regulacje:** EU AI Act (pierwsze kompleksowe regulacje), USA (rozporządzenie prezydenta z 2023 r. o wymogach dla dużych modeli [uchylone w styczniu 2025 r.](https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/)), [UK AI Security Institute](https://www.gov.uk/government/organisations/ai-security-institute) (dawniej AI Safety Institute - badania nad ryzykami zaawansowanej AI), globalne porozumienia (próby koordynacji).
 
 ## Jak się przygotować?
 
@@ -108,7 +108,7 @@ Masowe bezrobocie i nierówności. Koncentracja władzy w rękach nielicznych. D
 
 **Newslettery i podcasty:** The Rundown AI (codzienny newsletter), Ben's Bites (przegląd nowości), Lex Fridman Podcast (wywiady z ekspertami), The AI Podcast (NVIDIA) (techniczny ale przystępny).
 
-**Platformy:** arXiv (najnowsze publikacje naukowe), Papers with Code (implementacje badań), Hugging Face (centrum społeczności AI).
+**Platformy:** arXiv (najnowsze publikacje naukowe), Hugging Face (centrum społeczności AI, codzienny przegląd nowych publikacji).
 
 **Media społecznościowe:** X/Twitter (wielu badaczy AI jest aktywnych), Reddit (r/MachineLearning, r/LocalLLaMA), YouTube (Yannic Kilcher, Two Minute Papers).
 
@@ -124,7 +124,7 @@ Przyszłość AI jest niepewna i nie zamierzam udawać, że wiem, jak potoczy si
 
 :::note[Teraz wiesz]
 
-- Jakie są najważniejsze trendy AI: multimodalność, agenci AI, personalizacja i demokratyzacja modeli open-source
+- Jakie są najważniejsze trendy AI: multimodalność, agenci AI, personalizacja i demokratyzacja modeli open-weight
 - Czym jest AGI, dlaczego prognozy ekspertów są tak rozbieżne (2027-2050+) i jakie ryzyka się z tym wiążą
 - Jak się przygotować na przyszłość: bądź na bieżąco, ucz się ciągle, rozwijaj ludzkie umiejętności i buduj reputację
 

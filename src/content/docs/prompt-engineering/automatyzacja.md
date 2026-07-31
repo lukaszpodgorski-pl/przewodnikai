@@ -89,7 +89,7 @@ Raport:
 
 ## APE (Automatic Prompt Engineer)
 
-**APE** (Zhou et al. 2022) to framework do automatycznego generowania i selekcji najlepszych instrukcji. Zamiast ręcznie pisać prompty, pozwalasz AI je tworzyć i testować.
+**APE** ([Zhou i in., 2022](https://arxiv.org/abs/2211.01910)) to framework do automatycznego generowania i selekcji najlepszych instrukcji. Zamiast ręcznie pisać prompty, pozwalasz AI je tworzyć i testować.
 
 :::tip[Kluczowe odkrycie]
 APE odkrył, że prompt "Let's work this out in a step by step way to be sure we have the right answer" działa lepiej niż ręcznie wymyślony "Let's think step by step" w zadaniach matematycznych.
@@ -128,7 +128,7 @@ Następnie testujesz każdą instrukcję na większym zbiorze danych i wybierasz
 
 ## Active-Prompt
 
-**Active-Prompt** (Diao et al. 2023) to technika adaptująca przykłady Chain-of-Thought do konkretnego zadania poprzez identyfikację najbardziej "niepewnych" przypadków.
+**Active-Prompt** ([Diao i in., 2023](https://arxiv.org/abs/2302.12246)) to technika adaptująca przykłady Chain-of-Thought do konkretnego zadania poprzez identyfikację najbardziej "niepewnych" przypadków.
 
 **Jak działa Active-Prompt?** 1. Generowanie odpowiedzi - model generuje kilka odpowiedzi dla każdego pytania. 2. Pomiar niepewności - obliczana jest "niezgoda" między odpowiedziami. 3. Selekcja - pytania z największą niepewnością są wybierane do ręcznej anotacji. 4. Wykorzystanie - nowe przykłady z rozumowaniem są używane w promptach.
 
@@ -259,9 +259,13 @@ Istnieje wiele narzędzi wspierających automatyzację pracy z promptami:
 | --- | --- | --- |
 | **LangChain** | Łańcuchy promptów, agenci | Framework Python |
 | **LlamaIndex** | RAG, indeksowanie dokumentów | Framework Python |
-| **PromptFlow** | Wizualne projektowanie workflow | Narzędzie Microsoft |
+| **PromptFlow** | Wizualne projektowanie workflow | Narzędzie Microsoft - wycofywane |
 | **Weights & Biases** | Śledzenie eksperymentów | Platforma MLOps |
-| **Humanloop** | Wersjonowanie promptów | Platforma SaaS |
+| **Langfuse** | Wersjonowanie i zarządzanie promptami | Platforma open source |
+
+:::caution[PromptFlow jest wycofywany]
+Microsoft nie poleca już PromptFlow do nowych wdrożeń, a jego wyłączenie zapowiedział na 20 kwietnia 2027 r. - jako następcę wskazuje Microsoft Agent Framework ([dokumentacja Microsoft Learn](https://learn.microsoft.com/en-us/azure/machine-learning/prompt-flow/overview-what-is-prompt-flow?view=azureml-api-2)). Jeśli dopiero zaczynasz, wybierz inne narzędzie z tej tabeli.
+:::
 
 ## Podsumowanie
 

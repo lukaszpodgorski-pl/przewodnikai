@@ -1,6 +1,6 @@
 ---
 title: Case studies AI - przykłady wdrożeń i sukcesów
-description: Przykłady wykorzystania AI w firmach - case studies z marketingu, obsługi klienta, automatyzacji procesów i więcej.
+description: Pięć scenariuszy wdrożeń AI - agencja marketingowa, startup, freelancer, kancelaria i e-commerce. Co zadziałało, co nie i jakie wnioski z tego płyną.
 sidebar:
   label: 'Case studies'
   order: 2

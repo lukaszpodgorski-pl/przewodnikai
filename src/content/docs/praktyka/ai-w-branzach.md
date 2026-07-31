@@ -68,10 +68,10 @@ W **księgowości** kategoryzuje transakcje automatycznie, wykonuje reconciliati
 W **obsłudze klienta w bankach i ubezpieczeniach** znajdziesz chatboty odpowiadające na pytania klientów, underwriting (ocena ryzyka ubezpieczeniowego), claims (przetwarzanie roszczeń) i KYC, czyli weryfikację tożsamości.
 
 :::note[AI w bankowości]
-Banki używają AI do wykrywania fraudów, scoringu kredytowego, personalizacji ofert i automatyzacji back-office. JP Morgan oszczędza 360 000 godzin rocznie dzięki AI analizującemu umowy.
+Banki używają AI do wykrywania fraudów, scoringu kredytowego, personalizacji ofert i automatyzacji back-office - w tym do wstępnej analizy umów kredytowych.
 :::
 
-**Popularne narzędzia:** Bloomberg GPT, Kensho, AlphaSense, Vic.ai, Docyt.
+**Popularne narzędzia:** Kensho, AlphaSense, Vic.ai, Docyt.
 
 ## Prawo
 
@@ -87,7 +87,7 @@ Przy **tworzeniu dokumentów** AI generuje drafty umów (pierwsze wersje), podpo
 AI to narzędzie wspomagające, nie substytut porady prawnej. Zawsze weryfikuj z wykwalifikowanym prawnikiem. AI może generować błędne cytaty i precedensy.
 :::
 
-**Popularne narzędzia:** Harvey AI, CoCounsel (Thomson Reuters), Lexis+ AI, Casetext, Spellbook.
+**Popularne narzędzia:** Harvey AI, CoCounsel (Thomson Reuters, dawniej Casetext), Lexis+ AI, Spellbook.
 
 ## Zdrowie i medycyna
 
@@ -104,7 +104,7 @@ W **badaniach i rozwoju** AI wchodzi w drug discovery (projektowanie cząsteczek
 Systemy analizy obrazu bywają wykorzystywane jako narzędzie wspierające radiologa - potrafią oznaczyć na zdjęciu miejsca warte uwagi. Odczyt i diagnozę zatwierdza lekarz, nie model. Osobnym wątkiem jest przewidywanie struktury białek przez Google DeepMind, które przyspiesza rozwój leków.
 :::
 
-**Popularne narzędzia:** IBM Watson Health, Google Health AI, Nuance DAX, PathAI, Tempus.
+**Popularne narzędzia:** Merative (dawniej IBM Watson Health), Google Health AI, Microsoft Dragon Copilot (dawniej Nuance DAX), PathAI, Tempus.
 
 ## Edukacja
 
@@ -168,7 +168,7 @@ Jeśli masz wybrać jedno miejsce na start, wybierz to, w którym Twoja organiza
 ## Źródła i dalsze lektury
 
 - [McKinsey: The State of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) - coroczne badanie adopcji AI w firmach, z podziałem na branże i regiony
-- [Stanford HAI AI Index 2024](https://hai.stanford.edu/research/ai-index-report) - dane o inwestycjach, patentach i wdrożeniach AI w kluczowych sektorach
+- [Stanford HAI AI Index](https://hai.stanford.edu/ai-index) - coroczny raport z danymi o inwestycjach, patentach i wdrożeniach AI w kluczowych sektorach
 - [Goldman Sachs: Generative AI and GDP](https://www.goldmansachs.com/insights/articles/generative-ai-could-raise-global-gdp-by-7-percent) - analiza wpływu generatywnej AI na globalny PKB (szacunkowo +7%)
 - [WHO: Ethics & Governance of AI for Health (2021)](https://www.who.int/publications/i/item/9789240029200) - wytyczne WHO dotyczące stosowania AI w ochronie zdrowia
 

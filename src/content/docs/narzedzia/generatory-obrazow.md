@@ -6,7 +6,7 @@ sidebar:
   order: 3
 educationalLevel: Beginner
 teaches:
-  - Jak działają generatory obrazów AI
+  - Jak wybrać generator obrazów AI
   - Porównanie Midjourney, GPT Image i Stable Diffusion
   - Jak tworzyć obrazy z AI
 about:
@@ -83,13 +83,13 @@ Mniej artystyczny niż Midjourney, ograniczenia treści, w planie darmowym wolni
 
 ## Stable Diffusion i FLUX
 
-**Stable Diffusion** to open-source'owy generator, który możesz uruchomić lokalnie na swoim komputerze. Aktualna wersja to Stable Diffusion 3.5 (w wariantach Large, Turbo i Medium).
+**Stable Diffusion** to generator z otwartymi wagami, który możesz uruchomić lokalnie na swoim komputerze (licencja Stability AI Community nie jest licencją open source w rozumieniu OSI - różnicę wyjaśniam w [Modelach językowych](/jak-dziala-ai/modele-jezykowe/)). Aktualna wersja to Stable Diffusion 3.5 (w wariantach Large, Turbo i Medium).
 
 **FLUX** od Black Forest Labs to dziś druga - a często mocniejsza - opcja w świecie otwartych modeli obrazu. Rozlicza się za wygenerowany obraz, bez abonamentu. [Cennik](https://bfl.ai/pricing).
 
 **Dostęp:** lokalnie (darmowy, wymaga dobrej karty graficznej) albo online przez platformy pośredniczące.
 
-**Zalety modelu open-source:** pełna kontrola i prywatność, możliwość dostrojenia do swoich potrzeb, brak ograniczeń treści w wersji lokalnej, tysiące modeli społeczności.
+**Zalety modelu z otwartymi wagami:** pełna kontrola i prywatność, możliwość dostrojenia do swoich potrzeb, brak ograniczeń treści w wersji lokalnej, tysiące modeli społeczności.
 
 :::caution[Uwaga na fałszywe wersje]
 W sieci krążą artykuły o "Stable Diffusion 4". Taki model nie istnieje - to powielana dezinformacja. Najnowsza oficjalna wersja Stability AI to Stable Diffusion 3.5. Zanim uwierzysz w numer wersji, sprawdź go na stronie producenta.
@@ -160,7 +160,7 @@ Status prawny obrazów AI jest wciąż niejasny. Większość platform pozwala n
 
 - **Midjourney** - dopracowana estetyka, dziś dostępny przez zwykłą stronę, bez planu darmowego
 - **GPT Image** - wierne odwzorowanie złożonych promptów, w ChatGPT; następca DALL-E
-- **Stable Diffusion / FLUX** - open-source, pełna kontrola, darmowe lokalnie
+- **Stable Diffusion / FLUX** - otwarte wagi, pełna kontrola, darmowe lokalnie
 - **Leonardo.ai** - przyjazny dla początkujących, darmowy plan
 - **Ideogram** - czytelny tekst wewnątrz obrazu
 
@@ -169,7 +169,7 @@ Status prawny obrazów AI jest wciąż niejasny. Większość platform pozwala n
 
 :::note[Teraz wiesz]
 
-- Czym różnią się Midjourney (artystyczna jakość), GPT Image (precyzja promptów) i Stable Diffusion z FLUX-em (open-source, pełna kontrola)
+- Czym różnią się Midjourney (artystyczna jakość), GPT Image (precyzja promptów) i Stable Diffusion z FLUX-em (otwarte wagi, pełna kontrola)
 - Że DALL-E został wycofany, a jego następcą w ChatGPT jest linia GPT Image
 - Jak budować skuteczne prompty do obrazów: temat, styl, detale, oświetlenie, kolorystyka i jakość
 - Na co uważać pod względem praw autorskich przy komercyjnym wykorzystaniu obrazów generowanych przez AI

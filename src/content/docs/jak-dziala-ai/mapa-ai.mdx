@@ -39,21 +39,21 @@ Jeśli czytasz o AI od kilku tygodni, masz już pewnie w głowie worek skrótów
 
 ## Fundament: modele i wiedza
 
-Zacznij od tej sekcji, nawet jeśli resztę mapy tylko przewiniesz wzrokiem. Bez tych trzech elementów nie działa nic, co znajdziesz niżej.
+Zacznij od tej sekcji, nawet jeśli resztę mapy tylko przewiniesz wzrokiem. Te trzy elementy to podstawa: model, który generuje odpowiedzi, i dwa sposoby na dostarczenie mu wiedzy - z Twoich dokumentów i z poprzednich rozmów.
 
 <CardGrid>
 	<Card title="LLM (Large Language Models)" icon="open-book">
-		Model wytrenowany na ogromnej ilości tekstu, który przewiduje kolejne tokeny i dzięki temu potrafi pisać, streszczać i rozumować w języku naturalnym. To silnik, z którego korzystasz w ChatGPT czy Claude.
+		Model wytrenowany na ogromnej ilości tekstu, który przewiduje kolejne tokeny i dzięki temu potrafi pisać, streszczać i rozumować w języku naturalnym. To silnik, z którego korzystasz w ChatGPT czy Claude. Cały rozdział: [Modele językowe LLM](/jak-dziala-ai/modele-jezykowe/).
 
 		**Zastosowania:** generowanie kodu, streszczanie długich tekstów, chatbot, wyciąganie wniosków z danych.
 	</Card>
 	<Card title="RAG (Retrieval Augmented Generation)" icon="magnifier">
-		Sam model zna tylko to, co było w danych treningowych. RAG dokłada mu wyszukiwarkę: zanim odpowie, znajduje właściwe fragmenty Twoich dokumentów i opiera odpowiedź na nich, zamiast zgadywać.
+		Sam model zna tylko to, co było w danych treningowych. RAG dokłada mu wyszukiwarkę: zanim odpowie, znajduje właściwe fragmenty Twoich dokumentów i opiera odpowiedź na nich, zamiast zgadywać. Cały rozdział: [RAG - AI na Twoich dokumentach](/jak-dziala-ai/rag/).
 
 		**Zastosowania:** asystent po firmowej bazie wiedzy, analiza dokumentów prawnych, przegląd literatury naukowej, obsługa klienta.
 	</Card>
-	<Card title="Agenci z rozszerzoną pamięcią" icon="document">
-		Zwykła rozmowa z modelem kończy się razem z sesją. Agent z pamięcią zapisuje, co już ustaliliście, i wraca do tego w kolejnych rozmowach - zamiast pytać Cię o to samo od nowa.
+	<Card title="Pamięć długoterminowa" icon="document">
+		Zwykła rozmowa z modelem kończy się razem z sesją. Pamięć zapisuje, co już ustaliliście, i wraca do tego w kolejnych rozmowach - zamiast pytać Cię o to samo od nowa.
 
 		**Zastosowania:** asystent nauki pamiętający Twoje postępy, wsparcie klienta z historią zgłoszeń, długi projekt badawczy, planer pracy.
 	</Card>
@@ -65,9 +65,9 @@ Tu narosło najwięcej marketingowego szumu. Pod hasłami "agentic AI", "autonom
 
 <CardGrid>
 	<Card title="Agenci AI (agentic AI)" icon="rocket">
-		Dostają cel zamiast pojedynczego polecenia. Sami planują kroki, wykonują je, sprawdzają wynik i poprawiają się po drodze - bez Twojej akceptacji na każdym etapie. To samo kryje się pod hasłami "autonomiczni agenci", "agenci rozumujący i planujący" oraz "autonomiczne podejmowanie decyzji".
+		Dostają cel zamiast pojedynczego polecenia. Sami planują kroki, wykonują je, sprawdzają wynik i poprawiają się po drodze - bez Twojej akceptacji na każdym etapie. To samo kryje się pod hasłami "autonomiczni agenci", "agenci rozumujący i planujący" oraz "autonomiczne podejmowanie decyzji". Cały rozdział: [Agenci AI](/jak-dziala-ai/agenci-ai/).
 
-		**Zastosowania:** asystent badawczy zbierający i porządkujący materiały, automatyzacja wieloetapowego workflow, boty handlowe, nawigacja pojazdów autonomicznych, optymalizacja łańcucha dostaw.
+		**Zastosowania:** asystent badawczy zbierający i porządkujący materiały, automatyzacja wieloetapowego workflow, przeglądanie stron i wypełnianie formularzy za Ciebie, samodzielne wprowadzanie zmian w plikach projektu.
 	</Card>
 	<Card title="Systemy Multi-Agent" icon="comment-alt">
 		Kilku agentów pracuje jednocześnie: dzielą się zadaniami, uzgadniają wyniki albo wzajemnie się sprawdzają. Ma to sens dopiero wtedy, gdy problem rozpada się na role, których jeden model nie ogarnie naraz.
@@ -92,7 +92,7 @@ Sam model tylko generuje tekst. Dopiero ta warstwa pozwala mu coś faktycznie zr
 		**Zastosowania:** delegowanie zadań między agentami, koordynacja wieloplatformowa, workflow niezależny od dostawcy.
 	</Card>
 	<Card title="Wywoływanie narzędzi (tool calling / tool use)" icon="setting">
-		Mechanizm, w którym model zamiast odpowiadać tekstem zgłasza: "wywołaj tę funkcję z tymi argumentami". _Tool calling_ to sam mechanizm, _tool use_ to sytuacja, w której agent samodzielnie wybiera i łączy kolejne narzędzia.
+		Mechanizm, w którym model zamiast odpowiadać tekstem zgłasza: "wywołaj tę funkcję z tymi argumentami". _Tool calling_ i _tool use_ to dwie nazwy tego samego mechanizmu: OpenAI mówi zwykle o wywoływaniu funkcji (_function calling_), Anthropic o użyciu narzędzi (_tool use_). Sytuację, w której agent sam wybiera i łączy kolejne narzędzia krok po kroku, opisuje osobne pojęcie - pętla decyzyjna agenta (_agentic loop_), którą poznałeś w rozdziale o [agentach AI](/jak-dziala-ai/agenci-ai/).
 
 		**Zastosowania:** pobieranie aktualnych danych, zapytania do bazy, generowanie raportów, asystent debugowania kodu.
 	</Card>

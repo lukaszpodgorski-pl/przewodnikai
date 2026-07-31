@@ -37,17 +37,19 @@ Czy Twoje dane są używane do treningu modeli? To różni się między dostawca
 
 **OpenAI (ChatGPT):**
 
-| Plan | Dane do treningu? | Retencja |
+| Rodzaj planu | Dane do treningu? | Retencja |
 | --- | --- | --- |
-| Free | Tak (domyślnie) | 30 dni |
-| Plus | Tak (można wyłączyć) | 30 dni |
-| Team | Nie | 30 dni |
-| Enterprise | Nie | Konfigurowalne |
-| API | Nie (domyślnie) | 30 dni (logs) |
+| Plany konsumenckie | Tak (domyślnie, można wyłączyć) | Czat zostaje, dopóki go nie usuniesz (usunięty znika w ciągu 30 dni) |
+| Plany firmowe | Nie | Konfigurowalne przez administratora |
+| API | Nie (domyślnie) | 30 dni (logi) |
 
-<small>Źródło: OpenAI Privacy Policy. Zawsze sprawdzaj aktualne polityki.</small>
+<small>Źródła: [OpenAI - retencja czatów i plików](https://help.openai.com/en/articles/8983778-chat-and-file-retention-policies-in-chatgpt) oraz polityka prywatności OpenAI. Zawsze sprawdzaj aktualne polityki.</small>
 
-**Anthropic (Claude):** Consumer (dane mogą być używane do treningu, można opt-out), Pro (dane mogą być używane, można opt-out), API (dane NIE są używane do treningu), Enterprise (pełna kontrola, dane nie używane).
+:::note[Dlaczego bez nazw planów?]
+Nazwy szczebli zmieniają się kilka razy w roku - plan, który do sierpnia 2025 nazywał się Team, nosi dziś nazwę Business. Aktualną listę planów każdego dostawcy trzymam w jednym miejscu, w rozdziale [Chatboty AI](/narzedzia/chatboty/). Tutaj liczy się sama zasada: plany dla firm domyślnie nie trenują na Twoich danych, konsumenckie tak.
+:::
+
+**Anthropic (Claude):** plany konsumenckie (dane mogą być używane do treningu, można wyłączyć), API (dane NIE są używane do treningu), Enterprise (pełna kontrola, dane nie używane).
 
 **Google (Gemini):** Free Gemini (dane używane do ulepszania produktów), Workspace (dane nie używane do treningu), API/Vertex AI (dane nie używane do treningu).
 
@@ -55,11 +57,11 @@ Czy Twoje dane są używane do treningu modeli? To różni się między dostawca
 
 ## Jak wyłączyć trening na Twoich danych?
 
-**ChatGPT:** 1. Otwórz Settings. 2. Data Controls. 3. Wyłącz "Improve the model for everyone". Uwaga: wyłączenie oznacza też brak historii rozmów!
+**ChatGPT:** 1. Otwórz Settings. 2. Data Controls. 3. Wyłącz "Improve the model for everyone". Uwaga: to ustawienie dotyczy tylko treningu - historia rozmów zostaje na Twoim koncie.
 
 **Claude:** 1. Otwórz Settings. 2. Privacy. 3. Opt-out z treningu.
 
-**Gemini:** Gemini Apps Activity - można wyłączyć w ustawieniach Google. Dostępna też kontrola retencji danych.
+**Gemini:** wyłącz ustawienie "Zachowuj aktywność" (dawniej "Aktywność w aplikacjach z Gemini") na stronie Moja aktywność Google. Możesz tam też włączyć automatyczne kasowanie aktywności po określonym czasie. Uwaga: nawet po wyłączeniu Google przechowuje rozmowy jeszcze przez 72 godziny - żeby obsłużyć usługę i zgłoszone opinie ([pomoc Google](https://support.google.com/gemini/answer/13278892?hl=pl)).
 
 ## RODO i AI
 
@@ -73,7 +75,7 @@ W 2023 Włochy czasowo zablokowały ChatGPT za naruszenia RODO. OpenAI musiało 
 
 ## Operacyjna checklista bezpieczeństwa RODO
 
-Użyj tej checklisty PRZED każdym użyciem AI z danymi firmowymi lub osobowymi. Opracowana na podstawie wytycznych UODO i PCPD.
+Użyj tej checklisty PRZED każdym użyciem AI z danymi firmowymi lub osobowymi. Opracowana na podstawie wytycznych UODO (Urzędu Ochrony Danych Osobowych).
 
 **Przed wprowadzeniem danych do AI:**
 
@@ -139,7 +141,7 @@ Jakie klauzule są standardowe?"
 
 **Polityka korzystania z AI.** Firma powinna mieć jasne wytyczne: które narzędzia AI są dozwolone? Jakie dane można przetwarzać? Kto weryfikuje output AI? Jak raportować incydenty?
 
-**Rozwiązania enterprise:** Azure OpenAI (dane w Twojej chmurze), ChatGPT Enterprise (izolacja danych, SOC 2), Claude for Business (kontrola nad danymi), lokalne modele (Llama na własnych serwerach).
+**Rozwiązania enterprise:** Azure OpenAI (dane w Twojej chmurze), ChatGPT Enterprise (izolacja danych, SOC 2), [Claude for Work](https://claude.com/pricing) (firmowe plany Anthropic - dane nie trafiają do treningu modeli), lokalne modele (Llama na własnych serwerach).
 
 :::tip[Checklist bezpieczeństwa przed użyciem AI w firmie]
 
@@ -160,15 +162,13 @@ Jeśli prywatność jest krytyczna, rozważ modele działające lokalnie.
 
 Chcesz spróbować? [Jak to zrobić krok po kroku](/suwerenne-ai/ai-na-wlasnym-komputerze/).
 
-**Wymagania:** GPU z min. 8 GB VRAM (dla mniejszych modeli - orientacyjne wymagania znajdziesz w podlinkowanym artykule), 16-32GB RAM, szybki dysk SSD.
+**Dla płynnego działania:** GPU z min. 8 GB VRAM (dla mniejszych modeli - orientacyjne wymagania znajdziesz w podlinkowanym artykule), 16-32 GB RAM, szybki dysk SSD.
 
-**Kompromisy:** jakość niższa niż w modelach czołowych dostawców (ale rośnie!), wymaga technicznej wiedzy, potrzebny mocny sprzęt. Ale: pełna prywatność, zero kosztów API.
+**Kompromisy:** jakość niższa niż w modelach czołowych dostawców (ale rośnie!), pierwsza konfiguracja zajmuje chwilę, a im słabszy sprzęt, tym wolniejsze odpowiedzi - na zwykłym laptopie modele też ruszą, tylko wolniej. W zamian: pełna prywatność i zero kosztów API.
 
 ## AI Act - regulacje EU
 
-AI Act to europejskie rozporządzenie regulujące AI.
-
-<!-- TODO(Łukasz): zweryfikuj aktualny stan prawny przed publikacją -->
+AI Act to europejskie rozporządzenie regulujące AI - obowiązuje etapami. Wymogi przejrzystości, m.in. obowiązek jasnej informacji, że rozmawiasz z AI, a nie z człowiekiem, obowiązują od 2 sierpnia 2026 r. Pełny harmonogram wraz ze źródłami opisuję w rozdziale [Etyka i prawo w świecie AI](/etyka/etyczne-aspekty/).
 
 **Kluczowe elementy:** klasyfikacja ryzyka (AI podzielone na kategorie ryzyka), przejrzystość (obowiązek informowania o użyciu AI), dane treningowe (wymogi dot. jakości i dokumentacji), prawa autorskie (kwestie treści generowanych przez AI).
 

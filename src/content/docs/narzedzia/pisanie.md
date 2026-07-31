@@ -1,5 +1,5 @@
 ---
-title: Narzędzia AI do pisania - Jasper, Copy.ai, Writesonic i inne
+title: Narzędzia AI do pisania - Jasper, Rytr, Sudowrite i inne
 description: Przegląd najlepszych narzędzi AI do pisania - copywriting, content marketing, SEO. Porównanie funkcji i zastosowań.
 sidebar:
   label: 'Narzędzia do pisania'
@@ -12,10 +12,6 @@ teaches:
 about:
   - name: Przetwarzanie języka naturalnego
     sameAs: https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego
-mentions:
-  - name: Grammarly
-    sameAs: https://en.wikipedia.org/wiki/Grammarly
-    type: SoftwareApplication
 ---
 
 ![Świetliste pióro pisze płynny tekst ze śladem iskier AI - narzędzia AI do pisania](../../../assets/narzedzia/pisanie/pisanie.jpg)
@@ -27,14 +23,14 @@ Narzędzia AI do pisania to specjalistyczne aplikacje, które pomagają tworzyć
 Zaznaczam to od razu, bo to najczęstsze nieporozumienie w tej kategorii: żadne z opisanych tu narzędzi nie zastąpi Cię jako autora. Przyspieszają etap szkicu i redakcji - i o tym będzie ten rozdział.
 
 :::note[Dlaczego nie znajdziesz tu kwot]
-Cenniki narzędzi AI zmieniają się szybciej, niż da się je odświeżać, a nieaktualna liczba szkodzi bardziej niż jej brak. Dlatego przy każdym narzędziu podaję tylko jedno: czy da się je wypróbować za darmo. Jak w ogóle wygląda rozliczanie AI - subskrypcja, API u dostawcy, API u brokera - tłumaczę w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).
+Cenniki narzędzi AI zmieniają się szybciej, niż da się je odświeżać, a nieaktualna liczba szkodzi bardziej niż jej brak. Dlatego przy każdym narzędziu podaję tylko jedno: czy da się je wypróbować za darmo - a po aktualne stawki linkuję wprost do cennika producenta. Jak w ogóle wygląda rozliczanie AI - subskrypcja, API u dostawcy, API u brokera - tłumaczę w rozdziale [Ile kosztuje AI](/narzedzia/ile-kosztuje-ai/).
 :::
 
 ## Jasper
 
 **Jasper** (wcześniej Jarvis) to jedno z najpopularniejszych narzędzi AI do content marketingu i copywritingu. Sam producent określa go dziś jako AI zbudowane pod marketing - i to dobrze opisuje, dla kogo jest ten produkt.
 
-**Plan darmowy:** brak. Jest 7-dniowy okres próbny.
+**Plan darmowy:** brak. Jest 7-dniowy okres próbny. [Cennik](https://www.jasper.ai/pricing).
 
 **Kluczowe funkcje:** Brand Voice (nauczenie AI Twojego stylu pisania), Campaigns (tworzenie pełnych kampanii marketingowych), Templates (szablony dla różnych formatów), Browser Extension (pisanie wszędzie).
 
@@ -52,7 +48,7 @@ Bez wersji darmowej - masz tylko tydzień na sprawdzenie, czy się przyda. Dla p
 
 Mówię o tym wprost: **jeśli szukasz narzędzia po prostu do pisania, Copy.ai nie jest już dla Ciebie**. Zostawiam go w tym rozdziale, bo wiele starszych poradników wciąż go poleca jako copywritingowy - i warto wiedzieć, że to nieaktualne.
 
-**Plan darmowy:** brak.
+**Plan darmowy:** brak. [Cennik](https://www.copy.ai/prices).
 
 **Kluczowe funkcje:** Workflows (automatyzacja powtarzalnych procesów sprzedażowo-marketingowych), baza wiedzy o Twojej firmie, generowanie treści wewnątrz tych procesów.
 
@@ -70,7 +66,7 @@ To już nie jest narzędzie dla pojedynczego autora tekstów. Brak planu darmowe
 
 Ta sama uwaga co przy Copy.ai: **to nie jest już narzędzie do pisania**. Wymieniam je, bo starsze zestawienia wciąż tak je klasyfikują, a Ty zasługujesz na aktualną informację, zanim wykupisz dostęp.
 
-**Plan darmowy:** brak. Jest okres próbny.
+**Plan darmowy:** brak. Jest okres próbny, do którego nie trzeba podawać karty. [Cennik](https://writesonic.com/pricing).
 
 :::tip[Zalety]
 Odpowiada na realne pytanie, które zaczynają sobie zadawać firmy: co ChatGPT czy Perplexity mówią o mojej marce.
@@ -82,25 +78,25 @@ Zupełnie inne zastosowanie niż kiedyś - jeśli trafiłeś tu po generator tek
 
 ## Narzędzia do pisania długich form
 
-**Sudowrite** - specjalnie dla pisarzy fikcji: powieści, opowiadania, scenariusze. Plan darmowy: okres próbny. Najlepsze dla: autorzy książek, scenarzyści. Funkcje: Story Engine, Describe, Brainstorm, Rewrite.
+**Sudowrite** - specjalnie dla pisarzy fikcji: powieści, opowiadania, scenariusze. Plan darmowy: brak, jest okres próbny bez podawania karty. [Cennik](https://sudowrite.com/pricing). Najlepsze dla: autorzy książek, scenarzyści. Funkcje: Story Engine, Describe, Brainstorm, Rewrite.
 
-**Rytr** - alternatywa dla mniejszych budżetów, z kilkudziesięcioma przypadkami użycia. Plan darmowy: tak, z limitem 10 000 znaków miesięcznie. Najlepsze dla: freelancerzy, małe budżety. Funkcje: wiele tonów wypowiedzi, kilkadziesiąt języków, sprawdzanie plagiatu.
+**Rytr** - alternatywa dla mniejszych budżetów, z kilkudziesięcioma przypadkami użycia. Plan darmowy: tak, z limitem 10 000 znaków miesięcznie. [Cennik](https://rytr.me/pricing). Najlepsze dla: freelancerzy, małe budżety. Funkcje: wiele tonów wypowiedzi, kilkadziesiąt języków, sprawdzanie plagiatu.
 
-**Notion AI** - AI wbudowane w popularne narzędzie do notatek i zarządzania wiedzą. Płatny dodatek do Notion. Najlepsze dla: użytkownicy Notion, notatki i dokumentacja. Funkcje: pisanie, streszczanie, tłumaczenie, w kontekście Twoich notatek.
+**Notion AI** - AI wbudowane w popularne narzędzie do notatek i zarządzania wiedzą. Plan darmowy: tak, sam Notion ma darmowy plan, ale funkcje AI wypróbujesz w nim tylko w ograniczonym zakresie - pełny asystent Notion AI jest w planach Business i Enterprise. [Cennik](https://www.notion.com/pricing). Najlepsze dla: użytkownicy Notion, notatki i dokumentacja. Funkcje: pisanie, streszczanie, tłumaczenie, w kontekście Twoich notatek.
 
 ## Narzędzia SEO z AI
 
-**Surfer SEO** - łączy AI z analizą SEO, pomaga pisać artykuły zoptymalizowane pod wyszukiwarki. Plan darmowy: brak. Funkcje: Content Editor, SERP Analyzer, Keyword Research, AI Writer. Najlepsze dla: specjaliści SEO, content marketerzy.
+**Surfer SEO** - łączy AI z analizą SEO, pomaga pisać artykuły zoptymalizowane pod wyszukiwarki. Plan darmowy: brak. [Cennik](https://surferseo.com/pricing/). Funkcje: Content Editor, SERP Analyzer, Keyword Research, AI Writer. Najlepsze dla: specjaliści SEO, content marketerzy.
 
-**Frase** - narzędzie do researchu i pisania treści SEO. Funkcje: analiza konkurencji, brief content, AI writing. Najlepsze dla: pisanie artykułów blogowych z SEO.
+**Frase** - narzędzie do researchu i pisania treści SEO. Plan darmowy: brak, jest 7-dniowy okres próbny bez podawania karty. [Cennik](https://www.frase.io/pricing/). Funkcje: analiza konkurencji, brief content, AI writing. Najlepsze dla: pisanie artykułów blogowych z SEO.
 
-**NeuronWriter** - polskie narzędzie do optymalizacji treści pod SEO. Funkcje: analiza NLP, plan artykułu, sugestie słów kluczowych. Najlepsze dla: polskie SEO, copywriterzy.
+**NeuronWriter** - polskie narzędzie do optymalizacji treści pod SEO. Plan darmowy: brak, jest 7-dniowy okres próbny. [Cennik](https://neuronwriter.com/pricing-neuron/). Funkcje: analiza NLP, plan artykułu, sugestie słów kluczowych. Najlepsze dla: polskie SEO, copywriterzy.
 
 ## Narzędzia do email marketingu
 
-**Lavender** - AI coach do pisania lepszych maili sprzedażowych. Funkcje: analiza maili, sugestie poprawy, personalizacja.
+**Lavender** - AI coach do pisania lepszych maili sprzedażowych. Plan darmowy: tak, w planie Basic, z limitem pięciu analizowanych maili miesięcznie. [Cennik](https://www.lavender.ai/coach). Funkcje: analiza maili, sugestie poprawy, personalizacja.
 
-**Instantly.ai** - automatyzacja cold email z AI. Funkcje: warm-up, sekwencje, AI writer.
+**Instantly.ai** - automatyzacja cold email z AI. Plan darmowy: brak, choć konto założysz bez podawania karty. [Cennik](https://instantly.ai/pricing). Funkcje: warm-up, sekwencje, AI writer.
 
 ## Porównanie narzędzi do pisania
 

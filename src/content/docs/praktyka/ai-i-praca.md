@@ -31,23 +31,21 @@ AI zmienia rynek pracy szybciej niż jakakolwiek poprzednia technologia. Niektó
 
 Zanim przejdziemy do wniosków, cztery liczby, do których będę się dalej odwoływał:
 
-<!-- TODO(Łukasz): "Badania branżowe 2024" przy różnicy 56% w zarobkach to nie jest źródło - podaj konkretny raport albo usuń ten wiersz -->
-
 | Wskaźnik | Wartość | Źródło |
 | --- | --- | --- |
 | Zmiana kompetencji do 2030 | **39%** kluczowych kompetencji zawodowych ulegnie zmianie | World Economic Forum 2025 |
 | Nowe miejsca pracy (2025-2030) | **+170 mln** nowych miejsc, -92 mln zniknie = **+78 mln netto** | WEF Future of Jobs 2025 |
-| Różnica w zarobkach | **56% więcej** zarabiają pracownicy ze znajomością AI | Badania branżowe 2024 |
-| Organizacje używające AI | **72%** aktywnie korzysta z AI w 2024 | McKinsey Global Survey |
+| Różnica w zarobkach | **56% więcej** zarabiają pracownicy z umiejętnościami AI | PwC Global AI Jobs Barometer 2025 |
+| Organizacje używające AI | **88%** regularnie korzysta z AI w co najmniej jednym obszarze firmy (2025) | McKinsey State of AI 2025 |
 
 ### Polska - sytuacja specyficzna
 
 | Wskaźnik | Polska | Średnia UE | Cel UE 2030 |
 | --- | --- | --- | --- |
-| Podstawowe umiejętności cyfrowe | **44,3%** | 55,6% | 80% |
+| Podstawowe umiejętności cyfrowe | **50,4%** | 60,4% | 80% |
 | Pracownicy narażeni na wpływ AI | **3,68 mln** osób (w tym 2,16 mln kobiet) | - | - |
 
-<small>Źródło: Poland 2025 Digital Decade Country Report</small>
+<small>Źródła: podstawowe umiejętności cyfrowe - [Eurostat, dane za 2025 rok](https://ec.europa.eu/eurostat/databrowser/view/isoc_sk_dskl_i21/default/table?lang=en) (osoby w wieku 16-74 lata); pracownicy narażeni na wpływ AI - Poland 2025 Digital Decade Country Report.</small>
 
 :::caution[Luka kompetencyjna w Polsce]
 Polska jest poniżej średniej UE w umiejętnościach cyfrowych. Nie traktuj tego jako powodu do paniki - raczej jako informację, że próg wejścia wciąż jest niski i masz spokojnie czas, żeby nadrobić we własnym tempie.
@@ -66,14 +64,13 @@ Polska jest poniżej średniej UE w umiejętnościach cyfrowych. Nie traktuj teg
 9. Myślenie analityczne
 10. Odpowiedzialność środowiskowa
 
-<!-- TODO(Łukasz): zweryfikuj atrybucję tego cytatu - przypisywany bywa Karimowi Lakhaniemu (HBR, 2023), nie IBM. Popraw albo usuń ramkę -->
 :::note[Kluczowy cytat]
-"AI nie zastąpi ludzi - ale ludzie używający AI zastąpią ludzi, którzy tego nie robią." - IBM
+"AI nie zastąpi ludzi - ale ludzie używający AI zastąpią ludzi, którzy tego nie robią." - Karim Lakhani, Harvard Business School (HBR, 2023)
 :::
 
 ## Umiejętności odporne na automatyzację
 
-Badania Microsoft Research (2024) na 200 000+ konwersacji AI wykazały, że w **40% przypadków** to, czego użytkownicy chcieli, różniło się od tego, w czym AI faktycznie pomogło. AI przede wszystkim **augmentuje**, nie zastępuje.
+Badania Microsoft Research z 2025 roku, oparte na 200 000 rozmów z Bing Copilot zebranych w 2024 roku, wykazały, że w **40% przypadków** to, czego użytkownicy chcieli, różniło się od tego, w czym AI faktycznie pomogło ([Working with AI: Measuring the Applicability of Generative AI to Occupations](https://arxiv.org/abs/2507.07935)). AI przede wszystkim **augmentuje**, nie zastępuje.
 
 Ta liczba jest dla mnie ważniejsza niż większość prognoz zatrudnienia, bo mówi coś o naturze narzędzia, a nie o czyichś przewidywaniach.
 
@@ -82,11 +79,6 @@ Ta liczba jest dla mnie ważniejsza niż większość prognoz zatrudnienia, bo m
 ## Koncepcja "Centaurów" - przyszłość współpracy
 
 Termin "Centaur" (pół-człowiek, pół-koń z mitologii) opisuje hybrydowe zespoły człowiek-maszyna, gdzie: AI automatyzuje łatwe, powtarzalne, obciążone danymi zadania; człowiek + AI współpracują tam, gdzie wydajność obu jest podobna; człowiek pracuje samodzielnie przy trudnych zadaniach, innowacjach, unikalnych sytuacjach.
-
-<!-- TODO(Łukasz): podaj namiar na konkretne badanie Gallupa dla tej liczby ("3-krotnie") albo usuń ją - ta sama liczba wraca w ramce "Teraz wiesz" na końcu rozdziału -->
-:::tip[Badania Gallup]
-Organizacje wdrażające AI do augmentacji pracowników (nie zastąpienia) przewyższają wynikami te dążące wyłącznie do automatyzacji **3-krotnie**.
-:::
 
 **Prognoza Gartner na 2030:** 0% pracy IT będzie wykonywane przez ludzi bez AI, 75% przez ludzi wspomaganych AI, 25% przez samo AI.
 
@@ -182,7 +174,7 @@ Z mojego punktu widzenia najzdrowsze podejście jest takie: traktuj AI jak narz�
 
 :::note[Teraz wiesz]
 
-- Że AI zmieni większość zawodów, ale augmentacja (wzmacnianie) pracowników 3x przewyższa wynikami pełną automatyzację
+- Że AI zmieni większość zawodów, ale najczęściej chodzi o wzmacnianie (augmentację) Twojej pracy, a nie o zastąpienie Ciebie
 - Jakie kompetencje rozwijać: AI literacy, krytyczne myślenie, kreatywność, empatia i głęboka ekspertyza domenowa
 - Że w Polsce luka kompetencyjna w umiejętnościach cyfrowych jest wyraźna, a próg wejścia w AI wciąż niski
 

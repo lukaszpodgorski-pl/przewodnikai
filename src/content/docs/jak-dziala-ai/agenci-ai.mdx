@@ -1,6 +1,6 @@
 ---
 title: Agenci AI - kiedy chatbot przestaje tylko odpowiadać
-description: Czym jest agent AI i czym różni się od chatbota - z czego składa się agent, jak działa tryb agenta w ChatGPT i przeglądarki agentowe oraz gdzie postawić granice zaufania.
+description: Czym jest agent AI i czym różni się od chatbota - z czego składa się agent, jak działa ChatGPT Work i przeglądarki agentowe oraz gdzie postawić granice zaufania.
 sidebar:
   label: 'Agenci AI'
   order: 12
@@ -37,7 +37,7 @@ faq:
   - q: Czy agenci AI są godni zaufania?
     a: Warunkowo. Agent kumuluje błędy - drobna pomyłka w kroku trzecim psuje kroki czwarty i piąty. Sprawdzaj wyniki, zaczynaj od zadań o niskiej stawce i zostawiaj sobie zatwierdzanie działań nieodwracalnych, takich jak płatności czy wysyłka wiadomości.
   - q: Gdzie zwykły użytkownik spotka agenta AI?
-    a: W trybie agenta w ChatGPT, w przeglądarkach agentowych takich jak Comet od Perplexity, w trybach deep research (agent badawczy) oraz w asystentach programowania, które samodzielnie edytują pliki i uruchamiają testy.
+    a: W ChatGPT Work (następcy wycofanego trybu agenta), w przeglądarkach agentowych takich jak Comet od Perplexity, w trybach deep research (agent badawczy) oraz w asystentach programowania, które samodzielnie edytują pliki i uruchamiają testy.
 ---
 
 import Termin from '../../../components/Termin.astro';
@@ -46,7 +46,7 @@ import SlowniczekStrony from '../../../components/SlowniczekStrony.astro';
 ![Postać AI z kilkoma ramionami samodzielnie obsługująca narzędzia i łańcuch zadań - agent AI](../../../assets/jak-dziala-ai/agenci-ai/agenci-ai.jpg)
 
 :::note[W skrócie]
-Agent AI to system, który dostaje cel zamiast pojedynczego polecenia: sam planuje kroki, wykonuje je za pomocą narzędzi (przeglądarka, pliki, aplikacje), sprawdza wyniki i koryguje kurs. W 2026 roku agenci wyszli z laboratoriów do produktów codziennego użytku - tryb agenta w ChatGPT, przeglądarki agentowe, deep research, asystenci programowania. Działają imponująco, ale kumulują błędy, więc kluczowa umiejętność to wiedzieć, co można im powierzyć bez nadzoru, a czego nie.
+Agent AI to system, który dostaje cel zamiast pojedynczego polecenia: sam planuje kroki, wykonuje je za pomocą narzędzi (przeglądarka, pliki, aplikacje), sprawdza wyniki i koryguje kurs. W 2026 roku agenci wyszli z laboratoriów do produktów codziennego użytku - ChatGPT Work, przeglądarki agentowe, deep research, asystenci programowania. Działają imponująco, ale kumulują błędy, więc kluczowa umiejętność to wiedzieć, co można im powierzyć bez nadzoru, a czego nie.
 :::
 
 ## "Powiedz mi jak" kontra "zrób to za mnie"
@@ -59,12 +59,12 @@ To jest zmiana, o której mówi się "rok agentów" - i powód, dla którego ten
 
 ## Anatomia agenta
 
-Pod każdym agentem - od trybu w ChatGPT po systemy firmowe - kryje się ten sam zestaw elementów:
+Pod każdym agentem - od ChatGPT Work po systemy firmowe - kryje się ten sam zestaw elementów:
 
 1. **Model językowy** - "mózg", który rozumie cel i planuje; często [model rozumujący](/jak-dziala-ai/modele-rozumujace/), bo planowanie to zadanie wieloetapowe
-2. **Narzędzia** - "ręce": wyszukiwarka, przeglądarka, dostęp do plików, kalendarz, arkusz. Model nie klika sam z siebie - zgłasza "wywołaj narzędzie X z parametrami Y", a system wykonuje (mechanizm tool calling, który znasz z [Mapy Systemów AI](/jak-dziala-ai/mapa-ai/))
+2. **Narzędzia** - "ręce": wyszukiwarka, przeglądarka, dostęp do plików, kalendarz, arkusz. Model nie klika sam z siebie - zgłasza "wywołaj narzędzie X z parametrami Y", a system wykonuje (mechanizm tool calling, do którego wrócimy w [Mapie Systemów AI](/jak-dziala-ai/mapa-ai/))
 3. **Pamięć** - notatki agenta o tym, co już zrobił i czego się dowiedział; bez niej dziesiąty krok nie wiedziałby nic o pierwszym
-4. **Pętla decyzyjna** - rytm pracy: pomyśl → działaj → sprawdź wynik → popraw plan. Ten schemat opisano w badaniach jako ReAct ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)); jego "ręczną" wersję poznałeś w rozdziale o [technikach rozumowania](/prompt-engineering/rozumowanie/)
+4. **Pętla decyzyjna** - rytm pracy: pomyśl → działaj → sprawdź wynik → popraw plan. Ten schemat opisano w badaniach jako ReAct ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)); jego "ręczną" wersję opiszę w rozdziale o [technikach rozumowania](/prompt-engineering/rozumowanie/)
 
 ```text
 CEL: "Znajdź 3 połączenia do Rzymu i porównaj ceny"
@@ -89,7 +89,7 @@ Praktyczny wniosek z tego rozróżnienia brzmi przewrotnie: **jeśli zadanie da 
 
 ## Gdzie spotkasz agentów w praktyce
 
-- **Tryb agenta w ChatGPT** - model dostaje wirtualny komputer z przeglądarką: klika, wypełnia formularze, zbiera dane i składa wynik w dokument ([OpenAI, 2025](https://openai.com/index/introducing-chatgpt-agent/))
+- **ChatGPT Work** - agent w ChatGPT do dłuższych, wieloetapowych zadań: zbiera kontekst z podłączonych aplikacji i plików, prowadzi sprawę przez wiele kroków i oddaje gotowy dokument, arkusz czy prezentację, pytając Cię o zgodę przy ważniejszych decyzjach. Zastąpił wcześniejszy tryb agenta (ChatGPT agent), który OpenAI wycofało ([OpenAI Help Center](https://help.openai.com/en/articles/11752874-chatgpt-agent))
 - **Przeglądarki agentowe** - np. Comet od Perplexity: asystent wbudowany w przeglądarkę, który potrafi streścić otwarte karty, porównać oferty czy wypełnić formularz ([perplexity.ai/comet](https://www.perplexity.ai/comet))
 - **Deep research** - agent badawczy: na jedno pytanie wykonuje dziesiątki wyszukiwań, czyta źródła i oddaje raport; szczegóły w rozdziale o [trybach pracy chatbotów](/narzedzia/tryby-pracy-chatbotow/)
 - **Asystenci programowania** - narzędzia takie jak Claude Code samodzielnie przeszukują projekt, edytują pliki i uruchamiają testy, wracając do programisty z gotową zmianą
@@ -103,7 +103,7 @@ Każda słabość modelu, którą znasz z poprzednich rozdziałów, u agenta wys
 
 - **Kumulacja błędów** - jeśli każdy krok ma 95% szans powodzenia, to zadanie z 20 kroków kończy się sukcesem tylko w ok. 36% przypadków (0,95 do potęgi 20). Dlatego agenci świetnie radzą sobie z zadaniami na kilka-kilkanaście kroków, a przy bardzo długich potrafią ugrzęznąć
 - **Halucynacja w działaniu** - chatbot, który zmyśla, produkuje błędny tekst; agent, który zmyśla, klika w błędne rzeczy. Ta sama wada, wyższa stawka
-- **Podatność na manipulację** - agent czytający strony internetowe może natrafić na ukryte złośliwe instrukcje (prompt injection - znasz to zagrożenie z [najlepszych praktyk promptowania](/prompt-engineering/najlepsze-praktyki/)); producenci wbudowują zabezpieczenia, ale problem nie jest w pełni rozwiązany
+- **Podatność na manipulację** - agent czytający strony internetowe może natrafić na ukryte złośliwe instrukcje (prompt injection - czyli podszycie się pod Twoje polecenie tekstem ukrytym na stronie; piszę o tym szerzej w [najlepszych praktykach promptowania](/prompt-engineering/najlepsze-praktyki/)); producenci wbudowują zabezpieczenia, ale problem nie jest w pełni rozwiązany
 - **Koszt** - agent wykonuje dziesiątki wywołań modelu tam, gdzie chatbot wykonałby jedno
 
 ## Zasady bezpiecznego korzystania
@@ -116,7 +116,7 @@ Każda słabość modelu, którą znasz z poprzednich rozdziałów, u agenta wys
 ## Źródła i dalsze lektury
 
 - [Anthropic, "Building effective agents" (2024)](https://www.anthropic.com/engineering/building-effective-agents) - rozróżnienie workflow/agent i wzorce budowy agentów
-- [OpenAI, "Introducing ChatGPT agent" (2025)](https://openai.com/index/introducing-chatgpt-agent/) - jak działa tryb agenta w ChatGPT
+- [OpenAI Help Center, "ChatGPT agent"](https://help.openai.com/en/articles/11752874-chatgpt-agent) - o wycofaniu trybu agenta i jego następcy, ChatGPT Work
 - [Yao i in., "ReAct: Synergizing Reasoning and Acting in Language Models" (2022)](https://arxiv.org/abs/2210.03629) - pętla myśl-działaj-obserwuj, fundament współczesnych agentów
 - [Perplexity Comet](https://www.perplexity.ai/comet) - przykład przeglądarki agentowej
 

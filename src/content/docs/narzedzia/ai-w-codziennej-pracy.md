@@ -90,7 +90,7 @@ Oto transkrypcja spotkania. Przygotuj:
 **Analiza danych:** interpretacja (co oznaczają te liczby?), wzorce (jakie trendy widzisz w danych?), anomalie (co wyróżnia się jako nietypowe?), rekomendacje (jakie wnioski wyciągnąć?).
 
 :::caution[Weryfikacja faktów]
-AI może halucynować fakty. Przy ważnych decyzjach zawsze weryfikuj informacje z wiarygodnych źródeł. Używaj narzędzi z dostępem do internetu (Perplexity, ChatGPT z browsing) dla aktualnych danych.
+AI może halucynować fakty. Przy ważnych decyzjach zawsze weryfikuj informacje z wiarygodnych źródeł. Przy pytaniach o rzeczy zmienne w czasie włączaj [wyszukiwanie w sieci](/narzedzia/tryby-pracy-chatbotow/) - ma je dziś każdy duży chatbot, w ChatGPT [także w planie darmowym](https://help.openai.com/en/articles/9237897-chatgpt-search), a Perplexity opiera na nim całe działanie.
 :::
 
 ## Brainstorming i kreatywność
@@ -166,12 +166,13 @@ Zobacz, jak wygląda praktyczne wykorzystanie AI w różnych zawodach.
 
 ## Najlepsze praktyki
 
-Cztery zasady, które powtarzam najczęściej - jeśli zapamiętasz tylko je, i tak wyjdziesz na plus:
+Pięć zasad, które powtarzam najczęściej - jeśli zapamiętasz tylko je, i tak wyjdziesz na plus:
 
 1. **Traktuj AI jak młodszego asystenta** - wykona zadanie, ale potrzebuje jasnych instrukcji i Twojej weryfikacji. Nie ufaj ślepo - zawsze sprawdzaj wynik.
 2. **Iteruj** - rzadko pierwszy wynik jest od razu dobry. Proś o poprawki: "Skróć to", "Dodaj więcej szczegółów o X", "Zmień ton na bardziej formalny".
 3. **Zapisuj dobre prompty** - gdy znajdziesz prompt, który dobrze działa, zapisz go. Twórz własną bibliotekę promptów do powtarzalnych zadań.
-4. **Uważaj na poufne dane** - nie wklejaj wrażliwych informacji (dane osobowe, tajemnice firmowe) do publicznych chatbotów. Używaj wersji enterprise lub anonimizuj dane.
+4. **Uważaj na poufne dane** - nie wklejaj wrażliwych informacji (dane osobowe, tajemnice firmowe) do publicznych chatbotów. Anonimizuj dane, a w firmie sięgnij po plan firmowy (enterprise) z umową o przetwarzaniu danych - szerzej piszę o tym w rozdziale o [prywatności](/etyka/prywatnosc/).
+5. **Wiedz, gdzie kończy się ręczne wklejanie** - dopóki zadanie robisz od czasu do czasu, okno czatu w zupełności wystarcza. Gdy wraca co tydzień, zajrzyj do rozdziałów o [asystentach agentowych](/narzedzia/asystenci-agentowi/) i [serwerach MCP](/narzedzia/serwery-mcp/) - to one podłączają AI do Twoich narzędzi i wykonują kolejne kroki za Ciebie.
 
 ## Podsumowanie
 

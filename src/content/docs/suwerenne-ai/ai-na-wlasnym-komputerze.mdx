@@ -25,7 +25,7 @@ faq:
   - q: Czy AI może działać bez internetu?
     a: Tak. Po jednorazowym pobraniu modelu open-weight na dysk wszystko dzieje się na Twoim komputerze - rozmowa działa bez połączenia z internetem, a Twoje dane nigdzie nie wychodzą.
   - q: Jaki komputer jest potrzebny do lokalnego AI?
-    a: Orientacyjnie - komputer z 8-12 GB pamięci karty graficznej (VRAM) uruchomi mniejsze modele (7-8 mld parametrów), a 16-24 GB pozwala na modele średnie. Na słabszym sprzęcie modele też ruszą, tylko wolniej - na start wystarczy zwykły laptop i cierpliwość.
+    a: Orientacyjnie - komputer z 8-12 GB pamięci karty graficznej (VRAM) uruchomi mniejsze modele (do ok. 11 mld parametrów), a 16-24 GB pozwala na modele średnie. Na słabszym sprzęcie modele też ruszą, tylko wolniej - na start wystarczy zwykły laptop i cierpliwość.
   - q: Który lokalny model wybrać na start, jeśli piszę po polsku?
     a: Bielik - polski model open-weight, dostępny oficjalnie w Ollama i LM Studio. Dobrze rozumie polski, a instalacja sprowadza się do jednego polecenia lub kilku kliknięć.
 ---
@@ -70,7 +70,7 @@ Nie każdy model open-weight równie dobrze radzi sobie z polszczyzną. Na szcz�
 - **Bielik 11B v3** i mniejszy **Bielik Minitron 7B** - polskie modele open-weight, dostępne oficjalnie w Ollama i LM Studio ([klewer.pl](https://klewer.pl/en/bielik-ai-the-complete-guide-to-the-polish-open-source-llm/)). Jeśli piszesz po polsku, to naturalny pierwszy wybór.
 - **PLLuM 8B i 12B** - polska rodzina otwartych modeli ([pllum.org.pl](https://pllum.org.pl/)).
 - **Gemma 3 27B** - duży model wielojęzyczny, także open-weight ([promptquorum.com](https://www.promptquorum.com/local-llms)) - o ile Twój sprzęt go udźwignie (o tym za chwilę).
-- **Ministral 3** - model open-weight od Mistral AI ([mistral.ai](https://mistral.ai/news/mistral-3/)).
+- **Ministral 3** - rodzina trzech modeli open-weight od Mistral AI, o 3, 8 i 14 mld parametrów; na zwykły komputer celuj w wersję o 3 albo 8 mld parametrów ([mistral.ai](https://mistral.ai/news/mistral-3/)).
 
 O Bieliku i PLLuM - skąd się wzięły, kto je buduje i dlaczego to ważne - przeczytasz więcej w [pierwszym artykule tej sekcji](/suwerenne-ai/bielik-i-polskie-modele/), poświęconym polskim modelom.
 
@@ -78,11 +78,11 @@ O Bieliku i PLLuM - skąd się wzięły, kto je buduje i dlaczego to ważne - pr
 
 Najważniejsza liczba to pamięć karty graficznej (VRAM) - to w niej model "mieszka" podczas pracy. Poniższa tabela zakłada modele w kwantyzacji Q4, czyli skompresowane tak, żeby zajmowały mniej pamięci kosztem odrobiny jakości ([localllm.in](https://localllm.in/blog/ollama-vram-requirements-for-local-llms)):
 
-| Pamięć karty graficznej (VRAM) | Jakie modele uruchomisz                                                 |
-| ------------------------------ | ----------------------------------------------------------------------- |
-| 8-12 GB                        | mniejsze modele (7-8 mld parametrów), np. Bielik Minitron 7B             |
-| 16-24 GB                       | modele średnie (22-35 mld parametrów), np. Gemma 3 27B (ok. 17 GB)       |
-| 48 GB i więcej                 | największe modele open-weight (70 mld parametrów i więcej)               |
+| Pamięć karty graficznej (VRAM) | Jakie modele uruchomisz                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------- |
+| 8-12 GB                        | mniejsze modele (do ok. 11 mld parametrów), np. Bielik Minitron 7B albo Bielik 11B v3 |
+| 16-24 GB                       | modele średnie (22-35 mld parametrów), np. Gemma 3 27B (ok. 17 GB)                    |
+| 48 GB i więcej                 | największe modele open-weight (70 mld parametrów i więcej)                            |
 
 Te liczby traktuj orientacyjnie - stan na lipiec 2026. I ważne zastrzeżenie: słabszy sprzęt nie oznacza, że nic nie uruchomisz. Modele ruszą też bez mocnej karty graficznej, tylko wolniej - na start wystarczy zwykły laptop i odrobina cierpliwości.
 
