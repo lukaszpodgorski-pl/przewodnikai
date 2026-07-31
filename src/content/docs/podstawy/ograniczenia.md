@@ -18,7 +18,7 @@ faq:
   - q: Czym są halucynacje AI?
     a: Halucynacje AI to sytuacje, gdy model generuje informacje, które wyglądają wiarygodnie, ale są nieprawdziwe lub zmyślone. AI nie odróżnia prawdy od fałszu.
   - q: Jakie są główne ograniczenia AI?
-    a: AI nie rozumie kontekstu tak jak człowiek, może generować błędne informacje, nie ma dostępu do aktualnych danych (chyba że jest podłączona do internetu) i nie potrafi myśleć kreatywnie.
+    a: AI nie rozumie kontekstu tak jak człowiek i może generować błędne informacje, podając je z pełnym przekonaniem. Zna świat tylko do swojej daty odcięcia - nowsze fakty zna wyłącznie wtedy, gdy chatbot sprawdzi je w internecie. Powiela też uprzedzenia obecne w danych treningowych, a sposób, w jaki dochodzi do konkretnej odpowiedzi, pozostaje nieprzejrzysty.
 ---
 
 ![Robot dotykający przezroczystej szklanej ściany-granicy - ograniczenia sztucznej inteligencji](../../../assets/podstawy/ograniczenia/ograniczenia.jpg)

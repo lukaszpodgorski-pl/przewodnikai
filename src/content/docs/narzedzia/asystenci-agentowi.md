@@ -60,7 +60,9 @@ Microsoft nazwał słowem "Copilot" kilka różnych produktów i to źródło ni
 
 [Microsoft Copilot](https://copilot.microsoft.com) to konsumencka twarz tej rodziny: darmowy chatbot w przeglądarce, w Windows i na telefonie. Dla wielu osób to najniższy próg wejścia w AI w ogóle - nie wymaga konta ani karty, a pod spodem pracują modele klasy GPT. Podstawowe porównanie z ChatGPT, Claude i Gemini znajdziesz w [artykule o chatbotach](/narzedzia/chatboty/).
 
-<!-- TODO(Łukasz): merytoryka - co wyróżnia konsumenckiego Copilota (integracja z Windows/Edge, tryby, limity), aktualne wersje i ceny do weryfikacji u źródła; Twoja rekomendacja: komu to wystarcza w zupełności -->
+Wyróżnia go nie model, tylko wrośnięcie w system: jest wbudowany w Windows i w przeglądarkę Edge, a na Windows można mu włączyć budzenie głosem ("Hey Copilot"). W rozmowie opisze Ci zdjęcie, przeszuka sieć i streści znalezione strony razem z linkami, wygeneruje też obraz. Darmowy plan ma limity zużycia, ale do domowych zastosowań - streszczenia artykułu, szkicu maila, szybkiego wyjaśnienia - wystarcza w zupełności.
+
+<!-- TODO(Łukasz): Twoja rekomendacja z praktyki - komu konsumencki Copilot wystarcza i kiedy zaczyna uwierać -->
 
 ## Microsoft 365 Copilot - AI w Wordzie, Excelu i Teams
 
@@ -72,7 +74,9 @@ Microsoft nazwał słowem "Copilot" kilka różnych produktów i to źródło ni
 
 [GitHub Copilot](https://github.com/features/copilot) to narzędzie, od którego cała fala "copilotów" wzięła nazwę - asystent AI pracujący w edytorze kodu. Zaczynał od podpowiadania kolejnych linijek, dziś coraz częściej działa w trybie agentowym: dostaje zadanie i samodzielnie proponuje zmiany w wielu plikach. Jak z niego korzystać mądrze, piszę w [Programowaniu z AI](/prompt-engineering/programowanie/).
 
-<!-- TODO(Łukasz): merytoryka - tryby (autouzupełnianie / chat / agent), plany i ceny do weryfikacji; dla kogo GH Copilot, a dla kogo raczej Claude Code -->
+W praktyce korzysta się z niego na [kilka sposobów](https://docs.github.com/en/copilot/get-started/features): autouzupełnianie podpowiada dalszy ciąg pisanego kodu, czat odpowiada na pytania o projekt zwykłym zdaniem, tryb agenta dostaje zadanie i sam wprowadza zmiany do zatwierdzenia, a osobny tryb recenzji komentuje zgłoszone zmiany, zanim zajrzy w nie człowiek. Jest też wersja terminalowa, dla tych, którzy nie chcą wychodzić z konsoli.
+
+<!-- TODO(Łukasz): dla kogo GH Copilot, a dla kogo raczej Claude Code - Twoje obserwacje z praktyki -->
 
 ## Claude Code - agent w terminalu
 

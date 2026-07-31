@@ -54,7 +54,7 @@ Systematyczne odchylenie wyników lub decyzji modelu AI, odzwierciedlające uprz
 
 ### Chain-of-thought (łańcuch myśli)
 
-Technika promptowania, w której prosisz model, żeby rozpisał rozumowanie krok po kroku, zanim poda ostateczną odpowiedź. Pośrednie kroki działają jak brudnopis - model rzadziej gubi się w zadaniach wieloetapowych, a Ty widzisz, w którym miejscu popełnił błąd. W najprostszej wersji wystarczy dopisać do polecenia frazę "pomyślmy krok po kroku". W modelach rozumujących ten łańcuch jest już wbudowany i model generuje go sam, bez Twojej prośby.
+Technika promptowania, w której prosisz model, żeby rozpisał rozumowanie krok po kroku, zanim poda ostateczną odpowiedź. Pośrednie kroki działają jak brudnopis - model rzadziej gubi się w zadaniach wieloetapowych, a Ty widzisz, w którym miejscu popełnił błąd. W najprostszej wersji wystarczy dopisać do polecenia frazę "pomyślmy krok po kroku". W [modelach rozumujących](/jak-dziala-ai/modele-rozumujace/) ten łańcuch jest już wbudowany i model generuje go sam, bez Twojej prośby.
 
 **Przykład:** Pytasz "mam 3 skrzynki po 24 butelki, sprzedałem 17 - ile zostało?" i dostajesz samą liczbę, czasem błędną. Dopisujesz "rozpisz obliczenia krok po kroku" - model najpierw mnoży 3 × 24, potem odejmuje 17 i podaje wynik, który możesz sprawdzić.
 
@@ -140,7 +140,7 @@ Zjawisko, w którym model AI generuje informacje, które wydają się spójne i 
 
 Reprezentacja systemu AI po treningu na danych. Model zawiera wzorce i reguły wyodrębnione z danych treningowych i może być używany do przewidywania wyników dla nowych, niewidzianych wcześniej danych.
 
-**Przykład:** ChatGPT jest modelem językowym wytrenowanym na ogromnej ilości tekstów, który potrafi generować odpowiedzi na podstawie zadanych pytań.
+**Przykład:** GPT-5.6 jest modelem językowym wytrenowanym na ogromnej ilości tekstów - to on generuje odpowiedzi, które widzisz w aplikacji ChatGPT.
 
 ### Model językowy (LLM)
 
@@ -154,7 +154,9 @@ System AI trenowany na dużych zbiorach tekstów, zdolny do rozumienia i generow
 
 Model AI, którego wagi (czyli wyuczone parametry) producent udostępnia do pobrania - możesz uruchomić go na własnym komputerze lub serwerze, bez wysyłania danych do chmury dostawcy. Open-weight nie zawsze znaczy w pełni open source: licencje bywają różne, od bardzo liberalnej Apache 2.0 (np. Bielik, rodzina Mistral 3) po licencje z ograniczeniami komercyjnymi. Przeciwieństwem są modele zamknięte, dostępne wyłącznie przez API lub aplikację producenta.
 
-**Przykład:** Bielik i rodzina Mistral 3 to modele open-weight - możesz pobrać je za darmo i uruchomić w aplikacji LM Studio na własnym komputerze.
+**Przykład:** Bielik i małe modele Ministral 3 (3, 8 i 14 mld parametrów) to modele open-weight - możesz pobrać je za darmo i uruchomić w aplikacji LM Studio na własnym komputerze. Flagowy Mistral Large 3 też ma otwarte wagi, ale przy 675 mld parametrów potrzebuje już serwera z kilkoma kartami graficznymi.
+
+**Więcej:** [AI na własnym komputerze](/suwerenne-ai/ai-na-wlasnym-komputerze/)
 
 ### Okno kontekstowe
 
@@ -213,6 +215,8 @@ Model matematyczny inspirowany strukturą i funkcjonowaniem ludzkiego mózgu, sk
 Zdolność państwa, firmy lub pojedynczej osoby do korzystania z technologii cyfrowych - chmury, oprogramowania, modeli AI - bez krytycznej zależności od dostawców spoza swojego regionu. W praktyce chodzi o pytanie: co się stanie z Twoimi narzędziami i danymi, jeśli zagraniczny dostawca zmieni cennik, regulamin albo zostanie objęty sankcjami? Odpowiedzią są m.in. europejskie modele AI, lokalne centra danych i modele open-weight uruchamiane na własnym sprzęcie.
 
 **Przykład:** Urząd, który zamiast chmury zagranicznego dostawcy uruchamia polski model językowy na własnych serwerach - dane obywateli nie opuszczają kraju.
+
+**Więcej:** [Suwerenne AI](/suwerenne-ai/)
 
 ### Sztuczna inteligencja (AI)
 

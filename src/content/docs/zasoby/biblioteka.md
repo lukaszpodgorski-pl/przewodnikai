@@ -70,7 +70,7 @@ Anthropic i OpenAI nie są wyjątkami - każdy większy dostawca prowadzi własn
 
 ## Polska scena AI: SpeakLeash i Bielik
 
-**[SpeakLeash](https://speakleash.org/)** (znany też jako Spichlerz) to polska fundacja open-source, która buduje największy zbiór polskich tekstów do trenowania AI i rozwija rodzinę polskich modeli **Bielik**. To najżywsza polska społeczność AI: setki osób, które po godzinach tworzą model rozumiejący polski lepiej niż niejeden komercyjny gigant.
+**[SpeakLeash](https://speakleash.org/)** (znany też jako Spichlerz) to polska fundacja open-source, która buduje największy zbiór polskich tekstów do trenowania AI i rozwija rodzinę polskich modeli **Bielik**. To najżywsza polska społeczność AI: setki osób, które po godzinach tworzą model rozumiejący polski lepiej niż niejeden komercyjny gigant. O tym, kto buduje Bielika i jak go wypróbować, piszę szerzej w artykule [Bielik i polskie modele AI](/suwerenne-ai/bielik-i-polskie-modele/).
 
 - **[Discord SpeakLeash](https://discord.com/invite/ZJwCMrxwT7)** - główne miejsce spotkań społeczności. Możesz tylko czytać, a możesz też realnie pomóc w rozwoju polskiego AI - nie trzeba umieć programować.
 - **[Polish EQ-Bench](https://huggingface.co/spaces/speakleash/polish_eq-bench)** - prowadzony przez SpeakLeash ranking (leaderboard) sprawdzający, jak dobrze modele AI rozumieją emocje i niuanse w języku polskim. Praktyczna odpowiedź na pytanie "który model najlepiej mówi po polsku".

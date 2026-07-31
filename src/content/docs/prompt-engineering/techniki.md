@@ -99,7 +99,7 @@ Przykład zdania z farduddle:
 
 ## Chain-of-Thought (CoT) Prompting
 
-**Chain-of-Thought** (Łańcuch Myśli) to technika wprowadzona przez Wei et al. (2022), która umożliwia złożone rozumowanie poprzez pośrednie kroki. Zamiast od razu podawać odpowiedź, model pokazuje etapy swojego rozumowania.
+**Chain-of-Thought** (Łańcuch Myśli) to technika wprowadzona przez [Wei i in., 2022](https://arxiv.org/abs/2201.11903), która umożliwia złożone rozumowanie poprzez pośrednie kroki. Zamiast od razu podawać odpowiedź, model pokazuje etapy swojego rozumowania.
 
 :::caution[Kluczowa idea]
 CoT zmusza model do "myślenia na głos" - rozbijania problemu na mniejsze kroki i pokazywania toku rozumowania przed podaniem finalnej odpowiedzi.
@@ -134,7 +134,7 @@ Rozwiązanie:
 
 ## Zero-Shot CoT - magiczna fraza
 
-Badacze Kojima et al. (2022) odkryli, że można wywołać rozumowanie krok po kroku bez podawania przykładów - wystarczy dodać frazę: **"Let's think step by step"** (Pomyślmy krok po kroku).
+Badacze [Kojima i in., 2022](https://arxiv.org/abs/2205.11916) odkryli, że można wywołać rozumowanie krok po kroku bez podawania przykładów - wystarczy dodać frazę: **"Let's think step by step"** (Pomyślmy krok po kroku).
 
 **Bez frazy CoT:**
 
@@ -164,6 +164,10 @@ Pomyślmy krok po kroku.
 
 :::tip[Praktyczna wskazówka]
 Frazy wywołujące rozumowanie krok po kroku (po polsku i angielsku): "Pomyślmy krok po kroku.", "Let's think step by step.", "Rozwiążmy to systematycznie.", "Przeanalizujmy to etapami."
+:::
+
+:::note[A co z modelami, które myślą same?]
+Ta fraza pomaga modelom, które odpowiadają od razu. [Modele rozumujące](/jak-dziala-ai/modele-rozumujace/) (tryb myślenia, reasoning) rozpisują sobie kolejne kroki wewnętrznie, zanim cokolwiek napiszą - tam dopisanie "Pomyślmy krok po kroku" niczego nie zmienia. OpenAI wprost odradza proszenie takich modeli o myślenie krok po kroku, bo robią to same ([przewodnik OpenAI](https://developers.openai.com/api/docs/guides/reasoning-best-practices)), a Anthropic zaleca ogólne polecenia w rodzaju "przemyśl to dokładnie" zamiast rozpisywania modelowi kroków ([wskazówki Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices)). Zamiast sterować sposobem rozumowania, opisz dokładnie cel i to, co uznasz za dobrą odpowiedź.
 :::
 
 ## Meta-prompting - niech AI napisze prompt za Ciebie
@@ -249,7 +253,7 @@ Przetestuj z: (1) samym pytaniem (Zero-Shot), (2) dodając "Pomyślmy krok po kr
 :::note[Teraz wiesz]
 
 - Kiedy użyć zero-shot (proste zadania), few-shot (nietypowe formaty) i chain-of-thought (złożone rozumowanie)
-- Jak magiczna fraza "Pomyślmy krok po kroku" drastycznie poprawia dokładność odpowiedzi AI
+- Jak fraza "Pomyślmy krok po kroku" poprawia dokładność w modelach, które odpowiadają od razu - i dlaczego przy modelach z trybem myślenia (reasoning) jest już zbędna
 - Jak łączyć techniki (np. Few-Shot CoT) do rozwiązywania najtrudniejszych problemów
 - Jak meta-promptingiem zlecić modelowi napisanie lub poprawienie prompta - i dlaczego wynik warto przejrzeć przed użyciem
 

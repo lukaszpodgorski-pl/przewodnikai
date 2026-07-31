@@ -62,7 +62,7 @@ Wyobraź sobie grę w uzupełnianie zdań: "Pada deszcz, więc wziąłem..." - p
 
 ### Trening na ogromnych danych
 
-LLM trenowane są na bilionach słów z internetu, książek, artykułów naukowych, kodu źródłowego i innych źródeł. Model [Llama 2 (2023)](https://arxiv.org/abs/2302.13971) był trenowany na 2 bilionach tokenów, a nowsze modele używają jeszcze większych zbiorów - szacunkowo 10-15 bilionów tokenów. Dzięki temu model "widział" niemal każdy możliwy wzorzec językowy.
+LLM trenowane są na bilionach słów z internetu, książek, artykułów naukowych, kodu źródłowego i innych źródeł. Model [Llama 2 (2023)](https://arxiv.org/abs/2307.09288) był trenowany na 2 bilionach tokenów, a nowsze modele używają jeszcze większych zbiorów - szacunkowo 10-15 bilionów tokenów. Dzięki temu model "widział" niemal każdy możliwy wzorzec językowy.
 
 ### Architektura Transformer
 
@@ -152,17 +152,17 @@ Możliwości LLM systematycznie rosną. Już w 2023 r. GPT-4 zdał egzamin adwok
 - **Analiza i zrozumienie** - sentyment, ekstrakcja danych, klasyfikacja, podsumowywanie
 - **Tłumaczenie** - ponad 100 języków, w tym specjalistyczne i idiomatyczne konteksty
 - **Programowanie** - generowanie kodu, debugging, code review, konwersja między językami
-- **Rozumowanie** - matematyka, logika, analiza argumentów, planowanie; modele o1/o3 i Gemini 2.5 Pro z trybem "thinking" osiągają wyniki na poziomie doktorantów w naukach ścisłych
+- **Rozumowanie** - matematyka, logika, analiza argumentów, planowanie; dzisiejsze modele rozumujące (GPT-5.6 Sol, Claude Fable 5, Gemini 3.1 Deep Think) osiągają wyniki na poziomie doktorantów w naukach ścisłych
 - **Agenci AI** - trend 2025-2026: modele działające autonomicznie, wykonujące wieloetapowe zadania (przeglądanie internetu, obsługa narzędzi, planowanie)
 
 ## Ograniczenia modeli językowych
 
 Do tej sekcji wracaj częściej niż do tabel powyżej. Możliwości modeli poznasz po kilku dniach używania - ograniczenia potrafią Cię zaskoczyć jeszcze po roku.
 
-- **Halucynacje** - LLM mogą generować przekonująco brzmiące, ale całkowicie nieprawdziwe informacje. Według [badań Vectara (2023)](https://arxiv.org/abs/2311.05232), nawet najlepsze modele "halucynują" w 3-15% odpowiedzi, w zależności od zadania
+- **Halucynacje** - LLM mogą generować przekonująco brzmiące, ale całkowicie nieprawdziwe informacje. W rankingu [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard), który mierzy zmyślanie przy streszczaniu podanego dokumentu, nawet czołowe modele "halucynują" w kilku procentach odpowiedzi
 - **Brak wiedzy po dacie treningu** - model nie wie o wydarzeniach po swojej dacie "odcięcia", chyba że ma dostęp do internetu (RAG) lub narzędzi
 - **Brak prawdziwego rozumienia** - LLM przetwarzają wzorce statystyczne, nie "rozumieją" świata jak ludzie
-- **Ograniczone okno kontekstowe** - choć okna rosną (od 4K do 2M tokenów), efektywność przetwarzania spada przy bardzo długich kontekstach ([efekt "Lost in the Middle"](https://arxiv.org/abs/2307.03172))
+- **Ograniczone okno kontekstowe** - choć okna rosną (od 4K do 1M tokenów w czołówce, a w Llama 4 Scout nawet 10M), efektywność przetwarzania spada przy bardzo długich kontekstach ([efekt "Lost in the Middle"](https://arxiv.org/abs/2307.03172))
 - **Bias i uprzedzenia** - modele dziedziczą uprzedzenia z danych treningowych. Producenci stosują techniki debiasingu, ale problem nie jest w pełni rozwiązany
 
 ## Jak wybierać model?
@@ -193,8 +193,8 @@ Nie komplikuj tego na starcie. Przez pierwsze tygodnie pracy z AI spokojnie wyst
 
 - Jak działają LLM - przewidują kolejne tokeny dzięki architekturze Transformer i mechanizmowi uwagi, a RLHF czyni je pomocnymi asystentami
 - Jakie modele dominują na rynku - GPT-5.6, Claude 5, Gemini 3.1, DeepSeek V4, Llama 4 - i czym się różnią
-- Jakie są realne ograniczenia LLM - halucynacje (3-15%), ograniczone okno kontekstowe, brak wiedzy po dacie treningu
-- Jak dobrać model do zadania - od analizy dokumentów (Claude/Gemini) po coding (Claude/GPT) i rozumowanie (o3/Gemini)
+- Jakie są realne ograniczenia LLM - halucynacje (kilka procent odpowiedzi nawet w czołówce), ograniczone okno kontekstowe, brak wiedzy po dacie treningu
+- Jak dobrać model do zadania - od analizy dokumentów (Claude/Gemini) po coding (Claude/GPT) i rozumowanie (Claude Fable 5 / Gemini 3.1 Deep Think)
 
 **Następny krok:** [Modele rozumujące](/jak-dziala-ai/modele-rozumujace/) - dowiesz się, co naprawdę robi przycisk "myślenia" w chatbocie, kiedy go włączać i dlaczego odpowiedź trwa wtedy dłużej.
 :::

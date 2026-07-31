@@ -33,7 +33,7 @@ Często słyszysz, że **roboty i algorytmy zastąpią wszystkich pracowników**
 
 <!-- TODO(Łukasz): tu zadziałałaby anegdota - jakie zadanie ze swojej pracy oddałeś AI jako pierwsze i co robisz teraz w czasie, który dzięki temu odzyskałeś? -->
 
-Owszem, sztuczna inteligencja automatyzuje niektóre zadania i **zmienia rynek pracy**, ale jednocześnie **tworzy nowe zawody** i możliwości zatrudnienia. Według raportu Future of Jobs Światowego Forum Ekonomicznego, AI do roku 2025 może wprawdzie zlikwidować około 85 milionów miejsc pracy, ale **stworzyć zarazem 97 milionów nowych** - co daje potencjalny wzrost zatrudnienia netto.
+Owszem, sztuczna inteligencja automatyzuje niektóre zadania i **zmienia rynek pracy**, ale jednocześnie **tworzy nowe zawody** i możliwości zatrudnienia. Według raportu [Future of Jobs 2025](https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf) Światowego Forum Ekonomicznego przemiany rynku pracy - napędzane przez technologię z AI na czele, ale też przez demografię, gospodarkę i zieloną transformację - mają do 2030 roku zlikwidować około 92 milionów miejsc pracy i **stworzyć zarazem 170 milionów nowych**. Bilans wychodzi na plus: 78 milionów miejsc pracy więcej niż dziś.
 
 Dobry przykład to historia bankomatów. Gdy pojawiły się pierwsze bankomaty, kasjerzy obawiali się masowych zwolnień. Stało się inaczej - bankomaty przejęły rutynowe zadania (wypłatę gotówki), dzięki czemu utrzymanie oddziałów stało się tańsze. Banki zaczęły otwierać **więcej oddziałów**, a kasjerzy skupili się na bardziej złożonych zadaniach związanych z obsługą klienta. W rezultacie liczba zatrudnionych kasjerów bankowych w USA wzrosła między 1985 a 2002 rokiem.
 
@@ -67,7 +67,7 @@ Dlatego niezwykle ważna jest **ludzka kontrola i weryfikacja**. Wynikom generow
 
 Wiele osób traktuje AI jak **czarną magię** - coś tajemniczego, co robi rzeczy niewiarygodne i trudne do pojęcia. Gdy komputer nagle zaczyna sam z siebie pisać tekst czy tworzyć obraz, łatwo pomyśleć, że dzieje się to w jakiś cudowny sposób.
 
-Rzecz w tym, że **w AI nie ma żadnej magii** - to po prostu sprytne wykorzystanie matematyki, logiki i ogromnej mocy obliczeniowej komputerów. Jak powiedział badacz AI Peter Norvig: "AI to nie magia; to matematyka".
+Rzecz w tym, że **w AI nie ma żadnej magii** - to po prostu sprytne wykorzystanie matematyki, logiki i ogromnej mocy obliczeniowej komputerów.
 
 Dlaczego więc wyniki AI czasem wydają się magiczne? Bo modele AI są bardzo złożone - potrafią dostrzegać wzorce w olbrzymich zbiorach danych, których człowiek nie byłby w stanie ręcznie przeanalizować. To **dzieło ludzkich rąk i umysłów** - programistów i naukowców, którzy stworzyli algorytm oraz zasilili go danymi. AI nie łamie praw logiki ani fizyki; działa zgodnie z nimi, tylko na skalę nieosiągalną dla człowieka bez maszyny.
 

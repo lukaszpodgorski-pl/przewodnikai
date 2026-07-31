@@ -9,7 +9,7 @@ sidebar:
 
 Wdrażaj AI w swoim zespole świadomie - z myślą o ludziach i o efektach ich pracy. Zebrałem 8 lekcji i ułożyłem je od zrozumienia narzędzia, przez cudze wdrożenia, po dwa rozdziały o odpowiedzialności na końcu. Ta kolejność nie jest przypadkowa: łatwiej ustalić zasady, kiedy widziało się już, co potrafi zepsuć ich brak.
 
-1. [Czym jest AI?](/podstawy/czym-jest-ai/) - wspólny słownik dla zespołu, zanim na spotkaniu padnie "AI" i "automatyzacja" jako synonimy.
+1. [Czym jest AI?](/podstawy/czym-jest-ai/) - wspólny słownik dla zespołu: czym różni się AI od generatywnej AI i dlaczego dzisiejsze modele to wciąż wąska AI, a nie ta z filmów.
 2. [AI w codziennej pracy](/narzedzia/ai-w-codziennej-pracy/) - katalog zastosowań, z którego można wybrać pierwszy pilotaż: notatki ze spotkań, raporty, research.
 3. [Podstawy Promptowania](/prompt-engineering/podstawy/) - CO-STAR jako struktura, którą warto ustandaryzować w zespole. Porównywalne polecenia dają porównywalne wyniki.
 4. [AI w różnych branżach](/praktyka/ai-w-branzach/) - przegląd branż z oceną dojrzałości wdrożeń: marketing, HR, finanse, prawo, edukacja.

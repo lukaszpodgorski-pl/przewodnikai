@@ -16,8 +16,6 @@ Oswój AI krok po kroku, we własnym tempie. Ułożyłem tę ścieżkę z 6 lekc
 5. [Chatboty AI](/narzedzia/chatboty/) - porównanie ChatGPT, Claude i Gemini: który wybrać na początek i czy trzeba za to płacić (nie trzeba).
 6. [Prywatność i dane w AI](/etyka/prywatnosc/) - świadome dzielenie się danymi. Najważniejsza jest tu lista czterech kategorii, których nie wkleja się do czatu: PESEL i numery dokumentów, hasła, dane finansowe, dokumenty innych osób. Dalsza część rozdziału dotyczy firm - możesz ją spokojnie pominąć.
 
-<!-- TODO(Łukasz): seniorzy to grupa najczęściej atakowana oszustwami z użyciem AI (klonowanie głosu, deepfake). W kursie NIE MA o tym ani słowa. Rozważ osobną lekcję - to realna luka. -->
-
 :::note[Nic tu nie kosztuje]
 Przewodnik AI jest bezpłatny i taki zostanie - nie ma tu wersji premium ani nic do wykupienia. Jak skończysz, możesz [wrócić do strony głównej](/) albo [zobaczyć inne ścieżki](/sciezki/), jeśli któraś okaże się bliższa temu, czego szukasz.
 :::

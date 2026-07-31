@@ -1,6 +1,6 @@
 ---
 title: Baza promptów
-description: Baza promptów. Wybierz kategorię i przeszukaj bazę promptów, aby znaleźć inspirację do swoich projektów.
+description: Gotowe prompty do skopiowania - pisanie, biznes, edukacja, kreatywność i analiza danych. Każdy sprawdzony w praktyce, każdy do przerobienia pod siebie.
 sidebar:
   label: 'Baza promptów'
   order: 10

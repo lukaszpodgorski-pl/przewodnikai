@@ -39,16 +39,18 @@ AI często podaje Ci nieprawdziwe informacje z dużą pewnością siebie, bez ż
 
 ## Jak często AI "halucynuje"? Statystyki
 
-| Dziedzina | Wskaźnik halucynacji | Źródło |
+| Obszar | Wskaźnik halucynacji | Źródło |
 | --- | --- | --- |
-| **Ogólne pytania** | 3-10% | Vectara Hallucination Leaderboard, 2024 |
+| **Streszczanie dokumentów** | 1,8-24,2% zależnie od modelu | [Vectara Hallucination Leaderboard](https://github.com/vectara/hallucination-leaderboard), stan na maj 2026 |
 | **Prawo i regulacje** | 69-88% | [Stanford HAI / RegLab, 2024](https://hai.stanford.edu/news/hallucinating-law-legal-mistakes-large-language-models-are-pervasive) |
-| **Medycyna** | 15-30% | Badania kliniczne, JAMA 2023 |
-| **Cytaty i źródła** | do 50% | NYU badanie cytatów naukowych |
-| **Dane liczbowe** | 20-40% | Meta-analiza, Vectara 2024 |
+| **Cytaty i źródła** | 55% (GPT-3.5), 18% (GPT-4) | [Walters, Wilder, Scientific Reports 2023](https://www.nature.com/articles/s41598-023-41032-5) |
+
+Każda z tych liczb dotyczy innego zadania i innych modeli, więc nie porównuj ich ze sobą wprost - kliknij w źródło i sprawdź, co dokładnie mierzono. Wiersze, przy których nie dało się wskazać publikacji do sprawdzenia, usunąłem: to ten sam test, który za chwilę polecę Ci stosować wobec AI. Źródła sprawdziłem w lipcu 2026 roku.
 
 :::danger[Szokujące odkrycie]
 W badaniu Stanford HAI z 2024 roku trzy modele AI (GPT-3.5, Llama 2 i PaLM 2) generowały fałszywe cytaty prawne i nieistniejące precedensy w 69-88% przypadków pytań prawnych ([Stanford HAI, styczeń 2024](https://hai.stanford.edu/news/hallucinating-law-legal-mistakes-large-language-models-are-pervasive)). Prawnik w USA został ukarany za cytowanie w sądzie nieistniejących spraw wygenerowanych przez ChatGPT!
+
+Pół roku później ten sam zespół sprawdził narzędzia stworzone specjalnie dla prawników: Lexis+ AI i Ask Practical Law AI halucynowały w ponad 17% zapytań, a Westlaw AI-Assisted Research w ponad 34% ([Stanford HAI, maj 2024](https://hai.stanford.edu/news/ai-trial-legal-models-hallucinate-1-out-6-or-more-benchmarking-queries)). Wyspecjalizowane narzędzie to więc poprawa, ale nie gwarancja - weryfikacji nie zdejmuje z Ciebie żadne z nich.
 :::
 
 ## "AI Slop" - nowe zagrożenie ery generatywnego AI
@@ -192,14 +194,14 @@ Są tematy, przy których weryfikacja to nie opcja:
 
 Załóżmy, że zapytałeś AI o naturalne metody obniżenia ciśnienia krwi, a model odpowiedział:
 
-> "Według badania dr. Andrzeja Kowalskiego z Warszawskiego Uniwersytetu Medycznego z 2023 roku, spożywanie 50g sproszkowanej kurkumy dziennie obniża ciśnienie krwi o 15-20% w ciągu tygodnia. To naturalna metoda zatwierdzona przez Narodowy Fundusz Zdrowia."
+> "Według badania dr. Andrzeja Kowalskiego z Warszawskiego Uniwersytetu Medycznego z 2026 roku, spożywanie 50g sproszkowanej kurkumy dziennie obniża ciśnienie krwi o 15-20% w ciągu tygodnia. To naturalna metoda zatwierdzona przez Narodowy Fundusz Zdrowia."
 
 **Czerwone flagi:**
 
 - Konkretna ilość obniżenia ciśnienia (15-20%) brzmi podejrzanie precyzyjnie
 - Bardzo duża dawka kurkumy (50g to około 4-5 łyżek stołowych!)
 - Wzmianka o zatwierdzeniu przez NFZ (który nie zatwierdza metod leczenia)
-- Badanie z 2023 roku (po dacie odcięcia wielu modeli)
+- Badanie z 2026 roku - czyli z okresu po dacie odcięcia modelu, więc nie mógł go poznać podczas treningu
 
 **Twoja weryfikacja:**
 
@@ -282,7 +284,7 @@ Pamiętaj, że umiejętność weryfikacji informacji to nie tylko kluczowa kompe
 
 :::note[Teraz wiesz]
 
-- Dlaczego weryfikacja jest koniecznością - AI halucynuje nawet w 88% przypadków w niektórych dziedzinach (np. prawo)
+- Dlaczego weryfikacja jest koniecznością - w badaniu Stanforda z 2024 roku modele ogólnego przeznaczenia myliły się w pytaniach prawnych w 69-88% przypadków, a wyspecjalizowane narzędzia prawnicze pół roku później - nadal w 17-34%
 - Jak stosować metodę SIFT (Stop, Investigate, Find, Trace) do sprawdzania informacji od AI
 - Jak rozpoznawać "AI slop" i czerwone flagi oraz jakich narzędzi używać do weryfikacji (Demagog, Google Scholar, GUS)
 

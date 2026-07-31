@@ -12,6 +12,11 @@ teaches:
 about:
   - name: Sztuczna inteligencja
     sameAs: https://pl.wikipedia.org/wiki/Sztuczna_inteligencja
+faq:
+  - q: Czy muszę nauczyć się AI, żeby nie zostać w tyle?
+    a: Nie. AI to narzędzie, a narzędzie przydaje się wtedy, gdy masz dla niego zastosowanie. Jeśli pracujesz z tekstem, danymi albo powtarzalnymi zadaniami, nauka się opłaci. Jeśli nie - wystarczy podstawowa orientacja.
+  - q: Jak nadążyć za nowościami w AI?
+    a: Nie musisz nadążać za wszystkim. Podstawy korzystania z AI zmieniają się znacznie wolniej niż konkretne modele i narzędzia. Wyznacz sobie stały, ograniczony czas na eksperymenty - godzinę tygodniowo albo 15 minut dziennie - i skup się na fundamentach.
 ---
 
 ![Spokojna postać zachowująca środek pośród wiru krzykliwych ikon szumu wokół AI](../../../assets/podstawy/nie-dajmy-sie-zwariowac/nie-dajmy-sie-zwariowac.jpg)

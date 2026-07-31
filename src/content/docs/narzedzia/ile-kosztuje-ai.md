@@ -101,7 +101,7 @@ Każdy duży dostawca układa plany według tego samego schematu. Nazwy się ró
 | Szczebel | Rząd wielkości | Co dostajesz |
 | --- | --- | --- |
 | **Darmowy** | 0 zł | Słabszy model, wąskie limity, wolniejsza obsługa w godzinach szczytu |
-| **Lekki** | ok. 30 zł/mies. | Wyższe limity niż w darmowym, ale bez modelu flagowego |
+| **Lekki** | ok. 30 zł/mies. | Zwykle ten sam model flagowy co w standardowym, ale wyraźnie niższe limity i bez części funkcji zaawansowanych |
 | **Standardowy** | ok. 80 zł/mies. | Model flagowy, wszystkie funkcje, limity wystarczające do codziennej pracy |
 | **Wysoki** | ok. 400-1000 zł/mies. | To samo co wyżej, tylko **kilkukrotnie do dwudziestokrotnie wyższe limity** |
 | **Firmowy** | wycena indywidualna | Rozliczenie za stanowisko, administracja kontami, umowa o przetwarzaniu danych |
@@ -109,7 +109,7 @@ Każdy duży dostawca układa plany według tego samego schematu. Nazwy się ró
 Zwróć uwagę na szczebel najwyższy, bo tu początkujący najczęściej się gubi: **nie kupujesz w nim lepszego AI, tylko więcej tego samego AI**. Trzej najwięksi dostawcy - OpenAI, Anthropic i Google - opisują dziś swoje topowe plany dokładnie tym samym mnożnikiem: do dwudziestu razy więcej zużycia niż w planie standardowym. Model jest ten sam. Zmienia się to, jak szybko uderzysz w ścianę.
 
 :::tip[Praktyczna kolejność]
-Zacznij od darmowego. Gdy zaczniesz regularnie wyczerpywać limity - przejdź na standardowy, nie na lekki: to on daje dostęp do modelu flagowego, a różnica w jakości odpowiedzi jest większa niż różnica w cenie. Po plan najwyższy sięgaj dopiero wtedy, gdy realnie kończą Ci się limity w planie standardowym, a nie "na zapas".
+Zacznij od darmowego. Gdy zaczniesz regularnie wyczerpywać limity - przejdź na standardowy, nie na lekki. W lekkim pracuje dziś zwykle ten sam model co w standardowym ([Google AI Plus](https://one.google.com/about/google-ai-plans/) daje dostęp do modelu Pro), ale limity kończą się w nim szybko, a część funkcji dochodzi dopiero wyżej - u OpenAI na przykład [deep research](https://help.openai.com/en/articles/11989085-what-is-chatgpt-go). Po plan najwyższy sięgaj dopiero wtedy, gdy realnie kończą Ci się limity w planie standardowym, a nie "na zapas".
 :::
 
 ## Gdzie sprawdzić aktualną cenę

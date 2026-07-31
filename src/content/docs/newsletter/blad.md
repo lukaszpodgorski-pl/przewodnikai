@@ -10,12 +10,12 @@ sidebar:
 
 ## Coś poszło nie tak
 
-Nie udało się dokończyć zapisu. Twój adres **nie trafił** na listę, więc nic się nie stało - możesz po prostu spróbować jeszcze raz.
+Nie udało się dokończyć zapisu. Najczęściej znaczy to, że Twój adres **nie trafił** na listę - wtedy nic się nie stało i możesz po prostu spróbować jeszcze raz. Jeśli natomiast klikasz w link potwierdzający po raz drugi, jesteś już zapisany i nie musisz robić nic więcej.
 
 ## Co najczęściej jest przyczyną
 
 - **Literówka w adresie** - najczęstszy powód. Sprawdź, czy nie brakuje kropki albo czy nie wkradła się spacja.
-- **Link potwierdzający wygasł albo był już użyty** - w takim wypadku zapisz się ponownie, a wyślę świeży.
+- **Link potwierdzający wygasł albo był już użyty** - jeśli wygasł, zapisz się ponownie, a wyślę świeży. Jeśli był już użyty, zapis jest potwierdzony i nic więcej nie trzeba.
 - **Chwilowy problem po mojej stronie** - wtedy wystarczy odczekać minutę i spróbować jeszcze raz.
 
 ## Spróbuj ponownie

@@ -1,6 +1,6 @@
 ---
 title: Strukturyzacja Danych w Promptach - Formaty i Schematy
-description: Naucz się strukturyzować dane w promptach. Poznaj formaty JSON, tabele, listy i schematy, które pomogą AI lepiej zrozumieć Twoje zadania.
+description: Naucz się strukturyzować dane w promptach - framework CRISPE, formaty JSON, tabele, listy i znaczniki XML, dzięki którym AI lepiej zrozumie Twoje zadania.
 sidebar:
   label: 'Strukturyzacja danych'
   order: 5
@@ -9,6 +9,9 @@ teaches:
   - Strukturyzacja danych w promptach
   - Formaty danych dla AI
   - Tabelaryczne i listowe formatowanie promptów
+  - Framework CRISPE
+  - Znaczniki XML w promptach
+  - Definiowanie narzędzi (function calling)
 about:
   - name: Prompt engineering
     sameAs: https://en.wikipedia.org/wiki/Prompt_engineering

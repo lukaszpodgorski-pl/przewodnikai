@@ -29,7 +29,7 @@ Podstawowe techniki promptowania (zero-shot, few-shot, CoT) sprawdzają się w w
 
 ## Self-Consistency (Samospójność)
 
-**Self-Consistency** to technika zaproponowana przez Wang et al. (2022), która zastępuje standardowe generowanie odpowiedzi próbkowaniem wielu ścieżek rozumowania.
+**Self-Consistency** to technika zaproponowana przez [Wang i in., 2022](https://arxiv.org/abs/2203.11171), która zastępuje standardowe generowanie odpowiedzi próbkowaniem wielu ścieżek rozumowania.
 
 :::note[Zasada działania]
 Zamiast generować jedną odpowiedź, model tworzy wiele niezależnych odpowiedzi z różnymi ścieżkami rozumowania. Następnie wybierana jest odpowiedź, która pojawia się najczęściej (głosowanie większościowe).
@@ -63,7 +63,7 @@ W praktyce możesz użyć Self-Consistency przez: wysłanie tego samego prompta 
 
 ## Tree of Thoughts (ToT) - Drzewo Myśli
 
-**Tree of Thoughts** to framework zaproponowany przez Yao et al. (2023), który utrzymuje drzewo myśli jako pośrednie kroki rozwiązywania problemów. To rozszerzenie Chain-of-Thought, które pozwala na eksplorację wielu ścieżek jednocześnie.
+**Tree of Thoughts** to framework zaproponowany przez [Yao i in., 2023](https://arxiv.org/abs/2305.10601), który utrzymuje drzewo myśli jako pośrednie kroki rozwiązywania problemów. To rozszerzenie Chain-of-Thought, które pozwala na eksplorację wielu ścieżek jednocześnie.
 
 :::tip[Analogia]
 Wyobraź sobie, że rozwiązujesz szachy. CoT to patrzenie jeden ruch do przodu. ToT to patrzenie na wszystkie możliwe ruchy, ocena każdego, i wybór najlepszej ścieżki - z możliwością cofnięcia się i wybrania innej, jeśli ta nie działa.
@@ -142,7 +142,7 @@ Używaj tej techniki przy pytaniach, które mogą być nieintuicyjne lub gdzie m
 
 ## RAG (Retrieval Augmented Generation)
 
-**RAG** to metoda łącząca wyszukiwanie informacji z generowaniem tekstu. Model ma dostęp do zewnętrznej bazy wiedzy, z której może pobierać aktualne i specjalistyczne informacje.
+**RAG** (czyli generowanie wspomagane wyszukiwaniem) to metoda łącząca wyszukiwanie informacji z generowaniem tekstu. Model ma dostęp do zewnętrznej bazy wiedzy, z której może pobierać aktualne i specjalistyczne informacje - szerzej opisuję ją w rozdziale [RAG - jak AI korzysta z Twoich dokumentów](/jak-dziala-ai/rag/).
 
 :::tip[Problem, który RAG rozwiązuje]
 Modele językowe mają wiedzę tylko do momentu treningu (cut-off date) i mogą "halucynować" - generować przekonująco brzmiące, ale nieprawdziwe informacje. RAG dostarcza modelowi prawdziwe, aktualne dane.
@@ -171,7 +171,7 @@ Odpowiedź:
 
 ## ReAct (Reasoning + Acting)
 
-**ReAct** to framework łączący rozumowanie z działaniem. Model nie tylko "myśli", ale również podejmuje akcje (np. wyszukiwanie, obliczenia) i obserwuje ich wyniki.
+**ReAct** ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)) to framework łączący rozumowanie z działaniem. Model nie tylko "myśli", ale również podejmuje akcje (np. wyszukiwanie, obliczenia) i obserwuje ich wyniki.
 
 **Cykl ReAct:** 1. Thought (Myśl) - model analizuje sytuację i planuje. 2. Action (Akcja) - model wykonuje działanie (np. wyszukiwanie). 3. Observation (Obserwacja) - model otrzymuje wynik akcji. 4. Repeat - cykl powtarza się aż do uzyskania odpowiedzi.
 

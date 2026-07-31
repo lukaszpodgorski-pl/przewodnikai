@@ -98,6 +98,8 @@ Jedna uwaga, zanim przejdziesz do konkretów: dopóki piszesz prompty dla siebie
    </text>
    ```
 
+   Pamiętaj tylko, że sam znacznik nie jest szczelny - atakujący może dopisać `</text>` i wrócić do kontekstu instrukcji. Dlatego Anthropic radzi dołożyć drugą warstwę: przekazuj cudzy tekst zakodowany jako JSON, bo wtedy cudzysłowy i znaczniki są jednoznacznie oznaczone jako dane i nie da się z nich "wyjść". A jeśli tekst przychodzi z zewnątrz - z maila, ze strony, z wyniku narzędzia - podawaj go modelowi jako wynik narzędzia, nigdy jako część instrukcji systemowej ([dokumentacja Anthropic](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks)).
+
 2. **Walidacja i sanityzacja wejścia** - przed przekazaniem do modelu, sprawdzaj dane pod kątem podejrzanych wzorców: fraz typu "ignoruj instrukcje", poleceń systemowych, prób zmiany roli.
 3. **Ograniczanie możliwości** - model powinien mieć dostęp tylko do niezbędnych funkcji. Nie dawaj mu możliwości wykonywania kodu lub dostępu do wrażliwych danych, jeśli to nie jest konieczne.
 
@@ -167,7 +169,7 @@ Sentyment (pozytywny/negatywny/neutralny):
 Sentyment:
 ```
 
-**3. Caching odpowiedzi.** Dla powtarzających się zapytań używaj cache'owania - nie płać za te same odpowiedzi dwa razy.
+**3. Caching.** Działa na dwa sposoby. Po Twojej stronie: zapamiętuj odpowiedzi na powtarzające się zapytania, żeby nie płacić dwa razy za to samo. Po stronie dostawcy: jeśli w każdym zapytaniu wysyłasz ten sam długi prompt systemowy albo ten sam dokument, włącz cache promptu (prompt caching) - u Anthropic odczyt z cache kosztuje 10 procent ceny zwykłego tokenu wejściowego ([dokumentacja Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)).
 
 **4. Batch processing.** Gdy to możliwe, grupuj wiele zapytań w jedno - zmniejsza to overhead.
 
@@ -177,7 +179,7 @@ Sentyment:
 
 **Jakość:** czy prompt przetestowany na różnych przypadkach? Czy format wyjściowy jest spójny? Czy istnieją fallbacki dla błędów?
 
-**Wydajność:** czy prompt jest zoptymalizowany pod kątem tokenów? Czy używasz odpowiedniego modelu? Czy masz caching dla powtarzalnych zapytań?
+**Wydajność:** czy prompt jest zoptymalizowany pod kątem tokenów? Czy używasz odpowiedniego modelu? Czy masz caching dla powtarzalnych zapytań i cache promptu dla stałego, długiego kontekstu?
 
 **Monitoring:** czy logujesz zapytania i odpowiedzi? Czy masz alerty dla anomalii? Czy śledzisz koszty?
 
@@ -185,7 +187,7 @@ Sentyment:
 
 **Dokumentacje:** [OpenAI Documentation](https://developers.openai.com/api/docs), [Anthropic Documentation](https://platform.claude.com/docs/en/home), [Prompting Guide](https://www.promptingguide.ai/)
 
-**Narzędzia:** Prompt Flow (Microsoft, wizualne projektowanie), LangChain (framework do łańcuchów promptów), OpenAI Playground (testowanie promptów)
+**Narzędzia:** LangChain (framework do łańcuchów promptów), OpenAI Playground i Google AI Studio (testowanie promptów i parametrów modelu)
 
 **Społeczność:** r/PromptEngineering na Reddit, Discord serwery OpenAI i Anthropic, GitHub - awesome-prompt-engineering
 

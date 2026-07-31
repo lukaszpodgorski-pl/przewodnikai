@@ -73,7 +73,7 @@ Te pytania są sednem całego rozdziału - zadaj je sobie, zanim użyjesz AI do 
 **O kontekst:** czy model AI ma dostęp do wszystkich potrzebnych danych? Czy porównuję "jabłka do jabłek"? Jakie czynniki zewnętrzne mogą wpływać na wyniki?
 
 :::caution[Praktyczny przykład]
-Menedżer sprzedaży prosi AI o prognozę na Q4 2025. Ale model ma dostęp tylko do danych z lat 2020-2023. Rok 2020 był anomalią (pandemia), a model nie wie o nowym produkcie wprowadzonym w 2024. Prognoza będzie błędna nie z winy AI, ale z powodu niekompletnych danych.
+Menedżer sprzedaży prosi AI o prognozę na najbliższy kwartał. Ale model ma dostęp tylko do danych sprzed kilku lat. W dodatku jeden z tych roczników był zupełnie nietypowy (pandemia), a o produkcie, który firma wprowadziła w zeszłym roku, model nie wie nic. Prognoza będzie błędna nie z winy AI, ale z powodu niekompletnych danych.
 :::
 
 <!-- TODO(Łukasz): tu zadziałałaby anegdota - czy widziałeś raport albo prognozę, która rozsypała się przez lukę w danych? Co konkretnie wypadło ze zbioru? -->
@@ -122,7 +122,7 @@ Nie traktuj tej listy jak formularza do wypełniania przy każdym pytaniu do AI.
 
 ## Zasoby do dalszej nauki
 
-Jeśli chcesz pogłębić swoją Data Fluency bez nauki programowania: **Google Data Analytics Certificate** (darmowy kurs na Coursera, podstawy analizy bez kodowania), **Storytelling with Data** (Cole Nussbaumer Knaflic, książka o efektywnej wizualizacji), **Calling Bullshit** (Carl Bergstrom, Jevin West, jak rozpoznawać manipulacje danymi), **Gemini Notebook od Google** (narzędzie do "rozmowy" z własnymi dokumentami i danymi).
+Jeśli chcesz pogłębić swoją Data Fluency bez nauki programowania: **[Google Data Analytics Certificate](https://www.coursera.org/professional-certificates/google-data-analytics)** (podstawy analizy bez kodowania; kurs na Coursera w płatnej subskrypcji, z bezpłatnym okresem próbnym i możliwością ubiegania się o pomoc finansową), **Storytelling with Data** (Cole Nussbaumer Knaflic, książka o efektywnej wizualizacji), **Calling Bullshit** (Carl Bergstrom, Jevin West, jak rozpoznawać manipulacje danymi), **Gemini Notebook od Google** (narzędzie do "rozmowy" z własnymi dokumentami i danymi).
 
 :::tip[Podsumowanie]
 Data Fluency to nie umiejętność techniczna, ale sposób myślenia. Chodzi o zadawanie właściwych pytań, zdrowy sceptycyzm wobec wyników i świadomość ograniczeń zarówno danych, jak i AI. W erze, gdzie "dane napędzają decyzje", ta kompetencja jest niezbędna dla każdego profesjonalisty.

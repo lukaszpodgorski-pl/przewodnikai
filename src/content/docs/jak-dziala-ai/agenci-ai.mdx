@@ -62,9 +62,9 @@ To jest zmiana, o której mówi się "rok agentów" - i powód, dla którego ten
 Pod każdym agentem - od ChatGPT Work po systemy firmowe - kryje się ten sam zestaw elementów:
 
 1. **Model językowy** - "mózg", który rozumie cel i planuje; często [model rozumujący](/jak-dziala-ai/modele-rozumujace/), bo planowanie to zadanie wieloetapowe
-2. **Narzędzia** - "ręce": wyszukiwarka, przeglądarka, dostęp do plików, kalendarz, arkusz. Model nie klika sam z siebie - zgłasza "wywołaj narzędzie X z parametrami Y", a system wykonuje (mechanizm tool calling, który znasz z [Mapy Systemów AI](/jak-dziala-ai/mapa-ai/))
+2. **Narzędzia** - "ręce": wyszukiwarka, przeglądarka, dostęp do plików, kalendarz, arkusz. Model nie klika sam z siebie - zgłasza "wywołaj narzędzie X z parametrami Y", a system wykonuje (mechanizm tool calling, do którego wrócimy w [Mapie Systemów AI](/jak-dziala-ai/mapa-ai/))
 3. **Pamięć** - notatki agenta o tym, co już zrobił i czego się dowiedział; bez niej dziesiąty krok nie wiedziałby nic o pierwszym
-4. **Pętla decyzyjna** - rytm pracy: pomyśl → działaj → sprawdź wynik → popraw plan. Ten schemat opisano w badaniach jako ReAct ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)); jego "ręczną" wersję poznałeś w rozdziale o [technikach rozumowania](/prompt-engineering/rozumowanie/)
+4. **Pętla decyzyjna** - rytm pracy: pomyśl → działaj → sprawdź wynik → popraw plan. Ten schemat opisano w badaniach jako ReAct ([Yao i in., 2022](https://arxiv.org/abs/2210.03629)); jego "ręczną" wersję opiszę w rozdziale o [technikach rozumowania](/prompt-engineering/rozumowanie/)
 
 ```text
 CEL: "Znajdź 3 połączenia do Rzymu i porównaj ceny"
@@ -103,7 +103,7 @@ Każda słabość modelu, którą znasz z poprzednich rozdziałów, u agenta wys
 
 - **Kumulacja błędów** - jeśli każdy krok ma 95% szans powodzenia, to zadanie z 20 kroków kończy się sukcesem tylko w ok. 36% przypadków (0,95 do potęgi 20). Dlatego agenci świetnie radzą sobie z zadaniami na kilka-kilkanaście kroków, a przy bardzo długich potrafią ugrzęznąć
 - **Halucynacja w działaniu** - chatbot, który zmyśla, produkuje błędny tekst; agent, który zmyśla, klika w błędne rzeczy. Ta sama wada, wyższa stawka
-- **Podatność na manipulację** - agent czytający strony internetowe może natrafić na ukryte złośliwe instrukcje (prompt injection - znasz to zagrożenie z [najlepszych praktyk promptowania](/prompt-engineering/najlepsze-praktyki/)); producenci wbudowują zabezpieczenia, ale problem nie jest w pełni rozwiązany
+- **Podatność na manipulację** - agent czytający strony internetowe może natrafić na ukryte złośliwe instrukcje (prompt injection - czyli podszycie się pod Twoje polecenie tekstem ukrytym na stronie; piszę o tym szerzej w [najlepszych praktykach promptowania](/prompt-engineering/najlepsze-praktyki/)); producenci wbudowują zabezpieczenia, ale problem nie jest w pełni rozwiązany
 - **Koszt** - agent wykonuje dziesiątki wywołań modelu tam, gdzie chatbot wykonałby jedno
 
 ## Zasady bezpiecznego korzystania

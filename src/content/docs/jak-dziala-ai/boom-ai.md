@@ -46,7 +46,7 @@ Dat z tej osi czasu nie musisz zapamiętywać. Przejrzyj ją i zatrzymaj się na
 
 **2010-2020: Renesans deep learning** - 2012: AlexNet wygrywa konkurs ImageNet, rozpoczynając rewolucję w rozpoznawaniu obrazów. 2014: GAN (Generative Adversarial Networks) - przełom w generowaniu obrazów. 2016: AlphaGo pokonuje mistrza świata w Go. 2017: artykuł "Attention is All You Need" - architektura Transformer. 2018: BERT (Google) i GPT (OpenAI) - przełomowe duże modele językowe.
 
-**2020-dziś: Eksplozja** - 2020: GPT-3 pokazuje niesamowite możliwości. 2021: DALL-E generuje obrazy z tekstu. 2022: ChatGPT zdobywa 100 milionów użytkowników w 2 miesiące. 2023: GPT-4, Claude 2, Gemini - wyścig gigantów. 2024: AI staje się codziennym narzędziem pracy.
+**2020-dziś: Eksplozja** - 2020: GPT-3 pokazuje niesamowite możliwości. 2021: DALL-E generuje obrazy z tekstu. 2022: ChatGPT zdobywa 100 milionów użytkowników w 2 miesiące. 2023: GPT-4, Claude 2, Gemini - wyścig gigantów. 2024: AI staje się codziennym narzędziem pracy; OpenAI pokazuje o1 - pierwszy szeroko dostępny [model rozumujący](/jak-dziala-ai/modele-rozumujace/), który "myśli na brudno", zanim odpowie. 2025: DeepSeek-R1 pokazuje w otwartej publikacji, że rozumowania da się nauczyć model znacznie taniej ([DeepSeek, 2025](https://arxiv.org/abs/2501.12948)). 2026: agenci AI wychodzą z laboratoriów do codziennych narzędzi - AI nie tylko odpowiada, ale samodzielnie planuje i wykonuje wieloetapowe zadania.
 
 ## Trzy filary obecnego boomu
 
@@ -102,11 +102,13 @@ GPT-3 istniał od 2020 roku, ale nie zdobył masowej popularności. Co zrobiło 
 
 ## Wyścig gigantów
 
-Sukces ChatGPT uruchomił wyścig największych firm technologicznych: **Google** - Bard (później Gemini), ogłoszony w panice po sukcesie ChatGPT; **Microsoft** - inwestycja $13 mld w OpenAI, integracja z Bing i Office; **Meta** - Llama (open-source), demokratyzacja AI; **Anthropic** - Claude, nacisk na bezpieczeństwo; **Amazon** - inwestycja w Anthropic, integracja z AWS; **Apple** - Apple Intelligence, integracja z urządzeniami.
+Sukces ChatGPT uruchomił wyścig największych firm technologicznych: **Google** - Bard (później Gemini), ogłoszony w panice po sukcesie ChatGPT; **Microsoft** - inwestycja $13 mld w OpenAI, integracja z Bing i Office; **Meta** - Llama (otwarte wagi, licencja z ograniczeniami - piszę o tym w [Modelach językowych](/jak-dziala-ai/modele-jezykowe/)); **Anthropic** - Claude, nacisk na bezpieczeństwo; **Amazon** - inwestycja w Anthropic, integracja z AWS; **Apple** - Apple Intelligence, integracja z urządzeniami.
+
+Wyścig szybko przestał być jednak wyłącznie amerykański: **DeepSeek** (Chiny) - modele o otwartych wagach, trenowane znacznie taniej, które w styczniu 2025 przetasowały rynek ([DeepSeek, 2025](https://arxiv.org/abs/2501.12948)); **Mistral AI** (Francja) - modele o otwartych wagach i chatbot z planem darmowym, europejska alternatywa dla amerykańskiej czołówki. O europejskich i polskich graczach piszę osobno w sekcji [Suwerenne AI](/suwerenne-ai/).
 
 ## Co dalej?
 
-Eksperci wskazują pięć kierunków rozwoju: multimodalność (modele rozumiejące tekst, obraz, dźwięk i wideo jednocześnie), agenci AI (systemy wykonujące złożone zadania autonomicznie), personalizację (AI dostosowane do indywidualnych potrzeb), integrację (AI wbudowane w każdą aplikację i urządzenie), lokalne modele (AI działające na Twoim urządzeniu, bez chmury).
+Eksperci wskazują pięć kierunków rozwoju: multimodalność (modele rozumiejące tekst, obraz, dźwięk i wideo jednocześnie), agenci AI (systemy wykonujące złożone zadania autonomicznie), personalizację (AI dostosowane do indywidualnych potrzeb), integrację (AI wbudowane w każdą aplikację i urządzenie), lokalne modele - te już działają na zwykłym laptopie ([AI na własnym komputerze](/suwerenne-ai/ai-na-wlasnym-komputerze/)), a rozwój idzie w stronę mniejszych modeli o jakości dzisiejszych dużych.
 
 :::danger[Pytanie otwarte]
 Czy obecne podejście (skalowanie) doprowadzi do AGI (ogólnej sztucznej inteligencji)? Eksperci są podzieleni. Jedni wierzą, że to kwestia czasu i mocy obliczeniowej. Inni twierdzą, że potrzebne są fundamentalne przełomy.
@@ -118,7 +120,7 @@ Czy obecne podejście (skalowanie) doprowadzi do AGI (ogólnej sztucznej intelig
 - **Scaling laws** - większe modele = lepsze wyniki
 - **RLHF** - technika, która uczyniła modele "pomocnymi"
 - **ChatGPT** - prosty interfejs + darmowy dostęp + moment wirusowy
-- **Wyścig gigantów** - Google, Microsoft, Meta, Anthropic, Amazon, Apple
+- **Wyścig gigantów** - Google, Microsoft, Meta, Anthropic, Amazon, Apple, a od 2025 także DeepSeek (Chiny) i Mistral (Francja)
 - **Przyszłość** - multimodalność, agenci, personalizacja, integracja
 
 :::note[Teraz wiesz]

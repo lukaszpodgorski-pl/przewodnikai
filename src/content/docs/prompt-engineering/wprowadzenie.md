@@ -72,23 +72,35 @@ Nauczysz się używać JSON, tabel, XML i szablonów do tworzenia spójnych, prz
 
 [Przejdź do: Strukturyzacja danych →](/prompt-engineering/schematy/)
 
-### Moduł 5: Automatyzacja
+### Moduł 5: Inżynieria kontekstu
+
+Zrozumiesz, dlaczego długie rozmowy z AI tracą jakość i jak świadomie dobierać informacje, które trafiają do modelu - łącznie z instrukcjami stałymi i pamięcią chatbota.
+
+[Przejdź do: Inżynieria kontekstu →](/prompt-engineering/inzynieria-kontekstu/)
+
+### Moduł 6: Automatyzacja
 
 Poznasz prompt chaining, APE (Automatic Prompt Engineer) i techniki testowania promptów.
 
 [Przejdź do: Automatyzacja →](/prompt-engineering/automatyzacja/)
 
-### Moduł 6: Programowanie z AI
+### Moduł 7: Programowanie z AI
 
 Dowiesz się, jak wykorzystać AI do generowania kodu, debugowania, pisania testów i dokumentacji.
 
 [Przejdź do: Programowanie z AI →](/prompt-engineering/programowanie/)
 
-### Moduł 7: Najlepsze praktyki
+### Moduł 8: Najlepsze praktyki
 
 Podsumowanie kursu plus bezpieczeństwo promptów, ochrona przed injection i optymalizacja kosztów.
 
 [Przejdź do: Najlepsze praktyki →](/prompt-engineering/najlepsze-praktyki/)
+
+### Moduł 9: Baza promptów
+
+Na koniec dostajesz gotowe, przetestowane prompty do pisania, biznesu, edukacji i kreatywności - skopiuj, uruchom i przerób pod siebie.
+
+[Przejdź do: Baza promptów →](/prompt-engineering/baza-promptow/)
 
 ## Szybki start - Twój pierwszy lepszy prompt
 
@@ -123,17 +135,17 @@ Format: lista numerowana
 
 ## Ustawienia modeli językowych
 
-Zanim zaczniesz pisać własne prompty, chcę Ci pokazać cztery parametry, które wpływają na zachowanie modeli:
+Zanim zaczniesz pisać własne prompty, chcę Ci pokazać cztery parametry, które wpływają na zachowanie modeli. Nie szukaj ich w oknie czatu ChatGPT, Claude czy Gemini - tam ich nie ma. To ustawienia z paneli dla programistów: API (interfejs programistyczny, przez który aplikacje rozmawiają z modelem), OpenAI Playground i Google AI Studio. Warto je znać, bo tłumaczą, dlaczego ten sam prompt raz daje suchy fakt, a raz rozbudowaną opowieść:
 
 | Parametr | Co robi | Kiedy używać |
 | --- | --- | --- |
-| **Temperature** | Kontroluje "kreatywność" modelu | Niska (0-0.3) dla faktów, wysoka (0.7-1) dla kreatywności |
+| **Temperature** | Kontroluje "kreatywność" modelu | Niska (0-0,3) dla faktów, wysoka (0,7-1) dla kreatywności |
 | **Top P** | Alternatywna kontrola losowości | Zmieniaj temperature ALBO top_p, nie oba |
 | **Max Tokens** | Limit długości odpowiedzi | Kontrola kosztów i długości |
 | **Stop Sequences** | Sekwencje zatrzymujące generowanie | Kontrola struktury odpowiedzi |
 
 :::tip[Praktyczna wskazówka]
-Przy zadaniach biznesowych i faktograficznych radzę Ci trzymać się niskiej temperatury (0.1-0.3). Przy kreatywnym pisaniu, burzy mózgów i generowaniu pomysłów możesz podbić ją do 0.7-0.9.
+W oknie czatu nie ustawisz temperatury suwakiem, ale podobny efekt uzyskasz słowami: przy zadaniach faktograficznych dopisz "odpowiadaj rzeczowo i trzymaj się faktów", przy kreatywnych - "zaproponuj kilka zaskakujących wariantów". Jeśli pracujesz przez API albo Playground, przy zadaniach biznesowych i faktograficznych radzę Ci trzymać się niskiej temperatury (0,1-0,3), a przy kreatywnym pisaniu i burzy mózgów podbić ją do 0,7-0,9.
 :::
 
 ## Dla kogo jest ten kurs?
@@ -161,7 +173,7 @@ Wracaj do wcześniejszych modułów, gdy napotkasz trudności. Powtórzenie i pr
 
 ## Zaczynamy
 
-Im precyzyjniej opiszesz zadanie, tym mniej czasu spędzisz na poprawianiu odpowiedzi. To cała stawka tej umiejętności - i to właśnie ćwiczysz przez kolejne siedem modułów.
+Im precyzyjniej opiszesz zadanie, tym mniej czasu spędzisz na poprawianiu odpowiedzi. To cała stawka tej umiejętności - i to właśnie ćwiczysz przez kolejne dziewięć modułów.
 
 **Następny krok:** Przejdź do pierwszego modułu, gdzie poznasz fundamenty skutecznego promptowania.
 
@@ -171,7 +183,7 @@ Im precyzyjniej opiszesz zadanie, tym mniej czasu spędzisz na poprawianiu odpow
 
 - Czym jest prompt engineering i dlaczego jest kluczową kompetencją w pracy z AI
 - Jak wygląda różnica między słabym a dobrze skonstruowanym promptem
-- Jakie parametry modeli (temperature, top_p) wpływają na jakość odpowiedzi i kiedy je dostosować
+- Jakie parametry modeli (temperature, top_p) wpływają na jakość odpowiedzi, gdzie w ogóle da się je ustawić i kiedy warto to zrobić
 
 **Następny krok:** [Podstawy Promptowania](/prompt-engineering/podstawy/) - poznasz cztery elementy skutecznego prompta i framework CO-STAR, który natychmiast poprawi Twoje wyniki.
 :::
