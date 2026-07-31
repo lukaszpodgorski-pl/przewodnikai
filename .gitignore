@@ -78,6 +78,7 @@ $RECYCLE.BIN/
 /CLAUDE.md
 /TODO.md
 /TODO_AUDYT.md
+/TODO_CHECK.md
 
 # surowce grafik - lokalne; procesor (npm run grafiki) zapisuje gotowe do src/assets/
 /grafiki-zrodlo/

@@ -198,7 +198,7 @@ wyniku. Zwróć poprawioną wersję i krótko wyjaśnij zmiany.
 
 Ta pętla - prompt, poprawa, użycie - uczy przy okazji szybciej niż jakikolwiek poradnik, bo na własnych zadaniach widzisz, czego Twoim promptom brakowało.
 
-Technika jest na tyle skuteczna, że producenci wbudowali ją w swoje narzędzia: Anthropic oferuje w konsoli deweloperskiej ulepszacz promptów ([prompt improver](https://www.anthropic.com/news/prompt-improver)), a OpenAI - generator promptów w [Playground](https://platform.openai.com/playground). W pełni zautomatyzowaną wersję tego pomysłu (APE - Automatic Prompt Engineer) poznasz w rozdziale o [automatyzacji](/prompt-engineering/automatyzacja/).
+Technika jest na tyle skuteczna, że producenci wbudowali ją w swoje narzędzia: Anthropic oferuje w konsoli deweloperskiej ulepszacz promptów ([prompt improver](https://claude.com/blog/prompt-improver)), a OpenAI - generator promptów w [Playground](https://platform.openai.com/playground). W pełni zautomatyzowaną wersję tego pomysłu (APE - Automatic Prompt Engineer) poznasz w rozdziale o [automatyzacji](/prompt-engineering/automatyzacja/).
 
 :::caution[Przeczytaj, zanim użyjesz]
 Wygenerowany prompt traktuj jak szkic od asystenta, nie jak gotowca: przeczytaj go i wytnij fragmenty, które nie pasują do Twojej sytuacji. Model potrafi dopisać wymagania, o które nie prosiłeś - a każdy zbędny wymóg w prompcie to ryzyko gorszej odpowiedzi.

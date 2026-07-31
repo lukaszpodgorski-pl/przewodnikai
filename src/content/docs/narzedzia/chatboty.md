@@ -55,7 +55,7 @@ Nazwy planów i stawki zmieniają się u tych dostawców kilka razy w roku - ka�
 
 **ChatGPT** to chatbot OpenAI udostępniony publicznie w listopadzie 2022 roku. To od jego premiery zaczęło się masowe zainteresowanie chatbotami AI.
 
-**Plany:** Free, Go, Plus, Pro, Business i Enterprise. Plan darmowy daje ograniczony dostęp do słabszego modelu; model flagowy zaczyna się od planu Plus. Plan, który do sierpnia 2025 nazywał się Team, nosi dziś nazwę Business. [Cennik](https://openai.com/chatgpt/pricing/).
+**Plany:** Free, Go, Plus, Pro, Business i Enterprise. Plan darmowy daje ograniczony dostęp do słabszego modelu; model flagowy zaczyna się od planu Plus. Plan, który do sierpnia 2025 nazywał się Team, nosi dziś nazwę Business. [Cennik](https://chatgpt.com/pricing/).
 
 **Modele:** rodzina GPT-5.6 - flagowy Sol oraz tańsze Terra i Luna. W planie darmowym pracujesz na GPT-5.5 Instant.
 
@@ -219,12 +219,12 @@ Moja rada: wypróbuj kilka i zobacz, który pasuje do Twojego stylu pracy. Nie m
 
 ## Źródła i oficjalne strony
 
-- [ChatGPT (OpenAI)](https://openai.com/chatgpt) - oficjalna strona i dokumentacja
+- [ChatGPT (OpenAI)](https://chatgpt.com/) - oficjalna strona i dokumentacja
 - [Claude (Anthropic)](https://claude.ai) - oficjalna strona i modele
 - [Gemini (Google)](https://gemini.google.com) - chatbot i API
 - [Copilot (Microsoft)](https://copilot.microsoft.com) - asystent AI z integracją Office
 - [Perplexity AI](https://www.perplexity.ai) - wyszukiwarka AI ze źródłami
-- [LMSYS Chatbot Arena](https://lmarena.ai/) - niezależny ranking modeli AI oparty na głosowaniu użytkowników (ELO rating)
+- [Arena AI](https://arena.ai/) - niezależny ranking modeli AI oparty na głosowaniu użytkowników (ELO rating, dawniej LMSYS Chatbot Arena)
 
 :::note[Teraz wiesz]
 
