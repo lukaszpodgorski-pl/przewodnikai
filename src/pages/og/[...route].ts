@@ -24,10 +24,12 @@ export const { getStaticPaths, GET } = await OGImageRoute({
 		title: page.title,
 		description: page.description ?? 'Otwarta baza wiedzy o AI po polsku',
 		// CanvasKit dekoduje tylko formaty rastrowe (PNG/JPEG/WebP), nie SVG -
-		// favicon.svg jest wcześniej zrasteryzowany do public/og-logo.png (144x144).
-		// Znak jest dwukolorowy (teal + biel) i czyta się wprost na ciemnym tle
-		// karty, więc nie wymaga już wymuszania koloru, jak poprzedni monochromatyczny
-		// favicon. Po każdej zmianie favicon.svg trzeba zregenerować og-logo.png.
+		// og-logo.png (144x144) to zrasteryzowany znak marki. Znak jest dwukolorowy
+		// (teal + biel) i czyta się wprost na ciemnym tle karty, więc nie wymaga już
+		// wymuszania koloru, jak poprzedni monochromatyczny favicon. og-logo.png jest
+		// ŚWIADOMIE odpięty od favicon.svg: favicon to portret (awatar), karta OG
+		// zostaje przy znaku marki. Zmiana favicon.svg nie wymaga już regeneracji
+		// tego pliku.
 		logo: { path: './public/og-logo.png', size: [72, 72] },
 		bgGradient: [
 			[24, 24, 27],
