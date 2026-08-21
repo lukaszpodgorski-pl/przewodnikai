@@ -25,8 +25,10 @@ export const NEWSLETTER = {
 	 * aitomate.pl, lukaszpodgorski.pl, szanujczas.pl i myeye.pl, wiec ten sam
 	 * dokument obsluguje ten serwis - nie trzeba osobnego.
 	 *
-	 * DO UZUPELNIENIA POZA REPO: dokument nie opisuje jeszcze newslettera
-	 * (celu przetwarzania, podstawy prawnej, okresu przechowywania ani Sendy).
+	 * Od 2026-08-20 dokument ma sekcje §3a "Newsletter i powiadomienia e-mail":
+	 * cel przetwarzania, podstawa prawna (art. 6 ust. 1 lit. a), opis double
+	 * opt-in, zakres danych, Sendy + SES Frankfurt, okres przechowywania,
+	 * wycofanie zgody. Zrodlo: `aitomate.pl/public_html/polityka-prywatnosci.html`.
 	 */
 	privacyUrl: 'https://aitomate.pl/polityka-prywatnosci',
 
@@ -38,9 +40,9 @@ export const NEWSLETTER = {
 	 * skrzynki zamykaloby te droge.
 	 *
 	 * Adres potwierdzony przez wlasciciela 2026-07-22 i zgodny z
-	 * src/content/docs/zasoby/kontakt.md. Tekst zgody skonfigurowany w panelu
-	 * Sendy wskazuje jeszcze `kontakt@przewodnikai.pl` - do poprawienia tam,
-	 * zeby oba miejsca mowily to samo.
+	 * src/content/docs/zasoby/kontakt.md. Tekst zgody w panelu Sendy wskazywal
+	 * wczesniej `kontakt@przewodnikai.pl` - poprawione 2026-08-21, oba miejsca
+	 * mowia teraz to samo.
 	 */
 	contactEmail: 'kontakt@lukaszpodgorski.pl',
 } as const;
@@ -82,6 +84,24 @@ export const STRONY_POWROTU = {
 	 * i ze wystarczy sprobowac ponownie.
 	 */
 	blad: '/newsletter/blad/',
+	/**
+	 * GDPR consent not given page - czlowiek wyslal formularz bez zaznaczonej zgody.
+	 *
+	 * Od 2026-08-20 checkbox zgody jest widoczny i niezaznaczony (wczesniej byl
+	 * ukryty i zaznaczony z gory), wiec ten przypadek stal sie realny: mozna
+	 * swiadomie odmowic. Bez tej strony Sendy odsyla na wlasna, generyczna
+	 * stronke z komunikatem "Consent not given".
+	 */
+	brakZgody: '/newsletter/brak-zgody/',
+	/**
+	 * GDPR reconsent success page - czlowiek potwierdzil zgode po kampanii
+	 * wyslanej ze znacznikiem `[reconsent]`.
+	 *
+	 * Potrzebna, bo obie listy przewodnikai maja adresy bez mozliwego do wykazania
+	 * dowodu zgody (szczegoly: `_newsletters/DO-SPRAWDZENIA-lista-clear.md`).
+	 * Kampania re-consent nie ma bez tej strony gdzie odeslac czlowieka.
+	 */
+	zgodaPotwierdzona: '/newsletter/zgoda-potwierdzona/',
 } as const;
 
 /** Czy konfiguracja jest wciaz zastepcza. */
